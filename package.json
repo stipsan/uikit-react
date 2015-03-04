@@ -1,0 +1,25 @@
+{
+  "name": "react-uikit",
+  "version": "0.1.0",
+  "description": "UIkit components for React",
+  "main": "./lib",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stipsan/react-uikit.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "uikit",
+    "ecosystem-react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stipsan/react-uikit/issues"
+  },
+  "homepage": "https://github.com/stipsan/react-uikit"
+}
