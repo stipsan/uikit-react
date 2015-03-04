@@ -3,6 +3,19 @@ var React = require('react/addons'),
     classNames = require('classnames');
 
 var Button = React.createClass({
+    
+  propTypes: {
+    type: React.PropTypes.string,
+    primary: React.PropTypes.bool, 
+    success: React.PropTypes.bool, 
+    danger: React.PropTypes.bool,
+    link: React.PropTypes.bool,
+    mini: React.PropTypes.bool,
+    small: React.PropTypes.bool,
+    large: React.PropTypes.bool,
+    disabled: React.PropTypes.bool
+  },
+    
   getInitialState: function() {
     return { isActive: false };
   },
