@@ -36,18 +36,21 @@ var Button = React.createClass({
     this.setState({isActive: !this.state.isActive});
   },
   render: function() {
+      
+    var classes = classNames('uk-button', {
+      "uk-button-primary": this.props.primary, 
+      "uk-button-success": this.props.success, 
+      "uk-button-danger": this.props.danger,
+      "uk-button-link": this.props.link,
+      "uk-button-mini": this.props.mini,
+      "uk-button-small": this.props.small,
+      "uk-button-large": this.props.large,
+      "uk-active": this.state.isActive
+    });
+
     return (
       <button 
-        className={classNames('uk-button', {
-            "uk-button-primary": this.props.primary, 
-            "uk-button-success": this.props.success, 
-            "uk-button-danger": this.props.danger,
-            "uk-button-link": this.props.link,
-            "uk-button-mini": this.props.mini,
-            "uk-button-small": this.props.small,
-            "uk-button-large": this.props.large,
-            "uk-active": this.state.isActive
-        })}
+        className={classes}
         type={this.props.type}
         disabled={this.props.disabled}
         onClick={this.onClick}

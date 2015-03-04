@@ -4,12 +4,13 @@
   "description": "UIkit components for React",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "test": "jest"
   },
   "jest": {
     "scriptPreprocessor": "preprocessor.js",
     "unmockedModulePathPatterns": [
-      "node_modules/react"
+      "node_modules/react",
+      "node_modules/classnames"
     ]
   },
   "repository": {
@@ -30,7 +31,7 @@
   "homepage": "https://github.com/stipsan/react-uikit",
   "devDependencies": {
     "gulp": "^3.8.11",
-    "jest": "^0.1.37",
+    "jest-cli": "^0.4.0",
     "react": "^0.12.2",
     "react-tools": "^0.12.2"
   },
