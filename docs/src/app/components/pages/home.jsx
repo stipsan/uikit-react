@@ -1,6 +1,6 @@
 var React = require('react');
 var Router = require('react-router');
-var {Button} = require('uikit');
+var {Button, Close} = require('uikit');
 
 var HomePage = React.createClass({
 
@@ -10,9 +10,16 @@ var HomePage = React.createClass({
 
     return (
       <div>
-        <Button primary={true}>Submit</Button>
-        <Button success={true}>Submit</Button>
-        <Button danger={true}>Submit</Button>
+        <div>
+          <Button primary={true}>Submit</Button>
+          <Button success={true}>Submit</Button>
+          <Button danger={true}>Submit</Button>
+        </div>
+        <div>
+          <h2>Close:</h2>
+          <Close></Close>
+          <Close alt={true}></Close>
+        </div>
       </div>
     );
   }

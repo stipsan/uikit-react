@@ -1,3 +1,4 @@
 module.exports = {
-  Button: require('./js/button')
+  Button: require('./js/button'),
+  Close: require('./js/close')
 };
