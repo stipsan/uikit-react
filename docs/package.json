@@ -1,0 +1,26 @@
+{
+  "name": "react-uikit-docs",
+  "version": "0.1.0",
+  "description": "A documentation site for React UIkit",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stipsan/react-uikit.git"
+  },
+  "browser": {
+    "UIkit": "../src/index.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  },
+}
