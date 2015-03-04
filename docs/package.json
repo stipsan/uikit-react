@@ -23,4 +23,21 @@
       ]
     ]
   },
+  "devDependencies": {
+    "browser-sync": "^2.2.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-less": "^3.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-util": "^3.0.4",
+    "pretty-hrtime": "^1.0.0",
+    "require-dir": "^0.1.0",
+    "underscore": "^1.8.2",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.4.0"
+  },
+  "dependencies": {
+    "uikit": "git://github.com/uikit/uikit"
+  }
 }
