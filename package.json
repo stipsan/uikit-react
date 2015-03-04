@@ -6,6 +6,12 @@
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
+  "jest": {
+    "rootDir": "src",
+    "testPathIgnorePatterns": [
+      "/__tests__/[^/]*/.+"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/stipsan/react-uikit.git"
