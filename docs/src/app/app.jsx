@@ -4,8 +4,6 @@
     Router = require('react-router'),
     AppRoutes = require('./app-routes.jsx');
 
-  //Needed for React Developer Tools
-  window.React = React;
 
   /** Render the main app component. You can read more about the react-router here: 
     *  https://github.com/rackt/react-router/blob/master/docs/guides/overview.md

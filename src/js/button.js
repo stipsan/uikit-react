@@ -32,7 +32,8 @@ var Button = React.createClass({
       disabled: false
     };
   },
-  onClick: function() {
+  onClick: function(event) {
+      console.log('click!', event);
     this.setState({isActive: !this.state.isActive});
   },
   render: function() {
@@ -54,6 +55,7 @@ var Button = React.createClass({
         type={this.props.type}
         disabled={this.props.disabled}
         onClick={this.onClick}
+        onSubmit={this.onClick}
        >
        {this.props.children}
     </button>

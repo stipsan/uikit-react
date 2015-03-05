@@ -29,6 +29,9 @@
     "url": "https://github.com/stipsan/react-uikit/issues"
   },
   "homepage": "https://github.com/stipsan/react-uikit",
+  "peerDependencies": {
+    "react": "0.12.x"  
+  },
   "devDependencies": {
     "gulp": "^3.8.11",
     "jest-cli": "^0.4.0",
