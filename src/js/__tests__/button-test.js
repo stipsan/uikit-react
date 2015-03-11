@@ -53,4 +53,19 @@ describe('Button', function() {
     TestUtils.Simulate.click(button);
     expect(button.getDOMNode().className).not.toContain('uk-active');
   });
+  
+  it('can be a submit type button', function() {
+    var React = require('react/addons');
+    var Button = require('../button.js');
+    var TestUtils = React.addons.TestUtils;
+
+    // Render a checkbox with label in the document
+    var container = TestUtils.renderIntoDocument(
+      <Button type="submit">Submit</Button>
+    );
+    var button = TestUtils.findRenderedDOMComponentWithTag(container, 'button');
+
+    // Verify that the type is submit
+    expect(button.getDOMNode().type).toContain('submit');
+  });
 });
