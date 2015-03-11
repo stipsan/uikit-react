@@ -14,6 +14,7 @@ var HomePage = React.createClass({
           <Button primary={true}>Submit</Button>
           <Button success={true}>Submit</Button>
           <Button danger={true}>Submit</Button>
+          <Button link={true}>Submit</Button>
         </div>
         <div>
           <h2>Close:</h2>
