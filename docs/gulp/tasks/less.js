@@ -2,6 +2,7 @@ var gulp = require('gulp'),
   less = require('gulp-less'),
   sourcemaps = require('gulp-sourcemaps'),
   handleErrors = require('../util/handleErrors'),
+  replace = require('gulp-replace'),
   autoprefixer = require('gulp-autoprefixer'),
   config = require('../config').less;
 

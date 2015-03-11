@@ -1,12 +1,10 @@
 var dest = './build';
 var src = './src';
-var mui = '../src';
+var uikit = './node_modules/uikit';
 
 module.exports = {
   browserSync: {
     server: {
-      // We're serving the src folder as well
-      // for sass sourcemap linking
       baseDir: [dest, src]
     },
     files: [
@@ -17,7 +15,7 @@ module.exports = {
     src: src + '/less/main.less',
     watch: [
       src + '/less/**',
-      mui + '/less/**'
+      uikit + '/docs/css/**'
     ],
     dest: dest
   },
@@ -26,8 +24,8 @@ module.exports = {
     dest: dest
   },
   fontIcons: {
-    src: src + "/less/font-icons/**",
-    dest: dest + '/font-icons'
+    src: [uikit + "/src/fonts/**"],
+    dest: dest + '/fonts'
   },
   browserify: {
     // Enable source maps
