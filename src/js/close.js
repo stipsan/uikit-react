@@ -13,7 +13,7 @@ var Close = React.createClass({
 	},
 
 	render: function () {
-		var classes = classNames('uk-button', {
+		var classes = classNames('uk-close', {
 			'uk-close-alt': this.props.alt, 
 		});
 
