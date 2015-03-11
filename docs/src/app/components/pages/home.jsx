@@ -1,10 +1,10 @@
 var React = require('react');
-var Router = require('react-router');
+//var Router = require('react-router');
 var {Button, Close} = require('uikit');
 
 var HomePage = React.createClass({
 
-  mixins: [Router.Navigation],
+  //mixins: [Router.Navigation],
 
   render: function() {
 
