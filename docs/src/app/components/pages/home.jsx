@@ -1,6 +1,7 @@
 var React = require('react');
 //var Router = require('react-router');
-var {Button, Close} = require('uikit');
+var ButtonsPage = require('./buttons.jsx');
+var ClosePage = require('./close.jsx');
 
 var HomePage = React.createClass({
 
@@ -84,6 +85,16 @@ var HomePage = React.createClass({
           </nav>
           <div className="tm-section tm-section-color-1 tm-section-colored">
             <div className="uk-container uk-container-center uk-text-center">
+              
+              // @TODO Temporary section (until Ract/react-router works with react 0.13)
+              <div className="uk-panel uk-panel-box">
+              
+                <ButtonsPage />
+              </div>
+              <div className="uk-panel uk-panel-box">
+                <ClosePage />
+              </div>
+              
               <img
   className="tm-logo"
   src="docs/images/logo_uikit_large.svg"
