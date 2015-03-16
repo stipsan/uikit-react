@@ -27,6 +27,10 @@ module.exports = {
     src: [uikit + "/src/fonts/**"],
     dest: dest + '/fonts'
   },
+  svgs: {
+    src: [uikit + "/docs/images/**"],
+    dest: dest + '/docs/images'
+  },
   browserify: {
     // Enable source maps
     debug: true,
