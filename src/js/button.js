@@ -13,7 +13,8 @@ var Button = React.createClass({
     mini: React.PropTypes.bool,
     small: React.PropTypes.bool,
     large: React.PropTypes.bool,
-    disabled: React.PropTypes.bool
+    disabled: React.PropTypes.bool,
+    className: React.PropTypes.string
   },
     
   getInitialState: function() {
@@ -29,7 +30,8 @@ var Button = React.createClass({
       mini: false,
       small: false,
       large: false,
-      disabled: false
+      disabled: false,
+      className: ''
     };
   },
   onClick: function(event) {
@@ -37,7 +39,7 @@ var Button = React.createClass({
   },
   render: function() {
       
-    var classes = classNames('uk-button', {
+    var classes = classNames('uk-button', this.props.className, {
       "uk-button-primary": this.props.primary, 
       "uk-button-success": this.props.success, 
       "uk-button-danger": this.props.danger,

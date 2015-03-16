@@ -115,30 +115,30 @@ var ButtonsPage = React.createClass({
                   </div>
                   <hr className="uk-article-divider" />
                   <h2 id="size-modifiers"><a href="#size-modifiers" className="uk-link-reset">Size modifiers</a></h2>
-                  <p>Add the <code>.uk-button-mini</code>, <code>.uk-button-small</code> or <code>.uk-button-large</code> class to a button to make it smaller or larger.</p>
+                  <p>Add the <code>mini</code>, <code>small</code> or <code>large</code> properties to a button to make it smaller or larger.</p>
                   <p>
-                    <button className="uk-button uk-button-mini" type="button">Mini button</button>
-                    <button className="uk-button uk-button-mini uk-button-primary" type="button">Mini button</button>
+                    <Button mini>Mini button</Button>
+                    <Button mini primary>Mini button</Button>
                   </p>
                   <p>
-                    <button className="uk-button uk-button-small" type="button">Small button</button>
-                    <button className="uk-button uk-button-small uk-button-primary" type="button">Small button</button>
+                    <Button small>Small button</Button>
+                    <Button small primary>Small button</Button>
                   </p>
                   <p>
-                    <button className="uk-button" type="button">Default button</button>
-                    <button className="uk-button uk-button-primary" type="button">Default button</button>
+                    <Button>Default button</Button>
+                    <Button primary>Default button</Button>
                   </p>
                   <p>
-                    <button className="uk-button uk-button-large" type="button">Large button</button>
-                    <button className="uk-button uk-button-large uk-button-primary" type="button">Large button</button>
+                    <Button large>Large button</Button>
+                    <Button large primary>Large button</Button>
                   </p>
                   <hr className="uk-article-divider" />
                   <h3>Full width button</h3>
                   <p>Add the <code>.uk-width-1-1</code> class from the <a href="grid.html">Grid component</a> and the button will take up full width.</p>
                   <h3 className="tm-article-subtitle">Example</h3>
                   <p>
-                    <button className="uk-button uk-button-large uk-width-1-1 uk-margin-small-bottom" type="button">Button</button>
-                    <button className="uk-button uk-button-primary uk-button-large uk-width-1-1" type="button">Button</button>
+                    <Button large className="uk-width-1-1 uk-margin-small-bottom">Button</Button>
+                    <Button large className="uk-button uk-button-primary uk-button-large uk-width-1-1">Button</Button>
                   </p>
                   <h3 className="tm-article-subtitle">Markup</h3>
                   <pre><code>&lt;button class="uk-button uk-width-1-1 uk-margin-small-bottom"&gt;...&lt;/button&gt;
@@ -150,29 +150,29 @@ var ButtonsPage = React.createClass({
                   <div className="uk-margin">
                     <div className="uk-button-group">
                       <a className="uk-button" href="#">Link</a>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
                     </div>
                   </div>
                   <div className="uk-margin">
                     <div className="uk-button-group">
                       <a className="uk-button uk-button-primary" href="#">Link</a>
-                      <button className="uk-button uk-button-primary">Button</button>
-                      <button className="uk-button uk-button-primary">Button</button>
+                      <Button className="uk-button uk-button-primary">Button</Button>
+                      <Button className="uk-button uk-button-primary">Button</Button>
                     </div>
                   </div>
                   <div className="uk-margin">
                     <div className="uk-button-group">
                       <a className="uk-button uk-button-success" href="#">Link</a>
-                      <button className="uk-button uk-button-success">Button</button>
-                      <button className="uk-button uk-button-success">Button</button>
+                      <Button className="uk-button uk-button-success">Button</Button>
+                      <Button className="uk-button uk-button-success">Button</Button>
                     </div>
                   </div>
                   <div className="uk-margin">
                     <div className="uk-button-group">
                       <a className="uk-button uk-button-danger" href="#">Link</a>
-                      <button className="uk-button uk-button-danger">Button</button>
-                      <button className="uk-button uk-button-danger">Button</button>
+                      <Button className="uk-button uk-button-danger">Button</Button>
+                      <Button className="uk-button uk-button-danger">Button</Button>
                     </div>
                   </div>
                   <h3 className="tm-article-subtitle">Markup</h3>
@@ -185,7 +185,7 @@ var ButtonsPage = React.createClass({
                   <h2 id="javascript"><a href="#javascript" className="uk-link-reset">JavaScript</a></h2>
                   <p>You can toggle button states via JavaScript. Just add the data attibute <code>data-uk-button</code>.</p>
                   <h3 className="tm-article-subtitle">Example</h3>
-                  <button className="uk-button uk-button-primary" type="button" data-uk-button>Button</button>
+                  <Button className="uk-button uk-button-primary" type="button" data-uk-button>Button</Button>
                   <h3 className="tm-article-subtitle">Markup</h3>
                   <pre><code>&lt;button class="uk-button uk-button-primary" type="button" data-uk-button&gt;Button&lt;/button&gt;</code></pre>
                   <hr className="uk-article-divider" />
@@ -194,16 +194,16 @@ var ButtonsPage = React.createClass({
                   <h4 className="tm-article-subtitle">Example</h4>
                   <div className="uk-margin">
                     <div data-uk-button-checkbox>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
                     </div>
                   </div>
                   <div className="uk-margin">
                     <div className="uk-button-group" data-uk-button-checkbox>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
                     </div>
                   </div>
                   <h3 className="tm-article-subtitle">Markup</h3>
@@ -218,16 +218,16 @@ var ButtonsPage = React.createClass({
                   <h4 className="tm-article-subtitle">Example</h4>
                   <div className="uk-margin">
                     <div data-uk-button-radio>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
                     </div>
                   </div>
                   <div className="uk-margin">
                     <div className="uk-button-group" data-uk-button-radio>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
-                      <button className="uk-button">Button</button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
+                      <Button className="uk-button">Button</Button>
                     </div>
                   </div>
                   <h3 className="tm-article-subtitle">Markup</h3>
@@ -242,7 +242,7 @@ var ButtonsPage = React.createClass({
                   <h3 className="tm-article-subtitle">Example</h3>
                   <div className="uk-margin" data-uk-margin>
                     <div className="uk-button-dropdown" data-uk-dropdown>
-                      <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+                      <Button className="uk-button">Hover <i className="uk-icon-caret-down" /></Button>
                       <div className="uk-dropdown uk-dropdown-small">
                         <ul className="uk-nav uk-nav-dropdown">
                           <li><a href="#">Item</a></li>
@@ -256,7 +256,7 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-dropdown" data-uk-dropdown>
-                      <button className="uk-button uk-button-primary">Hover <i className="uk-icon-caret-down" /></button>
+                      <Button className="uk-button uk-button-primary">Hover <i className="uk-icon-caret-down" /></Button>
                       <div className="uk-dropdown uk-dropdown-small">
                         <ul className="uk-nav uk-nav-dropdown">
                           <li><a href="#">Item</a></li>
@@ -270,7 +270,7 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-dropdown" data-uk-dropdown>
-                      <button className="uk-button uk-button-success">Hover <i className="uk-icon-caret-down" /></button>
+                      <Button className="uk-button uk-button-success">Hover <i className="uk-icon-caret-down" /></Button>
                       <div className="uk-dropdown uk-dropdown-small">
                         <ul className="uk-nav uk-nav-dropdown">
                           <li><a href="#">Item</a></li>
@@ -284,7 +284,7 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-dropdown" data-uk-dropdown>
-                      <button className="uk-button uk-button-danger">Hover <i className="uk-icon-caret-down" /></button>
+                      <Button className="uk-button uk-button-danger">Hover <i className="uk-icon-caret-down" /></Button>
                       <div className="uk-dropdown uk-dropdown-small">
                         <ul className="uk-nav uk-nav-dropdown">
                           <li><a href="#">Item</a></li>
@@ -298,7 +298,7 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-dropdown" data-uk-dropdown>
-                      <button className="uk-button" disabled>Hover <i className="uk-icon-caret-down" /></button>
+                      <Button className="uk-button" disabled>Hover <i className="uk-icon-caret-down" /></Button>
                       <div className="uk-dropdown uk-dropdown-small">
                         <ul className="uk-nav uk-nav-dropdown">
                           <li><a href="#">Item</a></li>
@@ -331,9 +331,9 @@ var ButtonsPage = React.createClass({
                   <h4 className="tm-article-subtitle">Example</h4>
                   <div className="uk-margin" data-uk-margin>
                     <div className="uk-button-group">
-                      <button className="uk-button">Button</button>
+                      <Button className="uk-button">Button</Button>
                       <div data-uk-dropdown="{mode:'click'}">
-                        <button className="uk-button"><i className="uk-icon-caret-down" /></button>
+                        <Button className="uk-button"><i className="uk-icon-caret-down" /></Button>
                         <div className="uk-dropdown uk-dropdown-small">
                           <ul className="uk-nav uk-nav-dropdown">
                             <li><a href="#">Item</a></li>
@@ -348,9 +348,9 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-group">
-                      <button className="uk-button uk-button-primary">Button</button>
+                      <Button className="uk-button uk-button-primary">Button</Button>
                       <div data-uk-dropdown="{mode:'click'}">
-                        <button className="uk-button uk-button-primary"><i className="uk-icon-caret-down" /></button>
+                        <Button className="uk-button uk-button-primary"><i className="uk-icon-caret-down" /></Button>
                         <div className="uk-dropdown uk-dropdown-small">
                           <ul className="uk-nav uk-nav-dropdown">
                             <li><a href="#">Item</a></li>
@@ -365,9 +365,9 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-group">
-                      <button className="uk-button uk-button-success">Button</button>
+                      <Button className="uk-button uk-button-success">Button</Button>
                       <div data-uk-dropdown="{mode:'click'}">
-                        <button className="uk-button uk-button-success"><i className="uk-icon-caret-down" /></button>
+                        <Button className="uk-button uk-button-success"><i className="uk-icon-caret-down" /></Button>
                         <div className="uk-dropdown uk-dropdown-small">
                           <ul className="uk-nav uk-nav-dropdown">
                             <li><a href="#">Item</a></li>
@@ -382,9 +382,9 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-group">
-                      <button className="uk-button uk-button-danger">Button</button>
+                      <Button className="uk-button uk-button-danger">Button</Button>
                       <div data-uk-dropdown="{mode:'click'}">
-                        <button className="uk-button uk-button-danger"><i className="uk-icon-caret-down" /></button>
+                        <Button className="uk-button uk-button-danger"><i className="uk-icon-caret-down" /></Button>
                         <div className="uk-dropdown uk-dropdown-small">
                           <ul className="uk-nav uk-nav-dropdown">
                             <li><a href="#">Item</a></li>
@@ -399,9 +399,9 @@ var ButtonsPage = React.createClass({
                       </div>
                     </div>
                     <div className="uk-button-group">
-                      <button className="uk-button" disabled>Button</button>
+                      <Button className="uk-button" disabled>Button</Button>
                       <div data-uk-dropdown="{mode:'click'}">
-                        <button className="uk-button" disabled><i className="uk-icon-caret-down" /></button>
+                        <Button className="uk-button" disabled><i className="uk-icon-caret-down" /></Button>
                         <div className="uk-dropdown uk-dropdown-small">
                           <ul className="uk-nav uk-nav-dropdown">
                             <li><a href="#">Item</a></li>
