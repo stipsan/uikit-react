@@ -67,17 +67,15 @@ var ButtonsPage = React.createClass({
                   <h3 className="tm-article-subtitle">Example</h3>
                   <p>
                     <a className="uk-button" href>Link</a>
-                    <button className="uk-button" type="button">Button</button>
-                      <Button>Button</Button>
-                      <CodeBlock value={
-                          `<button className="uk-button" type="button">Button</button>`
-                      } />
-                    <button className="uk-button" type="button" disabled>Disabled</button>
-                  </p>
+                    <Button>Button</Button>
+                    <Button disabled>Button</Button>
+´                  </p>
                   <h3 className="tm-article-subtitle">Markup</h3>
-                  <pre><code>&lt;a class="uk-button" href=""&gt;...&lt;/a&gt;
-                      &lt;button class="uk-button" type="button"&gt;...&lt;/button&gt;
-                      &lt;button class="uk-button" type="button" disabled&gt;...&lt;/button&gt;</code></pre>
+                    <CodeBlock value={
+                        `<a className="uk-button" href="">...</a>
+<Button>...</Button>
+<Button disabled>...</Button>`
+                    } />
                   <p><span className="uk-badge">NOTE</span> If you are displaying a number of buttons in a row, you can add a top margin to them, when they stack on smaller viewports. Just add the <code>data-uk-margin</code> attribute from the <a href="utility.html">Utility component</a> to their parent element.</p>
                   <hr className="uk-article-divider" />
                   <h2 id="color-modifiers"><a href="#color-modifiers" className="uk-link-reset">Color modifiers</a></h2>
@@ -87,29 +85,29 @@ var ButtonsPage = React.createClass({
                       <thead>
                         <tr>
                           <th>Example</th>
-                          <th>Class</th>
+                          <th>Property</th>
                           <th>Description</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td><button className="uk-button uk-button-primary" type="button">Primary</button></td>
-                          <td><code>.uk-button-primary</code></td>
+                          <td><Button primary>Primary</Button></td>
+                          <td><code>primary</code></td>
                           <td>Emphasizes to identify the primary action in a set of buttons.</td>
                         </tr>
                         <tr>
-                          <td><button className="uk-button uk-button-success" type="button">Success</button></td>
-                          <td><code>.uk-button-success</code></td>
+                          <td><Button success>Success</Button></td>
+                          <td><code>success</code></td>
                           <td>Indicates a successful or positive action.</td>
                         </tr>
                         <tr>
-                          <td><button className="uk-button uk-button-danger" type="button">Danger</button></td>
-                          <td><code>.uk-button-danger</code></td>
+                          <td><Button danger>Danger</Button></td>
+                          <td><code>danger</code></td>
                           <td>Indicates a dangerous or negative action.</td>
                         </tr>
                         <tr>
-                          <td><a className="uk-button uk-button-link" href="#">Link</a></td>
-                          <td><code>.uk-button-link</code></td>
+                          <td><Button link>Link</Button></td>
+                          <td><code>link</code></td>
                           <td>Deemphasizes to look like a link while maintaining button behavior.</td>
                         </tr>
                       </tbody>
