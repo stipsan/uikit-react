@@ -83,18 +83,12 @@ var HomePage = React.createClass({
   </div>
             </div>
           </nav>
+          // @TODO Temporary section (until Ract/react-router works with react 0.13)          
+          <ButtonsPage />
+          <ClosePage />
+
           <div className="tm-section tm-section-color-1 tm-section-colored">
             <div className="uk-container uk-container-center uk-text-center">
-              
-              // @TODO Temporary section (until Ract/react-router works with react 0.13)
-              <div className="uk-panel uk-panel-box">
-              
-                <ButtonsPage />
-              </div>
-              <div className="uk-panel uk-panel-box">
-                <ClosePage />
-              </div>
-              
               <img
   className="tm-logo"
   src="docs/images/logo_uikit_large.svg"
