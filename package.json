@@ -35,10 +35,10 @@
   "devDependencies": {
     "gulp": "^3.8.11",
     "jest-cli": "^0.4.0",
-    "react": "^0.13.0",
-    "react-tools": "^0.13.0"
+    "react": "^0.13.1",
+    "react": "^0.13.1"
   },
   "dependencies": {
-    "classnames": "^1.1.4"
+    "classnames": "^1.2.0"
   }
 }

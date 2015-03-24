@@ -1,6 +1,6 @@
 var React = require('react');
 var {Button} = require('uikit');
-var CodeBlock = require('../codeblock.jsx');
+var Example = require('../example.jsx');
 
 var ButtonsPage = React.createClass({
 
@@ -64,18 +64,20 @@ var ButtonsPage = React.createClass({
                   <p className="uk-article-lead">Easily create nicely looking buttons, which come in different styles.</p>
                   <h2 id="usage"><a href="#usage" className="uk-link-reset">Usage</a></h2>
                   <p>To apply this component, add the <code>.uk-button</code> class to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. Now you have created a button. Add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code> element to disable the button.</p>
+                  <Example>
+                    <p>
+                      <a className="uk-button" href>Link</a>
+                      <Button>Button</Button>
+                      <Button disabled>Button</Button>
+                    </p>
+                  </Example>
                   <h3 className="tm-article-subtitle">Example</h3>
                   <p>
                     <a className="uk-button" href>Link</a>
                     <Button>Button</Button>
                     <Button disabled>Button</Button>
-´                  </p>
+                  </p>
                   <h3 className="tm-article-subtitle">Markup</h3>
-                    <CodeBlock value={
-                        `<a className="uk-button" href="">...</a>
-<Button>...</Button>
-<Button disabled>...</Button>`
-                    } />
                   <p><span className="uk-badge">NOTE</span> If you are displaying a number of buttons in a row, you can add a top margin to them, when they stack on smaller viewports. Just add the <code>data-uk-margin</code> attribute from the <a href="utility.html">Utility component</a> to their parent element.</p>
                   <hr className="uk-article-divider" />
                   <h2 id="color-modifiers"><a href="#color-modifiers" className="uk-link-reset">Color modifiers</a></h2>

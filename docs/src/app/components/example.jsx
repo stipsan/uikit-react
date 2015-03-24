@@ -1,12 +1,17 @@
 var React = require('react');
 
-var CodeBlock = React.createClass({
+var Example = React.createClass({
 
   render: function() {
     
-    return <pre><code>{this.props.value}</code></pre>;
+    return <div>
+      <h3 className="tm-article-subtitle">Example</h3>
+      {this.props.children}
+      <h3 className="tm-article-subtitle">Markup</h3>
+      <pre><code>{React.renderToString(React.Children.only(this.props.children))}</code></pre>
+    </div>;
   }
 
 });
 
-module.exports = CodeBlock;
+module.exports = Example;

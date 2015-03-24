@@ -24,26 +24,26 @@
     ]
   },
   "devDependencies": {
-    "browser-sync": "^2.2.4",
+    "browser-sync": "^2.4.0",
     "browserify": "^9.0.3",
     "buildbranch": "0.0.3",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
-    "gulp-less": "^3.0.1",
+    "gulp-less": "^3.0.2",
     "gulp-notify": "^2.2.0",
     "gulp-replace": "^0.5.3",
-    "gulp-sourcemaps": "^1.5.0",
+    "gulp-sourcemaps": "^1.5.1",
     "gulp-util": "^3.0.4",
     "pretty-hrtime": "^1.0.0",
-    "react": "^0.13.0",
+    "react": "^0.13.1",
     "reactify": "^1.1.0",
-    "require-dir": "^0.1.0",
+    "require-dir": "^0.2.0",
     "underscore": "^1.8.2",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^2.4.0"
+    "watchify": "^2.6.0"
   },
   "dependencies": {
-    "react": "^0.13.0",
+    "react": "^0.13.1",
     "uikit": "git://github.com/uikit/uikit"
   }
 }
