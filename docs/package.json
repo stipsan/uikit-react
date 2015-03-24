@@ -16,6 +16,7 @@
   "browserify": {
     "transform": [
       [
+        "brfs",
         "reactify",
         {
           "es6": true
@@ -24,6 +25,7 @@
     ]
   },
   "devDependencies": {
+    "brfs": "^1.4.0",
     "browser-sync": "^2.4.0",
     "browserify": "^9.0.3",
     "buildbranch": "0.0.3",
