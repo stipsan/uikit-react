@@ -23,11 +23,11 @@ var Master = React.createClass({
               alt="UIkit" />
           </Link>
           <ul className="uk-navbar-nav uk-hidden-small">
-            <NavLink to="get-started">Get Started</NavLink>
+            <NavLink to="get-started" disabled disabledClassName='uk-hidden'>Get Started</NavLink>
             <NavLink to="core">Core</NavLink>
-            <NavLink to="components">Components</NavLink>
-            <NavLink to="customizer">Customizer</NavLink>
-            <NavLink to="showcase">Showcase</NavLink>
+            <NavLink to="components" disabled disabledClassName='uk-hidden'>Components</NavLink>
+            <NavLink to="customizer" disabled disabledClassName='uk-hidden'>Customizer</NavLink>
+            <NavLink to="showcase" disabled disabledClassName='uk-hidden'>Showcase</NavLink>
           </ul>
           <a
             href="#tm-offcanvas"

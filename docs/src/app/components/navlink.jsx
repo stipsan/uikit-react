@@ -7,16 +7,16 @@ var NavLink = React.createClass({
   },
   
   getDefaultProps: function(){
-    return {disabled: false};
+    return {disabled: false, disabledClassName: 'uk-text-muted uk-link-muted'};
   },
 
   render: function () {
-    var {disabled, ...other} = this.props;
+    var {disabled, disabledClassName, ...other} = this.props;
     
     if(disabled) {
       return <li><a 
           {...other} 
-          className='uk-text-muted uk-link-muted' 
+          className={disabledClassName}
           title="Coming soon…"
           style={{cursor: 'not-allowed', backgroundColor: 'transparent'}}
         /></li>;

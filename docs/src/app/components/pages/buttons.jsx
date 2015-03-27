@@ -7,14 +7,6 @@ var ButtonsPage = React.createClass({
   render: function() {
 
     return (
-          <div>
-        <div className="tm-middle">
-          <div className="uk-container uk-container-center">
-            <div className="uk-grid" data-uk-grid-margin>
-              <div className="tm-sidebar uk-width-medium-1-4 uk-hidden-small">
-                
-              </div>
-              <div className="tm-main uk-width-medium-3-4">
                 <article className="uk-article">
                   <h1 className="uk-article-title">Button</h1>
                   <p className="uk-article-lead">Easily create nicely looking buttons, which come in different styles.</p>
@@ -397,11 +389,6 @@ var ButtonsPage = React.createClass({
                       &lt;/div&gt;
                       &lt;/div&gt;</code></pre>
                 </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     );
   }
 
