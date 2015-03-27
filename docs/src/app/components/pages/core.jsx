@@ -5,11 +5,21 @@ var ClosePage = require('./close.jsx');
 
 var HomePage = React.createClass({
 
+  //mixins: [Router.Navigation],
+
   render: function() {
 
     return (
+      
+
+
+
+      
       <div>
         <div>
+          <ButtonsPage />
+          <ClosePage />
+
           <div className="tm-section tm-section-color-1 tm-section-colored">
             <div className="uk-container uk-container-center uk-text-center">
               <img

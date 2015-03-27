@@ -10,9 +10,9 @@ var Master = React.createClass({
     <div>
       <nav className="tm-navbar uk-navbar uk-navbar-attached">
         <div className="uk-container uk-container-center">
-          <a
+          <Link
             className="uk-navbar-brand uk-hidden-small"
-            href="index.html">
+            to="root">
               <img
               className="uk-margin uk-margin-remove"
               src="docs/images/logo_uikit.svg"
@@ -20,25 +20,23 @@ var Master = React.createClass({
               height={30}
               title="UIkit"
               alt="UIkit" />
-          </a>
+          </Link>
           <ul className="uk-navbar-nav uk-hidden-small">
             <li>
-<a href="docs/documentation_get-started.html">
-Get Started
-</a>
-</li>
+              <Link to="get-started">Get Started</Link>
+            </li>
             <li>
-<a href="docs/core.html">Core</a>
-</li>
+              <Link to="core">Core</Link>
+            </li>
             <li>
-<a href="docs/components.html">Components</a>
-</li>
+              <Link to="components">Components</Link>
+            </li>
             <li>
-<a href="docs/customizer.html">Customizer</a>
-</li>
+              <Link to="customizer">Customizer</Link>
+            </li>
             <li>
-<a href="showcase/index.html">Showcase</a>
-</li>
+              <Link to="showcase">Showcase</Link>
+            </li>
           </ul>
           <a
             href="#tm-offcanvas"
