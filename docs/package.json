@@ -39,10 +39,10 @@
     "pretty-hrtime": "^1.0.0",
     "react": "^0.13.1",
     "reactify": "^1.1.0",
-    "require-dir": "^0.2.0",
+    "require-dir": "^0.3.0",
     "underscore": "^1.8.2",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^2.6.0"
+    "watchify": "^2.6.2"
   },
   "dependencies": {
     "react": "^0.13.1",
