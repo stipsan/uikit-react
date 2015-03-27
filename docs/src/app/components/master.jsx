@@ -1,7 +1,7 @@
 var React = require('react');
-var {RouteHandler} = require('react-router');
-var Link = require('./link.jsx');
+var {RouteHandler, Link} = require('react-router');
 var uikit = require('uikit');
+var NavLink = require('./navlink.jsx');
 
 var Master = React.createClass({
 
@@ -23,21 +23,11 @@ var Master = React.createClass({
               alt="UIkit" />
           </Link>
           <ul className="uk-navbar-nav uk-hidden-small">
-            <li>
-              <Link to="get-started">Get Started</Link>
-            </li>
-            <li>
-              <Link to="core">Core</Link>
-            </li>
-            <li>
-              <Link to="components">Components</Link>
-            </li>
-            <li>
-              <Link to="customizer">Customizer</Link>
-            </li>
-            <li>
-              <Link to="showcase">Showcase</Link>
-            </li>
+            <NavLink to="get-started">Get Started</NavLink>
+            <NavLink to="core">Core</NavLink>
+            <NavLink to="components">Components</NavLink>
+            <NavLink to="customizer">Customizer</NavLink>
+            <NavLink to="showcase">Showcase</NavLink>
           </ul>
           <a
             href="#tm-offcanvas"
@@ -53,6 +43,7 @@ var Master = React.createClass({
           </div>
         </div>
       </nav>
+      
         <RouteHandler {...this.props} />
         
         <div className="tm-footer">
