@@ -2,8 +2,6 @@ var React = require('react'),
     CodeMirror = require('codemirror'),
     JSXTransformer = require('react-tools');
 
-console.log(JSXTransformer);
-
 var IS_MOBILE = (
   navigator.userAgent.match(/Android/i)
     || navigator.userAgent.match(/webOS/i)
@@ -97,7 +95,7 @@ var ReactPlayground = React.createClass({
   getDefaultProps: function() {
     return {
       transformer: function(code) {
-        return JSXTransformer.transform(code).code;
+        return JSXTransformer.transformWithDetails(code, {harmony: true}).code;
       },
       editorTabTitle: 'Live JSX Editor',
       showCompiledJSTab: true,
@@ -201,19 +199,23 @@ var ReactPlayground = React.createClass({
 
   executeCode: function() {
     var mountNode = this.refs.mount.getDOMNode();
-
+console.log('about to execute code');
     try {
       React.unmountComponentAtNode(mountNode);
-    } catch (e) { }
+    } catch (e) {
+      console.log('unable to unmount', mountNode);
+    }
 
     try {
       var compiledCode = this.compileCode();
       if (this.props.renderCode) {
+        console.log('renderCode', compiledCode)
         React.render(
           <CodeMirrorEditor codeText={compiledCode} readOnly={true} />,
           mountNode
         );
       } else {
+        console.log('eval', compiledCode);
         eval(compiledCode);
       }
     } catch (err) {
