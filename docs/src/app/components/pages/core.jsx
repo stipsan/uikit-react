@@ -10,7 +10,7 @@ var CorePage = React.createClass({
       <div className="tm-middle">
         <div className="uk-container uk-container-center">
           <div className="uk-grid">
-            <div className="tm-sidebar uk-width-medium-1-4 uk-hidden-small">
+            <div className="tm-sidebar uk-width-medium-1-5 uk-hidden-small">
               <ul className="tm-nav uk-nav">
                 <li className="uk-nav-header">Defaults</li>
                 <NavLink to="base" disabled>Base</NavLink>
@@ -61,7 +61,7 @@ var CorePage = React.createClass({
                 <NavLink to="smooth-scroll" disabled>Smooth scroll</NavLink>
               </ul>
             </div>
-            <div className="tm-main uk-width-medium-3-4">
+            <div className="tm-main uk-width-medium-4-5">
               <RouteHandler {...this.props} />
             </div>
           </div>

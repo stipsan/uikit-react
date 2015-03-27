@@ -7,7 +7,7 @@ var ButtonsPage = React.createClass({
   render: function() {
 
     var HELLO_COMPONENT = `
-    var {Button} = uikit;
+var {Button} = uikit;
 var HelloMessage = React.createClass({
   render: function() {
     return <div>Hello {this.props.name}</div>;
