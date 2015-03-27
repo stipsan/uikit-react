@@ -11,7 +11,7 @@ var Master = React.createClass({
 
     return (
     <div>
-        <RouteHandler />
+        <RouteHandler {...this.props} />
     </div>
     );
   },
