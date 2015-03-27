@@ -7,61 +7,22 @@ var ButtonsPage = React.createClass({
   render: function() {
 
     return (
-        <div>
           <div>
         <div className="tm-middle">
           <div className="uk-container uk-container-center">
             <div className="uk-grid" data-uk-grid-margin>
               <div className="tm-sidebar uk-width-medium-1-4 uk-hidden-small">
-                <ul className="tm-nav uk-nav" data-uk-nav>
-                  <li className="uk-nav-header">Defaults</li>
-                  <li><a href="base.html">Base</a></li>
-                  <li><a href="print.html">Print</a></li>
-                  <li className="uk-nav-header">Layout</li>
-                  <li><a href="grid.html">Grid</a></li>
-                  <li><a href="panel.html">Panel</a></li>
-                  <li><a href="article.html">Article</a></li>
-                  <li><a href="comment.html">Comment</a></li>
-                  <li><a href="utility.html">Utility</a></li>
-                  <li><a href="flex.html">Flex</a></li>
-                  <li><a href="cover.html">Cover</a></li>
-                  <li className="uk-nav-header">Navigations</li>
-                  <li><a href="nav.html">Nav</a></li>
-                  <li><a href="navbar.html">Navbar</a></li>
-                  <li><a href="subnav.html">Subnav</a></li>
-                  <li><a href="breadcrumb.html">Breadcrumb</a></li>
-                  <li><a href="pagination.html">Pagination</a></li>
-                  <li><a href="tab.html">Tab</a></li>
-                  <li><a href="thumbnav.html">Thumbnav</a></li>
-                  <li className="uk-nav-header">Elements</li>
-                  <li><a href="list.html">List</a></li>
-                  <li><a href="description-list.html">Description list</a></li>
-                  <li><a href="table.html">Table</a></li>
-                  <li><a href="form.html">Form</a></li>
-                  <li className="uk-nav-header">Common</li>
-                  <li className="uk-active"><a href="button.html">Button</a></li>
-                  <li><a href="icon.html">Icon</a></li>
-                  <li><a href="close.html">Close</a></li>
-                  <li><a href="badge.html">Badge</a></li>
-                  <li><a href="alert.html">Alert</a></li>
-                  <li><a href="thumbnail.html">Thumbnail</a></li>
-                  <li><a href="overlay.html">Overlay</a></li>
-                  <li><a href="text.html">Text</a></li>
-                  <li><a href="animation.html">Animation</a></li>
-                  <li className="uk-nav-header">JavaScript</li>
-                  <li><a href="dropdown.html">Dropdown</a></li>
-                  <li><a href="modal.html">Modal</a></li>
-                  <li><a href="offcanvas.html">Off-canvas</a></li>
-                  <li><a href="switcher.html">Switcher</a></li>
-                  <li><a href="toggle.html">Toggle</a></li>
-                  <li><a href="scrollspy.html">Scrollspy</a></li>
-                  <li><a href="smooth-scroll.html">Smooth scroll</a></li>
-                </ul>
+                
               </div>
               <div className="tm-main uk-width-medium-3-4">
                 <article className="uk-article">
                   <h1 className="uk-article-title">Button</h1>
                   <p className="uk-article-lead">Easily create nicely looking buttons, which come in different styles.</p>
+                    <Button primary={true}>Submit</Button>
+                    <Button success={true}>Submit</Button>
+                    <Button danger={true}>Submit</Button>
+                    <Button link={true}>Submit</Button>
+                    <Button type="submit">Submit</Button>
                   <h2 id="usage"><a href="#usage" className="uk-link-reset">Usage</a></h2>
                   <p>To apply this component, add the <code>.uk-button</code> class to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. Now you have created a button. Add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code> element to disable the button.</p>
                   <Example>
@@ -441,13 +402,6 @@ var ButtonsPage = React.createClass({
           </div>
         </div>
       </div>
-
-          <Button primary={true}>Submit</Button>
-          <Button success={true}>Submit</Button>
-          <Button danger={true}>Submit</Button>
-          <Button link={true}>Submit</Button>
-          <Button type="submit">Submit</Button>
-        </div>
     );
   }
 

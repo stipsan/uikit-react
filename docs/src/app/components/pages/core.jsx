@@ -1,5 +1,6 @@
 var React = require('react');
 var {RouteHandler, Link} = require('react-router');
+var NavLink = require('../navlink.jsx');
 
 var CorePage = React.createClass({
 
@@ -40,9 +41,9 @@ var CorePage = React.createClass({
                 <li><a href="form.html">Form</a></li>
 
                 <li className="uk-nav-header">Common</li>
-                <li><a href="button.html">Button</a></li>
-                <li><a href="icon.html">Icon</a></li>
-                <li><a href="close.html">Close</a></li>
+                <NavLink to="button">Button</NavLink>
+                <NavLink to="icon" disabled>Icon</NavLink>
+                <NavLink to="close">Close</NavLink>
                 <li><a href="badge.html">Badge</a></li>
                 <li><a href="alert.html">Alert</a></li>
                 <li><a href="thumbnail.html">Thumbnail</a></li>
