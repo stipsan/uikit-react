@@ -6,9 +6,19 @@ var ButtonsPage = React.createClass({
 
   render: function() {
 
+    var HELLO_COMPONENT = `
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+React.render(<HelloMessage name="John" />, mountNode);
+`;
+
     return (
                 <article className="uk-article">
                   <h1 className="uk-article-title">Button</h1>
+                    <ReactPlayground codeText={HELLO_COMPONENT} />
                   <p className="uk-article-lead">Easily create nicely looking buttons, which come in different styles.</p>
                     <Button primary={true}>Submit</Button>
                     <Button success={true}>Submit</Button>
