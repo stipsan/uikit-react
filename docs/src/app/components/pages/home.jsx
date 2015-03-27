@@ -17,26 +17,6 @@ var HomePage = React.createClass({
       
       <div>
         <div>
-          <meta charset="utf-8" />
-          <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1" />
-          <title>UIkit</title>
-          <link
-  rel="shortcut icon"
-  href="docs/images/favicon.ico"
-  type="image/x-icon" />
-          <link
-  rel="apple-touch-icon-precomposed"
-  href="docs/images/apple-touch-icon.png" />
-          <link
-  id="data-uikit-theme"
-  rel="stylesheet"
-  href="docs/css/uikit.docs.min.css" />
-          <link rel="stylesheet" href="docs/css/docs.css" />
-          <link
-  rel="stylesheet"
-  href="vendor/highlight/highlight.css" />
           <nav className="tm-navbar uk-navbar uk-navbar-attached">
             <div className="uk-container uk-container-center">
               <a
@@ -53,7 +33,7 @@ var HomePage = React.createClass({
               <ul className="uk-navbar-nav uk-hidden-small">
                 <li>
   <a href="docs/documentation_get-started.html">
-  Get Started
+  Get Starteds
   </a>
   </li>
                 <li>

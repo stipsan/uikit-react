@@ -16,11 +16,11 @@
   "browserify": {
     "transform": [
       [
-        "brfs",
         "reactify",
         {
           "es6": true
-        }
+        },
+        "brfs"
       ]
     ]
   },
