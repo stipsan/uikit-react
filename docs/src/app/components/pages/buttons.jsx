@@ -6,37 +6,27 @@ var ButtonsPage = React.createClass({
 
   render: function() {
 
-    var HELLO_COMPONENT = `
-var {Button} = uikit;
-var HelloMessage = React.createClass({
-  render: function() {
-    return <div>Hello {this.props.name}</div>;
-  }
-});
-React.render(<HelloMessage name="John" />, mountNode);
-`;
-
     return (
                 <article className="uk-article">
                   <h1 className="uk-article-title">Button</h1>
-                  
-                    <ReactPlayground codeText={HELLO_COMPONENT} />
-                    
+                                      
                   <p className="uk-article-lead">Easily create nicely looking buttons, which come in different styles.</p>
-                    <Button primary={true}>Submit</Button>
-                    <Button success={true}>Submit</Button>
-                    <Button danger={true}>Submit</Button>
-                    <Button link={true}>Submit</Button>
-                    <Button type="submit">Submit</Button>
+                    
                   <h2 id="usage"><a href="#usage" className="uk-link-reset">Usage</a></h2>
                   <p>To apply this component, add the <code>.uk-button</code> class to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. Now you have created a button. Add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code> element to disable the button.</p>
-                  <Example>
-                    <p>
-                      <a className="uk-button" href>Link</a>
-                      <Button>Button</Button>
-                      <Button disabled>Button</Button>
-                    </p>
-                  </Example>
+                  <Example uikit={['Button']} codeText={`
+        <Button primary={true}>Submit</Button>
+        <Button success={true}>Submit</Button>
+        <Button danger={true}>Submit</Button>
+        <Button link={true}>Submit</Button>
+        <Button type="submit">Submit</Button>
+                  `} />
+                  
+                <Example name="Buttons" uikit={['Button']} codeText={`
+        <a className="uk-button">Link</a>
+        <Button>Button</Button>
+        <Button disabled>Button</Button>
+                `} />
                   <h3 className="tm-article-subtitle">Example</h3>
                   <p>
                     <a className="uk-button" href>Link</a>

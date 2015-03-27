@@ -18,7 +18,6 @@
 }
 
 .cm-s-solarized-light {
-    background-color: #f8f5ec;
     color: #637c84
 }
 
@@ -275,13 +274,8 @@ small code, li code, p code {
     font-size: 12px;
     font-weight: bold;
     color: #c2c0bc;
-    background-color: #f1ede4;
     display: inline-block;
     cursor: pointer
-}
-
-.playgroundCode, .playground-tab, .playgroundPreview {
-    border: 1px solid rgba(16, 16, 16, 0.1)
 }
 
 .playground-tab-active {
@@ -289,18 +283,11 @@ small code, li code, p code {
 }
 
 .playgroundCode {
-    border-radius: 0 3px 3px 3px;
-    float: left;
-    overflow: hidden;
-    width: 600px
-}
-
-.playgroundPreview {
-    background-color: white;
-    border-radius: 3px;
-    float: right;
-    padding: 15px 20px;
-    width: 280px
+    &:extend(pre);
+    &:extend(.uk-margin-bottom);
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .playgroundError {

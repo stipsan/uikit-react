@@ -2,14 +2,27 @@ var React = require('react');
 
 var Example = React.createClass({
 
+  getDefaultProps: function(){
+    return {name: 'Example', uikit: ['']};
+  },
+
   render: function() {
     
-    return <div>
-      <h3 className="tm-article-subtitle">Example</h3>
-      {this.props.children}
-      <h3 className="tm-article-subtitle">Markup</h3>
-      <pre><code>{React.renderToString(React.Children.only(this.props.children))}</code></pre>
-    </div>;
+    return <ReactPlayground codeText={`
+var {${this.props.uikit.join(', ')}} = uikit;
+              
+var ${this.props.name} = React.createClass({
+  render: function(){
+    return (
+      <div>
+        ${this.props.codeText}
+      </div>
+    );
+  }
+});
+
+React.render(<${this.props.name}/>, mountNode);
+        `} />;
   }
 
 });

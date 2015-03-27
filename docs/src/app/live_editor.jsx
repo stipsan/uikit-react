@@ -150,35 +150,37 @@ var ReactPlayground = React.createClass({
       />;
 
     var JSXTabClassName =
-      'playground-tab' + (isJS ? '' : ' playground-tab-active');
+      (isJS ? '' : ' uk-active');
     var JSTabClassName =
-      'playground-tab' + (isJS ? ' playground-tab-active' : '');
+      (isJS ? ' uk-active' : '');
 
     var JSTab =
-      <div
+      <li
         className={JSTabClassName}
         onClick={this.handleCodeModeSwitch.bind(this, this.MODES.JS)}>
-          Compiled JS
-      </div>;
+          <a>Compiled JS</a>
+      </li>;
 
     var JSXTab =
-      <div
+      <li
         className={JSXTabClassName}
         onClick={this.handleCodeModeSwitch.bind(this, this.MODES.JSX)}>
-          {this.props.editorTabTitle}
-      </div>
+          <a>{this.props.editorTabTitle}</a>
+      </li>
 
     return (
       <div className="playground">
-        <div>
-          {JSXTab}
-          {this.props.showCompiledJSTab && JSTab}
-        </div>
-        <div className="playgroundCode">
-          {isJS ? JSContent : JSXContent}
-        </div>
+        <h3 className="tm-article-subtitle">Example</h3>
         <div className="playgroundPreview">
           <div ref="mount" />
+        </div>
+        <h3 className="tm-article-subtitle">Markup</h3>
+        <ul className="uk-tab">
+          {JSXTab}
+          {this.props.showCompiledJSTab && JSTab}
+        </ul>
+        <div className="playgroundCode">
+          {isJS ? JSContent : JSXContent}
         </div>
       </div>
     );
