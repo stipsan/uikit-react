@@ -1,6 +1,8 @@
 var React = require('react'),
     CodeMirror = require('codemirror'),
-    JSXTransformer = ('JSXTransformer');
+    JSXTransformer = require('react-tools');
+
+console.log(JSXTransformer);
 
 var IS_MOBILE = (
   navigator.userAgent.match(/Android/i)

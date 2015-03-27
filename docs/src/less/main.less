@@ -5,6 +5,7 @@
 @icon-font-path: "/fonts";
 
 @import (inline) "../../node_modules/uikit/docs/css/docs.css";
+@import (inline) "codemirror.css";
 
 
 .example-enter {
@@ -14,4 +15,87 @@
 
 .example-enter.example-enter-active {
   opacity: 1;
+}
+
+div.CodeMirror pre, div.CodeMirror-linenumber, code {
+    font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.5
+}
+
+div.CodeMirror-linenumber {
+    text-align: right
+}
+
+.CodeMirror, div.CodeMirror-gutters, div.highlight {
+    border: none
+}
+
+.CodeMirror-readonly div.CodeMirror-cursor {
+    visibility: hidden
+}
+
+small code, li code, p code {
+    color: #555;
+    background-color: rgba(0, 0, 0, 0.04);
+    padding: 1px 3px
+}
+
+.cm-s-default span.cm-string-2 {
+    color: inherit
+}
+
+.playground:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.playground-tab {
+    border-bottom: none !important;
+    border-radius: 3px 3px 0 0;
+    padding: 6px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #c2c0bc;
+    background-color: #f1ede4;
+    display: inline-block;
+    cursor: pointer
+}
+
+.playgroundCode, .playground-tab, .playgroundPreview {
+    border: 1px solid rgba(16, 16, 16, 0.1)
+}
+
+.playground-tab-active {
+    color: #222
+}
+
+.playgroundCode {
+    border-radius: 0 3px 3px 3px;
+    float: left;
+    overflow: hidden;
+    width: 600px
+}
+
+.playgroundPreview {
+    background-color: white;
+    border-radius: 3px;
+    float: right;
+    padding: 15px 20px;
+    width: 280px
+}
+
+.playgroundError {
+    color: #c5695c;
+    font-size: 15px
+}
+
+.MarkdownEditor textarea {
+    width: 100%;
+    height: 100px
+}
+
+.MarkdownEditor .content {
+    white-space: pre-wrap
 }
