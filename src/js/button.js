@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 var React = require('react/addons'),
     classNames = require('classnames');
 
@@ -13,7 +12,12 @@ var Button = React.createClass({
     mini: React.PropTypes.bool,
     small: React.PropTypes.bool,
     large: React.PropTypes.bool,
-    disabled: React.PropTypes.bool
+    disabled: React.PropTypes.bool,
+    className: React.PropTypes.string,
+    onClick: React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.func
+    ])
   },
     
   getInitialState: function() {
@@ -29,34 +33,30 @@ var Button = React.createClass({
       mini: false,
       small: false,
       large: false,
-      disabled: false
+      disabled: false,
+      className: '',
+      onClick: false
     };
   },
   onClick: function(event) {
     this.setState({isActive: !this.state.isActive});
   },
   render: function() {
-      
-    var classes = classNames('uk-button', {
-      "uk-button-primary": this.props.primary, 
-      "uk-button-success": this.props.success, 
-      "uk-button-danger": this.props.danger,
-      "uk-button-link": this.props.link,
-      "uk-button-mini": this.props.mini,
-      "uk-button-small": this.props.small,
-      "uk-button-large": this.props.large,
-      "uk-active": this.state.isActive
-    });
+    
+    var props = this.props,
+        classes = classNames('uk-button', this.props.className, {
+          "uk-button-primary": this.props.primary, 
+          "uk-button-success": this.props.success, 
+          "uk-button-danger": this.props.danger,
+          "uk-button-link": this.props.link,
+          "uk-button-mini": this.props.mini,
+          "uk-button-small": this.props.small,
+          "uk-button-large": this.props.large,
+          "uk-active": this.state.isActive
+        });
 
     return (
-      <button 
-        className={classes}
-        type={this.props.type}
-        disabled={this.props.disabled}
-        onClick={this.onClick}
-       >
-       {this.props.children}
-    </button>
+        <button {...props} onClick={this.props.onClick || this.onClick} className={classes} />
     );
   }
 });
