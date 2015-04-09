@@ -39,7 +39,8 @@ var Button = React.createClass({
   },
   render: function() {
     
-    var classes = classNames('uk-button', this.props.className, {
+    var props = this.props,
+        classes = classNames('uk-button', this.props.className, {
           "uk-button-primary": this.props.primary, 
           "uk-button-success": this.props.success, 
           "uk-button-danger": this.props.danger,
