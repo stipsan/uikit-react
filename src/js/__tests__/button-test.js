@@ -69,7 +69,7 @@ describe('Button', function() {
     expect(button.getDOMNode().type).toContain('submit');
   });
   
-  it('can attach custom props and events', function() {
+  it('can attach custom props', function() {
     var React = require('react/addons');
     var Button = require('../button.js');
     var TestUtils = React.addons.TestUtils;
@@ -82,5 +82,39 @@ describe('Button', function() {
 
     // Verify that the type is submit
     expect(button.getDOMNode().id).toEqual('mySubmit');
+  });
+  
+  it('supports additional event handlers, like onMouseMove', function() {
+    var React = require('react/addons');
+    var Button = require('../button.js');
+    var TestUtils = React.addons.TestUtils;
+
+    // Render a checkbox with label in the document
+    var triggered = false, container = TestUtils.renderIntoDocument(
+      <Button onMouseMove={function(){triggered = true}}>Submit</Button>
+    );
+    var button = TestUtils.findRenderedDOMComponentWithTag(container, 'button');
+
+    // Simulate a click and verify that it is now active
+    TestUtils.Simulate.mouseMove(button);
+
+    // Verify that the type is submit
+    expect(triggered).toBeTruthy();
+  });
+  
+  it('allows onClick overrides', function() {
+      var React = require('react/addons');
+      var Button = require('../button.js');
+      var TestUtils = React.addons.TestUtils;
+
+      // Render a checkbox with label in the document
+      var container = TestUtils.renderIntoDocument(
+        <Button onClick={function(){}}>Save</Button>
+      );
+      var button = TestUtils.findRenderedDOMComponentWithTag(container, 'button');
+
+      // Simulate a click and verify that it is now active
+      TestUtils.Simulate.click(button);
+      expect(button.getDOMNode().className).not.toContain('uk-active');
   });
 });
