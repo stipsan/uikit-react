@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 var React = require('react/addons'),
     classNames = require('classnames');
 
@@ -14,7 +13,11 @@ var Button = React.createClass({
     small: React.PropTypes.bool,
     large: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
-    className: React.PropTypes.string
+    className: React.PropTypes.string,
+    onClick: React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.func
+    ])
   },
     
   getInitialState: function() {
@@ -31,7 +34,8 @@ var Button = React.createClass({
       small: false,
       large: false,
       disabled: false,
-      className: ''
+      className: '',
+      onClick: false
     };
   },
   onClick: function(event) {
@@ -52,7 +56,7 @@ var Button = React.createClass({
         });
 
     return (
-      <button {...props} onClick={this.onClick} className={classes} />
+        <button {...props} onClick={this.props.onClick || this.onClick} className={classes} />
     );
   }
 });
