@@ -7,7 +7,7 @@ var NavLink = React.createClass({
   },
   
   getDefaultProps: function(){
-    return {disabled: false, disabledClassName: 'uk-text-muted uk-link-muted'};
+    return {disabled: false, disabledClassName: 'uk-text-muted uk-link-muted tm-link-muted'};
   },
 
   render: function () {

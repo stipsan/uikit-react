@@ -45,39 +45,15 @@ Close in alerts
 </a>
 </h2>
                   <p>This is an example of how this component is used with an alert box from the <a href="alert.html">Alert component</a>.</p>
-                  <Example uikit={['Close']} codeText={`
-        <div className="uk-alert uk-alert-success">
-          <Close />
-          <p>This is a alert using an a element as close button.</p>
-        </div>
+                  <Example uikit={['Close', 'Button']} initialState={{closed: false}} codeText={`
+        {this.state.closed 
+           ? <Button onClick={() => {this.setState({closed: false})}}>Undo!</Button> 
+           : <div className="uk-alert uk-alert-success">
+               <Close onClick={() => {this.setState({closed: true})}} />
+               <p>This is a alert using an a element as close button.</p>
+             </div>
+         }
                     `} />
-                  <hr className="uk-article-divider" />
-                  <h2 id="close-in-modals">
-<a
-href="#close-in-modals"
-className="uk-link-reset">
-Close in modals
-</a>
-</h2>
-                  <p>This is an example of how this component is used with the <a href="modal.html">Modal component</a>.</p>
-                  <h3 className="tm-article-subtitle">Example</h3>
-                  <p>
-                    <button
-className="uk-button"
-data-uk-modal="{target:'#modal'}">Button</button>
-                  </p>
-                  <div id="modal" className="uk-modal">
-                    <div className="uk-modal-dialog uk-modal-dialog-lightbox">
-                      <button
-type="button"
-className="uk-modal-close uk-close uk-close-alt" />
-                      <img
-src="images/placeholder_600x400.svg"
-width={600}
-height={400}
-alt />
-                    </div>
-                  </div>
                 </article>
     );
   }

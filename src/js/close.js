@@ -17,13 +17,7 @@ var Close = React.createClass({
 			'uk-close-alt': this.props.alt, 
 		});
 
-		return (
-      <a 
-      	className={classes}
-       >
-       {this.props.children}
-    </a>
-    );
+		return <a {...this.props} className={classes} />;
 
 	}
 });
