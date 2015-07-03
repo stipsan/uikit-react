@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600px" height="600px" viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#222222" sketch:type="MSShapeGroup" x="0" y="0" width="600" height="600"></rect>
+            <circle id="Oval" fill="#00D8FF" sketch:type="MSShapeGroup" cx="299.529" cy="299.628" r="50.167"></circle>
+            <path d="M299.529,197.628 C366.885,197.628 429.457,207.293 476.636,223.535 C533.48,243.104 568.43,272.768 568.43,299.628 C568.43,327.619 531.389,359.131 470.347,379.356 C424.196,394.647 363.468,402.628 299.529,402.628 C233.975,402.628 171.899,395.136 125.239,379.187 C66.193,359.005 30.628,327.084 30.628,299.628 C30.628,272.986 63.998,243.552 120.043,224.012 C167.398,207.503 231.515,197.628 299.529,197.628 L299.529,197.628 Z" id="Shape" stroke="#00D8FF" stroke-width="24" sketch:type="MSShapeGroup"></path>
+            <path d="M210.736,248.922 C244.385,190.574 284.017,141.198 321.656,108.442 C367.006,68.976 410.163,53.519 433.431,66.937 C457.679,80.92 466.473,128.751 453.498,191.733 C443.688,239.351 420.264,295.945 388.322,351.334 C355.573,408.122 318.072,458.153 280.945,490.606 C233.964,531.674 188.545,546.535 164.76,532.819 C141.681,519.509 132.854,475.898 143.926,417.586 C153.281,368.316 176.758,307.841 210.736,248.922 L210.736,248.922 Z" id="Shape" stroke="#00D8FF" stroke-width="24" sketch:type="MSShapeGroup"></path>
+            <path d="M210.821,351.482 C177.075,293.19 154.09,234.195 144.509,185.227 C132.965,126.228 141.127,81.118 164.373,67.661 C188.597,53.637 234.428,69.905 282.513,112.601 C318.869,144.881 356.201,193.438 388.236,248.774 C421.08,305.507 445.697,362.983 455.272,411.356 C467.389,472.569 457.581,519.34 433.819,533.096 C410.762,546.444 368.57,532.312 323.58,493.597 C285.567,460.886 244.898,410.344 210.821,351.482 L210.821,351.482 Z" id="Shape" stroke="#00D8FF" stroke-width="24" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
