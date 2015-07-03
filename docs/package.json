@@ -11,7 +11,8 @@
     "url": "https://github.com/stipsan/react-uikit.git"
   },
   "browser": {
-    "uikit": "../src/index.js"
+    "@stipsan/react-uikit": "../src/index.js",
+    "uikit": "@stipsan/react-uikit"
   },
   "browserify": {
     "transform": [
@@ -39,6 +40,7 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.6",
     "include-folder": "^0.9.0",
+    "parcelify": "^1.1.3",
     "pretty-hrtime": "^1.0.0",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
@@ -52,7 +54,6 @@
     "watchify": "^3.2.3"
   },
   "dependencies": {
-    "react": "^0.13.3",
-    "uikit": "git://github.com/uikit/uikit"
+    "react": "^0.13.3"
   }
 }

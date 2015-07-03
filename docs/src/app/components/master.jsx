@@ -16,7 +16,7 @@ var Master = React.createClass({
             to="root">
               <img
               className="uk-margin uk-margin-remove"
-              src="docs/images/logo_uikit.svg"
+              src="docs/images/logo-horizontal.svg"
               width={90}
               height={30}
               title="UIkit"
@@ -35,7 +35,7 @@ var Master = React.createClass({
             data-uk-offcanvas />
           <div className="uk-navbar-brand uk-navbar-center uk-visible-small">
             <img
-            src="docs/images/logo_uikit.svg"
+            src="docs/images/logo-horizontal.svg"
             width={90}
             height={30}
             title="UIkit"
@@ -66,7 +66,7 @@ var Master = React.createClass({
               <p>Made by <a href="http://www.yootheme.com">YOOtheme</a> with love and caffeine.<br className="uk-hidden-small" />Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
               <a href="index.html">
                 <img
-                  src="docs/images/logo_uikit.svg"
+                  src="docs/images/logo.svg"
                   width={90}
                   height={30}
                   title="UIkit"

@@ -1,8 +1,10 @@
 {
-  "name": "react-uikit",
+  "name": "@stipsan/react-uikit",
   "version": "0.1.0",
   "description": "UIkit components for React",
   "main": "src/index.js",
+  "style": "./node_modules/@stipsan/uikit/docs/css/docs.css",
+  "less": "./node_modules/@stipsan/uikit/docs/less/uikit.less",
   "scripts": {
     "test": "jest"
   },
@@ -11,6 +13,16 @@
     "unmockedModulePathPatterns": [
       "node_modules/react",
       "node_modules/classnames"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
     ]
   },
   "repository": {

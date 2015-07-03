@@ -28,7 +28,7 @@ module.exports = {
     dest: dest + '/fonts'
   },
   svgs: {
-    src: [uikit + "/docs/images/**"],
+    src: [uikit + "/docs/images/**", src + '/img/*.svg'],
     dest: dest + '/docs/images'
   },
   browserify: {
