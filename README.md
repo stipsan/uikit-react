@@ -2,6 +2,9 @@ react-uikit
 ===========
 
 [![Build Status](https://travis-ci.org/stipsan/react-uikit.svg)](https://travis-ci.org/stipsan/react-uikit)
+[![Dependency Status](https://david-dm.org/stipsan/react-uikit.svg)](https://david-dm.org/stipsan/react-uikit)
+[![devDependency Status](https://david-dm.org/stipsan/react-uikit/dev-status.svg)](https://david-dm.org/stipsan/react-uikit#info=devDependencies)
+[![peerDependency Status](https://david-dm.org/stipsan/react-uikit/peer-status.svg)](https://david-dm.org/stipsan/react-uikit#info=peerDependencies)
 
 UIkit components built with React
 
