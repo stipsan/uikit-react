@@ -6,6 +6,7 @@ var Alert = React.createClass({
       success: React.PropTypes.bool, 
       danger: React.PropTypes.bool,
       warning: React.PropTypes.bool,
+      large: React.PropTypes.bool,
       className: React.PropTypes.string,
       closeButton: React.PropTypes.node
     },

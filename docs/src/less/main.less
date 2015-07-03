@@ -12,6 +12,18 @@
     opacity: 0.5;
 }
 
+/* Animation fix */
+
+.uk-animation-fade-leave {
+    opacity: 1;
+    transition: opacity 3000ms linear;
+    .uk-animation-fade-leave-active {
+        opacity: 0.01;
+    }
+}
+
+
+
 .example-enter {
   opacity: 0.01;
   transition: opacity .5s ease-in;

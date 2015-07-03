@@ -1,4 +1,4 @@
-var React = require('react'),
+var React = require('react/addons'),
     Router = require('react-router'),
     routes = require('./app-routes.jsx'),
     LiveEditor = require('./live_editor.jsx');
