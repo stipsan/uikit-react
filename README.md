@@ -6,7 +6,10 @@ react-uikit
 [![devDependency Status](https://david-dm.org/stipsan/react-uikit/dev-status.svg)](https://david-dm.org/stipsan/react-uikit#info=devDependencies)
 [![peerDependency Status](https://david-dm.org/stipsan/react-uikit/peer-status.svg)](https://david-dm.org/stipsan/react-uikit#info=peerDependencies)
 
-UIkit components built with React
+# Be warned, this is barely even alpha atm!
+
+React UI component built on top of the UIkit CSS.
+The docs folder shows how easy it is to setup a project that compiles the UIkit less and puts it all together using Browserify.
 
 Inspired by :
 * http://material-ui.com/
@@ -14,3 +17,4 @@ Inspired by :
 * https://github.com/akiran/react-foundation-apps
 * http://prometheusresearch.github.io/react-forms/
 * http://elemental-ui.com
+
