@@ -1,10 +1,8 @@
 {
-  "name": "@stipsan/react-uikit",
-  "version": "0.1.0",
+  "name": "uikit-react",
+  "version": "0.0.1",
   "description": "UIkit components for React",
   "main": "src/index.js",
-  "style": "./node_modules/@stipsan/uikit/docs/css/docs.css",
-  "less": "./node_modules/@stipsan/uikit/docs/less/uikit.less",
   "scripts": {
     "test": "jest"
   },
