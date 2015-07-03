@@ -40,13 +40,12 @@
   },
   "homepage": "https://github.com/stipsan/react-uikit",
   "peerDependencies": {
-    "react": "0.13.x"
+    "react": ">=0.12.x || >=0.13.x || >=0.14.0-alpha1"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "jest-cli": "^0.4.14",
-    "react": "^0.13.3",
-    "react-tools": "^0.13.3"
+    "react": "^0.13.3"
   },
   "dependencies": {
     "classnames": "^2.1.3"
