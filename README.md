@@ -5,4 +5,9 @@ react-uikit
 
 UIkit components built with React
 
-Inspired by http://material-ui.com/ and http://react-bootstrap.github.io
+Inspired by :
+* http://material-ui.com/
+* http://react-bootstrap.github.io
+* https://github.com/akiran/react-foundation-apps
+* http://prometheusresearch.github.io/react-forms/
+* http://elemental-ui.com
