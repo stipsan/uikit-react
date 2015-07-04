@@ -1,6 +1,6 @@
 var React = require('react'),
     CodeMirror = require('codemirror'),
-    JSXTransformer = require('react-tools');
+    babel = require('babel-core');
     
     // TODO actually recognize syntax of TypeScript constructs
 
@@ -521,6 +521,7 @@ var ReactPlayground = React.createClass({
   getDefaultProps: function() {
     return {
       transformer: function(code) {
+        return babel.transform(code, {stage: 0}).code;
         return JSXTransformer.transformWithDetails(code, {harmony: true}).code;
       },
       editorTabTitle: 'Live JSX Editor',
