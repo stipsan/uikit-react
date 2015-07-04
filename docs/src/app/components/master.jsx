@@ -1,6 +1,6 @@
 var React = require('react');
 var {RouteHandler, Link} = require('react-router');
-var uikit = require('uikit');
+var uikit = require('uikit-react');
 var NavLink = require('./navlink.jsx');
 
 var Master = React.createClass({
