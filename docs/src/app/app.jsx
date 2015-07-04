@@ -6,7 +6,7 @@ var React = require('react/addons'),
 
 // These global vars are needed for the live examples to work
 window.ReactPlayground = LiveEditor;
-window.uikit = require('@stipsan/react-uikit');
+window.uikit = require('uikit-react');
 
 Router.run(routes, function(Handler, state) {
   React.render(<Handler {...state} />, document.body);

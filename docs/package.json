@@ -10,21 +10,22 @@
     "type": "git",
     "url": "https://github.com/stipsan/react-uikit.git"
   },
-  "browser": {
-    "@stipsan/react-uikit": "../src/index.js",
-    "uikit": "@stipsan/react-uikit"
-  },
   "browserify": {
     "transform": [
       [
-        "reactify",
+        "babelify",
         {
-          "es6": true
+          "optional": [
+            "es7.classProperties",
+            "es7.decorators",
+            "es7.objectRestSpread"
+          ]
         }
       ]
     ]
   },
   "devDependencies": {
+    "babelify": "^6.1.2",
     "brfs": "^1.4.0",
     "browser-sync": "^2.7.13",
     "browserify": "^10.2.4",
@@ -44,7 +45,6 @@
     "pretty-hrtime": "^1.0.0",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
-    "react-tools": "^0.13.3",
     "reactify": "^1.1.1",
     "require-dir": "^0.3.0",
     "rfile": "^1.0.0",
@@ -53,7 +53,8 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"
   },
+  "private": true,
   "dependencies": {
-    "react": "^0.13.3"
+    "uikit-react": "0.0.1"
   }
 }
