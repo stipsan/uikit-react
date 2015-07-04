@@ -7,7 +7,9 @@
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "preprocessor.js",
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"],
     "unmockedModulePathPatterns": [
       "node_modules/react",
       "node_modules/classnames"
@@ -43,7 +45,7 @@
     "react": ">=0.12.x || >=0.13.x || >=0.14.0-alpha1"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "babel-jest": "^5.3.0",
     "jest-cli": "^0.4.14",
     "react": "^0.13.3"
   },
