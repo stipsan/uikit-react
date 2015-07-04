@@ -24,6 +24,9 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 
+# These will be loaded only when needed
+bower_components
+
 # Users Environment Variables
 .lock-wscript
 

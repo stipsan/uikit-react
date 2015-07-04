@@ -1,0 +1,20 @@
+{
+  "name": "react-uikit-docs",
+  "version": "0.1.0",
+  "homepage": "https://github.com/stipsan/react-uikit",
+  "authors": [
+    "Stian Didriksen <stipsan@gmail.com>"
+  ],
+  "description": "A documentation site for React UIkit",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "uikit": "~2.21.0"
+  }
+}
