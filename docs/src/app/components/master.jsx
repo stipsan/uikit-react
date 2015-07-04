@@ -47,13 +47,13 @@ var Master = React.createClass({
           <div className="uk-container uk-container-center uk-text-center">
             <ul className="uk-subnav uk-subnav-line uk-flex-center">
               <li>
-                <a href="https://github.com/uikit/uikit">GitHub</a>
+                <a href="https://github.com/stipsan/uikit-react">GitHub</a>
               </li>
               <li>
                 <a href="https://github.com/uikit/uikit/issues">Issues</a>
               </li>
               <li>
-                <a href="https://github.com/uikit/uikit/blob/master/CHANGELOG.md">Changelog</a>
+                <a href="https://github.com/stipsan/uikit-react/blob/master/CHANGELOG.md">Changelog</a>
               </li>
               <li>
                 <a href="https://twitter.com/getuikit">Twitter</a>
@@ -61,7 +61,7 @@ var Master = React.createClass({
             </ul>
             <div className="uk-panel">
               <p>Made by <a href="http://www.yootheme.com">YOOtheme</a> with love and caffeine.<br className="uk-hidden-small" />Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
-              <a href="index.html">
+              <a href="/">
                 <img
                   src="images/logo.svg"
                   width={90}
