@@ -1,0 +1,14 @@
+{
+  "firebase": "uikit-react",
+  "public": "build",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**",
+    "**/bower_components/**"
+],
+"rewrites": [ {
+    "source": "**",
+    "destination": "/index.html"
+  } ],
+}
