@@ -63,6 +63,6 @@
   },
   "private": true,
   "dependencies": {
-    "uikit-react": "0.0.1"
+    "uikit-react": "latest"
   }
 }
