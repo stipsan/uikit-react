@@ -74,7 +74,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_less.svg"
+  src="images/icon_less.svg"
   width={200}
   height={140}
   alt="LESS" />
@@ -88,7 +88,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_components.svg"
+  src="images/icon_components.svg"
   width={200}
   height={140}
   alt="Components" />
@@ -102,7 +102,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_themes.svg"
+  src="images/icon_themes.svg"
   width={200}
   height={140}
   alt="Themes" />
@@ -116,7 +116,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_responsive.svg"
+  src="images/icon_responsive.svg"
   width={200}
   height={140}
   alt="Responsive" />

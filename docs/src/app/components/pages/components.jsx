@@ -24,7 +24,7 @@ var HomePage = React.createClass({
             <div className="uk-container uk-container-center uk-text-center">
               <img
   className="tm-logo"
-  src="docs/images/logo_uikit_large.svg"
+  src="images/logo_uikit_large.svg"
   width={281}
   height={217}
   title="UIkit"
@@ -85,7 +85,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_less.svg"
+  src="images/icon_less.svg"
   width={200}
   height={140}
   alt="LESS" />
@@ -99,7 +99,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_components.svg"
+  src="images/icon_components.svg"
   width={200}
   height={140}
   alt="Components" />
@@ -113,7 +113,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_themes.svg"
+  src="images/icon_themes.svg"
   width={200}
   height={140}
   alt="Themes" />
@@ -127,7 +127,7 @@ var HomePage = React.createClass({
                   <div className="uk-panel">
                     <img
   className="tm-image-pull"
-  src="docs/images/icon_responsive.svg"
+  src="images/icon_responsive.svg"
   width={200}
   height={140}
   alt="Responsive" />
@@ -259,7 +259,7 @@ var HomePage = React.createClass({
                 <p>Made by <a href="http://www.yootheme.com">YOOtheme</a> with love and caffeine.<br className="uk-hidden-small" />Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
                 <a href="index.html">
   <img
-  src="docs/images/logo_uikit.svg"
+  src="images/logo_uikit.svg"
   width={90}
   height={30}
   title="UIkit"
