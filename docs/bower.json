@@ -1,7 +1,7 @@
 {
-  "name": "react-uikit-docs",
+  "name": "uikit-react-docs",
   "version": "0.1.0",
-  "homepage": "https://github.com/stipsan/react-uikit",
+  "homepage": "https://github.com/stipsan/uikit-react",
   "authors": [
     "Stian Didriksen <stipsan@gmail.com>"
   ],

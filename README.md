@@ -1,10 +1,10 @@
-react-uikit
+uikit-react
 ===========
 
-[![Build Status](https://travis-ci.org/stipsan/react-uikit.svg)](https://travis-ci.org/stipsan/react-uikit)
-[![Dependency Status](https://david-dm.org/stipsan/react-uikit.svg)](https://david-dm.org/stipsan/react-uikit)
-[![devDependency Status](https://david-dm.org/stipsan/react-uikit/dev-status.svg)](https://david-dm.org/stipsan/react-uikit#info=devDependencies)
-[![peerDependency Status](https://david-dm.org/stipsan/react-uikit/peer-status.svg)](https://david-dm.org/stipsan/react-uikit#info=peerDependencies)
+[![Build Status](https://travis-ci.org/stipsan/uikit-react.svg)](https://travis-ci.org/stipsan/uikit-react)
+[![Dependency Status](https://david-dm.org/stipsan/uikit-react.svg)](https://david-dm.org/stipsan/uikit-react)
+[![devDependency Status](https://david-dm.org/stipsan/uikit-react/dev-status.svg)](https://david-dm.org/stipsan/uikit-react#info=devDependencies)
+[![peerDependency Status](https://david-dm.org/stipsan/uikit-react/peer-status.svg)](https://david-dm.org/stipsan/uikit-react#info=peerDependencies)
 
 <img src="https://uikit-react.firebaseapp.com/images/logo.png" width="300"/>
 
