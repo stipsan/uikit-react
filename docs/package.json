@@ -20,6 +20,9 @@
             "es7.classProperties",
             "es7.decorators",
             "es7.objectRestSpread"
+          ],
+          "blacklist": [
+            "strict"
           ]
         }
       ]
@@ -44,6 +47,8 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.6",
     "include-folder": "^0.9.0",
+    "less-plugin-bower-resolve": "^0.1.0",
+    "less-plugin-npm-import": "^2.1.0",
     "parcelify": "^1.1.3",
     "pretty-hrtime": "^1.0.0",
     "react": "^0.13.3",

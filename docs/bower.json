@@ -14,7 +14,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "uikit": "~2.21.0"
+  "devDependencies": {
+    "dev_uikit": "~2.21.0"
   }
 }
