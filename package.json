@@ -16,14 +16,7 @@
     ]
   },
   "browserify": {
-    "transform": [
-      [
-        "reactify",
-        {
-          "es6": true
-        }
-      ]
-    ]
+    "transform": [["babelify", { "optional": ["es7.classProperties", "es7.decorators", "es7.objectRestSpread"] }]]
   },
   "repository": {
     "type": "git",
