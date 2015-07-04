@@ -1,6 +1,6 @@
 var dest = './build';
 var src = './src';
-var uikit = './node_modules/uikit';
+var uikit = './bower_components/dev_uikit';
 
 module.exports = {
   browserSync: {
@@ -14,8 +14,7 @@ module.exports = {
   less: {
     src: src + '/less/main.less',
     watch: [
-      src + '/less/**',
-      uikit + '/docs/css/**'
+      src + '/less/**'
     ],
     dest: dest
   },
@@ -28,8 +27,8 @@ module.exports = {
     dest: dest + '/fonts'
   },
   svgs: {
-    src: [uikit + "/docs/images/**", src + '/img/*.svg'],
-    dest: dest + '/docs/images'
+    src: [src + '/images/**'],
+    dest: dest + '/images'
   },
   browserify: {
     // Enable source maps

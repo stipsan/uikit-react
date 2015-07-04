@@ -13,7 +13,7 @@ var HomePage = React.createClass({
             <div className="uk-container uk-container-center uk-text-center">
               <img
                 className="tm-logo"
-                src="docs/images/logo_uikit_large.svg"
+                src="images/logo-large.svg"
                 width={281}
                 height={217}
                 title="UIkit"
