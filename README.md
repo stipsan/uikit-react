@@ -6,6 +6,8 @@ react-uikit
 [![devDependency Status](https://david-dm.org/stipsan/react-uikit/dev-status.svg)](https://david-dm.org/stipsan/react-uikit#info=devDependencies)
 [![peerDependency Status](https://david-dm.org/stipsan/react-uikit/peer-status.svg)](https://david-dm.org/stipsan/react-uikit#info=peerDependencies)
 
+<img src="https://uikit-react.firebaseapp.com/images/logo.png" width="300"/>
+
 # Be warned, this is barely even alpha atm!
 
 React UI component built on top of the UIkit CSS.

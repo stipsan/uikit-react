@@ -8,6 +8,8 @@ var React = require('react/addons'),
 window.ReactPlayground = LiveEditor;
 window.uikit = require('uikit-react');
 
-Router.run(routes, function(Handler, state) {
+let location = window.location.hostname !== 'uikit-react.firebaseapp.com' ? Router.HashLocation : Router.HistoryLocation;
+
+Router.run(routes, location, function(Handler, state) {
   React.render(<Handler {...state} />, document.body);
 });
