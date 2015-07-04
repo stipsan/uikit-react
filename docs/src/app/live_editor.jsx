@@ -521,8 +521,7 @@ var ReactPlayground = React.createClass({
   getDefaultProps: function() {
     return {
       transformer: function(code) {
-        return babel.transform(code, {stage: 0}).code;
-        return JSXTransformer.transformWithDetails(code, {harmony: true}).code;
+        return babel.transform(code, {stage: 0, blacklist: ["strict"]}).code;
       },
       editorTabTitle: 'Live JSX Editor',
       showCompiledJSTab: true,
