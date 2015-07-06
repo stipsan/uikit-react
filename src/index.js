@@ -1,5 +1,5 @@
 module.exports = {
-  Button: require('./js/button'),
-  Close: require('./js/close'),
+  Button: require('./Button'),
+  Close: require('./Close'),
   version: require('../package.json').version
 };
