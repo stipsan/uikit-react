@@ -13,6 +13,8 @@ uikit-react
 React UI component built on top of the UIkit CSS.
 The docs folder shows how easy it is to setup a project that compiles the UIkit less and puts it all together using Browserify.
 
+A changelog.md will be started up as soon as we reach 0.1.0. Versions in the 0.0.x range is not at all meant to be used in production.
+
 Inspired by :
 * http://material-ui.com/
 * http://react-bootstrap.github.io
