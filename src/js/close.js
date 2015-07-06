@@ -1,17 +1,16 @@
-var React = require('react/addons'),
-    classNames = require('classnames');
+import React from 'react';
+import classNames from 'classnames';
 
-export default React.createClass({
-	propTypes: {
+export default class Close extends React.Component {
+	
+  static propTypes = {
 		alt: React.PropTypes.bool
-	},
-	getDefaultProps: function () {
-		return {
-      alt: false, 
-    };
-	},
+	};
+	static defaultProps = {
+    alt: false, 
+  };
 
-	render: function () {
+	render() {
 		var classes = classNames('uk-close', {
 			'uk-close-alt': this.props.alt, 
 		});
@@ -19,4 +18,4 @@ export default React.createClass({
 		return <a {...this.props} className={classes} />;
 
 	}
-});
+};
