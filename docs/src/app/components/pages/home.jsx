@@ -1,7 +1,7 @@
-var React = require('react');
-//var Router = require('react-router');
-var ButtonsPage = require('./buttons.jsx');
-var ClosePage = require('./close.jsx');
+import React from 'react';
+import ButtonsPage from './buttons.jsx';
+import ClosePage from './close.jsx';
+import {version} from 'uikit-react';
 
 var HomePage = React.createClass({
 
@@ -23,8 +23,8 @@ var HomePage = React.createClass({
               </p>
               <a
                 className="uk-button tm-button-download"
-                data-uikit-download>
-                Download UIkit
+                href={"https://github.com/stipsan/uikit-react/releases/download/v"+version+"/uikit-react-"+version+".zip"}>
+                Download UIkit for React
               </a>
               <ul className="tm-subnav uk-subnav uk-flex-center">
                 <li>
@@ -35,7 +35,8 @@ var HomePage = React.createClass({
                     Get Started
                   </a>
                 </li>
-                <li data-uikit-version />
+                <li>Version {version}</li>
+                
               </ul>
               <ul className="tm-subnav uk-subnav uk-flex-center">
                 <li>
