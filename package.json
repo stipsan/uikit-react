@@ -1,22 +1,43 @@
 {
   "name": "uikit-react",
   "version": "0.0.4",
-  "description": "UIkit components for React",
-  "main": "src/index.js",
+  "description": "UIkit components built with React",
+  "main": "./lib",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prebuild": "rm -rf lib",
+    "build": "babel ./src --out-dir ./lib",
+    "prepublish": "npm run build"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": ["es6", "js"],
-    "moduleFileExtensions": ["js", "json", "es6"],
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
+    ],
     "unmockedModulePathPatterns": [
       "node_modules/react",
       "node_modules/classnames"
     ]
   },
   "browserify": {
-    "transform": [["babelify", { "optional": ["es7.classProperties", "es7.decorators", "es7.objectRestSpread"] }]]
+    "transform": [
+      [
+        "babelify",
+        {
+          "optional": [
+            "es7.classProperties",
+            "es7.decorators",
+            "es7.objectRestSpread"
+          ]
+        }
+      ]
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,16 +49,17 @@
     "uikit",
     "ecosystem-react"
   ],
-  "author": "",
+  "author": "stipsan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stipsan/uikit-react/issues"
   },
-  "homepage": "https://github.com/stipsan/uikit-react",
+  "homepage": "https://uikit-react.firebaseapp.com/",
   "peerDependencies": {
     "react": ">=0.12.x || >=0.13.x || >=0.14.0-alpha1"
   },
   "devDependencies": {
+    "babel": "^5.6.14",
     "babel-jest": "^5.3.0",
     "jest-cli": "^0.4.14",
     "react": "^0.13.3"
