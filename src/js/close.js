@@ -1,7 +1,7 @@
 var React = require('react/addons'),
     classNames = require('classnames');
 
-var Close = React.createClass({
+export default React.createClass({
 	propTypes: {
 		alt: React.PropTypes.bool
 	},
@@ -20,5 +20,3 @@ var Close = React.createClass({
 
 	}
 });
-
-module.exports = Close;
