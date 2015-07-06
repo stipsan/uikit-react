@@ -1,7 +1,7 @@
 uikit-react
 ===========
 
-[![Build Status](https://travis-ci.org/stipsan/react-uikit.svg)](https://travis-ci.org/stipsan/uikit-react)
+[![Build Status](https://travis-ci.org/stipsan/uikit-react.svg)](https://travis-ci.org/stipsan/uikit-react)
 [![Dependency Status](https://david-dm.org/stipsan/uikit-react.svg)](https://david-dm.org/stipsan/uikit-react)
 [![devDependency Status](https://david-dm.org/stipsan/uikit-react/dev-status.svg)](https://david-dm.org/stipsan/uikit-react#info=devDependencies)
 [![peerDependency Status](https://david-dm.org/stipsan/uikit-react/peer-status.svg)](https://david-dm.org/stipsan/uikit-react#info=peerDependencies)
