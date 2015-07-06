@@ -1,7 +1,7 @@
 var React = require('react');
 //var Router = require('react-router');
-var ButtonsPage = require('./buttons.jsx');
-var ClosePage = require('./close.jsx');
+var ButtonsPage = require('./buttons.js');
+var ClosePage = require('./close.js');
 
 var HomePage = React.createClass({
 

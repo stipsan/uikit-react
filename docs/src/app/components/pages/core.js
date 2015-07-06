@@ -1,6 +1,6 @@
 var React = require('react');
 var {RouteHandler, Link} = require('react-router');
-var NavLink = require('../navlink.jsx');
+var NavLink = require('../navlink.js');
 
 var CorePage = React.createClass({
 

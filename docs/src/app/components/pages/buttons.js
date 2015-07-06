@@ -1,6 +1,6 @@
 var React = require('react');
 var {Button} = require('uikit-react');
-var Example = require('../example.jsx');
+var Example = require('../example.js');
 
 var ButtonsPage = React.createClass({
 

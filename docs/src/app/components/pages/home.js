@@ -1,6 +1,6 @@
 import React from 'react';
-import ButtonsPage from './buttons.jsx';
-import ClosePage from './close.jsx';
+import ButtonsPage from './buttons.js';
+import ClosePage from './close.js';
 import {version} from 'uikit-react';
 
 var HomePage = React.createClass({

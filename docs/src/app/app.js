@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'react-router';
-import routes from './app-routes.jsx';
-import LiveEditor from './live_editor.jsx';
+import routes from './app-routes.js';
+import LiveEditor from './live_editor.js';
 
 // These global vars are needed for the live examples to work
 window.ReactPlayground = LiveEditor;

@@ -1,6 +1,6 @@
 var React = require('react');
 var {Close} = require('uikit-react');
-var Example = require('../example.jsx');
+var Example = require('../example.js');
 
 var ClosePage = React.createClass({
 
