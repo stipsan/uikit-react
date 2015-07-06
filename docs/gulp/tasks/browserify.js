@@ -13,6 +13,10 @@ var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source       = require('vinyl-source-stream');
 var config       = require('../config').browserify;
+var buffer = require('vinyl-buffer');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+var gutil = require('gulp-util');
 
 gulp.task('browserify', function(callback) {
 
@@ -30,6 +34,9 @@ gulp.task('browserify', function(callback) {
       // Enable source maps!
       debug: config.debug
     });
+    
+    //We load babel-core in its own package to keep down the filesize
+    //bundler.exclude('babel-core');
 
     var bundle = function() {
       // Log when bundling starts
@@ -43,6 +50,12 @@ gulp.task('browserify', function(callback) {
         // stream gulp compatible. Specifiy the
         // desired output filename here.
         .pipe(source(bundleConfig.outputName))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        // Add transformation tasks to the pipeline here.
+        .pipe(uglify())
+        .on('error', gutil.log)
+        .pipe(sourcemaps.write('./'))
         // Specify the output destination
         .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished);
