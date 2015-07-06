@@ -3,6 +3,10 @@ var src = './src';
 var uikit = './bower_components/dev_uikit';
 
 module.exports = {
+  babelBrowser: {
+    src: './node_modules/babel-core/browser.min.js',
+    dest: dest
+  },
   browserSync: {
     server: {
       baseDir: [dest, src]

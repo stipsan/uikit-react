@@ -34,9 +34,6 @@ gulp.task('browserify', function(callback) {
       // Enable source maps!
       debug: config.debug
     });
-    
-    //We load babel-core in its own package to keep down the filesize
-    //bundler.exclude('babel-core');
 
     var bundle = function() {
       // Log when bundling starts

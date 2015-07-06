@@ -22,7 +22,7 @@ var HomePage = React.createClass({
                 A lightweight and modular front-end framework<br className="uk-hidden-small" /> for developing fast and powerful web interfaces.
               </p>
               <a
-                className="uk-button tm-button-download"
+                className="uk-button tm-button-download uk-hidden"
                 href={"https://github.com/stipsan/uikit-react/releases/download/v"+version+"/uikit-react-"+version+".zip"}>
                 Download UIkit for React
               </a>

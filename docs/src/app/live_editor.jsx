@@ -1,6 +1,5 @@
 var React = require('react'),
-    CodeMirror = require('codemirror'),
-    babel = require('babel-core');
+    CodeMirror = require('codemirror');
     
     // TODO actually recognize syntax of TypeScript constructs
 
