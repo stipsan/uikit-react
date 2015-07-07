@@ -4,8 +4,10 @@
  */
 
 // Use require instead of import until we're on 0.14 and can just use the react-addons-transition-group package
-var React = require('react/addons');
+import React from 'react';
 import classNames from 'classnames';
+
+import TransitionGroup from 'react-addons-transition-group';
 
 var {addons: {TransitionGroup: ReactTransitionGroup}} = React;
 
@@ -108,7 +110,8 @@ function hasClass(element, className) {
 
 var TimeoutTransitionGroupChild = React.createClass({
     transition: function(animationType, finishCallback) {
-        var node = this.getDOMNode();
+        var node = React.findDOMNode(this);
+        console.log(this.props.name);
         var className = this.props.name + '-' + animationType;
         var activeClassName = className + '-active';
 
@@ -150,7 +153,7 @@ var TimeoutTransitionGroupChild = React.createClass({
     flushClassNameQueue: function() {
         if (this.isMounted()) {
             this.classNameQueue.forEach(function(name) {
-                addClass(this.getDOMNode(), name);
+                addClass(React.findDOMNode(this), name);
             }.bind(this));
         }
         this.classNameQueue.length = 0;
@@ -193,6 +196,7 @@ var TimeoutTransitionGroupChild = React.createClass({
 
 
 export default React.createClass({
+  displayName: 'SimpleTransitionGroup',
   propTypes: {
        enterTimeout: React.PropTypes.number.isRequired,
        leaveTimeout: React.PropTypes.number.isRequired,
