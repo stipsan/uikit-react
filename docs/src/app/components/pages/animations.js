@@ -19,7 +19,10 @@ export default class AnimationPage extends React.Component{
               <a href="#usage" className="uk-link-reset">Usage</a>
             </h2>
             <Example uikit={['TransitionGroup']} initialState={{items: [1,2,3,4,5,6,7,8,9], next: 10}} codeText={`
-              <div className="uk-grid uk-text-center">
+              <UikitTransitionGroup className="uk-grid uk-text-center" 
+                                    enterTimeout={500}
+                                    leaveTimeout={500}
+                                    transitionName="demo">
                   {this.state.items.map((item, key) => <div className="bounceIn animated uk-width-medium-1-5 uk-margin-bottom">
                     <div className="uk-panel uk-panel-box uk-margin-bottom" 
                          style={{minHeight: 20}} 
@@ -38,7 +41,7 @@ export default class AnimationPage extends React.Component{
                       <h1><i className="uk-icon-plus-circle"></i></h1>
                     </div>
                   </div>
-              </div>
+              </UikitTransitionGroup>
             `} />
           <p>If you're more interested in using the animations that ship with UIkit, stop worrying and just use it <a href="http://getuikit.com/docs/animation.html">like you always have</a>.</p>
           </article>

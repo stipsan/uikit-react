@@ -40,7 +40,7 @@ let ${this.props.name} = React.createClass({
   }
 });
 
-React.render(<${this.props.name}/>, mountNode);
+React.render(<${this.props.name} key="${this.props.name}"/>, mountNode);
         `} />;
   }
 
