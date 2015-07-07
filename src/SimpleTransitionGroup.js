@@ -6,10 +6,7 @@
 // Use require instead of import until we're on 0.14 and can just use the react-addons-transition-group package
 import React from 'react';
 import classNames from 'classnames';
-
 import TransitionGroup from 'react-addons-transition-group';
-
-var {addons: {TransitionGroup: ReactTransitionGroup}} = React;
 
 const TICK = 17;
 
