@@ -1,13 +1,8 @@
 import React from 'react';
 import Router from 'react-router';
 import routes from './app-routes.js';
-import LiveEditor from './live_editor.js';
 
-// These global vars are needed for the live examples to work
-window.ReactPlayground = LiveEditor;
-window.uikit = require('uikit-react');
-
-console.log(window.uikit.version);
+window.React = React; // React devtools need this, so do live_editor.js examples
 
 let location = window.location.hostname !== 'uikit-react.firebaseapp.com' ? Router.HashLocation : Router.HistoryLocation;
 

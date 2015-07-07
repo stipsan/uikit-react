@@ -1,4 +1,5 @@
-var React = require('react');
+import React from 'react';
+import ReactPlayground from '../live_editor.js';
 
 var Example = React.createClass({
 
@@ -18,7 +19,7 @@ var Example = React.createClass({
     }
     
     return <ReactPlayground codeText={`
-var {${this.props.uikit.join(', ')}} = uikit;
+var {${this.props.uikit.join(', ')}} = UIkitReact;
               
 var ${this.props.name} = React.createClass({
   ${getInitialState}
