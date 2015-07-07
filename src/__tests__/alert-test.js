@@ -22,7 +22,7 @@ describe('Button', function() {
   
   it('toggles classNames based on props', function() {
     var React = require('react/addons');
-    var Button = require('../button.js');
+    var Button = require('../Button.js');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
