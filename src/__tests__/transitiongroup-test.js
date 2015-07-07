@@ -1,9 +1,9 @@
-jest.dontMock('../transitiongroup.js');
+jest.dontMock('../TransitionGroup.js');
 
 describe('TransitionGroup', function() {
 	it('reminds me not to close the PR before tests are written', function() {
     var React = require('react/addons');
-    var TransitionGroup = require('../tarnsitiongroup.js');
+    var TransitionGroup = require('../TransitionGroup.js');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
