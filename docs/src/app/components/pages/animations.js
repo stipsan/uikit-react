@@ -18,9 +18,9 @@ export default class AnimationPage extends React.Component{
             <h2 id="usage">
               <a href="#usage" className="uk-link-reset">Usage</a>
             </h2>
-            <Example uikit={['TransitionGroup']} initialState={{items: [1,2,3,4,5,6,7,8,9,10]}} codeText={`
+            <Example uikit={['TransitionGroup']} initialState={{items: [1,2,3,4,5,6,7,8,9], next: 10}} codeText={`
               <div className="uk-grid uk-text-center">
-                  {this.state.items.map((item, key) => <div className="uk-width-medium-1-5 uk-margin-bottom">
+                  {this.state.items.map((item, key) => <div className="bounceIn animated uk-width-medium-1-5 uk-margin-bottom">
                     <div className="uk-panel uk-panel-box uk-margin-bottom" 
                          style={{minHeight: 20}} 
                          onClick={function(i){
@@ -29,6 +29,15 @@ export default class AnimationPage extends React.Component{
                       <h1>{item}</h1>
                     </div>
                   </div>)}
+                  <div className="uk-width-medium-1-5 uk-margin-bottom" style={{opacity: 0.6}}>
+                    <div className="uk-panel uk-panel-box uk-margin-bottom" 
+                         style={{minHeight: 20}} 
+                         onClick={function(i){
+                           this.state.items.push(this.state.next++), this.setState(this.state);
+                    }.bind(this)}>
+                      <h1><i className="uk-icon-plus-circle"></i></h1>
+                    </div>
+                  </div>
               </div>
             `} />
           <p>If you're more interested in using the animations that ship with UIkit, stop worrying and just use it <a href="http://getuikit.com/docs/animation.html">like you always have</a>.</p>
