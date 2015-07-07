@@ -11,13 +11,14 @@ var CoreHome = require('./components/pages/core_home.js');
 var Buttons = require('./components/pages/buttons.js');
 var Close = require('./components/pages/close.js');
 var NotFound = require('./components/pages/404.js');
+var Getstarted = require('./components/pages/getstarted.js');
 
 var AppRoutes = (
   <Route name="root" path="/" handler={Master}>
     <DefaultRoute handler={Home}/>
     
     // @TODO temp
-    <Route name="get-started" handler={Home} />
+    <Route name="get-started" handler={Getstarted} />
     <Route name="core" handler={Core}>
       <DefaultRoute handler={CoreHome}/>
       <Route name="button" handler={Buttons} />

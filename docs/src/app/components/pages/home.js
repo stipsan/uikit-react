@@ -31,7 +31,7 @@ var HomePage = React.createClass({
                   <a href="https://github.com/uikit/uikit">GitHub</a>
                 </li>
                 <li>
-                  <a href="docs/documentation_get-started.html">
+                  <Link to="get-started">
                     Get Started
                   </a>
                 </li>
