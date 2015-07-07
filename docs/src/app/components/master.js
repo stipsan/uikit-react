@@ -15,7 +15,7 @@ var Master = React.createClass({
             className="uk-navbar-brand uk-hidden-small"
             to="root">
               <img
-              src="images/logo-horizontal.svg"
+              src="/images/logo-horizontal.svg"
               style={{height: 70, marginTop: -15, opacity: 0.9}}
               title="UIkit"
               alt="UIkit" />
@@ -33,7 +33,7 @@ var Master = React.createClass({
             data-uk-offcanvas />
           <div className="uk-navbar-brand uk-navbar-center uk-visible-small">
             <img
-            src="images/logo.svg"
+            src="/images/logo.svg"
             style={{width: 60, height: 60, marginTop: -10}}
             title="UIkit"
             alt="UIkit" />
@@ -50,24 +50,19 @@ var Master = React.createClass({
                 <a href="https://github.com/stipsan/uikit-react">GitHub</a>
               </li>
               <li>
-                <a href="https://github.com/uikit/uikit/issues">Issues</a>
+                <a href="https://github.com/stipsan/uikit-react/issues">Issues</a>
               </li>
-              <li>
-                <a href="https://github.com/stipsan/uikit-react/blob/master/CHANGELOG.md">Changelog</a>
-              </li>
-              <li>
-                <a href="https://twitter.com/getuikit">Twitter</a>
-              </li>
+
             </ul>
             <div className="uk-panel">
-              <p>Made by <a href="http://www.yootheme.com">YOOtheme</a> with love and caffeine.<br className="uk-hidden-small" />Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+              <p><a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
               <a href="/">
                 <img
-                  src="images/logo.svg"
+                  src="/images/logo.svg"
                   width={90}
                   height={30}
-                  title="UIkit"
-                  alt="UIkit" />
+                  title="UIkit for React"
+                  alt="UIkit for React" />
               </a>
             </div>
           </div>
