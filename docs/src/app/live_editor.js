@@ -1,7 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import CodeMirror from 'codemirror';
 import uikit_react from 'uikit-react';
-    
+
+window.React = React; // React devtools need this
+window.ReactDOM = ReactDOM;  //ReactPlayground rely on this
+
 // TODO actually recognize syntax of TypeScript constructs
 
 CodeMirror.defineMode("javascript", function(config, parserConfig) {
@@ -451,7 +455,7 @@ var CodeMirrorEditor = React.createClass({
   componentDidMount: function() {
     if (IS_MOBILE) return;
 
-    this.editor = CodeMirror.fromTextArea(this.refs.editor.getDOMNode(), {
+    this.editor = CodeMirror.fromTextArea(this.refs.editor, {
       mode: 'javascript',
       lineNumbers: this.props.lineNumbers,
       lineWrapping: true,
@@ -626,18 +630,18 @@ var ReactPlayground = React.createClass({
   },
 
   executeCode: function() {
-    var mountNode = this.refs.mount.getDOMNode();
+    var mountNode = this.refs.mount;
 
     try {
-      React.unmountComponentAtNode(mountNode);
+      ReactDOM.unmountComponentAtNode(mountNode);
     } catch (e) {
-      console.log('unable to unmount', mountNode);
+      console.error('unable to unmount', mountNode);
     }
 
     try {
       var compiledCode = this.compileCode();
       if (this.props.renderCode) {
-        React.render(
+        ReactDOM.render(
           <CodeMirrorEditor codeText={compiledCode} readOnly={true} />,
           mountNode
         );
@@ -649,7 +653,7 @@ var ReactPlayground = React.createClass({
       }
     } catch (err) {
       this.setTimeout(function() {
-        React.render(
+        ReactDOM.render(
           <div className="playgroundError">{err.toString()}</div>,
           mountNode
         );

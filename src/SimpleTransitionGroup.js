@@ -6,7 +6,7 @@
 // Use require instead of import until we're on 0.14 and can just use the react-addons-transition-group package
 import React from 'react';
 import classNames from 'classnames';
-import TransitionGroup from 'react-addons-transition-group';
+import ReactTransitionGroup from 'react-addons-transition-group';
 
 const TICK = 17;
 
@@ -107,6 +107,8 @@ function hasClass(element, className) {
 
 var TimeoutTransitionGroupChild = React.createClass({
     transition: function(animationType, finishCallback) {
+        console.log(this.props.name);
+        
         var node = React.findDOMNode(this);
         console.log(this.props.name);
         var className = this.props.name + '-' + animationType;
@@ -158,6 +160,8 @@ var TimeoutTransitionGroupChild = React.createClass({
     },
 
     componentWillMount: function() {
+      console.log('mounting');
+      console.log(this);
         this.classNameQueue = [];
     },
 
@@ -226,7 +230,7 @@ export default React.createClass({
        return (
            <ReactTransitionGroup
                {...this.props}
-               childFactory={this._wrapChild} />
+               childFactory={this._wrapChild.bind(this)} />
        );
    }
 });

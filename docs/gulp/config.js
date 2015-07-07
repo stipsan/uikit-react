@@ -9,7 +9,8 @@ module.exports = {
   },
   browserSync: {
     server: {
-      baseDir: [dest, src]
+      baseDir: [dest, src],
+     // middleware: [require('connect-history-api-fallback')]
     },
     files: [
       dest + '/**'

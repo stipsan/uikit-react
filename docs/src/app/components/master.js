@@ -1,5 +1,5 @@
 var React = require('react');
-var {RouteHandler, Link} = require('react-router');
+var {Link} = require('react-router');
 var uikit = require('uikit-react');
 var NavLink = require('./navlink.js');
 
@@ -13,7 +13,7 @@ var Master = React.createClass({
         <div className="uk-container uk-container-center">
           <Link
             className="uk-navbar-brand uk-hidden-small"
-            to="root">
+            to="/">
               <img
               src="/images/logo-horizontal.svg"
               style={{height: 70, marginTop: -15, opacity: 0.9}}
@@ -21,11 +21,11 @@ var Master = React.createClass({
               alt="UIkit" />
           </Link>
           <ul className="uk-navbar-nav uk-hidden-small">
-            <NavLink to="get-started" disabled disabledClassName='uk-hidden'>Get Started</NavLink>
+            <NavLink to="get-started">Getting Started</NavLink>
             <NavLink to="core">Core</NavLink>
             <NavLink to="components" disabled disabledClassName='uk-hidden'>Components</NavLink>
             <NavLink to="customizer" disabled disabledClassName='uk-hidden'>Customizer</NavLink>
-            <NavLink to="showcase" disabled disabledClassName='uk-hidden'>Showcase</NavLink>
+            <NavLink to="playground" disabled disabledClassName='uk-hidden'>Playground</NavLink>
           </ul>
           <a
             href="#tm-offcanvas"
@@ -41,7 +41,7 @@ var Master = React.createClass({
         </div>
       </nav>
       
-        <RouteHandler {...this.props} />
+        {this.props.children}
         
         <div className="tm-footer">
           <div className="uk-container uk-container-center uk-text-center">

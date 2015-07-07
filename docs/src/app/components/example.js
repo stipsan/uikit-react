@@ -26,7 +26,7 @@ var Example = React.createClass({
   },`;
     }
     
-    return <ReactPlayground onToggleMode={this.handleModeChange} isEs7={this.state.es7} codeText={`
+    return <ReactPlayground codeText={`
 let {${this.props.uikit.join(', ')}} = UIkitReact;
               
 let ${this.props.name} = React.createClass({
@@ -40,7 +40,7 @@ let ${this.props.name} = React.createClass({
   }
 });
 
-React.render(<${this.props.name} key="${this.props.name}"/>, mountNode);
+ReactDOM.render(<${this.props.name}/>, mountNode);
         `} />;
   }
 

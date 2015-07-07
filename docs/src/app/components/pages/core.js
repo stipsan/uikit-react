@@ -1,5 +1,5 @@
 import React from 'react';
-import {RouteHandler, Link} from 'react-router';
+import {Link} from 'react-router';
 import NavLink from '../navlink.js';
 
 var CorePage = React.createClass({
@@ -13,14 +13,14 @@ var CorePage = React.createClass({
             <div className="tm-sidebar uk-width-medium-1-5 uk-hidden-small">
               <ul className="tm-nav uk-nav">
                 <li className="uk-nav-header">Common</li>
-                <NavLink to="animation">Animation</NavLink>
-                <NavLink to="alert" disabled>Alert</NavLink>
-                <NavLink to="button">Button</NavLink>
-                <NavLink to="close">Close</NavLink>
+                <NavLink to="/core/animation">Animation</NavLink>
+                <NavLink to="/core/alert" disabled>Alert</NavLink>
+                <NavLink to="/core/button">Button</NavLink>
+                <NavLink to="/core/close">Close</NavLink>
               </ul>
             </div>
             <div className="tm-main uk-width-medium-4-5">
-              <RouteHandler {...this.props} />
+              {this.props.children}
             </div>
           </div>
         </div>
