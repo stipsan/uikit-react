@@ -1,9 +1,9 @@
-jest.dontMock('../close.js');
+jest.dontMock('../Close.js');
 
 describe('Close', function() {
 	it('renders on the page with alternative styling', function() {
     var React = require('react/addons');
-    var Close = require('../close.js');
+    var Close = require('../Close.js');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
@@ -17,7 +17,7 @@ describe('Close', function() {
 	
 	it('supports additional event handlers, like onClick', function() {
     var React = require('react/addons');
-    var Close = require('../close.js');
+    var Close = require('../Close.js');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document

@@ -1,9 +1,9 @@
-jest.dontMock('../button.js');
+jest.dontMock('../Button.js');
 
 describe('Button', function() {
   it('toggles the className uk-active after click', function() {
     var React = require('react/addons');
-    var Button = require('../button.js');
+    var Button = require('../Button.js');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
@@ -37,7 +37,7 @@ describe('Button', function() {
   
   it('ignores clicks when disabled', function() {
     var React = require('react/addons');
-    var Button = require('../button.js');
+    var Button = require('../Button.js');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
@@ -56,7 +56,7 @@ describe('Button', function() {
   
   it('can be a submit type button', function() {
     var React = require('react/addons');
-    var Button = require('../button.js');
+    var Button = require('../Button.js');
     var TestUtils = React.addons.TestUtils;
 
     // Render a checkbox with label in the document
