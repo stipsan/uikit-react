@@ -3,8 +3,16 @@ import ReactPlayground from '../live_editor.js';
 
 var Example = React.createClass({
 
+  getInitialState: function(){
+    return {es7: false};
+  },
+
   getDefaultProps: function(){
     return {name: 'Example', uikit: [''], initialState: false};
+  },
+  
+  handleModeChange: function(event){
+    this.setState({es7: !this.state.es7});
   },
 
   render: function() {
@@ -18,10 +26,10 @@ var Example = React.createClass({
   },`;
     }
     
-    return <ReactPlayground codeText={`
-var {${this.props.uikit.join(', ')}} = UIkitReact;
+    return <ReactPlayground onToggleMode={this.handleModeChange} isEs7={this.state.es7} codeText={`
+let {${this.props.uikit.join(', ')}} = UIkitReact;
               
-var ${this.props.name} = React.createClass({
+let ${this.props.name} = React.createClass({
   ${getInitialState}
   render: function(){
     return (
