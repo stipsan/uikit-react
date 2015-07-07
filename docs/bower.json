@@ -15,6 +15,7 @@
     "tests"
   ],
   "devDependencies": {
-    "dev_uikit": "~2.21.0"
+    "dev_uikit": "~2.21.0",
+    "animate.css": "~3.3.0"
   }
 }
