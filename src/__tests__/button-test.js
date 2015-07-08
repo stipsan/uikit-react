@@ -1,11 +1,11 @@
 jest.dontMock('../Button.js');
 
 describe('Button', function() {
+  var React = require('react/addons');
+  var Button = require('../Button.js');
+  var TestUtils = React.addons.TestUtils;
+  
   it('toggles the className uk-active after click', function() {
-    var React = require('react/addons');
-    var Button = require('../Button.js');
-    var TestUtils = React.addons.TestUtils;
-
     // Render a checkbox with label in the document
     var container = TestUtils.renderIntoDocument(
       <Button>Submit</Button>
@@ -21,10 +21,6 @@ describe('Button', function() {
   });
   
   it('toggles classNames based on props', function() {
-    var React = require('react/addons');
-    var Button = require('../Button.js');
-    var TestUtils = React.addons.TestUtils;
-
     // Render a checkbox with label in the document
     var container = TestUtils.renderIntoDocument(
       <Button primary={true}>Submit</Button>
@@ -36,10 +32,6 @@ describe('Button', function() {
   });
   
   it('ignores clicks when disabled', function() {
-    var React = require('react/addons');
-    var Button = require('../Button.js');
-    var TestUtils = React.addons.TestUtils;
-
     // Render a checkbox with label in the document
     var container = TestUtils.renderIntoDocument(
       <Button disabled={true}>Save</Button>
@@ -55,10 +47,6 @@ describe('Button', function() {
   });
   
   it('can be a submit type button', function() {
-    var React = require('react/addons');
-    var Button = require('../Button.js');
-    var TestUtils = React.addons.TestUtils;
-
     // Render a checkbox with label in the document
     var container = TestUtils.renderIntoDocument(
       <Button type="submit">Submit</Button>
@@ -70,10 +58,6 @@ describe('Button', function() {
   });
   
   it('can attach custom props', function() {
-    var React = require('react/addons');
-    var Button = require('../Button.js');
-    var TestUtils = React.addons.TestUtils;
-
     // Render a checkbox with label in the document
     var container = TestUtils.renderIntoDocument(
       <Button id="mySubmit">Submit</Button>
@@ -85,10 +69,6 @@ describe('Button', function() {
   });
   
   it('supports additional event handlers, like onMouseMove', function() {
-    var React = require('react/addons');
-    var Button = require('../Button.js');
-    var TestUtils = React.addons.TestUtils;
-
     // Render a checkbox with label in the document
     var triggered = false, container = TestUtils.renderIntoDocument(
       <Button onMouseMove={function(){triggered = true}}>Submit</Button>
@@ -103,10 +83,6 @@ describe('Button', function() {
   });
   
   it('allows onClick overrides', function() {
-      var React = require('react/addons');
-      var Button = require('../Button.js');
-      var TestUtils = React.addons.TestUtils;
-
       // Render a checkbox with label in the document
       var container = TestUtils.renderIntoDocument(
         <Button onClick={function(){}}>Save</Button>
