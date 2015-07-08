@@ -7,7 +7,6 @@
     "test": "jest",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
-    "docs": "webpack-dev-server --config docs/webpack.config.js --content-base docs --inline",
     "prepublish": "npm run build"
   },
   "jest": {
