@@ -21,7 +21,7 @@ module.exports = {
     dest: dest
   },
   svgs: {
-    src: [src + '/images/**'],
+    src: [src + '/images/**/*.{svg,ico}'],
     folder: '/images',
     dest: dest
   }
