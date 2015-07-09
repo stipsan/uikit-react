@@ -12,14 +12,21 @@
 @subnav-color: #fff;
 @navbar-nav-color: @global-primary-color;
 
+@gobal-primary-gradient-top: lighten( @global-primary-color, 20%, relative);
+@gobal-primary-gradient-bottom: darken( @global-primary-color, 20%, relative);
+@button-primary-gradient-top: @gobal-primary-gradient-top;
+@button-primary-gradient-bottom: @gobal-primary-gradient-bottom;
+
 //
 // Text colors
 //
 
 @global-color:                                  #666;
 
-@global-link-color:                             #1D8ACB;
-@global-link-hover-color:                       #0B5F90;
+@global-link-color:                             @global-primary-color;
+@global-link-hover-color:                       darken(@global-primary-color, 10%, relative);
+@button-primary-hover-background: @global-link-hover-color;
+@button-primary-active-background: darken(@global-link-hover-color, 15%, relative);
 
 //
 // Border and background colors
@@ -80,7 +87,7 @@
 // Icon
 //
 
-@icon-font-path:                                "../../src/fonts";
+@icon-font-path:                                "/fonts";
 
 //
 // Form-advanced
