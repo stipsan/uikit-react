@@ -26,11 +26,11 @@ export default class Master extends React.Component {
               alt="UIkit" />
           </Link>
           <ul className="uk-navbar-nav uk-hidden-small">
-            <NavLink to="getting-started">Getting Started</NavLink>
-            <NavLink to="core">Core</NavLink>
-            <NavLink to="components">Components</NavLink>
-            <NavLink to="customizer" disabled disabledClassName='uk-hidden'>Customizer</NavLink>
-            <NavLink to="playground" disabled disabledClassName='uk-hidden'>Playground</NavLink>
+            <NavLink to="/getting-started">Getting Started</NavLink>
+            <NavLink to="/core">Core</NavLink>
+            <NavLink to="/components">Components</NavLink>
+            <NavLink to="/customizer" disabled disabledClassName='uk-hidden'>Customizer</NavLink>
+            <NavLink to="/playground" disabled disabledClassName='uk-hidden'>Playground</NavLink>
           </ul>
           <div className="uk-navbar-flip">
             <ul className="uk-navbar-nav uk-hidden-small">
