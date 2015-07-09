@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import ButtonsPage from './buttons.js';
 import ClosePage from './close.js';
-import {version} from 'uikit-react/package.json';
+import {version} from 'uikit-react';
 
 var HomePage = React.createClass({
 

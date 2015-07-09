@@ -17,7 +17,7 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
     ]
   },
 
@@ -26,6 +26,12 @@ module.exports = {
       //'react-router$': process.cwd() + '/modules',
       //'react-router/lib': process.cwd() + '/modules'
     }
+  },
+  
+  resolveLoader: {
+      root: [
+        path.join(__dirname, "node_modules")
+      ]
   },
 
   plugins: [
