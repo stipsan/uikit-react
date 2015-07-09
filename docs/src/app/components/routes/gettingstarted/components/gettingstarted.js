@@ -3,9 +3,7 @@ import React from 'react';
 export default class Gettingstarted extends React.Component {
 
   static loadProps(params, cb) {
-    setTimeout(() => {
-      cb(null, {})
-    }, 1000);
+    cb(null, {});
   }
     
   render() {
