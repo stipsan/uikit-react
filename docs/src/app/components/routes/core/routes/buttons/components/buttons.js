@@ -1,10 +1,10 @@
-var React = require('react');
-var {Button} = require('uikit-react');
-var Example = require('../example.js');
+import React from 'react';
+import {Button} from 'uikit-react';
+import Example from '../../../../../example';
 
-var ButtonsPage = React.createClass({
+export default class ButtonsPage extends React.Component {
 
-  render: function() {
+  render() {
 
     return (
                 <article className="uk-article">
@@ -395,6 +395,4 @@ var ButtonsPage = React.createClass({
     );
   }
 
-});
-
-module.exports = ButtonsPage;
+}
