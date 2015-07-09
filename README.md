@@ -6,7 +6,7 @@ uikit-react
 [![devDependency Status](https://david-dm.org/stipsan/uikit-react/dev-status.svg)](https://david-dm.org/stipsan/uikit-react#info=devDependencies)
 [![peerDependency Status](https://david-dm.org/stipsan/uikit-react/peer-status.svg)](https://david-dm.org/stipsan/uikit-react#info=peerDependencies)
 
-<img src="https://uikit-react.firebaseapp.com/images/logo.png" width="300"/>
+<img src="https://uikit-react.firebaseapp.com/images/logo.svg" width="300"/>
 
 # Be warned, this is barely even alpha atm!
 
