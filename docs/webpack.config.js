@@ -6,7 +6,7 @@ module.exports = {
 
   debug: true,
 
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
 
   entry: {
       app: ['./src/app/app.js']

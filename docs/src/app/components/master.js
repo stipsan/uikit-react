@@ -1,11 +1,15 @@
-var React = require('react');
+import React from 'react';
 var {Link} = require('react-router');
-var uikit = require('uikit-react');
 var NavLink = require('./navlink.js');
 
-var Master = React.createClass({
+export default class Master extends React.Component {
 
-  render: function() {
+  static loadProps (params, cb) {
+    console.log('App', 'loadProps');
+    cb(null, {});
+  }
+
+  render() {
 
     return (
     <div>
@@ -21,12 +25,17 @@ var Master = React.createClass({
               alt="UIkit" />
           </Link>
           <ul className="uk-navbar-nav uk-hidden-small">
-            <NavLink to="get-started">Getting Started</NavLink>
+            <NavLink to="getting-started">Getting Started</NavLink>
             <NavLink to="core">Core</NavLink>
             <NavLink to="components" disabled disabledClassName='uk-hidden'>Components</NavLink>
             <NavLink to="customizer" disabled disabledClassName='uk-hidden'>Customizer</NavLink>
             <NavLink to="playground" disabled disabledClassName='uk-hidden'>Playground</NavLink>
           </ul>
+          <div className="uk-navbar-nav">
+            <ul className="uk-navbar-nav uk-hidden-small">
+              <li><a href="https://github.com/stipsan/uikit-react">GitHub</a></li>
+            </ul>
+          </div>
           <a
             href="#tm-offcanvas"
             className="uk-navbar-toggle uk-visible-small"
@@ -69,7 +78,5 @@ var Master = React.createClass({
         </div>
     </div>
     );
-  },
-});
-
-module.exports = Master;
+  }
+}
