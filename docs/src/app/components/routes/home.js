@@ -1,11 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
-import ButtonsPage from './buttons.js';
-import ClosePage from './close.js';
 
-var HomePage = React.createClass({
+export default class Home extends React.Component {
 
-  render: function() {
+  render() {
 
     return (
         <div>
@@ -93,6 +90,4 @@ var HomePage = React.createClass({
     );
   }
 
-});
-
-module.exports = HomePage;
+}
