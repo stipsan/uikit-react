@@ -1,10 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router';
-import NavLink from '../navlink.js';
+import NavLink from '../../../navlink.js';
 
-var CorePage = React.createClass({
+export default class CorePage extends React.Component {
 
-  render: function() {
+  static loadProps (params, cb) {
+    setTimeout(() => {
+      cb(null, {});
+    }, 3000);
+  }
+
+  render() {
     
     return (
       <div className="tm-middle">
@@ -13,9 +19,9 @@ var CorePage = React.createClass({
             <div className="tm-sidebar uk-width-medium-1-5 uk-hidden-small">
               <ul className="tm-nav uk-nav">
                 <li className="uk-nav-header">Common</li>
-                <NavLink to="/core/animation">Animation</NavLink>
+                <NavLink to="/core/animation" disabled>Animation</NavLink>
                 <NavLink to="/core/alert" disabled>Alert</NavLink>
-                <NavLink to="/core/button">Button</NavLink>
+                <NavLink to="/core/buttons">Button</NavLink>
                 <NavLink to="/core/close">Close</NavLink>
               </ul>
             </div>
@@ -27,7 +33,4 @@ var CorePage = React.createClass({
       </div>
     );
   }
-
-});
-
-module.exports = CorePage;
+}
