@@ -16,9 +16,9 @@ The docs folder shows how easy it is to setup a project that compiles the UIkit 
 A changelog.md will be started up as soon as we reach 0.1.0. Versions in the 0.0.x range is not at all meant to be used in production.
 
 Inspired by :
-* http://material-ui.com/
-* http://react-bootstrap.github.io
-* https://github.com/akiran/react-foundation-apps
-* http://prometheusresearch.github.io/react-forms/
-* http://elemental-ui.com
+* [material ui](http://material-ui.com/)
+* [React-Bootstrap](http://react-bootstrap.github.io)
+* [React Foundation Apps](https://github.com/akiran/react-foundation-apps)
+* [React Forms](http://prometheusresearch.github.io/react-forms/)
+* [Elemental UI](http://elemental-ui.com)
 
