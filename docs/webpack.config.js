@@ -14,7 +14,7 @@ module.exports = {
     },
 
   output: {
-    path: 'docs',
+    path: path.join(__dirname, "dist"),
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
     publicPath: '/'
@@ -29,8 +29,7 @@ module.exports = {
 
   resolve: {
     alias: {
-      //'react-router$': process.cwd() + '/modules',
-      //'react-router/lib': process.cwd() + '/modules'
+      'app': process.cwd() + '/src/app'
     }
   },
   

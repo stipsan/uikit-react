@@ -1,6 +1,6 @@
 {
   "firebase": "uikit-react",
-  "public": "build",
+  "public": "dist",
   "ignore": [
     "firebase.json",
     "**/.*",

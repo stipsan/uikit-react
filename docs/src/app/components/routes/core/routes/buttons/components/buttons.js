@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button} from 'uikit-react';
-import Example from '../../../../../example';
+import Example from 'app/components/example';
 
 export default class ButtonsPage extends React.Component {
 

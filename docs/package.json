@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "docs": "webpack-dev-server --config webpack.config.js --content-base build --inline",
+    "build": "webpack-dev-server --config webpack.config.js --content-base build --inline",
+    "dist": "NODE_ENV=production webpack --debug false --devtool false --optimize-dedupe -p",
     "postinstall": "bower install"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.0",
     "gulp-notify": "^2.2.0",
     "gulp-replace": "^0.5.3",
     "gulp-sourcemaps": "^1.5.2",
@@ -40,6 +42,7 @@
     "include-folder": "^0.9.0",
     "less-plugin-bower-resolve": "^0.1.0",
     "less-plugin-npm-import": "^2.1.0",
+    "merge-stream": "^0.1.8",
     "node-libs-browser": "^0.5.2",
     "pretty-hrtime": "^1.0.0",
     "react": "^0.14.0-beta1",

@@ -6,7 +6,7 @@ import NavLink from './navlink';
 export default class Master extends React.Component {
 
   static loadProps (params, cb) {
-    console.log('App', 'loadProps');
+    if('production' !== process.env.NODE_ENV) console.log('App', 'loadProps');
     cb(null, {});
   }
 
