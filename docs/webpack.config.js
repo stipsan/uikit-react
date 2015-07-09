@@ -23,14 +23,10 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
     ],
-    noParse: [
-      /babel-core[\\\/]browser\.js$/,
-      path.join(__dirname, "node_modules", "babel-core")
-    ]
+    noParse: /babel-core\/browser/,
   },
 
   resolve: {
-    packageAlias: "browser",
     alias: {
       //'react-router$': process.cwd() + '/modules',
       //'react-router/lib': process.cwd() + '/modules'
