@@ -1,6 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// Public imports, needed for ReactPlayground code samples to work
+import * as modReact from 'react';
+import * as modReactDOM from 'react-dom';
+import * as modUIkitReact from 'uikit-react';
+
+const React = modReact.default;
+const ReactDOM = modReactDOM.default;
+const UIkitReact = modUIkitReact.default;
+
+// Private imports
 import CodeMirror from 'codemirror';
+
 import babel from 'babel-core/browser';
 
 // TODO actually recognize syntax of TypeScript constructs

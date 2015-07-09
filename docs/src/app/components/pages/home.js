@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 import ButtonsPage from './buttons.js';
 import ClosePage from './close.js';
-import {version} from 'uikit-react';
 
 var HomePage = React.createClass({
 
@@ -22,24 +21,6 @@ var HomePage = React.createClass({
               <p className="uk-text-large">
                 A lightweight and modular front-end framework<br className="uk-hidden-small" /> for developing fast and powerful web interfaces.
               </p>
-              <a
-                className="uk-button tm-button-download uk-hidden"
-                href={"https://github.com/stipsan/uikit-react/releases/download/v"+version+"/uikit-react-"+version+".zip"}>
-                Download UIkit for React
-              </a>
-              <ul className="tm-subnav uk-subnav uk-flex-center">
-                <li>
-                  <a href="https://github.com/uikit/uikit">GitHub</a>
-                </li>
-                <li>
-                  <Link to="get-started">
-                    Get Started
-                  </Link>
-                </li>
-                {/* If we do: <li>Version {version}</li> React'll create two span elements */}
-                <li>{"Version "+version}</li>
-                
-              </ul>
             </div>
           </div>
           <div className="tm-section tm-section-color-2 tm-section-colored">
