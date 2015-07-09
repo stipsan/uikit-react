@@ -1,6 +1,7 @@
 import React from 'react';
-var {Link} = require('react-router');
-var NavLink = require('./navlink.js');
+import {Link} from 'react-router';
+import Home from './routes/home';
+import NavLink from './navlink';
 
 export default class Master extends React.Component {
 
@@ -27,11 +28,11 @@ export default class Master extends React.Component {
           <ul className="uk-navbar-nav uk-hidden-small">
             <NavLink to="getting-started">Getting Started</NavLink>
             <NavLink to="core">Core</NavLink>
-            <NavLink to="components" disabled disabledClassName='uk-hidden'>Components</NavLink>
+            <NavLink to="components">Components</NavLink>
             <NavLink to="customizer" disabled disabledClassName='uk-hidden'>Customizer</NavLink>
             <NavLink to="playground" disabled disabledClassName='uk-hidden'>Playground</NavLink>
           </ul>
-          <div className="uk-navbar-nav">
+          <div className="uk-navbar-flip">
             <ul className="uk-navbar-nav uk-hidden-small">
               <li><a href="https://github.com/stipsan/uikit-react">GitHub</a></li>
             </ul>
@@ -50,7 +51,7 @@ export default class Master extends React.Component {
         </div>
       </nav>
       
-        {this.props.children}
+        {this.props.children || <Home/>}
         
         <div className="tm-footer">
           <div className="uk-container uk-container-center uk-text-center">
