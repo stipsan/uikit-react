@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route} from 'react-router';
 import AsyncProps from 'react-router/lib/experimental/AsyncProps';
+import MasterNavBar from './components/navbar.js';
 
 const adapter = 'production' !== process.env.NODE_ENV ? 'HashHistory' : 'BrowserHistory';
 let { history } = require('react-router/lib/' + adapter);
@@ -10,7 +11,7 @@ var rootRoute = {
   component: AsyncProps,
 
   renderInitialLoad() {
-    return <div>loading...</div>
+    return <MasterNavBar />;
   },
 
   childRoutes: [{
