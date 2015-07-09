@@ -1,17 +1,29 @@
 import React from 'react';
-import ReactPlayground from '../live_editor.js';
+
+class LoadingExample extends React.Component {
+  render() {
+    return <div>Loading…</div>
+  }
+}
 
 export default class Example extends React.Component {
 
-  state = {es7: false}
+  state = {component: false}
 
-  static defaultProps = {name: 'Example', uikit: [''], initialState: false}
+  static defaultProps = {name: 'Examples', uikit: [''], initialState: false}
   
-  handleModeChange(event) {
-    this.setState({es7: !this.state.es7});
+  componentDidMount() {
+    console.log('The component mounted');
+    require.ensure([], (require) => {
+      console.log('live editor loaded');
+      let ReactPlayground = require('../live_editor.js');
+      this.setState({component: ReactPlayground});
+    })
   }
 
   render() {
+    console.log(this.state.component);
+    if(!this.state.component) return <LoadingExample />;
     
     var getInitialState = '';
     
@@ -21,7 +33,7 @@ export default class Example extends React.Component {
   `;
     }
     
-    return <ReactPlayground codeText={`
+    return React.createElement(this.state.component, {codeText: `
 let {${this.props.uikit.join(', ')}} = UIkitReact;
               
 class ${this.props.name} extends React.Component {
@@ -34,7 +46,7 @@ class ${this.props.name} extends React.Component {
 };
 
 ReactDOM.render(<${this.props.name}/>, mountNode);
-        `} />;
+        `});
   }
 
 }
