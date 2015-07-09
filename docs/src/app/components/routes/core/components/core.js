@@ -1,10 +1,11 @@
 import React from 'react';
-import {RouteHandler, Link} from 'react-router';
-import NavLink from '../navlink.js';
+import {Link} from 'react-router';
+import NavLink from '../../../navlink.js';
+import CoreHome from '../../core_home.js';
 
-var CorePage = React.createClass({
+export default class CorePage extends React.Component {
 
-  render: function() {
+  render() {
     
     return (
       <div className="tm-middle">
@@ -13,21 +14,18 @@ var CorePage = React.createClass({
             <div className="tm-sidebar uk-width-medium-1-5 uk-hidden-small">
               <ul className="tm-nav uk-nav">
                 <li className="uk-nav-header">Common</li>
-                <NavLink to="animation" disabled>Animation</NavLink>
-                <NavLink to="alert" disabled>Alert</NavLink>
-                <NavLink to="button">Button</NavLink>
-                <NavLink to="close">Close</NavLink>
+                <NavLink to="/core/animation" disabled>Animation</NavLink>
+                <NavLink to="/core/alert" disabled>Alert</NavLink>
+                <NavLink to="/core/buttons">Button</NavLink>
+                <NavLink to="/core/close">Close</NavLink>
               </ul>
             </div>
             <div className="tm-main uk-width-medium-4-5">
-              <RouteHandler {...this.props} />
+              {this.props.children || <CoreHome />}
             </div>
           </div>
         </div>
       </div>
     );
   }
-
-});
-
-module.exports = CorePage;
+}

@@ -1,11 +1,34 @@
 import React from 'react';
-import Router from 'react-router';
-import routes from './app-routes.js';
+import ReactDOM from 'react-dom';
+import {Router, Route} from 'react-router';
+import AsyncProps from 'react-router/lib/experimental/AsyncProps';
 
-window.React = React; // React devtools need this, so do live_editor.js examples
+const adapter = 'production' !== process.env.NODE_ENV ? 'HashHistory' : 'BrowserHistory';
+let { history } = require('react-router/lib/' + adapter);
 
-let location = window.location.hostname !== 'uikit-react.firebaseapp.com' ? Router.HashLocation : Router.HistoryLocation;
+var rootRoute = {
+  component: AsyncProps,
 
-Router.run(routes, location, function(Handler, state) {
-  React.render(<Handler {...state} />, document.body);
-});
+  renderInitialLoad() {
+    return <div>loading...</div>
+  },
+
+  childRoutes: [{
+    path: '/',
+    component: require('./components/master'),
+    childRoutes: [
+      require('./components/routes/gettingstarted'),
+      require('./components/routes/core'),
+      require('./components/routes/components'),
+      require('./components/routes/404')
+    ]}
+  ]
+};
+
+ReactDOM.render((
+  <Router
+    routes={rootRoute}
+    history={history}
+    createElement={AsyncProps.createElement}
+  />
+), document.getElementById('hotzone'));

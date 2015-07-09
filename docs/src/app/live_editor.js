@@ -1,7 +1,17 @@
-import React from 'react';
+// Public imports, needed for ReactPlayground code samples to work
+import * as modReact from 'react';
+import * as modReactDOM from 'react-dom';
+import * as modUIkitReact from 'uikit-react';
+
+const React = modReact.default;
+const ReactDOM = modReactDOM.default;
+const UIkitReact = modUIkitReact.default;
+
+// Private imports
 import CodeMirror from 'codemirror';
-import uikit_react from 'uikit-react';
-    
+
+import babel from 'babel-core/browser';
+
 // TODO actually recognize syntax of TypeScript constructs
 
 CodeMirror.defineMode("javascript", function(config, parserConfig) {
@@ -451,7 +461,7 @@ var CodeMirrorEditor = React.createClass({
   componentDidMount: function() {
     if (IS_MOBILE) return;
 
-    this.editor = CodeMirror.fromTextArea(this.refs.editor.getDOMNode(), {
+    this.editor = CodeMirror.fromTextArea(this.refs.editor, {
       mode: 'javascript',
       lineNumbers: this.props.lineNumbers,
       lineWrapping: true,
@@ -521,7 +531,7 @@ var ReactPlayground = React.createClass({
   getDefaultProps: function() {
     return {
       transformer: function(code) {
-        return babel.transform(code, {stage: 0, blacklist: ["strict"]}).code;
+        return babel.transform(code, {stage: 0, blacklist: ["strict"], externalHelpers: true}).code;
       },
       editorTabTitle: 'Live JSX Editor',
       showCompiledJSTab: true,
@@ -626,30 +636,27 @@ var ReactPlayground = React.createClass({
   },
 
   executeCode: function() {
-    var mountNode = this.refs.mount.getDOMNode();
+    var mountNode = this.refs.mount;
 
     try {
-      React.unmountComponentAtNode(mountNode);
+      ReactDOM.unmountComponentAtNode(mountNode);
     } catch (e) {
-      console.log('unable to unmount', mountNode);
+      console.error('unable to unmount', mountNode);
     }
 
     try {
       var compiledCode = this.compileCode();
       if (this.props.renderCode) {
-        React.render(
+        ReactDOM.render(
           <CodeMirrorEditor codeText={compiledCode} readOnly={true} />,
           mountNode
         );
       } else {
-        // Storing the import in a variable is to ensure eval()'d code can access it
-        // without needing to store it in a global variable
-        let UIkitReact = uikit_react;
         eval(compiledCode);
       }
     } catch (err) {
       this.setTimeout(function() {
-        React.render(
+        ReactDOM.render(
           <div className="playgroundError">{err.toString()}</div>,
           mountNode
         );

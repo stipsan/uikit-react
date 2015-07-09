@@ -1,10 +1,10 @@
-var React = require('react');
-var {Close} = require('uikit-react');
-var Example = require('../example.js');
+import React from 'react';
+import {Close} from 'uikit-react';
+import Example from 'app/components/example';
 
-var ClosePage = React.createClass({
+export default class ClosePage extends React.Component {
 
-  render: function() {
+  render() {
 
     return (
                 <article className="uk-article">
@@ -47,9 +47,9 @@ Close in alerts
                   <p>This is an example of how this component is used with an alert box from the <a href="alert.html">Alert component</a>.</p>
                   <Example uikit={['Close', 'Button']} initialState={{closed: false}} codeText={`
         {this.state.closed 
-           ? <Button onClick={() => {this.setState({closed: false})}}>Undo!</Button> 
+           ? <Button onClick={() => this.setState({closed: false})}>Undo!</Button> 
            : <div className="uk-alert uk-alert-success">
-               <Close onClick={() => {this.setState({closed: true})}} />
+               <Close onClick={() => this.setState({closed: true})} />
                <p>This is a alert using an a element as close button.</p>
              </div>
          }
@@ -58,6 +58,4 @@ Close in alerts
     );
   }
 
-});
-
-module.exports = ClosePage;
+}

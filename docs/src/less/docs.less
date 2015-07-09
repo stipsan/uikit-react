@@ -7,30 +7,8 @@
 /* Fonts
  ========================================================================== */
 
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/proximanova-light-webfont.eot');
-    src: url('../fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/proximanova-light-webfont.woff') format('woff'),
-        url('../fonts/proximanova-light-webfont.ttf') format('truetype'),
-        url('../fonts/proximanova-light-webfont.svg#ProximaNovaLight') format('svg');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/proximanova-reg-webfont.eot');
-    src: url('../fonts/proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/proximanova-reg-webfont.woff') format('woff'),
-        url('../fonts/proximanova-reg-webfont.ttf') format('truetype'),
-        url('../fonts/proximanova-reg-webfont.svg#ProximaNovaReg') format('svg');
-    font-weight: 400;
-    font-style: normal;
-}
-
 body, h1, h2, h3, h4, h5, h6,
-.uk-navbar-nav > li > a { font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.uk-navbar-nav > li > a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 
 /* Base
@@ -80,7 +58,7 @@ html {
  * Middle
  */
 
-.tm-middle { background: #fff; }
+.tm-middle { background: #fff; min-height: 50vh; }
 
 /* Tablet and bigger */
 @media (min-width: 768px) {
@@ -338,7 +316,7 @@ html {
 
 .tm-article-subtitle {
     padding-left: 6px;
-    border-left: 3px solid #1FA2D6;
+    border-left: 3px solid  @button-primary-background;
     font-size: 16px;
     line-height: 16px;
 }

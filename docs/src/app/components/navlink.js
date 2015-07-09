@@ -3,7 +3,7 @@ var {Link} = require('react-router');
 
 var NavLink = React.createClass({
   contextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.object
   },
   
   getDefaultProps: function(){

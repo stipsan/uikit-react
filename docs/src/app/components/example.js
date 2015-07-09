@@ -1,41 +1,52 @@
 import React from 'react';
-import ReactPlayground from '../live_editor.js';
 
-var Example = React.createClass({
+class LoadingExample extends React.Component {
+  render() {
+    return <div className="uk-alert uk-alert-warning">Loading {`<${this.props.name} />`}...</div>
+  }
+}
 
-  getDefaultProps: function(){
-    return {name: 'Example', uikit: [''], initialState: false};
-  },
+export default class Example extends React.Component {
 
-  render: function() {
+  state = {component: false}
+
+  static defaultProps = {name: 'Example', uikit: [''], initialState: false}
+  
+  componentDidMount() {
+    if('production' !== process.env.NODE_ENV) console.log('The component mounted');
+    require.ensure([], (require) => {
+      if('production' !== process.env.NODE_ENV) console.log('live editor loaded');
+      let ReactPlayground = require('../live_editor.js');
+      this.setState({component: ReactPlayground});
+    })
+  }
+
+  render() {
+    if('production' !== process.env.NODE_ENV) console.log(this.state.component);
+    if(!this.state.component) return <LoadingExample name={this.props.name}/>;
     
     var getInitialState = '';
     
     if(this.props.initialState) {
       getInitialState = `
-  getInitialState: function(){
-    return ${JSON.stringify(this.props.initialState)};
-  },`;
+  state = ${JSON.stringify(this.props.initialState)}
+  `;
     }
     
-    return <ReactPlayground codeText={`
-var {${this.props.uikit.join(', ')}} = UIkitReact;
+    return React.createElement(this.state.component, {codeText: `
+let {${this.props.uikit.join(', ')}} = UIkitReact;
               
-var ${this.props.name} = React.createClass({
+class ${this.props.name} extends React.Component {
   ${getInitialState}
-  render: function(){
-    return (
-      <div>
+  render() {
+    return <div>
         ${this.props.codeText}
-      </div>
-    );
+      </div>;
   }
-});
+};
 
-React.render(<${this.props.name}/>, mountNode);
-        `} />;
+ReactDOM.render(<${this.props.name}/>, mountNode);
+        `});
   }
 
-});
-
-module.exports = Example;
+}

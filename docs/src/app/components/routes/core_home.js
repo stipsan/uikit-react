@@ -7,7 +7,7 @@ var CoreHomePage = React.createClass({
     return (
       <div className="uk-article">
         <h1 className="uk-article-title">Core</h1>
-        <p className="uk-article-lead">All UIkit core components at a glance.</p>
+        <p className="uk-article-lead">All UIkit core components at a glance. These are all included when you run npm install uikit-react, bigger components are split up into stand-alone components.</p>
       </div>
     );
   }

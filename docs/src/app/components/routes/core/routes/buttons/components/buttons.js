@@ -1,10 +1,10 @@
-var React = require('react');
-var {Button} = require('uikit-react');
-var Example = require('../example.js');
+import React from 'react';
+import {Button} from 'uikit-react';
+import Example from 'app/components/example';
 
-var ButtonsPage = React.createClass({
+export default class ButtonsPage extends React.Component {
 
-  render: function() {
+  render() {
 
     return (
                 <article className="uk-article">
@@ -15,10 +15,10 @@ var ButtonsPage = React.createClass({
                   <h2 id="usage"><a href="#usage" className="uk-link-reset">Usage</a></h2>
                   <p>To apply this component, add the <code>.uk-button</code> class to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. Now you have created a button. Add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code> element to disable the button.</p>
                   <Example uikit={['Button']} codeText={`
-        <Button primary={true}>Submit</Button>
-        <Button success={true}>Submit</Button>
-        <Button danger={true}>Submit</Button>
-        <Button link={true}>Submit</Button>
+        <Button primary={true}>Submit</Button> &nbsp;
+        <Button success={true}>Submit</Button> &nbsp;
+        <Button danger={true}>Submit</Button> &nbsp;
+        <Button link={true}>Submit</Button> &nbsp;
         <Button type="submit">Submit</Button>
                   `} />
                   
@@ -395,6 +395,4 @@ var ButtonsPage = React.createClass({
     );
   }
 
-});
-
-module.exports = ButtonsPage;
+}

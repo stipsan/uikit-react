@@ -1,18 +1,19 @@
-var dest = './build';
+var dest = {development: './build', production: './dist'};
 var src = './src';
 var uikit = './bower_components/dev_uikit';
 
 module.exports = {
   babelBrowser: {
     src: './node_modules/babel-core/browser.min.js',
-    dest: dest
+    dest: dest.development
   },
   browserSync: {
     server: {
-      baseDir: [dest, src]
+      baseDir: [dest, src],
+     // middleware: [require('connect-history-api-fallback')]
     },
     files: [
-      dest + '/**'
+      dest.development + '/**'
     ]
   },
   less: {
@@ -20,6 +21,7 @@ module.exports = {
     watch: [
       src + '/less/**'
     ],
+    folder: '',
     dest: dest
   },
   markup: {
@@ -28,11 +30,13 @@ module.exports = {
   },
   fontIcons: {
     src: [uikit + "/src/fonts/**"],
-    dest: dest + '/fonts'
+    folder: '/fonts',
+    dest: dest
   },
   svgs: {
     src: [src + '/images/**'],
-    dest: dest + '/images'
+    folder: '/images',
+    dest: dest
   },
   browserify: {
     // Enable source maps
