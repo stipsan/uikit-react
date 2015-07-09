@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import NavLink from '../../../navlink.js';
+import CoreHome from '../../core_home.js';
 
 export default class CorePage extends React.Component {
 
@@ -20,7 +21,7 @@ export default class CorePage extends React.Component {
               </ul>
             </div>
             <div className="tm-main uk-width-medium-4-5">
-              {this.props.children}
+              {this.props.children || <CoreHome />}
             </div>
           </div>
         </div>

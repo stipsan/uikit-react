@@ -17,6 +17,9 @@ export default class Gettingstarted extends React.Component {
             </div>
             <div className="tm-main uk-width-medium-4-5">
               @TODO
+              <p>
+              Grab the CSS from <a href="http://getuikit.com" target="_blank">UIkit</a>.
+              </p>
             </div>
           </div>
         </div>

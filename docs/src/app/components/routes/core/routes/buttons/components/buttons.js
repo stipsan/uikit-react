@@ -15,10 +15,10 @@ export default class ButtonsPage extends React.Component {
                   <h2 id="usage"><a href="#usage" className="uk-link-reset">Usage</a></h2>
                   <p>To apply this component, add the <code>.uk-button</code> class to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. Now you have created a button. Add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code> element to disable the button.</p>
                   <Example uikit={['Button']} codeText={`
-        <Button primary={true}>Submit</Button>
-        <Button success={true}>Submit</Button>
-        <Button danger={true}>Submit</Button>
-        <Button link={true}>Submit</Button>
+        <Button primary={true}>Submit</Button> &nbsp;
+        <Button success={true}>Submit</Button> &nbsp;
+        <Button danger={true}>Submit</Button> &nbsp;
+        <Button link={true}>Submit</Button> &nbsp;
         <Button type="submit">Submit</Button>
                   `} />
                   
