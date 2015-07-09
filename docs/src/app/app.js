@@ -19,7 +19,8 @@ var rootRoute = {
     childRoutes: [
       require('./components/routes/gettingstarted'),
       require('./components/routes/core'),
-      require('./components/routes/components')
+      require('./components/routes/components'),
+      require('./components/routes/404')
     ]}
   ]
 };
