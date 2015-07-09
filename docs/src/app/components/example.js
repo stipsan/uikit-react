@@ -1,49 +1,40 @@
 import React from 'react';
 import ReactPlayground from '../live_editor.js';
 
-var Example = React.createClass({
+export default class Example extends React.Component {
 
-  getInitialState: function(){
-    return {es7: false};
-  },
+  state = {es7: false}
 
-  getDefaultProps: function(){
-    return {name: 'Example', uikit: [''], initialState: false};
-  },
+  static defaultProps = {name: 'Example', uikit: [''], initialState: false}
   
-  handleModeChange: function(event){
+  handleModeChange(event) {
     this.setState({es7: !this.state.es7});
-  },
+  }
 
-  render: function() {
+  render() {
     
     var getInitialState = '';
     
     if(this.props.initialState) {
       getInitialState = `
-  getInitialState: function(){
-    return ${JSON.stringify(this.props.initialState)};
-  },`;
+  state = ${JSON.stringify(this.props.initialState)}
+  `;
     }
     
     return <ReactPlayground codeText={`
 let {${this.props.uikit.join(', ')}} = UIkitReact;
               
-let ${this.props.name} = React.createClass({
+class ${this.props.name} extends React.Component {
   ${getInitialState}
-  render: function(){
-    return (
-      <div>
+  render() {
+    return <div>
         ${this.props.codeText}
-      </div>
-    );
+      </div>;
   }
-});
+};
 
 ReactDOM.render(<${this.props.name}/>, mountNode);
         `} />;
   }
 
-});
-
-module.exports = Example;
+}
