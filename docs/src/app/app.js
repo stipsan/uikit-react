@@ -1,7 +1,13 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route} from 'react-router';
 import { history } from 'react-router/lib/HashHistory';
 import * as Pages from './app-routes.js';
+
+// Needed for live_editor.js / ReactPlayground
+window.React = React;
+window.ReactDOM = ReactDOM;
+//window.UIkitReact = {};
 
 ReactDOM.render((
   <Router history={history}>

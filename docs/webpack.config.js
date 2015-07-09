@@ -4,9 +4,13 @@ var webpack = require('webpack');
 
 module.exports = {
 
+  debug: true,
+
   devtool: 'inline-source-map',
 
-  entry: './src/app/app.js',
+  entry: {
+      app: ['./src/app/app.js']
+    },
 
   output: {
     path: 'docs',
@@ -18,10 +22,15 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
+    ],
+    noParse: [
+      /babel-core[\\\/]browser\.js$/,
+      path.join(__dirname, "node_modules", "babel-core")
     ]
   },
 
   resolve: {
+    packageAlias: "browser",
     alias: {
       //'react-router$': process.cwd() + '/modules',
       //'react-router/lib': process.cwd() + '/modules'

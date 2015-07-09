@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CodeMirror from 'codemirror';
-import uikit_react from 'uikit-react';
-
-window.React = React; // React devtools need this
-window.ReactDOM = ReactDOM;  //ReactPlayground rely on this
+import babel from 'babel-core/browser';
 
 // TODO actually recognize syntax of TypeScript constructs
 
@@ -646,9 +643,6 @@ var ReactPlayground = React.createClass({
           mountNode
         );
       } else {
-        // Storing the import in a variable is to ensure eval()'d code can access it
-        // without needing to store it in a global variable
-        let UIkitReact = uikit_react;
         eval(compiledCode);
       }
     } catch (err) {

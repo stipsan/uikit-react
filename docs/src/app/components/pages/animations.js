@@ -2,6 +2,9 @@ import React from 'react';
 import {SimpleTransitionGroup} from 'uikit-react';
 import Example from '../example.js';
 
+window.UIkitReact = {};
+window.UIkitReact.SimpleTransitionGroup = SimpleTransitionGroup;
+
 export default class AnimationPage extends React.Component{
 
   render() {
