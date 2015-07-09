@@ -4,13 +4,6 @@ import Example from '../../../../../example';
 
 export default class ClosePage extends React.Component {
 
-  static loadProps (params, cb) {
-    console.log('Close Page loading props');
-    setTimeout(() => {
-      cb(null, {});
-    }, 3000);
-  }
-
   render() {
 
     return (

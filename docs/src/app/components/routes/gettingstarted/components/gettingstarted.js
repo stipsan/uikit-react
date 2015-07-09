@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class Gettingstarted extends React.Component {
-
-  static loadProps(params, cb) {
-    cb(null, {});
-  }
     
   render() {
     return (

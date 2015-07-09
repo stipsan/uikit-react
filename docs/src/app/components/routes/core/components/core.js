@@ -4,12 +4,6 @@ import NavLink from '../../../navlink.js';
 
 export default class CorePage extends React.Component {
 
-  static loadProps (params, cb) {
-    setTimeout(() => {
-      cb(null, {});
-    }, 3000);
-  }
-
   render() {
     
     return (
