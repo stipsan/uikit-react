@@ -3,20 +3,29 @@ import ReactDOM from 'react-dom';
 import {Router, Route} from 'react-router';
 import { history } from 'react-router/lib/HashHistory';
 import AsyncProps from 'react-router/lib/experimental/AsyncProps';
-import * as Pages from './app-routes.js';
+
+var rootRoute = {
+  component: AsyncProps,
+
+  renderInitialLoad() {
+    return <div>loading...</div>
+  },
+
+  childRoutes: [{
+    path: '/',
+    component: require('./components/master'),
+    childRoutes: [
+      require('./components/routes/gettingstarted'),
+      require('./components/routes/core'),
+      require('./components/routes/components')
+    ]}
+  ]
+};
 
 ReactDOM.render((
-  <Router history={history}>
-    <Route component={Pages.Master}>
-      <Route path="/" component={Pages.Home}/>
-      <Route path="/get-started" component={Pages.Getstarted} />
-      <Route component={Pages.Core}>
-        <Route path="/core" component={Pages.CoreHome}/>
-        <Route path="/core/animation" component={Pages.Animations} />
-        <Route path="/core/button" component={Pages.Buttons} />
-        <Route path="/core/close" component={Pages.Close} />
-      </Route>
-      <Route path="*" component={Pages.NotFound}/>
-    </Route>
-  </Router>
+  <Router
+    routes={rootRoute}
+    history={history}
+    createElement={AsyncProps.createElement}
+  />
 ), document.getElementById('hotzone'));
