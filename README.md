@@ -21,4 +21,4 @@ Inspired by :
 * [React Foundation Apps](https://github.com/akiran/react-foundation-apps)
 * [React Forms](http://prometheusresearch.github.io/react-forms/)
 * [Elemental UI](http://elemental-ui.com)
-
+* [Belle](https://github.com/nikgraf/belle/)
