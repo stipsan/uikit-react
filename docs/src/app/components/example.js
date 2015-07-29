@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 class LoadingExample extends React.Component {
   render() {
@@ -8,9 +8,16 @@ class LoadingExample extends React.Component {
 
 export default class Example extends React.Component {
 
+  static propTypes = {
+    name: PropTypes.string,
+    uikit: PropTypes.arrayOf(PropTypes.oneOf(['Button', 'Close', 'Alert', 'SimpleTransitionGroup'])),
+    codeText: PropTypes.string.isRequired,
+    import: PropTypes.arrayOf(PropTypes.object.isRequired)
+  }
+
   state = {component: false}
 
-  static defaultProps = {name: 'Example', uikit: [''], initialState: false}
+  static defaultProps = {name: 'Example', initialState: false}
   
   componentDidMount() {
     if('production' !== process.env.NODE_ENV) console.log('The component mounted');
@@ -33,7 +40,7 @@ export default class Example extends React.Component {
   `;
     }
     
-    return React.createElement(this.state.component, {codeText: `
+    return React.createElement(this.state.component, {codeText: this.props.uikit ? `
 let {${this.props.uikit.join(', ')}} = UIkitReact;
               
 class ${this.props.name} extends React.Component {
@@ -46,7 +53,7 @@ class ${this.props.name} extends React.Component {
 };
 
 ReactDOM.render(<${this.props.name}/>, mountNode);
-        `});
+        ` : this.props.codeText});
   }
 
 }

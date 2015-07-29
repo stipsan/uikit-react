@@ -4,10 +4,10 @@
   "description": "A documentation site for React UIkit",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
     "build": "webpack-dev-server --config webpack.config.js --content-base build --inline",
     "dist": "NODE_ENV=production webpack --debug false --devtool false --optimize-dedupe -p",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -56,6 +56,8 @@
   },
   "private": true,
   "dependencies": {
+    "firebase": "^2.2.7",
+    "gravatar": "^1.3.0",
     "uikit-react": "latest"
   }
 }

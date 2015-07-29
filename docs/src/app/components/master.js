@@ -20,6 +20,7 @@ export default class Master extends React.Component {
           <NavLink to="/getting-started">Getting Started</NavLink>
           <NavLink to="/core">Core</NavLink>
           <NavLink to="/components">Components</NavLink>
+          <NavLink to="/examples">Examples</NavLink>
           <NavLink to="/customizer" disabled disabledClassName='uk-hidden'>Customizer</NavLink>
           <NavLink to="/playground" disabled disabledClassName='uk-hidden'>Playground</NavLink>
         </MasterNavBar>
