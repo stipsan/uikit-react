@@ -23,6 +23,7 @@ var rootRoute = {
       require('./components/routes/gettingstarted'),
       require('./components/routes/core'),
       require('./components/routes/components'),
+      require('./components/routes/examples'),
       require('./components/routes/404')
     ]}
   ]
