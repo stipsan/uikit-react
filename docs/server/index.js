@@ -1,5 +1,6 @@
 import compressionMiddleware from 'compression'
 import express from 'express'
+import path from 'path'
 
 import htmlMiddleware from './middleware/html'
 
@@ -12,7 +13,9 @@ app.set('x-powered-by', false)
 app.enable('trust proxy')
 
 app.use(compressionMiddleware())
-app.use(express.static('public', { maxAge: 86400000 * 365, index: false }))
+app.use(express.static(path.resolve(__dirname, '..', 'public'), {
+  maxAge: 86400000 * 365, index: false
+}))
 app.use(htmlMiddleware())
 
 app.listen(process.env.PORT || 5000)

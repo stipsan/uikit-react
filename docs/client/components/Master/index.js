@@ -3,14 +3,14 @@ import { PropTypes } from 'react'
 import MasterNavBar from './navbar'
 import NavLink from './navlink'
 
-const Master = ({ loading }) => (
+const Master = ({ loading, children }) => (
   <div style={{ opacity: loading ? 0.66 : 1 }}>
     <MasterNavBar loading={loading}>
       <NavLink to="/getting-started">{'Getting Started'}</NavLink>
       <NavLink to="/components">{'Components'}</NavLink>
       <NavLink to="/examples">{'Examples'}</NavLink>
     </MasterNavBar>
-    {this.props.children}
+    {children}
     <div className="tm-footer">
       <div className="uk-container uk-container-center uk-text-center">
         <ul className="uk-subnav uk-subnav-line uk-flex-center">

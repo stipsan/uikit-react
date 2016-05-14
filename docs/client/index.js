@@ -1,3 +1,5 @@
+import './less/main.less'
+
 import { render } from 'react-dom'
 import { Router, IndexRoute, Route, browserHistory } from 'react-router'
 

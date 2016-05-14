@@ -1,7 +1,6 @@
 /* eslint import/no-extraneous-dependencies: "off" */
 /* eslint import/newline-after-import: "off" */
 
-const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -83,6 +82,9 @@ const entry = 'production' === process.env.NODE_ENV ? {
   ],
 }
 
+const cssnanoOptIn = 'zindex&normalizeUrl&discardUnused&mergeIdents&discardDuplicates&reduceIdents'
+const importLoaders = '&importLoaders=4'
+
 module.exports = {
 
   debug: true,
@@ -112,7 +114,18 @@ module.exports = {
         { test: /\.json$/, loader: 'json' },
     ],
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.less$/, loader: ExtractTextPlugin.extract(
+       'style',
+       `css?${cssnanoOptIn}${importLoaders}!autoprefixer!less!uikit`,
+        {
+          publicPath: 'docs/public'
+        }
+     ) },
+      {
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
+        loader: 'url?limit=1000&name=images/[hash].[ext]'
+      }
     ],
   },
 
