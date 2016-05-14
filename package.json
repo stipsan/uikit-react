@@ -111,7 +111,7 @@
     "redbox-react": "^1.2.4",
     "require-dir": "^0.3.0",
     "style-loader": "^0.13.1",
-    "uikit-loader": "^1.0.0-alpha1",
+    "uikit-loader": "^1.0.0",
     "underscore": "^1.8.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
