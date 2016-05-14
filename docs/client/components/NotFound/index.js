@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-export default class NotFound extends Component {
+class NotFound extends Component {
   render() {
     return (
       <div className="tm-middle">
@@ -11,3 +11,5 @@ export default class NotFound extends Component {
     )
   }
 }
+
+export default NotFound
