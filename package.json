@@ -70,6 +70,7 @@
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.1.1",
     "express": "^4.13.4",
+    "express-history-spa-fallback": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-less": "^3.1.0",
