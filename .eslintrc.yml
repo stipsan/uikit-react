@@ -2,3 +2,5 @@ parser: babel-eslint
 extends: stipsan
 rules:
   import/no-extraneous-dependencies: off
+  # temp disable until bugfix
+  import/no-return-assign: off

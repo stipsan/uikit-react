@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 export default class Gettingstarted extends React.Component {
-    
+
   render() {
     return (
       <div className="tm-middle">
@@ -24,6 +24,6 @@ export default class Gettingstarted extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
-};
+}

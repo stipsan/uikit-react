@@ -1,33 +1,39 @@
-var React = require('react');
-var {Link} = require('react-router');
+import { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
-var NavLink = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.object
-  },
-  
-  getDefaultProps: function(){
-    return {disabled: false, disabledClassName: 'uk-text-muted uk-link-muted tm-link-muted'};
-  },
-
-  render: function () {
-    var {disabled, disabledClassName, ...other} = this.props;
-    
-    if(disabled) {
-      return <li><a 
-          {...other} 
-          className={disabledClassName}
-          title="Coming soon…"
-          style={{cursor: 'not-allowed', backgroundColor: 'transparent'}}
-        /></li>;
-    } else {
-      var { router } = this.context;
-      var isActive = router.isActive(this.props.to, this.props.params, this.props.query);
-      var className = isActive ? 'uk-active' : '';
-      
-      return <li className={className}><Link {...other} /></li>;
-    }
+export default class NavLink extends Component {
+  static contextTypes = {
+    router: PropTypes.object
   }
-});
 
-module.exports = NavLink;
+  static propTypes = {
+    disabled: PropTypes.bool,
+    disabledClassName: PropTypes.string.isRequired,
+  }
+
+  static defaultProps = {
+    disabled: false,
+    disabledClassName: 'uk-text-muted uk-link-muted tm-link-muted',
+  }
+
+  render() {
+    const { disabled, disabledClassName, ...other } = this.props
+
+    if (disabled) {
+      return <li><a
+        {...other}
+        className={disabledClassName}
+        title="Coming soon…"
+        style={{ cursor: 'not-allowed', backgroundColor: 'transparent' }}
+                 /></li>
+    }
+
+    const { router } = this.context
+    const isActive = router.isActive(this.props.to, this.props.params, this.props.query)
+    const className = isActive ? 'uk-active' : ''
+
+    return <li className={className}><Link {...other} /></li>
+
+
+  }
+}
