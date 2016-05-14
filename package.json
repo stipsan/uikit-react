@@ -46,7 +46,7 @@
     "uikit",
     "ecosystem-react"
   ],
-  "author": "stipsan",
+  "author": "Stian Didriksen <stipsan@gmail.com> (http://github.com/stipsan)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stipsan/uikit-react/issues"
