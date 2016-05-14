@@ -11,7 +11,7 @@
     "webpack": "webpack-dev-server --config webpack.config.js --content-base build --inline",
     "dist": "NODE_ENV=production webpack --debug false --devtool false --optimize-dedupe -p",
     "postinstall": "bower install",
-    "start": "gulp"
+    "start": "babel-node docs/server"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
@@ -54,6 +54,7 @@
   "homepage": "https://uikit-react.firebaseapp.com/",
   "devDependencies": {
     "babel-core": "^6.8.0",
+    "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
     "bower": "^1.7.9",
     "brfs": "^1.4.3",
@@ -61,8 +62,14 @@
     "browserify": "^13.0.1",
     "buildbranch": "1.0.0",
     "codemirror": "^5.14.2",
+    "compression": "^1.6.2",
     "connect-history-api-fallback": "^1.2.0",
+    "eslint": "^2.10.0",
     "eslint-config-stipsan": "1.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.1.1",
+    "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-less": "^3.1.0",

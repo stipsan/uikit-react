@@ -14,7 +14,7 @@ describe('Close', function() {
 
     expect(anchor.getDOMNode().className).toContain('uk-close-alt');
   });
-	
+
 	it('supports additional event handlers, like onClick', function() {
     var React = require('react/addons');
     var Close = require('../Close.js');
