@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default class Home extends React.Component {
 
@@ -30,11 +30,11 @@ export default class Home extends React.Component {
                 <div className="uk-width-medium-1-4">
                   <div className="uk-panel">
                     <img
-  className="tm-image-pull"
-  src="images/icon_less.svg"
-  width={200}
-  height={140}
-  alt="LESS" />
+                      className="tm-image-pull"
+                      src="images/icon_less.svg"
+                      width={200}
+                      height={140}
+                      alt="LESS" />
                     <h2 className="uk-margin-top-remove">LESS</h2>
                     <p>
   UIkit is developed in <a href="http://lesscss.org">LESS</a> to write well-structured, extendable code which is easy to maintain.
@@ -44,11 +44,11 @@ export default class Home extends React.Component {
                 <div className="uk-width-medium-1-4">
                   <div className="uk-panel">
                     <img
-  className="tm-image-pull"
-  src="images/icon_components.svg"
-  width={200}
-  height={140}
-  alt="Components" />
+                      className="tm-image-pull"
+                      src="images/icon_components.svg"
+                      width={200}
+                      height={140}
+                      alt="Components" />
                     <h2 className="uk-margin-top-remove">Components</h2>
                     <p>
   A collection of small, responsive components using consistent and conflict-free naming conventions.
@@ -58,11 +58,11 @@ export default class Home extends React.Component {
                 <div className="uk-width-medium-1-4">
                   <div className="uk-panel">
                     <img
-  className="tm-image-pull"
-  src="images/icon_themes.svg"
-  width={200}
-  height={140}
-  alt="Themes" />
+                      className="tm-image-pull"
+                      src="images/icon_themes.svg"
+                      width={200}
+                      height={140}
+                      alt="Themes" />
                     <h2 className="uk-margin-top-remove">Customizer</h2>
                     <p>
   UIkit's very basic style can be extended with themes and is easy to customize to create your own look.
@@ -72,11 +72,11 @@ export default class Home extends React.Component {
                 <div className="uk-width-medium-1-4">
                   <div className="uk-panel">
                     <img
-  className="tm-image-pull"
-  src="/images/icon_responsive.svg"
-  width={200}
-  height={140}
-  alt="Responsive" />
+                      className="tm-image-pull"
+                      src="/images/icon_responsive.svg"
+                      width={200}
+                      height={140}
+                      alt="Responsive" />
                     <h2 className="uk-margin-top-remove">Responsive</h2>
                     <p>
   With the mobile-first approach UIkit provides a consistent experience from phones and tablets to desktops.
@@ -87,7 +87,7 @@ export default class Home extends React.Component {
             </div>
           </div>
         </div>
-    );
+    )
   }
 
 }

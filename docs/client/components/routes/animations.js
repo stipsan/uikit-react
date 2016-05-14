@@ -1,8 +1,9 @@
-import React from 'react';
-import {SimpleTransitionGroup} from 'uikit-react';
-import Example from '../example.js';
+import React from 'react'
+import { SimpleTransitionGroup } from 'uikit-react'
 
-export default class AnimationPage extends React.Component{
+import Example from '../example.js'
+
+export default class AnimationPage extends React.Component {
 
   render() {
 
@@ -18,10 +19,10 @@ export default class AnimationPage extends React.Component{
             <h2 id="usage">
               <a href="#usage" className="uk-link-reset">Usage</a>
             </h2>
-            <Example uikit={['SimpleTransitionGroup']} initialState={{items: [1,2,3,4,5,6,7,8,9], next: 10}} codeText={`
+            <Example uikit={['SimpleTransitionGroup']} initialState={{ items: [1, 2, 3, 4, 5, 6, 7, 8, 9], next: 10 }} codeText={`
               {items = this.state.items.map((item, key) => <div key={'item-'+item} className="bounceIn animateds uk-width-medium-1-5 uk-margin-bottom">
-                <div className="uk-panel uk-panel-box uk-margin-bottom" 
-                     style={{minHeight: 20}} 
+                <div className="uk-panel uk-panel-box uk-margin-bottom"
+                     style={{minHeight: 20}}
                      onClick={function(i){
                        this.state.items.splice(i, 1), this.setState(this.state);
                 }.bind(this, key)}>
@@ -29,8 +30,8 @@ export default class AnimationPage extends React.Component{
                 </div>
               </div>), ''}
               <div key="add" className="uk-width-medium-1-5 uk-margin-bottom" style={{opacity: 0.6}}>
-                <div className="uk-panel uk-panel-box uk-margin-bottom" 
-                     style={{minHeight: 20}} 
+                <div className="uk-panel uk-panel-box uk-margin-bottom"
+                     style={{minHeight: 20}}
                      onClick={function(i){
                        this.state.items.push(this.state.next++), this.setState(this.state);
                 }.bind(this)}>
@@ -47,6 +48,6 @@ export default class AnimationPage extends React.Component{
             `} />
           <p>If you're more interested in using the animations that ship with UIkit, stop worrying and just use it <a href="http://getuikit.com/docs/animation.html">like you always have</a>.</p>
           </article>
-    );
+    )
   }
-};
+}
