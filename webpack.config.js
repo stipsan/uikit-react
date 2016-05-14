@@ -109,6 +109,12 @@ module.exports = {
                 '/' : `http://${devServerHostName}:${devServerPort}/`,
   },
 
+  resolve: {
+    alias: {
+      'uikit-react': './src'
+    }
+  },
+
   module: {
     preLoaders: [
         { test: /\.json$/, loader: 'json' },

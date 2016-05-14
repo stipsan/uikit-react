@@ -9,6 +9,9 @@ export default class NavLink extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     disabledClassName: PropTypes.string.isRequired,
+    params: PropTypes.object,
+    query: PropTypes.object,
+    to: PropTypes.object,
   }
 
   static defaultProps = {
