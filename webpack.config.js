@@ -1,58 +1,64 @@
-var fs = require('fs');
-var path = require('path');
-var webpack = require('webpack');
+/* eslint import/no-extraneous-dependencies: "off" */
+/* eslint import/newline-after-import: "off" */
+
+const fs = require('fs')
+const path = require('path')
+const webpack = require('webpack')
+
+const devServerHostName = process.env.DEV_SERVER_HOST_NAME || 'localhost'
+const devServerPort = process.env.DEV_SERVER_PORT || '8080'
+
+const entry = 'production' === process.env.NODE_ENV ? {
+  client: [
+    'babel-polyfill',
+    './docs/client/index',
+  ],
+} : {
+  client: [
+    `webpack-dev-server/client?http://${devServerHostName}:${devServerPort}/`,
+    'webpack/hot/dev-server',
+    'babel-polyfill',
+    './docs/client/index',
+  ],
+}
 
 module.exports = {
 
   debug: true,
 
-  devtool: 'source-map',
+  devtool: 'production' === process.env.NODE_ENV ? 'source-map' : 'cheap-module-eval-source-map',
 
-  entry: {
-      vendor: ['babel-core/external-helpers'],
-      app: ['./src/app/app.js']
-    },
+  entry,
+
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    publicPath: `http://${devServerHostName}:${devServerPort}/`,
+    hot: true,
+    noInfo: true,
+    headers: { 'Access-Control-Allow-Origin': '*' },
+  },
 
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, 'docs', 'public'),
     filename: '[name].js',
     chunkFilename: '[id].[hash].bundle.js',
-    publicPath: '/'
+    publicPath: 'production' === process.env.NODE_ENV ?
+                '/' : `http://${devServerHostName}:${devServerPort}/`,
   },
 
   module: {
+    preLoaders: [
+        { test: /\.json$/, loader: 'json' },
+    ],
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
     ],
-    noParse: /babel-core\/browser/,
-  },
-
-  resolve: {
-    alias: {
-      'app': process.cwd() + '/src/app'
-    }
-  },
-  
-  resolveLoader: {
-      root: [
-        path.join(__dirname, "node_modules")
-      ]
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        
-        // filename: "vendor.js"
-        // (Give the chunk a different name)
-
-        minChunks: Infinity,
-        // (with more entries, this ensures that no other module
-        //  goes into the vendor chunk)
-    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     })
   ]
 
-};
+}
