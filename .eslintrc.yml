@@ -1,2 +1,4 @@
 parser: babel-eslint
 extends: stipsan
+rules:
+  import/no-extraneous-dependencies: off

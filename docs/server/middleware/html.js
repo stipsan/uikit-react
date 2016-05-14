@@ -1,5 +1,3 @@
-/* eslint import/no-extraneous-dependencies: "off" */
-
 import fallback from 'express-history-spa-fallback'
 
 const webpackToAssets = config =>
@@ -33,7 +31,6 @@ module.exports = function htmlMiddleware() {
     if (!assets) {
       /* eslint global-require: "off"*/
       /* eslint import/no-unresolved: "off" */
-      console.log(require('../../../webpack.config.js'))
       assets = 'production' === process.env.NODE_ENV ?
         require('../../../assets.json') :
         webpackToAssets(require('../../../webpack.config.js'))

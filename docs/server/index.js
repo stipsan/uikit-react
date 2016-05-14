@@ -1,5 +1,3 @@
-/* eslint import/no-extraneous-dependencies: "off" */
-
 import compressionMiddleware from 'compression'
 import express from 'express'
 

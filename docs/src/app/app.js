@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router, Route} from 'react-router';
-import AsyncProps from 'react-router/lib/experimental/AsyncProps';
-import MasterNavBar from './components/navbar.js';
+import AsyncProps from 'react-router/lib/experimental/AsyncProps'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Router, Route } from 'react-router'
 
-//const adapter = 'production' !== process.env.NODE_ENV ? 'HashHistory' : 'BrowserHistory';
+import MasterNavBar from './components/navbar.js'
+
+// const adapter = 'production' !== process.env.NODE_ENV ? 'HashHistory' : 'BrowserHistory';
 // Just use HashHistory for now
-const adapter = 'HashHistory';
-let { history } = require('react-router/lib/' + adapter);
+const adapter = 'HashHistory'
+let { history } = require('react-router/lib/' + adapter)
 
 var rootRoute = {
   component: AsyncProps,
 
   renderInitialLoad() {
-    return <MasterNavBar />;
+    return <MasterNavBar />
   },
 
   childRoutes: [{
@@ -25,9 +26,9 @@ var rootRoute = {
       require('./components/routes/components'),
       require('./components/routes/examples'),
       require('./components/routes/404')
-    ]}
+    ] }
   ]
-};
+}
 
 ReactDOM.render((
   <Router
@@ -35,4 +36,4 @@ ReactDOM.render((
     history={history}
     createElement={AsyncProps.createElement}
   />
-), document.getElementById('hotzone'));
+), document.getElementById('hotzone'))
