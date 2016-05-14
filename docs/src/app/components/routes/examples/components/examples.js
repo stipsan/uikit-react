@@ -35,7 +35,7 @@ class Comment extends React.Component {
             <h4 className="uk-comment-title">{this.props.author}</h4>
             <div className="uk-comment-meta">12 days ago | Profile | #</div>
         </header>
-        <div className="uk-comment-body" dangerouslySetInnerHTML={{__html: this.props.text}} />
+        <div className="uk-comment-body">{this.props.text}</div>
     </article>;
   }
 }
