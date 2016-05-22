@@ -76,7 +76,7 @@
     "connect-history-api-fallback": "^1.2.0",
     "css-loader": "^0.23.1",
     "eslint": "^2.10.0",
-    "eslint-config-stipsan": "1.0.1",
+    "eslint-config-stipsan": "1.0.2",
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.1.1",
