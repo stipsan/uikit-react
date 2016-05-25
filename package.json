@@ -109,7 +109,7 @@
     "react-transform-count-renders": "1.0.1",
     "react-transform-hmr": "1.0.4",
     "react-transform-render-visualizer": "0.4.0",
-    "redbox-react": "^1.2.4",
+    "redbox-react": "^1.2.6",
     "require-dir": "^0.3.0",
     "style-loader": "^0.13.1",
     "uikit": "^2.26.3",
