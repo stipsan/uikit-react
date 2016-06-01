@@ -102,7 +102,7 @@
     "node-libs-browser": "^1.0.0",
     "pretty-hrtime": "^1.0.2",
     "purifycss-webpack-plugin": "^2.0.3",
-    "react": "^15.0.2",
+    "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.0",
     "react-transform-catch-errors": "1.0.2",
