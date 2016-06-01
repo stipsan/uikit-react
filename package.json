@@ -78,7 +78,7 @@
     "eslint": "^2.11.1",
     "eslint-config-stipsan": "1.1.0",
     "eslint-plugin-import": "^1.8.0",
-    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "^1.2.1",
     "eslint-plugin-react": "^5.1.1",
     "express": "^4.13.4",
     "express-history-spa-fallback": "^3.0.0",
