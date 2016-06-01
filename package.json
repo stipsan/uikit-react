@@ -71,7 +71,7 @@
     "browserify": "^13.0.1",
     "buildbranch": "1.0.0",
     "classnames-loader": "^1.0.0",
-    "codemirror": "^5.14.2",
+    "codemirror": "^5.15.0",
     "compression": "^1.6.2",
     "connect-history-api-fallback": "^1.2.0",
     "css-loader": "^0.23.1",
