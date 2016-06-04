@@ -67,7 +67,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "bower": "^1.7.9",
     "brfs": "^1.4.3",
-    "browser-sync": "^2.12.10",
+    "browser-sync": "^2.12.11",
     "browserify": "^13.0.1",
     "buildbranch": "1.0.0",
     "classnames-loader": "^1.0.0",
