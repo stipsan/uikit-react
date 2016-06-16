@@ -80,7 +80,7 @@
     "eslint-plugin-import": "^1.8.1",
     "eslint-plugin-jsx-a11y": "^1.5.2",
     "eslint-plugin-react": "^5.1.1",
-    "express": "^4.13.4",
+    "express": "^4.14.0",
     "express-history-spa-fallback": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
