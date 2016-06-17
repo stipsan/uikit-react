@@ -79,7 +79,7 @@
     "eslint-config-stipsan": "1.1.0",
     "eslint-plugin-import": "^1.8.1",
     "eslint-plugin-jsx-a11y": "^1.5.3",
-    "eslint-plugin-react": "^5.2.1",
+    "eslint-plugin-react": "^5.2.2",
     "express": "^4.14.0",
     "express-history-spa-fallback": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
