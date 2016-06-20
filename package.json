@@ -83,7 +83,7 @@
     "express": "^4.14.0",
     "express-history-spa-fallback": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
+    "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-less": "^3.1.0",
