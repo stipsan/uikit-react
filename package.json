@@ -104,7 +104,7 @@
     "purifycss-webpack-plugin": "^2.0.3",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-router": "^2.5.0",
+    "react-router": "^2.5.1",
     "react-transform-catch-errors": "1.0.2",
     "react-transform-count-renders": "1.0.1",
     "react-transform-hmr": "1.0.4",
