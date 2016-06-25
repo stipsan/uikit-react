@@ -4,7 +4,7 @@
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
-    "test": "jest",
+    "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
