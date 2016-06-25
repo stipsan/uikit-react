@@ -1,47 +1,48 @@
 var React = require('react'),
-            classNames = require('classnames');
+  classNames = require('classnames')
 
 var DropDown = React.createClass({
-  propTypes : {
-    className : React.PropTypes.string,
+  propTypes: {
+    className: React.PropTypes.string,
   },
-  getInitialState: function() {
+  getInitialState() {
     return {
       isActive: false,
       mode: true,
-    };
+    }
   },
-  getDefaultProps: function(){
+  getDefaultProps() {
     return {
       type: 'button',
       disabled: false,
       className: '',
-      onMouseOver: false
-    };
+      onHover: false,
+    }
   },
-  handleMouseOver: function(event) {
-    this.setState({isActive: !this.state.isActive});
+  handleMouseOver(event) {
+    this.setState({ isActive: !this.state.isActive })
   },
-  mouseClick:  function(event)
+  mouseClick(event)
   {
-    this.setState({mode : {mode:'click'}});
+    this.setState({ isActive: !this.state.isActive })
   },
-  render : function(){
+  render() {
     const className = classNames('uk-button-dropdown', {
-      'uk-open' : this.state.isActive
-    });
+      'uk-open': this.state.isActive,
+    })
     return (
       <div
         className={className}
-        onMouseOver={this.handleMouseOver}
+        onMouseOver={this.props.onHover && this.handleMouseOver}
         onClick={this.mouseClick}
         data-uk-dropdown={this.state.mode}
         aria-haspopup="true"
-        aria-expanded={this.state.isActive}>
+        aria-expanded={this.state.isActive}
+      >
         {this.props.children}
       </div>
-    );
-  }
-});
+    )
+  },
+})
 
-module.exports = DropDown;
+module.exports = DropDown

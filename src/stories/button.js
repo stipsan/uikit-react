@@ -1,5 +1,5 @@
-import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import React from 'react'
+import { storiesOf, action } from '@kadira/storybook'
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -12,4 +12,4 @@ storiesOf('Button', module)
   ))
   .add('with no text', () => (
     <button></button>
-));
+))
