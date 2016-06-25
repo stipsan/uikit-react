@@ -5,6 +5,7 @@
   "main": "./lib",
   "scripts": {
     "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
+    "test:watch": "npm test -- --watch --growl",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
