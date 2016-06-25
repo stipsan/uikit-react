@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { Component, PropTypes } from 'react'
 
-export default class DropDown extends Component {
+export default class Dropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
@@ -16,13 +16,11 @@ export default class DropDown extends Component {
   }
   state = { isActive: false, mode: true }
 
-  handleMouseOver = (event) => {
-    event.preventDefault()
+  handleMouseOver = () => {
     this.setState({ isActive: !this.state.isActive })
   }
 
-  mouseClick = (event) => {
-    event.preventDefault()
+  mouseClick = () => {
     this.setState({ isActive: !this.state.isActive })
   }
 
@@ -45,4 +43,4 @@ export default class DropDown extends Component {
   }
 }
 
-module.exports = DropDown
+module.exports = Dropdown
