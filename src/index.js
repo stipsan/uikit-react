@@ -1,5 +1,7 @@
-module.exports = {
-  Button: require('./Button'),
-  Close: require('./Close'),
-  SimpleTransitionGroup: require('./SimpleTransitionGroup')
-};
+import Button from './Button'
+import Dropdown from './Dropdown'
+
+export default {
+  Button,
+  Dropdown,
+}
