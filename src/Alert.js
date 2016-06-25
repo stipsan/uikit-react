@@ -3,7 +3,7 @@ var React = require('react');
 var Alert = React.createClass({
 
     propTypes: {
-      success: React.PropTypes.bool, 
+      success: React.PropTypes.bool,
       danger: React.PropTypes.bool,
       warning: React.PropTypes.bool,
       large: React.PropTypes.bool,

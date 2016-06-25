@@ -2,11 +2,11 @@ var React = require('react'),
     classNames = require('classnames');
 
 var Button = React.createClass({
-    
+
   propTypes: {
     type: React.PropTypes.string,
-    primary: React.PropTypes.bool, 
-    success: React.PropTypes.bool, 
+    primary: React.PropTypes.bool,
+    success: React.PropTypes.bool,
     danger: React.PropTypes.bool,
     link: React.PropTypes.bool,
     mini: React.PropTypes.bool,
@@ -19,15 +19,15 @@ var Button = React.createClass({
       React.PropTypes.func
     ])
   },
-    
+
   getInitialState: function() {
     return { isActive: false };
   },
   getDefaultProps: function(){
     return {
-      type: 'button', 
-      primary: false, 
-      success: false, 
+      type: 'button',
+      primary: false,
+      success: false,
       danger: false,
       link: false,
       mini: false,
@@ -42,11 +42,11 @@ var Button = React.createClass({
     this.setState({isActive: !this.state.isActive});
   },
   render: function() {
-    
+
     var props = this.props,
         classes = classNames('uk-button', this.props.className, {
-          "uk-button-primary": this.props.primary, 
-          "uk-button-success": this.props.success, 
+          "uk-button-primary": this.props.primary,
+          "uk-button-success": this.props.success,
           "uk-button-danger": this.props.danger,
           "uk-button-link": this.props.link,
           "uk-button-mini": this.props.mini,
