@@ -20,7 +20,7 @@ export default class Dropdown extends Component {
     this.setState({ isActive: !this.state.isActive })
   }
 
-  mouseClick = () => {
+  handleClick = () => {
     this.setState({ isActive: !this.state.isActive })
   }
 
@@ -32,7 +32,7 @@ export default class Dropdown extends Component {
       <div
         className={className}
         onMouseOver={this.props.onHover && this.handleMouseOver}
-        onClick={this.mouseClick}
+        onClick={this.handleClick}
         data-uk-dropdown={this.state.mode}
         aria-haspopup="true"
         aria-expanded={this.state.isActive}
@@ -42,5 +42,3 @@ export default class Dropdown extends Component {
     )
   }
 }
-
-module.exports = Dropdown

@@ -15,7 +15,7 @@ describe('<Dropdown />', () => {
   })
 
   it('toggles the class name uk-open after mouse click', () => {
-    const wrapper = shallow(<Dropdown onClick />)
+    const wrapper = shallow(<Dropdown handleClick />)
 
     expect(wrapper.is('.uk-button-dropdown')).toBe(true)
 
