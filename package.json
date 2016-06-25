@@ -8,8 +8,6 @@
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
-    "webpack": "webpack-dev-server --config webpack.config.js --content-base build --inline",
-    "dist": "NODE_ENV=production webpack --debug false --devtool false --optimize-dedupe -p",
     "start": "babel-node docs/server",
     "hmr": "webpack-dev-server"
   },
