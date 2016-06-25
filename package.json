@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
     "test:watch": "npm test -- --watch --growl",
+    "lint": "eslint .",
+    "codeclimate": "codeclimate-test-reporter < ./coverage/lcov.info",
+    "coverage": "npm run coveralls && npm run codeclimate",
+    "coveralls": "node_modules/.bin/babel-node node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --recursive test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
