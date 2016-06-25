@@ -63,4 +63,4 @@ var Button = React.createClass({
   },
 })
 
-module.exports = Button;
+module.exports = Button
