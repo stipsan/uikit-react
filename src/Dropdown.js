@@ -1,31 +1,31 @@
-var React = require('react'),
-  classNames = require('classnames')
+import classNames from 'classnames'
+import React, { Component, PropTypes } from 'react'
 
-var DropDown = React.createClass({
-  propTypes: {
-    className: React.PropTypes.string,
-  },
-  getInitialState() {
-    return {
-      isActive: false,
-      mode: true,
-    }
-  },
-  getDefaultProps() {
-    return {
-      type: 'button',
-      disabled: false,
-      className: '',
-      onHover: false,
-    }
-  },
-  handleMouseOver(event) {
+export default class DropDown extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node,
+    onHover: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    type: 'button',
+    disabled: false,
+    className: '',
+    onHover: false,
+  }
+  state = { isActive: false, mode: true }
+
+  handleMouseOver = (event) => {
+    event.preventDefault()
     this.setState({ isActive: !this.state.isActive })
-  },
-  mouseClick(event)
-  {
+  }
+
+  mouseClick = (event) => {
+    event.preventDefault()
     this.setState({ isActive: !this.state.isActive })
-  },
+  }
+
   render() {
     const className = classNames('uk-button-dropdown', {
       'uk-open': this.state.isActive,
@@ -42,7 +42,7 @@ var DropDown = React.createClass({
         {this.props.children}
       </div>
     )
-  },
-})
+  }
+}
 
 module.exports = DropDown

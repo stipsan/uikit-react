@@ -1,13 +1,13 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   module: {
     loaders: [
       {
         test: /\.css?$/,
-        loaders: [ 'style', 'raw' ],
-        include: path.resolve(__dirname, '../')
-      }
-    ]
-  }
+        loaders: ['style', 'raw'],
+        include: path.resolve(__dirname, '../'),
+      },
+    ],
+  },
 }

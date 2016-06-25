@@ -7,7 +7,10 @@ storiesOf('Dropdown', module)
   .add('with text', () => (
     <div className="uk-container uk-margin-top">
       <Dropdown onHover>
-        <button className="uk-button" onMouseOver={action('onMouseOver')}>Hover me <i className="uk-icon-caret-down"></i></button>
+        <button className="uk-button" onMouseOver={action('onMouseOver')}>
+        Hover
+          <i className="uk-icon-caret-down"></i>
+        </button>
         <div className="uk-dropdown uk-dropdown-bottom">
           <ul className="uk-nav uk-nav-dropdown">
             <li><a className="uk-warning" href="#">Item</a></li>
@@ -21,8 +24,11 @@ storiesOf('Dropdown', module)
         </div>
       </Dropdown>
       <br /><br />
-      <Dropdown refs="click">
-        <button className="uk-button" onClick={action('onClick')}>Click me <i className="uk-icon-caret-down"></i></button>
+      <Dropdown onClick>
+        <button className="uk-button" onClick={action('onClick')}>
+        Click me
+          <i className="uk-icon-caret-down"></i>
+        </button>
         <div className="uk-dropdown uk-dropdown-bottom">
           <ul className="uk-nav uk-nav-dropdown">
             <li><a className="uk-warning" href="#">Item</a></li>
