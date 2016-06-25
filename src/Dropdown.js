@@ -14,7 +14,11 @@ export default class Dropdown extends Component {
     className: '',
     onHover: false,
   }
-  state = { isActive: false, mode: true }
+  state = {
+    isActive: false,
+    mode: true,
+    delay: 0,
+  }
 
   handleMouseOver = () => {
     this.setState({ isActive: !this.state.isActive })
@@ -33,7 +37,7 @@ export default class Dropdown extends Component {
         className={className}
         onMouseOver={this.props.onHover && this.handleMouseOver}
         onClick={this.handleClick}
-        data-uk-dropdown={this.state.mode}
+        data-uk-dropdown={this.state.mode || this.state.delay}
         aria-haspopup="true"
         aria-expanded={this.state.isActive}
       >
