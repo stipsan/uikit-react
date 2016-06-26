@@ -23,16 +23,17 @@ describe('<Dropdown />', () => {
   })
 
   it('toggles the class name uk-open after mouse hover after 1000 second', () => {
-    const wrapper = shallow(<Dropdown delay={1000} />)
+    const wrapper = shallow(<Dropdown delay={100} />)
 
-    expect(wrapper.is('.uk-button-dropdown')).toBe(true)
-    wrapper.simulate('hover')
+    expect(wrapper.hasClass('uk-button-dropdown')).toBe(true)
+    wrapper.simulate('mouseenter')
+    expect(wrapper.hasClass('uk-open')).toBe(false)
 
     return new Promise((resolve) => {
       setTimeout(() => {
-        wrapper.simulate('hover')
+        wrapper.simulate('mouseenter')
         resolve(expect(wrapper.hasClass('uk-open')).toBe(true))
-      }, 1500)
+      }, 100)
     })
   })
 })
