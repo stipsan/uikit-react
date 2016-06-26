@@ -69,5 +69,17 @@
   },
   "dependencies": {
     "classnames": "2.2.5"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Zach Curtis",
+      "email": "zachariahtimothy@gmail.com",
+      "url": "https://github.com/zachariahtimothy"
+    },
+    {
+      "name": "Suresh KUMAR Mukhiya",
+      "email": "itsmeskm99@gmail.com",
+      "url": "https://github.com/sureshHARDIYA"
+    }
+  ]
 }
