@@ -29,11 +29,6 @@ export default class Dropdown extends Component {
   }
 
   static defaultProps = {
-    type: 'button',
-    disabled: false,
-    className: '',
-    onMouseEnter: false,
-    onMouseLeave: false,
     mode: 'hover',
     pos: 'bottom-left',
     offset: 0,
@@ -41,6 +36,8 @@ export default class Dropdown extends Component {
     justify: false,
     hoverDelayIdle: 250,
     preventflip: false,
+    delay: 0,
+    boundary: window,
   }
 
   state = {
