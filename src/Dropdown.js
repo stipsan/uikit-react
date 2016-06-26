@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { Component, PropTypes } from 'react'
 
-export default class Dropdown extends Component {
+export class Dropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
@@ -26,6 +26,7 @@ export default class Dropdown extends Component {
     justify: false,
     hoverDelayIdle: PropTypes.number,
     preventflip: PropTypes.bool,
+    label: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
@@ -41,28 +42,36 @@ export default class Dropdown extends Component {
   }
 
   state = {
-    isActive: false,
-    mode: true,
+    isOpen: false,
   }
 
   handleMouseEnter = () => {
+    if (this.leaveTimeout) {
+      clearTimeout(this.leaveTimeout)
+    }
     if (this.props.delay) {
       setTimeout(() => {
-        this.setState({ isActive: true })
+        this.setState({ isOpen: true })
       }, this.props.delay)
     } else {
-      this.setState({ isActive: true })
+      this.setState({ isOpen: true })
     }
   }
   handleMouseLeave = () => {
-    this.setState({ isActive: false })
+    if (this.props.remaintime) {
+      this.leaveTimeout = setTimeout(() => {
+        this.setState({ isOpen: false })
+      }, this.props.remaintime)
+    } else {
+      this.setState({ isOpen: false })
+    }
   }
   handleClick = () => {
-    this.setState({ isActive: !this.state.isActive })
+    this.setState({ isOpen: !this.state.isOpen })
   }
   render() {
     const className = classNames('uk-button-dropdown', {
-      'uk-open': this.state.isActive,
+      'uk-open': this.state.isOpen,
     })
     return (
       <div
@@ -71,7 +80,7 @@ export default class Dropdown extends Component {
         onMouseLeave={this.props.mode === 'hover' && this.handleMouseLeave}
         onClick={this.props.mode === 'click' && this.handleClick}
         aria-haspopup="true"
-        aria-expanded={this.state.isActive}
+        aria-expanded={this.state.isOpen}
       >
         {this.props.children}
       </div>

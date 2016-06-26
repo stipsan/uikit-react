@@ -2,7 +2,7 @@ import expect from 'expect'
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Dropdown from '../src/Dropdown'
+import { Dropdown } from '../src/Dropdown'
 
 describe('<Dropdown />', () => {
   it('should mirror the same options provided in the official jQuery plugin', () => {

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { Component, PropTypes } from 'react'
 
-export default class Button extends Component {
+export class Button extends Component {
 
   static propTypes = {
     type: PropTypes.string,
