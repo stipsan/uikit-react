@@ -6,7 +6,7 @@ import Dropdown from '../DropDown'
 storiesOf('Dropdown', module)
   .add('with text', () => (
     <div className="uk-container uk-margin-top">
-      <Dropdown onHover>
+      <Dropdown mode="hover">
         <button className="uk-button" onMouseOver={action('onMouseOver')}>
         Hover
           <i className="uk-icon-caret-down"></i>
@@ -24,7 +24,7 @@ storiesOf('Dropdown', module)
         </div>
       </Dropdown>
       <br /><br />
-      <Dropdown onClick>
+      <Dropdown mode="click">
         <button className="uk-button" onClick={action('onClick')}>
         Click me
           <i className="uk-icon-caret-down"></i>
@@ -42,7 +42,7 @@ storiesOf('Dropdown', module)
         </div>
       </Dropdown>
       <br /><br />
-      <Dropdown onHover onDelay>
+      <Dropdown delay={1000} >
         <button className="uk-button" onClick={action('onClick')}>
         Delay me
           <i className="uk-icon-caret-down"></i>
