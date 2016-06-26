@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 
-import Dropdown from '../DropDown'
+import { Dropdown } from '../index'
 
 storiesOf('Dropdown', module)
   .add('with text', () => (
