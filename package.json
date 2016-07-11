@@ -61,7 +61,7 @@
     "react": "15.2.1",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "15.2.0",
-    "react-dom": "15.2.0",
+    "react-dom": "15.2.1",
     "style-loader": "0.13.1",
     "uikit": "2.26.3",
     "url-loader": "0.5.7"
