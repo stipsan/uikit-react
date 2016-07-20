@@ -63,7 +63,7 @@
     "react-addons-test-utils": "15.2.1",
     "react-dom": "15.2.1",
     "style-loader": "0.13.1",
-    "uikit": "2.26.3",
+    "uikit": "2.26.4",
     "url-loader": "0.5.7"
   },
   "dependencies": {
