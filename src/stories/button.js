@@ -1,15 +1,15 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 
+import Button from '../Button'
+
 storiesOf('Button', module)
   .add('with text', () => (
     <div className="uk-container uk-margin-top">
-      <button onClick={action('clicked')} className="uk-button uk-button-primary">Primary</button>
-      <button onClick={action('clicked')} className="uk-button uk-button-success">Success</button>
-      <button onClick={action('clicked')} className="uk-button uk-button-danger">Danger</button>
-      <button onClick={action('clicked')} className="uk-button uk-button-link">Link</button>
+      <Button primary>Submit</Button> &nbsp;
+      <Button success>Submit</Button> &nbsp;
+      <Button danger>Submit</Button> &nbsp;
+      <Button link>Submit</Button> &nbsp;
+      <Button type="submit">Submit</Button>
     </div>
   ))
-  .add('with no text', () => (
-    <button></button>
-))
