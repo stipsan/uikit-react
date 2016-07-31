@@ -1,7 +1,2 @@
-import Button from './Button'
-import Dropdown from './Dropdown'
-
-export default {
-  Button,
-  Dropdown,
-}
+export Button from './Button'
+export Dropdown from './Dropdown'
