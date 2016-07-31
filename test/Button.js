@@ -2,7 +2,7 @@ import React from 'react'
 import expect, { createSpy } from 'expect'
 import { shallow } from 'enzyme'
 
-import { Button } from '../src/Button'
+import Button from '../src/Button'
 
 describe('<Button />', () => {
   it('toggles the className uk-active after click', () => {

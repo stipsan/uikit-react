@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
-
-import { Dropdown } from '../index'
+import { Dropdown } from 'uikit-react'
 
 storiesOf('Dropdown', module)
   .add('with text', () => (

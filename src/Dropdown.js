@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { Component, PropTypes } from 'react'
 
-export class Dropdown extends Component {
+export default class Dropdown extends Component {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
