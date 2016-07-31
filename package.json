@@ -13,7 +13,9 @@
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
-    "storybook": "start-storybook -p 9001"
+    "storybook": "start-storybook -p 9001",
+    "deploy-storybook": "storybook-to-ghpages",
+    "postpublish": "npm run deploy-storybook"
   },
   "repository": {
     "type": "git",
