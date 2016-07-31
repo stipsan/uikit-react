@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
-
-import Button from '../Button'
+import { Button } from 'uikit-react'
 
 storiesOf('Button', module)
   .add('with text', () => (
