@@ -43,20 +43,30 @@ export default class Button extends Component {
   }
 
   render() {
-    const props = this.props
-    const className = classNames('uk-button', props.className, {
-      'uk-button-primary': props.primary,
-      'uk-button-success': props.success,
-      'uk-button-danger': props.danger,
-      'uk-button-link': props.link,
-      'uk-button-mini': props.mini,
-      'uk-button-small': props.small,
-      'uk-button-large': props.large,
+    const {
+      primary,
+      success,
+      danger,
+      link,
+      mini,
+      small,
+      large,
+      className: customClassName,
+      ...other,
+    } = this.props
+    const className = classNames('uk-button', customClassName, {
+      'uk-button-primary': primary,
+      'uk-button-success': success,
+      'uk-button-danger': danger,
+      'uk-button-link': link,
+      'uk-button-mini': mini,
+      'uk-button-small': small,
+      'uk-button-large': large,
       'uk-active': this.state.isActive,
     })
 
     return (
-      <button {...props} onClick={this.props.onClick || this.handleClick} className={className} />
+      <button {...other} onClick={this.props.onClick || this.handleClick} className={className} />
     )
   }
 }
