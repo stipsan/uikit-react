@@ -14,3 +14,9 @@ rules:
     - error
   react/jsx-handler-names:
     - error
+  react/react-in-jsx-scope:
+    - off
+  react/jsx-uses-react:
+    - off
+  global-require:
+    - off

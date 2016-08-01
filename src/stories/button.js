@@ -1,14 +1,20 @@
-import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 import { Button } from 'uikit-react'
 
 storiesOf('Button', module)
-  .add('with text', () => (
-    <div className="uk-container uk-margin-top">
-      <Button primary>Submit</Button> &nbsp;
-      <Button success>Submit</Button> &nbsp;
-      <Button danger>Submit</Button> &nbsp;
-      <Button link>Submit</Button> &nbsp;
-      <Button type="submit">Submit</Button>
-    </div>
-  ))
+  .addWithInfo(
+    'Basic Usage',
+    `
+      This is the basic usage with the button with providing a label to show the text.
+    `,
+    () => (
+      <div>
+        <Button primary>Primary</Button> &nbsp;
+        <Button success>Success</Button> &nbsp;
+        <Button danger>Danger</Button> &nbsp;
+        <Button link>Link</Button> &nbsp;
+        <Button type="submit">Submit</Button>
+      </div>
+  ),
+  { inline: true, propTables: [Button] }
+)

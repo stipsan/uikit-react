@@ -1,10 +1,10 @@
 {
   "name": "uikit-react",
-  "version": "0.0.10",
+  "version": "0.1.0-alpha.2",
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --require babel-polyfill --recursive",
+    "test": "mocha --compilers js:babel-register --require babel-polyfill --require ./test/.setup.js --recursive",
     "test:watch": "npm test -- --watch --growl",
     "lint": "eslint .",
     "codeclimate": "codeclimate-test-reporter < ./coverage/lcov.info",
@@ -13,7 +13,9 @@
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
-    "storybook": "start-storybook -p 9001"
+    "storybook": "start-storybook -p 9001",
+    "deploy-storybook": "storybook-to-ghpages",
+    "postpublish": "npm run deploy-storybook"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,10 @@
   },
   "homepage": "https://uikit-react.firebaseapp.com/",
   "devDependencies": {
+    "@kadira/react-storybook-addon-info": "3.1.1",
     "@kadira/storybook": "1.34.1",
+    "@kadira/storybook-deployer": "1.0.0",
+    "autoprefixer": "6.3.7",
     "babel-cli": "6.11.4",
     "babel-core": "6.10.4",
     "babel-eslint": "6.1.2",
@@ -53,20 +58,37 @@
     "eslint-plugin-jsx-a11y": "2.0.1",
     "eslint-plugin-react": "5.2.2",
     "expect": "1.20.2",
+    "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "growl": "1.9.2",
     "istanbul": "1.0.0-alpha.2",
+    "jsdom": "9.2.1",
     "json-loader": "0.5.4",
     "mocha": "3.0.0",
-    "react": "15.3.0",
+    "node-sass": "3.8.0",
+    "postcss-loader": "0.9.1",
     "raw-loader": "^0.5.1",
+    "react": "15.3.0",
     "react-addons-test-utils": "15.3.0",
     "react-dom": "15.3.0",
+    "sass-loader": "4.0.0",
     "style-loader": "0.13.1",
     "uikit": "2.26.4",
     "url-loader": "0.5.7"
   },
   "dependencies": {
     "classnames": "2.2.5"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Zach Curtis",
+      "email": "zachariahtimothy@gmail.com",
+      "url": "https://github.com/zachariahtimothy"
+    },
+    {
+      "name": "Suresh KUMAR Mukhiya",
+      "email": "itsmeskm99@gmail.com",
+      "url": "https://github.com/sureshHARDIYA"
+    }
+  ]
 }
