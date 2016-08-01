@@ -5,22 +5,6 @@ import { shallow } from 'enzyme'
 import Dropdown from '../src/Dropdown'
 
 describe('<Dropdown />', () => {
-  it('should mirror the same options provided in the official jQuery plugin', () => {
-    const wrapper = shallow(<Dropdown />)
-
-    expect(wrapper.instance().props).toEqual({
-      mode: 'hover',
-      pos: 'bottom-left',
-      offset: 0,
-      remainTime: 800,
-      justify: false,
-      boundary: window,
-      delay: 0,
-      hoverDelayIdle: 250,
-      preventflip: false,
-    })
-  })
-
   it('should require a label prop', () => {
     expect(Dropdown.propTypes.label).toEqual(React.PropTypes.string.isRequired)
   })
@@ -82,8 +66,9 @@ describe('<Dropdown />', () => {
 
     return new Promise((resolve) => {
       setTimeout(() => {
+        wrapper.update()
         resolve(expect(wrapper.hasClass('uk-open')).toBe(false))
-      }, 200)
+      }, 120)
     })
   })
 
@@ -99,6 +84,7 @@ describe('<Dropdown />', () => {
 
     return new Promise((resolve) => {
       setTimeout(() => {
+        wrapper.update()
         resolve(
           expect(wrapper.hasClass('uk-open')).toBe(true, 'failed to cancel remainTime timeout')
         )

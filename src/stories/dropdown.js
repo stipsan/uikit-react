@@ -1,4 +1,4 @@
-import { storiesOf, action } from '@kadira/storybook'
+import { storiesOf } from '@kadira/storybook'
 
 import Dropdown from '../Dropdown'
 
