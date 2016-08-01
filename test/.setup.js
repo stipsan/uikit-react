@@ -1,6 +1,8 @@
-var jsdom = require('jsdom').jsdom 
+global.React = require('react')
 
-var exposedProperties = ['window', 'navigator', 'document']
+const jsdom = require('jsdom').jsdom
+
+const exposedProperties = ['window', 'navigator', 'document']
 
 global.document = jsdom('')
 global.window = document.defaultView
