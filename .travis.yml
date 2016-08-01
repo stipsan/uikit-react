@@ -3,7 +3,7 @@ language: node_js
 node_js:
 - "node"
 script: "npm test && npm run lint"
-after_script: npm run coverage
+after_script: "npm run coverage"
 notifications:
   email: false
 env:
