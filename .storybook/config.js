@@ -1,4 +1,4 @@
-import 'uikit/dist/css/uikit.css'
+import './uikit.scss'
 
 import infoAddon from '@kadira/react-storybook-addon-info'
 import { configure, setAddon, addDecorator } from '@kadira/storybook'

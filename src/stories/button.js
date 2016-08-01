@@ -9,10 +9,10 @@ storiesOf('Button', module)
     `,
     () => (
       <div>
-        <Button primary>Submit</Button> &nbsp;
-        <Button success>Submit</Button> &nbsp;
-        <Button danger>Submit</Button> &nbsp;
-        <Button link>Submit</Button> &nbsp;
+        <Button primary>Primary</Button> &nbsp;
+        <Button success>Success</Button> &nbsp;
+        <Button danger>Danger</Button> &nbsp;
+        <Button link>Link</Button> &nbsp;
         <Button type="submit">Submit</Button>
       </div>
   ),

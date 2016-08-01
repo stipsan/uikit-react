@@ -26,16 +26,14 @@ storiesOf('Dropdown', module)
       <div className="">
         <Dropdown>
           <button className="uk-button">
-            Hover
-            <i className="uk-icon-caret-down"></i>
+            Hover <i className="uk-icon-caret-down" />
           </button>
           <Menu />
         </Dropdown>
         <br /> <br />
         <Dropdown mode="click">
           <button className="uk-button">
-            Click me
-            <i className="uk-icon-caret-down"></i>
+            Click me <i className="uk-icon-caret-down" />
           </button>
           <Menu />
         </Dropdown>

@@ -7,13 +7,13 @@ export default class Dropdown extends Component {
     children: PropTypes.node.isRequired,
     delay: PropTypes.number.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
-    remaintime: PropTypes.number.isRequired,
+    remainTime: PropTypes.number.isRequired,
     label: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
     mode: 'hover',
-    remaintime: 800,
+    remainTime: 800,
     delay: 0,
   }
 
@@ -34,10 +34,10 @@ export default class Dropdown extends Component {
     }
   }
   handleMouseLeave = () => {
-    if (this.props.remaintime) {
+    if (this.props.remainTime) {
       this.leaveTimeout = setTimeout(() => {
         this.setState({ isOpen: false })
-      }, this.props.remaintime)
+      }, this.props.remainTime)
     } else {
       this.setState({ isOpen: false })
     }

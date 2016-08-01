@@ -12,7 +12,7 @@ describe('<Dropdown />', () => {
       mode: 'hover',
       pos: 'bottom-left',
       offset: 0,
-      remaintime: 800,
+      remainTime: 800,
       justify: false,
       boundary: window,
       delay: 0,
@@ -71,14 +71,14 @@ describe('<Dropdown />', () => {
     })
   })
 
-  it('should delay removal of uk-open to the timeout in remaintime prop', () => {
-    const wrapper = shallow(<Dropdown remaintime={100} />)
+  it('should delay removal of uk-open to the timeout in remainTime prop', () => {
+    const wrapper = shallow(<Dropdown remainTime={100} />)
 
     wrapper.simulate('mouseenter')
     expect(wrapper.hasClass('uk-open')).toBe(true)
 
     wrapper.simulate('mouseleave')
-    expect(wrapper.hasClass('uk-open')).toBe(true, '.uk-open was removed before remaintime timeout')
+    expect(wrapper.hasClass('uk-open')).toBe(true, '.uk-open was removed before remainTime timeout')
 
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -88,19 +88,19 @@ describe('<Dropdown />', () => {
   })
 
   it('should cancel removal of uk-open on mouseenter', () => {
-    const wrapper = shallow(<Dropdown remaintime={100} />)
+    const wrapper = shallow(<Dropdown remainTime={100} />)
 
     wrapper.simulate('mouseenter')
     expect(wrapper.hasClass('uk-open')).toBe(true)
 
     wrapper.simulate('mouseleave')
-    expect(wrapper.hasClass('uk-open')).toBe(true, '.uk-open was removed before remaintime timeout')
+    expect(wrapper.hasClass('uk-open')).toBe(true, '.uk-open was removed before remainTime timeout')
     wrapper.simulate('mouseenter')
 
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(
-          expect(wrapper.hasClass('uk-open')).toBe(true, 'failed to cancel remaintime timeout')
+          expect(wrapper.hasClass('uk-open')).toBe(true, 'failed to cancel remainTime timeout')
         )
       }, 200)
     })
