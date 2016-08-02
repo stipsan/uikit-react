@@ -2,9 +2,7 @@ uikit-react
 ===========
 
 [![Build Status](https://travis-ci.org/stipsan/uikit-react.svg)](https://travis-ci.org/stipsan/uikit-react)
-[![Dependency Status](https://david-dm.org/stipsan/uikit-react.svg)](https://david-dm.org/stipsan/uikit-react)
-[![devDependency Status](https://david-dm.org/stipsan/uikit-react/dev-status.svg)](https://david-dm.org/stipsan/uikit-react#info=devDependencies)
-[![peerDependency Status](https://david-dm.org/stipsan/uikit-react/peer-status.svg)](https://david-dm.org/stipsan/uikit-react#info=peerDependencies)
+[![Coverage Status](https://coveralls.io/repos/github/stipsan/uikit-react/badge.svg)](https://coveralls.io/github/stipsan/uikit-react)
 
 <img src="https://uikit-react.firebaseapp.com/images/logo.svg" width="300"/>
 
