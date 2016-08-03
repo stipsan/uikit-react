@@ -1,4 +1,4 @@
-import { storiesOf } from '@kadira/storybook'
+import { storiesOf, action } from '@kadira/storybook'
 import { Select } from 'uikit-react'
 
 storiesOf('Select', module)
