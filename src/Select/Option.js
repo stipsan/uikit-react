@@ -17,17 +17,15 @@ export default class Option extends Component {
     optionIndex: PropTypes.number,                // index of the option, used to generate
   }
 
-  handleBlockEvent = (event) => {
+  onFocus = (event) => {
+    if (!this.props.isFocused) {
+      this.props.onFocus(this.props.option, event)
+    }
+  }
+
+  handleBlockEvent = event => {
     event.preventDefault()
     event.stopPropagation()
-    if ((event.target.tagName !== 'A') || !('href' in event.target)) {
-      return
-    }
-    if (event.target.target) {
-      window.open(event.target.href, event.target.target)
-    } else {
-      window.location.href = event.target.href
-    }
   }
 
   handleMouseDown = (event) => {
@@ -62,24 +60,21 @@ export default class Option extends Component {
     this.dragging = false
   }
 
-  onFocus = (event) => {
-    if (!this.props.isFocused) {
-      this.props.onFocus(this.props.option, event)
-    }
-  }
   render() {
     const { option, instancePrefix, optionIndex } = this.props
     let className = classNames(this.props.className, option.className)
     return option.disabled ? (
-      <div
+      <li
         className={className}
-        onMouseDown={this.blockEvent}
+        onMouseDown={this.handleBlockEvent}
         onClick={this.handleBlockEvent}
       >
-        {this.props.children}
-      </div>
+        <a>
+          {this.props.children}
+        </a>
+      </li>
     ) : (
-      <div
+      <li
         className={className}
         style={option.style}
         role="option"
@@ -92,12 +87,14 @@ export default class Option extends Component {
         id={`${instancePrefix}-option-${optionIndex}`}
         title={option.title}
       >
-        {
-          option.create ?
-          this.props.addLabelText.replace('{label}', option.label) :
-          this.props.children
-        }
-      </div>
+        <a>
+          {
+            option.create ?
+            this.props.addLabelText.replace('{label}', option.label) :
+            this.props.children
+          }
+        </a>
+      </li>
     )
   }
 }

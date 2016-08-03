@@ -9,9 +9,8 @@ import Value from './Value'
 function stringifyValue(value) {
   if (typeof value === 'object') {
     return JSON.stringify(value)
-  } else {
-    return value
   }
+  return value
 }
 
 const stringOrNode = React.PropTypes.oneOfType([
@@ -53,7 +52,6 @@ export default class Select extends Component {
     matchPos: React.PropTypes.string,           // (any|start) match the start or entire
     matchProp: React.PropTypes.string,          // (any|label|value) which option property
     menuBuffer: React.PropTypes.number,         // optional buffer (in px) between the bottom
-    menuContainerStyle: React.PropTypes.object, // optional style to apply to the menu container
     menuRenderer: React.PropTypes.func,         // renders a custom menu with options
     menuStyle: React.PropTypes.object,          // optional style to apply to the menu
     multi: React.PropTypes.bool,                // multi-value input
@@ -62,7 +60,7 @@ export default class Select extends Component {
     noResultsText: stringOrNode,                // placeholder displayed when there are no matching
     onBlur: React.PropTypes.func,               // onBlur handler: function (event) {}
     onBlurResetsInput: React.PropTypes.bool,    // whether input is cleared on blur
-    onChange: React.PropTypes.func,             // onChange handler: function (newValue) {}
+    onChange: React.PropTypes.func.isRequired,  // onChange handler: function (newValue) {}
     onClose: React.PropTypes.func,              // fires when the menu is closed
     onFocus: React.PropTypes.func,              // onFocus handler: function (event) {}
     onInputChange: React.PropTypes.func,        // onInputChange handler: function (inputValue) {}
@@ -89,7 +87,6 @@ export default class Select extends Component {
     valueComponent: React.PropTypes.func,       // value component to render
     valueKey: React.PropTypes.string,           // path of the label value in option objects
     valueRenderer: React.PropTypes.func,        // valueRenderer: function (option) {}
-    wrapperStyle: React.PropTypes.object,       // optional style to apply to the component wrapper
   }
 
   static defaultProps = {
@@ -208,7 +205,7 @@ export default class Select extends Component {
     }
   }
 
-  focus() {
+  focus = () => {
     if (!this.refs.input) return
     this.refs.input.focus()
 
@@ -219,22 +216,22 @@ export default class Select extends Component {
     }
   }
 
-  blurInput() {
+  blurInput = () => {
     if (!this.refs.input) return
     this.refs.input.blur()
   }
 
-  handleTouchMove(event) {
+  handleTouchMove = (event) => {
     // Set a flag that the view is being dragged
     this.dragging = true
   }
 
-  handleTouchStart(event) {
+  handleTouchStart = (event) => {
     // Set a flag that the view is not being dragged
     this.dragging = false
   }
 
-  handleTouchEnd(event) {
+  handleTouchEnd = (event) => {
     // Check if the view is being dragged, In this case
     // we don't want to fire the click event (because the user only wants to scroll)
     if (this.dragging) return
@@ -440,12 +437,12 @@ export default class Select extends Component {
     event.preventDefault()
   }
 
-  handleValueClick(option, event) {
+  handleValueClick = (option, event) => {
     if (!this.props.onValueClick) return
     this.props.onValueClick(option, event)
   }
 
-  handleMenuScroll(event) {
+  handleMenuScroll = (event) => {
     if (!this.props.onMenuScrollToBottom) return
     const { target } = event
     if (target.scrollHeight > target.offsetHeight && !(target.scrollHeight - target.offsetHeight - target.scrollTop)) {
@@ -475,7 +472,7 @@ export default class Select extends Component {
     return expandedValue ? [expandedValue] : []
   }
 
-  expandValue(value) {
+  expandValue = (value) => {
     if (typeof value !== 'string' && typeof value !== 'number') return value
     let { options, valueKey } = this.props
     if (!options) return
@@ -490,7 +487,7 @@ export default class Select extends Component {
     }
   }
 
-  setValue(value) {
+  setValue = (value) => {
     if (this.props.autoBlur) {
       this.blurInput()
     }
@@ -505,7 +502,7 @@ export default class Select extends Component {
     this.props.onChange(value)
   }
 
-  selectValue(value) {
+  selectValue = (value) => {
     this.hasScrolledToOption = false
     if (this.props.multi) {
       this.addValue(value)
@@ -523,19 +520,19 @@ export default class Select extends Component {
     }
   }
 
-  addValue(value) {
+  addValue = (value) => {
     const valueArray = this.getValueArray(this.props.value)
     this.setValue(valueArray.concat(value))
   }
 
-  popValue() {
+  popValue = () => {
     const valueArray = this.getValueArray(this.props.value)
     if (!valueArray.length) return
     if (valueArray[valueArray.length - 1].clearableValue === false) return
     this.setValue(valueArray.slice(0, valueArray.length - 1))
   }
 
-  removeValue(value) {
+  removeValue = (value) => {
     const valueArray = this.getValueArray(this.props.value)
     this.setValue(valueArray.filter(i => {
       if (i.create) {
@@ -547,7 +544,7 @@ export default class Select extends Component {
     this.focus()
   }
 
-  clearValue(event) {
+  clearValue = (event) => {
     // if the event was triggered by a mousedown and not the primary
     // button, ignore it.
     if (event && event.type === 'mousedown' && event.button !== 0) {
@@ -562,37 +559,37 @@ export default class Select extends Component {
     }, this.focus)
   }
 
-  focusOption(option) {
+  focusOption = (option) => {
     this.setState({
       focusedOption: option,
     })
   }
 
-  focusNextOption() {
+  focusNextOption = () => {
     this.focusAdjacentOption('next')
   }
 
-  focusPreviousOption() {
+  focusPreviousOption = () => {
     this.focusAdjacentOption('previous')
   }
 
-  focusPageUpOption() {
+  focusPageUpOption = () => {
     this.focusAdjacentOption('page_up')
   }
 
-  focusPageDownOption() {
+  focusPageDownOption = () => {
     this.focusAdjacentOption('page_down')
   }
 
-  focusStartOption() {
+  focusStartOption = () => {
     this.focusAdjacentOption('start')
   }
 
-  focusEndOption() {
+  focusEndOption = () => {
     this.focusAdjacentOption('end')
   }
 
-  focusAdjacentOption(dir) {
+  focusAdjacentOption = (dir) => {
     const options = this._visibleOptions
       .map((option, index) => ({ option, index }))
       .filter(option => !option.option.disabled)
@@ -651,7 +648,7 @@ export default class Select extends Component {
     })
   }
 
-  selectFocusedOption() {
+  selectFocusedOption = () => {
     // if (this.props.allowCreate && !this.state.focusedOption) {
     //   return this.selectValue(this.state.inputValue);
     // }
@@ -660,7 +657,7 @@ export default class Select extends Component {
     }
   }
 
-  createNewOption(value) {
+  createNewOption = (value) => {
     let newOption = {}
 
     if (this.props.newOptionCreator) {
@@ -728,15 +725,15 @@ export default class Select extends Component {
     if (this.props.inputRenderer) {
       return this.props.inputRenderer()
     } else {
-      let className = classNames('Select-input', this.props.inputProps.className)
+      let className = classNames('uk-form-blank Select-input', this.props.inputProps.className)
       const isOpen = !!this.state.isOpen
 
       const ariaOwns = classNames({
         [this._instancePrefix + '-list']: isOpen,
         [this._instancePrefix + '-backspace-remove-message']: this.props.multi &&
-                                    !this.props.disabled &&
-                                    this.state.isFocused &&
-                                      !this.state.inputValue,
+                                                              !this.props.disabled &&
+                                                              this.state.isFocused &&
+                                                              !this.state.inputValue,
       })
 
       // TODO: Check how this project includes Object.assign()
@@ -813,7 +810,7 @@ export default class Select extends Component {
     )
   }
 
-  filterOptions(excludeOptions) {
+  filterOptions = (excludeOptions) => {
     let filterValue = this.state.inputValue
     const originalFilterValue = filterValue
     const options = this.props.options || []
@@ -883,7 +880,7 @@ export default class Select extends Component {
           let optionClass = classNames(this.props.optionClassName, {
             'Select-option': true,
             'is-selected': isSelected,
-            'is-focused': isFocused,
+            'uk-active': isFocused,
             'is-disabled': option.disabled,
           })
 
@@ -909,9 +906,9 @@ export default class Select extends Component {
       }
     } else if (this.props.noResultsText) {
       return (
-        <div className="Select-noresults">
-          {this.props.noResultsText}
-        </div>
+        <li className="uk-skip">
+          <a>{this.props.noResultsText}</a>
+        </li>
       )
     } else {
       return null
@@ -943,7 +940,7 @@ export default class Select extends Component {
     ))
   }
 
-  getFocusableOptionIndex(selectedOption) {
+  getFocusableOptionIndex = (selectedOption) => {
     const options = this._visibleOptions
     if (!options.length) return null
 
@@ -968,14 +965,18 @@ export default class Select extends Component {
     }
 
     return (
-      <div ref="menuContainer" className="Select-menu-outer" style={this.props.menuContainerStyle}>
-        <div ref="menu" role="listbox" className="Select-menu" id={this._instancePrefix + '-list'}
+      <div ref="menuContainer" className="uk-dropdown">
+        <ul
+          ref="menu"
+          role="listbox"
+          className="uk-nav uk-nav-autocomplete"
+          id={this._instancePrefix + '-list'}
           style={this.props.menuStyle}
           onScroll={this.handleMenuScroll}
           onMouseDown={this.handleMouseDownOnMenu}
         >
           {menu}
-        </div>
+        </ul>
       </div>
     )
   }
@@ -993,9 +994,9 @@ export default class Select extends Component {
     } else {
       focusedOption = this._focusedOption = null
     }
-    let className = classNames('uk-autocomplete', this.props.className, {
-      'Select--multi': this.props.multi,
-      'Select--single': !this.props.multi,
+    let className = classNames('uk-autocomplete uk-component-select', this.props.className, {
+      'uk-component-select--multi': this.props.multi,
+      'uk-component-select--single': !this.props.multi,
       'is-disabled': this.props.disabled,
       'is-focused': this.state.isFocused,
       'is-loading': this.props.isLoading,
@@ -1013,19 +1014,24 @@ export default class Select extends Component {
       this.state.isFocused &&
       this.props.backspaceRemoves) {
       removeMessage = (
-        <span id={this._instancePrefix + '-backspace-remove-message'} className="Select-aria-only" aria-live="assertive">
+        <span
+          id={this._instancePrefix + '-backspace-remove-message'}
+          className="Select-aria-only"
+          aria-live="assertive"
+        >
           {this.props.backspaceToRemoveMessage.replace('{label}', valueArray[valueArray.length - 1][this.props.labelKey])}
         </span>
       )
     }
 
     return (
-      <div ref="wrapper"
+      <div
+        ref="wrapper"
         className={className}
-        style={this.props.wrapperStyle}
       >
         {this.renderHiddenField(valueArray)}
-        <div ref="control"
+        <div
+          ref="control"
           className="Select-control uk-select"
           style={this.props.style}
           onKeyDown={this.handleKeyDown}
@@ -1043,7 +1049,7 @@ export default class Select extends Component {
           {this.renderClear()}
           {this.renderArrow()}
         </div>
-        {isOpen ? this.renderOuter(options, !this.props.multi ? valueArray : null, focusedOption) : null}
+        {isOpen && this.renderOuter(options, !this.props.multi ? valueArray : null, focusedOption)}
       </div>
     )
   }
