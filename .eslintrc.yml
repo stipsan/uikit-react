@@ -18,5 +18,9 @@ rules:
     - off
   react/jsx-uses-react:
     - off
+  react/jsx-filename-extension:
+    - off
+  import/no-extraneous-dependencies:
+    - off
   global-require:
     - off
