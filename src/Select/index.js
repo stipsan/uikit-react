@@ -1,9 +1,30 @@
-import { Component } from 'react'
+import classNames from 'classnames'
+import Input from 'react-input-autosize'
+import ReactDOM from 'react-dom'
+import React, { Component } from 'react'
+
+import Option from './Option'
+import Value from './Value'
+
+function stringifyValue(value) {
+  if (typeof value === 'object') {
+    return JSON.stringify(value)
+  } else {
+    return value
+  }
+}
+
+const stringOrNode = React.PropTypes.oneOfType([
+  React.PropTypes.string,
+  React.PropTypes.node,
+])
+
+let instanceId = 1
 
 export default class Select extends Component {
 
   static propTypes = {
-    addItemOnKeyCode: React.PropTypes.number,
+    addItemOnKeyCode: React.PropTypes.number,   // The key code number that should trigger adding a tag if multi and allowCreate are enabled
     addLabelText: React.PropTypes.string,       // placeholder displayed when you want to add a label on a multi-value input
     allowCreate: React.PropTypes.bool,          // whether to allow creation of new entries
     'aria-label': React.PropTypes.string,    // Aria label (for assistive tech)
@@ -13,7 +34,7 @@ export default class Select extends Component {
     autosize: React.PropTypes.bool,             // whether to enable autosizing or not
     backspaceRemoves: React.PropTypes.bool,     // whether backspace removes an item if there is no text input
     backspaceToRemoveMessage: React.PropTypes.string,  // Message to use for screenreaders to press backspace to remove the current item -
-                               // {label} is replaced with the item label
+                           // {label} is replaced with the item label
     className: React.PropTypes.string,          // className for the outer element
     clearAllText: stringOrNode,                 // title for the "clear" control when multi: true
     clearValueText: stringOrNode,               // title for the "clear" control
@@ -72,57 +93,53 @@ export default class Select extends Component {
     wrapperStyle: React.PropTypes.object,       // optional style to apply to the component wrapper
   }
 
-  getDefaultProps() {
-    return {
-      addLabelText: 'Add "{label}"?',
-      addItemOnKeyCode: null,
-      autosize: true,
-      allowCreate: false,
-      backspaceRemoves: true,
-      backspaceToRemoveMessage: 'Press backspace to remove {label}',
-      clearable: true,
-      clearAllText: 'Clear all',
-      clearValueText: 'Clear value',
-      delimiter: ',',
-      disabled: false,
-      escapeClearsValue: true,
-      filterOptions: true,
-      ignoreAccents: true,
-      ignoreCase: true,
-      inputProps: {},
-      isLoading: false,
-      joinValues: false,
-      labelKey: 'label',
-      matchPos: 'any',
-      matchProp: 'any',
-      menuBuffer: 0,
-      multi: false,
-      noResultsText: 'No results found',
-      onBlurResetsInput: true,
-      openAfterFocus: false,
-      optionComponent: Option,
-      pageSize: 5,
-      placeholder: 'Select...',
-      required: false,
-      resetValue: null,
-      scrollMenuIntoView: true,
-      searchable: true,
-      simpleValue: false,
-      tabSelectsValue: true,
-      valueComponent: Value,
-      valueKey: 'value',
-    }
+  static defaultProps = {
+    addLabelText: 'Add "{label}"?',
+    addItemOnKeyCode: null,
+    autosize: true,
+    allowCreate: false,
+    backspaceRemoves: true,
+    backspaceToRemoveMessage: 'Press backspace to remove {label}',
+    clearable: true,
+    clearAllText: 'Clear all',
+    clearValueText: 'Clear value',
+    delimiter: ',',
+    disabled: false,
+    escapeClearsValue: true,
+    filterOptions: true,
+    ignoreAccents: true,
+    ignoreCase: true,
+    inputProps: {},
+    isLoading: false,
+    joinValues: false,
+    labelKey: 'label',
+    matchPos: 'any',
+    matchProp: 'any',
+    menuBuffer: 0,
+    multi: false,
+    noResultsText: 'No results found',
+    onBlurResetsInput: true,
+    openAfterFocus: false,
+    optionComponent: Option,
+    pageSize: 5,
+    placeholder: 'Select...',
+    required: false,
+    resetValue: null,
+    scrollMenuIntoView: true,
+    searchable: true,
+    simpleValue: false,
+    tabSelectsValue: true,
+    valueComponent: Value,
+    valueKey: 'value',
   }
 
-  getInitialState() {
-    return {
-      inputValue: '',
-      isFocused: false,
-      isLoading: false,
-      isOpen: false,
-      isPseudoFocused: false,
-      required: false,
-    }
+  state = {
+    inputValue: '',
+    isFocused: false,
+    isLoading: false,
+    isOpen: false,
+    isPseudoFocused: false,
+    required: false,
   }
 
   componentWillMount() {
