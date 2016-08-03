@@ -47,7 +47,7 @@
   "homepage": "https://github.com/stipsan/uikit-react",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.1.1",
-    "@kadira/storybook": "2.0.0",
+    "@kadira/storybook": "2.1.1",
     "@kadira/storybook-deployer": "1.0.0",
     "autoprefixer": "6.4.0",
     "babel-cli": "6.11.4",
