@@ -15,7 +15,7 @@
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001",
-    "build-storybook": "node ./node_modules/.bin/build-storybook -o .out && echo \"uikit-react.io\" > .out/CNAME",
+    "build-storybook": "build-storybook -o .out -s .storybook/static",
     "deploy-storybook": "storybook-to-ghpages",
     "postpublish": "npm run deploy-storybook"
   },
