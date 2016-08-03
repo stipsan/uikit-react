@@ -9,7 +9,11 @@ class Form extends Component {
   state = {
     value: '',
   }
-  handleChange = ({ value }) => this.setState({ value }, () => action('onChange')(value))
+  logChange = action('onChange')
+  handleChange = ({ value }) => {
+    this.setState({ value })
+    this.logChange(value)
+  }
   render() {
     return (
       <form className="uk-form">
@@ -31,6 +35,7 @@ storiesOf('Select', module)
     () => (
       <Form>
         <Select
+          allowCreate
           options={[
             { value: 1, label: 'Color' },
             { value: 2, label: 'Size' },

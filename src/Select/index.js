@@ -845,21 +845,18 @@ export default class Select extends Component {
     }
     if (this.props.allowCreate && filterValue) {
       let addNewOption = true
-      // NOTE: only add the "Add" option if none of the options are an exact match
+      // @TODO: only add the "Add" option if none of the options are an exact match
       filteredOptions.map(option => {
         if (String(option.label).toLowerCase() === filterValue || String(option.value).toLowerCase() === filterValue) {
           addNewOption = false
         }
       })
-      if (addNewOption) {
-        filteredOptions.unshift(this.createNewOption(originalFilterValue))
-      }
     }
     return filteredOptions
   }
 
   renderMenu(options, valueArray, focusedOption) {
-    if (options && options.length) {
+    if (options && options.length || this.props.allowCreate) {
       if (this.props.menuRenderer) {
         return this.props.menuRenderer({
           focusedOption,
@@ -904,7 +901,7 @@ export default class Select extends Component {
           )
         })
       }
-    } else if (this.props.noResultsText) {
+    } else if (this.props.noResultsText && !this.props.allowCreate) {
       return (
         <li className="uk-skip">
           <a>{this.props.noResultsText}</a>
@@ -964,6 +961,8 @@ export default class Select extends Component {
       return null
     }
 
+    const allowCreate = this.props.allowCreate && this.state.inputValue.trim()
+
     return (
       <div ref="menuContainer" className="uk-dropdown">
         <ul
@@ -975,6 +974,10 @@ export default class Select extends Component {
           onScroll={this.handleMenuScroll}
           onMouseDown={this.handleMouseDownOnMenu}
         >
+          {allowCreate && <li className="uk-skip">
+            <a>Create: <span className="uk-button uk-button-small uk-button-primary">{this.state.inputValue}</span></a>
+          </li>}
+          {allowCreate && options.length > 0 && <li className="uk-nav-divider uk-skip" />}
           {menu}
         </ul>
       </div>
