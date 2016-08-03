@@ -10,7 +10,7 @@ const Menu = () => (
       <li className="uk-nav-header">Header</li>
       <li><a href="#">Item</a></li>
       <li><a href="#">Another item</a></li>
-      <li className="uk-nav-divider"></li>
+      <li className="uk-nav-divider" />
       <li><a href="#">Separated item</a></li>
     </ul>
   </div>
