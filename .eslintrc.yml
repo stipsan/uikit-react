@@ -4,23 +4,13 @@ rules:
   semi:
     - error
     - never
-  react/no-danger:
-    - error
-  react/no-comment-textnodes:
-    - error
-  react/no-direct-mutation-state:
-    - error
-  react/no-string-refs:
-    - error
-  react/jsx-handler-names:
-    - error
-  react/react-in-jsx-scope:
-    - off
-  react/jsx-uses-react:
-    - off
-  react/jsx-filename-extension:
-    - off
-  import/no-extraneous-dependencies:
-    - off
-  global-require:
-    - off
+  react/no-danger: error
+  react/no-comment-textnodes: error
+  react/no-direct-mutation-state: error
+  react/no-string-refs: error
+  react/jsx-handler-names: error
+  react/react-in-jsx-scope: off
+  react/jsx-uses-react: off
+  react/jsx-filename-extension: off
+  import/no-extraneous-dependencies: off
+  global-require: off

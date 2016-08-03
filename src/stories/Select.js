@@ -8,9 +8,9 @@ storiesOf('Select', module)
       This is the basic usage examples
     `,
     () => (
-      <div>
+      <form className="uk-form">
         <Select options={['Color', 'Size', 'Material']} />
-      </div>
+      </form>
   ),
   { inline: true, propTables: [Select] }
 )

@@ -243,7 +243,7 @@ export default class Select extends Component {
     this.handleMouseDown(event)
   }
 
-  handleTouchEndClearValue(event) {
+  handleTouchEndClearValue = (event) => {
     // Check if the view is being dragged, In this case
     // we don't want to fire the click event (because the user only wants to scroll)
     if (this.dragging) return
@@ -252,7 +252,7 @@ export default class Select extends Component {
     this.clearValue(event)
   }
 
-  handleMouseDown(event) {
+  handleMouseDown = (event) => {
     // if the event was triggered by a mousedown and not the primary
     // button, or if the component is disabled, ignore it.
     if (this.props.disabled || (event.type === 'mousedown' && event.button !== 0)) {
@@ -296,7 +296,7 @@ export default class Select extends Component {
     }
   }
 
-  handleMouseDownOnArrow(event) {
+  handleMouseDownOnArrow = (event) => {
     // if the event was triggered by a mousedown and not the primary
     // button, or if the component is disabled, ignore it.
     if (this.props.disabled || (event.type === 'mousedown' && event.button !== 0)) {
@@ -313,7 +313,7 @@ export default class Select extends Component {
     this.closeMenu()
   }
 
-  handleMouseDownOnMenu(event) {
+  handleMouseDownOnMenu = (event) => {
     // if the event was triggered by a mousedown and not the primary
     // button, or if the component is disabled, ignore it.
     if (this.props.disabled || (event.type === 'mousedown' && event.button !== 0)) {
@@ -326,7 +326,7 @@ export default class Select extends Component {
     this.focus()
   }
 
-  closeMenu() {
+  closeMenu = () => {
     this.setState({
       isOpen: false,
       isPseudoFocused: this.state.isFocused && !this.props.multi,
@@ -335,7 +335,7 @@ export default class Select extends Component {
     this.hasScrolledToOption = false
   }
 
-  handleInputFocus(event) {
+  handleInputFocus = (event) => {
     const isOpen = this.state.isOpen || this._openAfterFocus || this.props.openOnFocus
     if (this.props.onFocus) {
       this.props.onFocus(event)
@@ -347,7 +347,7 @@ export default class Select extends Component {
     this._openAfterFocus = false
   }
 
-  handleInputBlur(event) {
+  handleInputBlur = (event) => {
     if (this.refs.menu && document.activeElement === this.refs.menu) {
       this.focus()
       return
@@ -367,7 +367,7 @@ export default class Select extends Component {
     this.setState(onBlurredState)
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     let newInputValue = event.target.value
     if (this.state.inputValue !== event.target.value && this.props.onInputChange) {
       const nextState = this.props.onInputChange(newInputValue)
@@ -383,7 +383,7 @@ export default class Select extends Component {
     })
   }
 
-  handleKeyDown(event) {
+  handleKeyDown = (event) => {
     if (this.props.disabled) return
     switch (event.keyCode) {
       case 8: // backspace
@@ -453,16 +453,16 @@ export default class Select extends Component {
     }
   }
 
-  handleRequired(value, multi) {
+  handleRequired = (value, multi) => {
     if (!value) return true
     return (multi ? value.length === 0 : Object.keys(value).length === 0)
   }
 
-  getOptionLabel(op) {
+  getOptionLabel = (op) => {
     return op[this.props.labelKey]
   }
 
-  getValueArray(value) {
+  getValueArray = (value) => {
     if (this.props.multi) {
       if (typeof value === 'string') value = value.split(this.props.delimiter)
       if (!Array.isArray(value)) {
@@ -993,13 +993,13 @@ export default class Select extends Component {
     } else {
       focusedOption = this._focusedOption = null
     }
-    let className = classNames('Select', this.props.className, {
+    let className = classNames('uk-autocomplete', this.props.className, {
       'Select--multi': this.props.multi,
       'Select--single': !this.props.multi,
       'is-disabled': this.props.disabled,
       'is-focused': this.state.isFocused,
       'is-loading': this.props.isLoading,
-      'is-open': isOpen,
+      'uk-open': isOpen,
       'is-pseudo-focused': this.state.isPseudoFocused,
       'is-searchable': this.props.searchable,
       'has-value': valueArray.length,
@@ -1026,7 +1026,7 @@ export default class Select extends Component {
       >
         {this.renderHiddenField(valueArray)}
         <div ref="control"
-          className="Select-control"
+          className="Select-control uk-select"
           style={this.props.style}
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleMouseDown}
