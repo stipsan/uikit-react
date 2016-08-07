@@ -14,6 +14,7 @@ addDecorator(story => (
 function loadStories() {
   require('../src/stories/button')
   require('../src/stories/dropdown')
+  require('../src/stories/Select')
 }
 
 configure(loadStories, module)

@@ -3,4 +3,7 @@ $icon-font-path: "~uikit/dist/fonts";
 @import "~uikit/dist/scss/uikit-mixins.scss";
 @import "~uikit/dist/scss/uikit-variables.scss";
 @import "~uikit/dist/scss/uikit.scss";
+@import "~uikit/dist/scss/components/autocomplete.scss";
 @import "~uikit/dist/scss/components/form-advanced.scss";
+
+@import "~uikit-react/scss/Select.scss";

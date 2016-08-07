@@ -4,14 +4,15 @@ uikit-react
 [![Build Status](https://travis-ci.org/stipsan/uikit-react.svg)](https://travis-ci.org/stipsan/uikit-react)
 [![Coverage Status](https://coveralls.io/repos/github/stipsan/uikit-react/badge.svg)](https://coveralls.io/github/stipsan/uikit-react)
 
-<img src="https://uikit-react.firebaseapp.com/images/logo.svg" width="300"/>
-
-# Be warned, this is barely even alpha atm!
+<img src="https://uikit-react.io/logo.svg" width="256"/>
 
 React UI component built on top of the UIkit CSS.
-The docs folder shows how easy it is to setup a project that compiles the UIkit less and puts it all together using Browserify.
+This library makes no assumptions how you provide the CSS, load it any way you like.
+The minimum required css for components can function can be seen in the [SCSS file](.storybook/uikit.scss) we use to compile UIkit for our [Storybook](http://uikit-react.io).
 
-A changelog.md will be started up as soon as we reach 0.1.0. Versions in the 0.0.x range is not at all meant to be used in production.
+Check our [Storybook](http://uikit-react.io) to see docs and usage examples on each component in the library.
+
+We use GitHub Releases as our [Changelog](https://github.com/stipsan/uikit-react/releases).
 
 Inspired by
 * [material ui](http://material-ui.com/)

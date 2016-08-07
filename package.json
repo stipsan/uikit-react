@@ -46,8 +46,8 @@
   },
   "homepage": "https://github.com/stipsan/uikit-react",
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "3.1.1",
-    "@kadira/storybook": "2.0.0",
+    "@kadira/react-storybook-addon-info": "3.1.2",
+    "@kadira/storybook": "2.2.0",
     "@kadira/storybook-deployer": "1.0.0",
     "autoprefixer": "6.4.0",
     "babel-cli": "6.11.4",
@@ -92,7 +92,8 @@
     "url-loader": "0.5.7"
   },
   "dependencies": {
-    "classnames": "2.2.5"
+    "classnames": "2.2.5",
+    "react-input-autosize": "1.1.0"
   },
   "contributors": [
     {
