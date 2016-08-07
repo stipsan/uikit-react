@@ -13,9 +13,9 @@ const CreateOption = ({ isFocused, addLabelText, children }) => (
 )
 
 CreateOption.propTypes = {
-  isFocused: PropTypes.bool.isRequired,
   addLabelText: PropTypes.node.isRequired,
   children: PropTypes.node.isRequired,
+  isFocused: PropTypes.bool.isRequired,
 }
 
 export default CreateOption

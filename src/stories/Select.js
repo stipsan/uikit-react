@@ -2,10 +2,14 @@
 // import Value from 'uikit-react/Select/Value'
 
 import { storiesOf, action } from '@kadira/storybook'
-import { cloneElement, Component } from 'react'
+import { cloneElement, Component, PropTypes } from 'react'
 import { Select } from 'uikit-react'
 
 class Form extends Component {
+  static propTypes = {
+    children: PropTypes.children.isRequired,
+    defaultValue: PropTypes.any.isRequired,
+  }
   static props = {
     defaultValue: null,
   }
