@@ -7,7 +7,7 @@ import { Select } from 'uikit-react'
 
 class Form extends Component {
   static propTypes = {
-    children: PropTypes.children.isRequired,
+    children: PropTypes.node.isRequired,
     defaultValue: PropTypes.any.isRequired,
   }
   static props = {

@@ -24,20 +24,21 @@ let instanceId = 1
 export default class Select extends Component {
 
   static propTypes = {
-    addItemOnKeyCode: PropTypes.number,   // The key code number that should trigger adding
     addLabelText: PropTypes.string.isRequired,       // placeholder displayed when you want to add a
-    allowCreate: PropTypes.bool,          // whether to allow creation of new entries
+    onChange: PropTypes.func.isRequired,  // onChange handler: function (newValue) {}
     'aria-label': PropTypes.string,       // Aria label (for assistive tech)
     'aria-labelledby': PropTypes.string,  // HTML ID of an element that should be used as
+    addItemOnKeyCode: PropTypes.number,   // The key code number that should trigger adding
+    allowCreate: PropTypes.bool,          // whether to allow creation of new entries
     autoBlur: PropTypes.bool,             // automatically blur the component when an optio
     autofocus: PropTypes.bool,            // autofocus the component on mount
     autosize: PropTypes.bool,             // whether to enable autosizing or not
     backspaceRemoves: PropTypes.bool,     // whether backspace removes an item if
     backspaceToRemoveMessage: PropTypes.string,  // Message to use for screenreaders to press
     className: PropTypes.string,          // className for the outer element
+    clearable: PropTypes.bool,            // should it be possible to reset value
     clearAllText: stringOrNode,           // title for the "clear" control when multi: true
     clearValueText: stringOrNode,         // title for the "clear" control
-    clearable: PropTypes.bool,            // should it be possible to reset value
     delimiter: PropTypes.string,          // delimiter to use to join multiple values for
     disabled: PropTypes.bool,             // whether the Select is disabled or not
     escapeClearsValue: PropTypes.bool,    // whether escape clears the value when the menu is
@@ -59,15 +60,6 @@ export default class Select extends Component {
     name: PropTypes.string,               // generates a hidden <input /> tag with this
     newOptionCreator: PropTypes.func,     // factory to create new options when allowCreate
     noResultsText: stringOrNode,          // placeholder displayed when there are no matching
-    onBlur: PropTypes.func,               // onBlur handler: function (event) {}
-    onBlurResetsInput: PropTypes.bool,    // whether input is cleared on blur
-    onChange: PropTypes.func.isRequired,  // onChange handler: function (newValue) {}
-    onClose: PropTypes.func,              // fires when the menu is closed
-    onFocus: PropTypes.func,              // onFocus handler: function (event) {}
-    onInputChange: PropTypes.func,        // onInputChange handler: function (inputValue) {}
-    onMenuScrollToBottom: PropTypes.func, // fires when the menu is scrolled to the bottom;
-    onOpen: PropTypes.func,               // fires when the menu is opened
-    onValueClick: PropTypes.func,         // onClick handler for value labels: function
     openAfterFocus: PropTypes.bool,       // boolean to enable opening dropdown when focused
     openOnFocus: PropTypes.bool,          // always open options menu on focus
     optionClassName: PropTypes.string,    // additional class(es) to apply to the <Option />
@@ -88,6 +80,14 @@ export default class Select extends Component {
     valueComponent: PropTypes.func,       // value component to render
     valueKey: PropTypes.string,           // path of the label value in option objects
     valueRenderer: PropTypes.func,        // valueRenderer: function (option) {}
+    onBlur: PropTypes.func,               // onBlur handler: function (event) {}
+    onBlurResetsInput: PropTypes.bool,    // whether input is cleared on blur
+    onClose: PropTypes.func,              // fires when the menu is closed
+    onFocus: PropTypes.func,              // onFocus handler: function (event) {}
+    onInputChange: PropTypes.func,        // onInputChange handler: function (inputValue) {}
+    onMenuScrollToBottom: PropTypes.func, // fires when the menu is scrolled to the bottom;
+    onOpen: PropTypes.func,               // fires when the menu is opened
+    onValueClick: PropTypes.func,         // onClick handler for value labels: function
   }
 
   static defaultProps = {
@@ -140,7 +140,8 @@ export default class Select extends Component {
   }
 
   componentWillMount() {
-    this._instancePrefix = 'react-select-' + (++instanceId) + '-'
+    // eslint-disable-next-line no-underscore-dangle
+    this._instancePrefix = `react-select-${++instanceId}-`
     const valueArray = this.getValueArray(this.props.value)
 
     if (this.props.required) {
@@ -169,11 +170,13 @@ export default class Select extends Component {
   componentWillUpdate(nextProps, nextState) {
     if (nextState.isOpen !== this.state.isOpen) {
       const handler = nextState.isOpen ? nextProps.onOpen : nextProps.onClose
-      handler && handler()
+      if (handler) {
+        handler()
+      }
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     // focus to the selected option
     if (this.refs.menu && this.refs.focused && this.state.isOpen && !this.hasScrolledToOption) {
       const focusedOptionNode = ReactDOM.findDOMNode(this.refs.focused)
@@ -744,9 +747,9 @@ export default class Select extends Component {
       // TODO: Check how this project includes Object.assign()
       const inputProps = Object.assign({}, this.props.inputProps, {
         role: 'combobox',
-        'aria-expanded': '' + isOpen,
+        'aria-expanded': `${isOpen}`,
         'aria-owns': ariaOwns,
-        'aria-haspopup': '' + isOpen,
+        'aria-haspopup': `${isOpen}`,
         'aria-activedescendant': isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value',
         'aria-labelledby': this.props['aria-labelledby'],
         'aria-label': this.props['aria-label'],
@@ -795,7 +798,9 @@ export default class Select extends Component {
   renderClear() {
     if (!this.props.clearable || !this.props.value || (this.props.multi && !this.props.value.length) || this.props.disabled || this.props.isLoading) return
     return (
-      <span className="uk-close" title={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
+      <span
+        className="uk-component-select__clear uk-close"
+        title={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
         aria-label={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
         onMouseDown={this.clearValue}
         onTouchStart={this.handleTouchStart}
@@ -1035,7 +1040,7 @@ export default class Select extends Component {
       removeMessage = (
         <span
           id={this._instancePrefix + '-backspace-remove-message'}
-          className="Select-aria-only"
+          className="uk-component-select__aria-only"
           aria-live="assertive"
         >
           {this.props.backspaceToRemoveMessage.replace('{label}', valueArray[valueArray.length - 1][this.props.labelKey])}

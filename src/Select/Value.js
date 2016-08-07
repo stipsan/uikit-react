@@ -58,14 +58,12 @@ export default class Value extends Component {
     return (
       <span
         aria-hidden="true"
-        className="Select-value-icon"
+        className="uk-close uk-component-select__delete"
         onMouseDown={this.handleRemove}
         onTouchEnd={this.handleTouchEndRemove}
         onTouchMove={this.handleTouchMove}
         onTouchStart={this.handleTouchStart}
-      >
-        &times;
-      </span>
+      />
     )
   }
 
@@ -91,7 +89,11 @@ export default class Value extends Component {
   render() {
     return (
       <div
-        className={cx('uk-component-select__value', this.props.value.className)}
+        className={cx(
+          'uk-component-select__value',
+          this.props.value.className,
+          { 'uk-badge': !!this.props.onRemove }
+        )}
         style={this.props.value.style}
         title={this.props.value.title}
       >
