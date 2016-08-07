@@ -1,8 +1,9 @@
 import classNames from 'classnames'
 import Input from 'react-input-autosize'
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import { Component, PropTypes } from 'react'
 
+import CreateOption from './CreateOption'
 import Option from './Option'
 import Value from './Value'
 
@@ -24,7 +25,7 @@ export default class Select extends Component {
 
   static propTypes = {
     addItemOnKeyCode: PropTypes.number,   // The key code number that should trigger adding
-    addLabelText: PropTypes.string,       // placeholder displayed when you want to add a
+    addLabelText: PropTypes.string.isRequired,       // placeholder displayed when you want to add a
     allowCreate: PropTypes.bool,          // whether to allow creation of new entries
     'aria-label': PropTypes.string,       // Aria label (for assistive tech)
     'aria-labelledby': PropTypes.string,  // HTML ID of an element that should be used as
@@ -90,7 +91,7 @@ export default class Select extends Component {
   }
 
   static defaultProps = {
-    addLabelText: 'Add "{label}"?',
+    addLabelText: 'Create:',
     addItemOnKeyCode: null,
     autosize: true,
     allowCreate: false,
@@ -120,7 +121,7 @@ export default class Select extends Component {
     pageSize: 5,
     placeholder: 'Select...',
     required: false,
-    resetValue: null,
+    resetValue: { value: null, label: null },
     scrollMenuIntoView: true,
     searchable: true,
     simpleValue: false,
@@ -673,7 +674,9 @@ export default class Select extends Component {
   }
 
   renderLoading() {
-    if (!this.props.isLoading) return
+    if (!this.props.isLoading) {
+      return false
+    }
     return (
       <span className="Select-loading-zone" aria-hidden="true">
         <span className="Select-loading" />
@@ -792,15 +795,13 @@ export default class Select extends Component {
   renderClear() {
     if (!this.props.clearable || !this.props.value || (this.props.multi && !this.props.value.length) || this.props.disabled || this.props.isLoading) return
     return (
-      <span className="Select-clear-zone" title={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
+      <span className="uk-close" title={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
         aria-label={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
         onMouseDown={this.clearValue}
         onTouchStart={this.handleTouchStart}
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEndClearValue}
-      >
-        <span className="Select-clear" dangerouslySetInnerHTML={{ __html: '&times;' }} />
-      </span>
+      />
     )
   }
 
@@ -853,6 +854,9 @@ export default class Select extends Component {
           addNewOption = false
         }
       })
+      if (addNewOption) {
+        filteredOptions.unshift(this.createNewOption(originalFilterValue))
+      }
     }
     return filteredOptions
   }
@@ -869,10 +873,13 @@ export default class Select extends Component {
           valueArray,
         })
       } else {
-        let Option = this.props.optionComponent
+        let OptionComponent = this.props.optionComponent
         const renderLabel = this.props.optionRenderer || this.getOptionLabel
 
         return options.map((option, i) => {
+          if (option.create) {
+            return false
+          }
           let isSelected = valueArray && valueArray.indexOf(option) > -1
           let isFocused = option === focusedOption
           let optionRef = isFocused ? 'focused' : null
@@ -884,7 +891,7 @@ export default class Select extends Component {
           })
 
           return (
-            <Option
+            <OptionComponent
               instancePrefix={this._instancePrefix}
               optionIndex={i}
               className={optionClass}
@@ -899,7 +906,7 @@ export default class Select extends Component {
               ref={optionRef}
             >
               {renderLabel(option)}
-            </Option>
+            </OptionComponent>
           )
         })
       }
@@ -963,7 +970,9 @@ export default class Select extends Component {
       return null
     }
 
-    const allowCreate = this.props.allowCreate && this.state.inputValue.trim()
+    const createOption = options && options[0] && options[0].create && options[0]
+
+    const allowCreate = this.props.allowCreate && this.state.inputValue.trim() && createOption
 
     return (
       <div ref="menuContainer" className="uk-dropdown">
@@ -976,13 +985,14 @@ export default class Select extends Component {
           onScroll={this.handleMenuScroll}
           onMouseDown={this.handleMouseDownOnMenu}
         >
-          {allowCreate && <li className="uk-skip">
-            <a>
-              Create: <span className="uk-button uk-button-small uk-button-primary uk-margin-bottom-remove">
-                {this.state.inputValue}
-              </span>
-            </a>
-          </li>}
+          {allowCreate && (
+            <CreateOption
+              isFocused={focusedOption && focusedOption.create}
+              addLabelText={this.props.addLabelText}
+            >
+              {createOption.label}
+            </CreateOption>
+          )}
           {allowCreate && options.length > 0 && <li className="uk-nav-divider uk-skip" />}
           {menu}
         </ul>
