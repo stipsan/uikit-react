@@ -225,12 +225,12 @@ export default class Select extends Component {
     this.refs.input.blur()
   }
 
-  handleTouchMove = (event) => {
+  handleTouchMove = () => {
     // Set a flag that the view is being dragged
     this.dragging = true
   }
 
-  handleTouchStart = (event) => {
+  handleTouchStart = () => {
     // Set a flag that the view is not being dragged
     this.dragging = false
   }
@@ -271,14 +271,15 @@ export default class Select extends Component {
     // for the non-searchable select, toggle the menu
     if (!this.props.searchable) {
       this.focus()
-      return this.setState({
+      this.setState({
         isOpen: !this.state.isOpen,
       })
+      return
     }
 
     if (this.state.isFocused) {
       // On iOS, we can get into a state where we think the input is focused but it isn't really,
-      // since iOS ignores programmatic calls to input.focus() that weren't triggered by a click event.
+      // since iOS ignores programmatic calls to input.focus() that weren't triggered by a click
       // Call focus() again here to be safe.
       this.focus()
 
@@ -429,7 +430,11 @@ export default class Select extends Component {
       case 36: // home key
         this.focusStartOption()
       default:
-        if (this.props.allowCreate && this.props.multi && event.keyCode === this.props.addItemOnKeyCode) {
+        if (
+          this.props.allowCreate &&
+          this.props.multi &&
+          (event.keyCode === this.props.addItemOnKeyCode)
+        ) {
           event.preventDefault()
           event.stopPropagation()
           this.selectFocusedOption()
@@ -459,10 +464,6 @@ export default class Select extends Component {
     return (multi ? value.length === 0 : Object.keys(value).length === 0)
   }
 
-  getOptionLabel = (op) => {
-    return op[this.props.labelKey]
-  }
-
   getValueArray = (value) => {
     if (this.props.multi) {
       if (typeof value === 'string') value = value.split(this.props.delimiter)
@@ -478,8 +479,8 @@ export default class Select extends Component {
 
   expandValue = (value) => {
     if (typeof value !== 'string' && typeof value !== 'number') return value
-    let { options, valueKey } = this.props
-    if (!options) return
+    const { options, valueKey } = this.props
+    if (!options) return undefined
     for (let i = 0; i < options.length; i++) {
       if (options[i][valueKey] === value) {
         return options[i]
@@ -489,6 +490,8 @@ export default class Select extends Component {
     if (this.props.allowCreate && value !== '') {
       return this.createNewOption(value)
     }
+
+    return undefined
   }
 
   setValue = (value) => {
@@ -541,9 +544,8 @@ export default class Select extends Component {
     this.setValue(valueArray.filter(i => {
       if (i.create) {
         return i[this.props.valueKey] !== value[this.props.valueKey] && i[this.props.labelKey] !== value[this.props.labelKey]
-      } else {
-        return i !== value
       }
+      return i !== value
     }))
     this.focus()
   }
@@ -676,147 +678,7 @@ export default class Select extends Component {
     return newOption
   }
 
-  renderLoading() {
-    if (!this.props.isLoading) {
-      return false
-    }
-    return (
-      <span className="Select-loading-zone" aria-hidden="true">
-        <span className="Select-loading" />
-      </span>
-    )
-  }
-
-  renderValue(valueArray, isOpen) {
-    const renderLabel = this.props.valueRenderer || this.getOptionLabel
-    let ValueComponent = this.props.valueComponent
-    if (!valueArray.length) {
-      return !this.state.inputValue && (
-        <div className="uk-component-select__placeholder">{this.props.placeholder}</div>
-      )
-    }
-    let onClick = this.props.onValueClick ? this.handleValueClick : null
-    if (this.props.multi) {
-      return valueArray.map((value, i) => {
-        return (
-          <ValueComponent
-            id={this._instancePrefix + '-value-' + i}
-            instancePrefix={this._instancePrefix}
-            disabled={this.props.disabled || value.clearableValue === false}
-            key={`value-${i}-${value[this.props.valueKey]}`}
-            onClick={onClick}
-            onRemove={this.removeValue}
-            value={value}
-          >
-            {renderLabel(value)}
-            <span className="Select-aria-only">&nbsp;</span>
-          </ValueComponent>
-        )
-      })
-    } else if (!this.state.inputValue) {
-      if (isOpen) onClick = null
-      return (
-        <ValueComponent
-          id={this._instancePrefix + '-value-item'}
-          disabled={this.props.disabled}
-          instancePrefix={this._instancePrefix}
-          onClick={onClick}
-          value={valueArray[0]}
-        >
-          {renderLabel(valueArray[0])}
-        </ValueComponent>
-      )
-    }
-  }
-
-  renderInput(valueArray, focusedOptionIndex) {
-    if (this.props.inputRenderer) {
-      return this.props.inputRenderer()
-    } else {
-      let className = cx('uk-component-select__input', this.props.inputProps.className)
-      const isOpen = !!this.state.isOpen
-
-      const ariaOwns = cx({
-        [this._instancePrefix + '-list']: isOpen,
-        [this._instancePrefix + '-backspace-remove-message']: this.props.multi &&
-                                                              !this.props.disabled &&
-                                                              this.state.isFocused &&
-                                                              !this.state.inputValue,
-      })
-
-      // TODO: Check how this project includes Object.assign()
-      const inputProps = Object.assign({}, this.props.inputProps, {
-        role: 'combobox',
-        'aria-expanded': `${isOpen}`,
-        'aria-owns': ariaOwns,
-        'aria-haspopup': `${isOpen}`,
-        'aria-activedescendant': isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value',
-        'aria-labelledby': this.props['aria-labelledby'],
-        'aria-label': this.props['aria-label'],
-        className,
-        tabIndex: this.props.tabIndex,
-        onBlur: this.handleInputBlur,
-        onChange: this.handleInputChange,
-        onFocus: this.handleInputFocus,
-        ref: 'input',
-        required: this.state.required,
-        value: this.state.inputValue,
-      })
-
-      if (this.props.disabled || !this.props.searchable) {
-        return (
-          <div
-            {...this.props.inputProps}
-            role="combobox"
-            aria-expanded={isOpen}
-            aria-owns={isOpen ? this._instancePrefix + '-list' : this._instancePrefix + '-value'}
-            aria-activedescendant={isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value'}
-            className={className}
-            tabIndex={this.props.tabIndex || 0}
-            onBlur={this.handleInputBlur}
-            onFocus={this.handleInputFocus}
-            ref="input"
-            aria-readonly={'' + !!this.props.disabled}
-            style={{ border: 0, width: 1, display: 'inline-block' }}
-          />
-        )
-      }
-
-      if (this.props.autosize) {
-        return (
-          <Input {...inputProps} minWidth="5px" />
-        )
-      }
-      return (
-        <div className={className}>
-          <input {...inputProps} />
-        </div>
-      )
-    }
-  }
-
-  renderClear() {
-    if (!this.props.clearable || !this.props.value || (this.props.multi && !this.props.value.length) || this.props.disabled || this.props.isLoading) return
-    return (
-      <span
-        className="uk-component-select__clear uk-close"
-        title={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
-        aria-label={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
-        onMouseDown={this.clearValue}
-        onTouchStart={this.handleTouchStart}
-        onTouchMove={this.handleTouchMove}
-        onTouchEnd={this.handleTouchEndClearValue}
-      />
-    )
-  }
-
-  renderArrow() {
-    return (
-      <span className="Select-arrow-zone" onMouseDown={this.handleMouseDownOnArrow}>
-        <span className="Select-arrow" onMouseDown={this.handleMouseDownOnArrow} />
-      </span>
-    )
-  }
+  getOptionLabel = op => op[this.props.labelKey]
 
   filterOptions = (excludeOptions) => {
     let filterValue = this.state.inputValue
@@ -866,6 +728,154 @@ export default class Select extends Component {
     return filteredOptions
   }
 
+  renderValue(valueArray, isOpen) {
+    const renderLabel = this.props.valueRenderer || this.getOptionLabel
+    let ValueComponent = this.props.valueComponent
+    if (!valueArray.length) {
+      return !this.state.inputValue && (
+        <div className="uk-component-select__placeholder">{this.props.placeholder}</div>
+      )
+    }
+    let onClick = this.props.onValueClick ? this.handleValueClick : null
+    if (this.props.multi) {
+      return valueArray.map((value, i) => (
+        <ValueComponent
+          disabled={this.props.disabled || value.clearableValue === false}
+          id={`${this._instancePrefix}-value-${i}`}
+          instancePrefix={this._instancePrefix}
+          key={`value-${i}-${value[this.props.valueKey]}`}
+          value={value}
+          onClick={onClick}
+          onRemove={this.removeValue}
+        >
+          {renderLabel(value)}
+          <span className="Select-aria-only">&nbsp;</span>
+        </ValueComponent>
+      ))
+    } else if (!this.state.inputValue) {
+      if (isOpen) onClick = null
+      return (
+        <ValueComponent
+          disabled={this.props.disabled}
+          id={`${this._instancePrefix}-value-item`}
+          instancePrefix={this._instancePrefix}
+          value={valueArray[0]}
+          onClick={onClick}
+        >
+          {renderLabel(valueArray[0])}
+        </ValueComponent>
+      )
+    }
+  }
+
+  renderInput(valueArray, focusedOptionIndex) {
+    if (this.props.inputRenderer) {
+      return this.props.inputRenderer()
+    } else {
+      let className = cx('uk-component-select__input', this.props.inputProps.className)
+      const isOpen = !!this.state.isOpen
+
+      const ariaOwns = cx({
+        [`${this._instancePrefix}-list`]: isOpen,
+        [`${this._instancePrefix}-backspace-remove-message`]: this.props.multi &&
+                                                              !this.props.disabled &&
+                                                              this.state.isFocused &&
+                                                              !this.state.inputValue,
+      })
+
+      // TODO: Check how this project includes Object.assign()
+      const inputProps = Object.assign({}, this.props.inputProps, {
+        role: 'combobox',
+        'aria-expanded': `${isOpen}`,
+        'aria-owns': ariaOwns,
+        'aria-haspopup': `${isOpen}`,
+        'aria-activedescendant': isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value',
+        'aria-labelledby': this.props['aria-labelledby'],
+        'aria-label': this.props['aria-label'],
+        className,
+        tabIndex: this.props.tabIndex,
+        onBlur: this.handleInputBlur,
+        onChange: this.handleInputChange,
+        onFocus: this.handleInputFocus,
+        ref: 'input',
+        required: this.state.required,
+        value: this.state.inputValue,
+      })
+
+      if (this.props.disabled || !this.props.searchable) {
+        return (
+          <div
+            {...this.props.inputProps}
+            aria-activedescendant={isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value'}
+            aria-expanded={isOpen}
+            aria-owns={isOpen ? this._instancePrefix + '-list' : this._instancePrefix + '-value'}
+            aria-readonly={`${!!this.props.disabled}`}
+            className={className}
+            ref="input"
+            role="combobox"
+            style={{ border: 0, width: 1, display: 'inline-block' }}
+            tabIndex={this.props.tabIndex || 0}
+            onBlur={this.handleInputBlur}
+            onFocus={this.handleInputFocus}
+          />
+        )
+      }
+
+      if (this.props.autosize) {
+        return (
+          <Input {...inputProps} minWidth="5px" />
+        )
+      }
+      return (
+        <div className={className}>
+          <input {...inputProps} />
+        </div>
+      )
+    }
+  }
+
+  renderClear() {
+    if (
+      !this.props.clearable ||
+      !this.props.value ||
+      (this.props.multi && !this.props.value.length) ||
+      this.props.disabled ||
+      this.props.isLoading
+    ) {
+      return
+    }
+    return (
+      <span
+        aria-label={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
+        className="uk-component-select__clear uk-close"
+        title={this.props.multi ? this.props.clearAllText : this.props.clearValueText}
+        onMouseDown={this.clearValue}
+        onTouchEnd={this.handleTouchEndClearValue}
+        onTouchMove={this.handleTouchMove}
+        onTouchStart={this.handleTouchStart}
+      />
+    )
+  }
+
+  renderArrow() {
+    return (
+      <span className="Select-arrow-zone" onMouseDown={this.handleMouseDownOnArrow}>
+        <span className="Select-arrow" onMouseDown={this.handleMouseDownOnArrow} />
+      </span>
+    )
+  }
+
+  renderLoading() {
+    if (!this.props.isLoading) {
+      return false
+    }
+    return (
+      <span aria-hidden="true" className="Select-loading-zone">
+        <span className="Select-loading" />
+      </span>
+    )
+  }
+
   renderMenu(options, valueArray, focusedOption) {
     if (options && options.length || this.props.allowCreate) {
       if (this.props.menuRenderer) {
@@ -897,18 +907,18 @@ export default class Select extends Component {
 
           return (
             <OptionComponent
-              instancePrefix={this._instancePrefix}
-              optionIndex={i}
+              addLabelText={this.props.addLabelText}
               className={optionClass}
+              instancePrefix={this._instancePrefix}
               isDisabled={option.disabled}
               isFocused={isFocused}
-              key={`option-${i}-${option[this.props.valueKey]}`}
-              onSelect={this.selectValue}
-              onFocus={this.focusOption}
-              option={option}
-              addLabelText={this.props.addLabelText}
               isSelected={isSelected}
+              key={`option-${i}-${option[this.props.valueKey]}`}
+              option={option}
+              optionIndex={i}
               ref={optionRef}
+              onFocus={this.focusOption}
+              onSelect={this.selectValue}
             >
               {renderLabel(option)}
             </OptionComponent>
@@ -921,32 +931,36 @@ export default class Select extends Component {
           <a>{this.props.noResultsText}</a>
         </li>
       )
-    } else {
-      return null
     }
+    return null
   }
 
   renderHiddenField(valueArray) {
-    if (!this.props.name) return
+    if (!this.props.name) {
+      return false
+    }
     if (this.props.joinValues) {
-      let value = valueArray.map(i => stringifyValue(i[this.props.valueKey])).join(this.props.delimiter)
+      let value = valueArray
+                    .map(i => stringifyValue(i[this.props.valueKey]))
+                    .join(this.props.delimiter)
       return (
         <input
-          type="hidden"
-          ref="value"
-          name={this.props.name}
-          value={value}
           disabled={this.props.disabled}
+          name={this.props.name}
+          ref="value"
+          type="hidden"
+          value={value}
         />
       )
     }
     return valueArray.map((item, index) => (
-      <input key={'hidden.' + index}
-        type="hidden"
-        ref={'value' + index}
-        name={this.props.name}
-        value={stringifyValue(item[this.props.valueKey])}
+      <input
         disabled={this.props.disabled}
+        key={`hidden.${index}`}
+        name={this.props.name}
+        ref={`value${index}`}
+        type="hidden"
+        value={stringifyValue(item[this.props.valueKey])}
       />
     ))
   }
@@ -980,20 +994,20 @@ export default class Select extends Component {
     const allowCreate = this.props.allowCreate && this.state.inputValue.trim() && createOption
 
     return (
-      <div ref="menuContainer" className="uk-dropdown">
+      <div className="uk-dropdown" ref="menuContainer">
         <ul
+          className="uk-nav uk-nav-autocomplete"
+          id={`${this._instancePrefix}-list`}
           ref="menu"
           role="listbox"
-          className="uk-nav uk-nav-autocomplete"
-          id={this._instancePrefix + '-list'}
           style={this.props.menuStyle}
-          onScroll={this.handleMenuScroll}
           onMouseDown={this.handleMouseDownOnMenu}
+          onScroll={this.handleMenuScroll}
         >
           {allowCreate && (
             <CreateOption
-              isFocused={focusedOption && focusedOption.create}
               addLabelText={this.props.addLabelText}
+              isFocused={focusedOption && focusedOption.create}
             >
               {createOption.label}
             </CreateOption>
@@ -1009,7 +1023,9 @@ export default class Select extends Component {
     const valueArray = this.getValueArray(this.props.value)
     const options = this._visibleOptions = this.filterOptions(this.props.multi ? valueArray : null)
     let isOpen = this.state.isOpen
-    if (this.props.multi && !options.length && valueArray.length && !this.state.inputValue) isOpen = false
+    if (this.props.multi && !options.length && valueArray.length && !this.state.inputValue) {
+      isOpen = false
+    }
     const focusedOptionIndex = this.getFocusableOptionIndex(valueArray[0])
 
     let focusedOption = null
@@ -1039,32 +1055,38 @@ export default class Select extends Component {
       this.props.backspaceRemoves) {
       removeMessage = (
         <span
-          id={this._instancePrefix + '-backspace-remove-message'}
-          className="uk-component-select__aria-only"
           aria-live="assertive"
+          className="uk-component-select__aria-only"
+          id={`${this._instancePrefix}-backspace-remove-message`}
         >
-          {this.props.backspaceToRemoveMessage.replace('{label}', valueArray[valueArray.length - 1][this.props.labelKey])}
+          {this.props.backspaceToRemoveMessage.replace(
+            '{label}',
+            valueArray[valueArray.length - 1][this.props.labelKey]
+          )}
         </span>
       )
     }
 
     return (
       <div
-        ref="wrapper"
         className={className}
+        ref="wrapper"
       >
         {this.renderHiddenField(valueArray)}
         <div
-          ref="control"
           className="uk-component-select__control"
+          ref="control"
           style={this.props.style}
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleMouseDown}
           onTouchEnd={this.handleTouchEnd}
-          onTouchStart={this.handleTouchStart}
           onTouchMove={this.handleTouchMove}
+          onTouchStart={this.handleTouchStart}
         >
-          <div className="Select-multi-value-wrapper uk-component-select__values" id={this._instancePrefix + '-value'}>
+          <div
+            className="Select-multi-value-wrapper uk-component-select__values"
+            id={`${this._instancePrefix}-value`}
+          >
             {this.renderValue(valueArray, isOpen)}
             {this.renderInput(valueArray, focusedOptionIndex)}
           </div>
