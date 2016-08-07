@@ -3,18 +3,18 @@ import { Component, PropTypes } from 'react'
 
 export default class Option extends Component {
   static propTypes = {
+    instancePrefix: PropTypes.string.isRequired,  // unique prefix for the ids (used for aria)
+    option: PropTypes.object.isRequired,          // object that is base for that option
     addLabelText: PropTypes.string,               // text to display with value while creating
     children: PropTypes.node,
     className: PropTypes.string,                  // className (based on mouse position)
-    instancePrefix: PropTypes.string.isRequired,  // unique prefix for the ids (used for aria)
     isDisabled: PropTypes.bool,                   // the option is disabled
     isFocused: PropTypes.bool,                    // the option is focused
     isSelected: PropTypes.bool,                   // the option is selected
+    optionIndex: PropTypes.number,                // index of the option, used to generate
     onFocus: PropTypes.func,                      // method to handle mouseEnter on option
     onSelect: PropTypes.func,                     // method to handle click on option element
     onUnfocus: PropTypes.func,                    // method to handle mouseLeave on option
-    option: PropTypes.object.isRequired,          // object that is base for that option
-    optionIndex: PropTypes.number,                // index of the option, used to generate
   }
 
   onFocus = (event) => {
@@ -66,8 +66,8 @@ export default class Option extends Component {
     return option.disabled ? (
       <li
         className={className}
-        onMouseDown={this.handleBlockEvent}
         onClick={this.handleBlockEvent}
+        onMouseDown={this.handleBlockEvent}
       >
         <a>
           {this.props.children}
@@ -76,16 +76,16 @@ export default class Option extends Component {
     ) : (
       <li
         className={className}
-        style={option.style}
+        id={`${instancePrefix}-option-${optionIndex}`}
         role="option"
+        style={option.style}
+        title={option.title}
         onMouseDown={this.handleMouseDown}
         onMouseEnter={this.handleMouseEnter}
         onMouseMove={this.handleMouseMove}
-        onTouchStart={this.handleTouchStart}
-        onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}
-        id={`${instancePrefix}-option-${optionIndex}`}
-        title={option.title}
+        onTouchMove={this.handleTouchMove}
+        onTouchStart={this.handleTouchStart}
       >
         <a>
           {
