@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
 export default class Button extends Component {
@@ -54,7 +54,7 @@ export default class Button extends Component {
       className: customClassName,
       ...other,
     } = this.props
-    const className = classNames('uk-button', customClassName, {
+    const className = cx('uk-button', customClassName, {
       'uk-button-primary': primary,
       'uk-button-success': success,
       'uk-button-danger': danger,

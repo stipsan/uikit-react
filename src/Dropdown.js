@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
 export default class Dropdown extends Component {
@@ -46,7 +46,7 @@ export default class Dropdown extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
   render() {
-    const className = classNames('uk-button-dropdown', {
+    const className = cx('uk-button-dropdown', {
       'uk-open': this.state.isOpen,
     })
     return (

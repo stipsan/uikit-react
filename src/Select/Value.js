@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
 export default class Value extends Component {
@@ -91,7 +91,7 @@ export default class Value extends Component {
   render() {
     return (
       <div
-        className={classNames('uk-component-select__value', this.props.value.className)}
+        className={cx('uk-component-select__value', this.props.value.className)}
         style={this.props.value.style}
         title={this.props.value.title}
       >

@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
 export default class Option extends Component {
@@ -62,7 +62,7 @@ export default class Option extends Component {
 
   render() {
     const { option, instancePrefix, optionIndex } = this.props
-    let className = classNames(this.props.className, option.className)
+    let className = cx(this.props.className, option.className)
     return option.disabled ? (
       <li
         className={className}

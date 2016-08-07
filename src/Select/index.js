@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import Input from 'react-input-autosize'
 import ReactDOM from 'react-dom'
 import { Component, PropTypes } from 'react'
@@ -730,10 +730,10 @@ export default class Select extends Component {
     if (this.props.inputRenderer) {
       return this.props.inputRenderer()
     } else {
-      let className = classNames('uk-component-select__input', this.props.inputProps.className)
+      let className = cx('uk-component-select__input', this.props.inputProps.className)
       const isOpen = !!this.state.isOpen
 
-      const ariaOwns = classNames({
+      const ariaOwns = cx({
         [this._instancePrefix + '-list']: isOpen,
         [this._instancePrefix + '-backspace-remove-message']: this.props.multi &&
                                                               !this.props.disabled &&
@@ -883,7 +883,7 @@ export default class Select extends Component {
           let isSelected = valueArray && valueArray.indexOf(option) > -1
           let isFocused = option === focusedOption
           let optionRef = isFocused ? 'focused' : null
-          let optionClass = classNames(this.props.optionClassName, {
+          let optionClass = cx(this.props.optionClassName, {
             'Select-option': true,
             'is-selected': isSelected,
             'uk-active': isFocused,
@@ -1013,7 +1013,7 @@ export default class Select extends Component {
     } else {
       focusedOption = this._focusedOption = null
     }
-    let className = classNames('uk-autocomplete uk-component-select', this.props.className, {
+    let className = cx('uk-autocomplete uk-component-select', this.props.className, {
       'uk-component-select--multi': this.props.multi,
       'uk-component-select--single': !this.props.multi,
       'uk-component-select--disabled': this.props.disabled,

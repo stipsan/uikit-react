@@ -13,7 +13,7 @@ describe('<Button />', () => {
     expect(wrapper.hasClass('uk-active')).toBe(true)
   })
 
-  it('toggles classNames based on props', () => {
+  it('toggles css class names based on props', () => {
     const wrapper = shallow(<Button primary />)
 
     expect(wrapper.hasClass('uk-button-primary')).toBe(true)
