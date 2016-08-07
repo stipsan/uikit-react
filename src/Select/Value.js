@@ -91,7 +91,7 @@ export default class Value extends Component {
   render() {
     return (
       <div
-        className={classNames('Select-value', this.props.value.className)}
+        className={classNames('uk-component-select__values', this.props.value.className)}
         style={this.props.value.style}
         title={this.props.value.title}
       >
