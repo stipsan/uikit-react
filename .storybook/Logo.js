@@ -3,6 +3,9 @@ import src from './static/logo.svg'
 const linkStyle = Object.freeze({
   height: '40px',
   overflow: 'hidden',
+  paddingRight: 0,
+  paddingLeft: 0,
+  marginLeft: '-15px',
 })
 
 const logoStyle = Object.freeze({
@@ -13,7 +16,7 @@ const logoStyle = Object.freeze({
 })
 
 const Logo = () => <a className="uk-navbar-brand" style={linkStyle}>
-  <img src={src} style={logoStyle} title="UIkit React Logo" role="presentation" />
+  <img role="presentation" src={src} style={logoStyle} title="UIkit React Logo" />
 </a>
 
 export default Logo

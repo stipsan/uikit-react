@@ -43,7 +43,7 @@ storiesOf('Select', module)
       This is the basic usage examples
     `,
     () => (
-      <div className="uk-grid">
+      <div className="uk-grid uk-margin-bottom">
         <Form>
           <Select
             allowCreate
@@ -67,5 +67,5 @@ storiesOf('Select', module)
         </Form>
       </div>
   ),
-  { inline: true, propTables: [/* Value, Option, */Select] }
+  { header: false, inline: true, propTables: [/* Value, Option, */Select] }
 )

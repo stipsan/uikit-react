@@ -2,6 +2,9 @@ import { storiesOf } from '@kadira/storybook'
 
 import Dropdown from '../Dropdown'
 
+// This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
+Dropdown.displayName = 'Dropdown'
+
 const Menu = () => (
   <div className="uk-dropdown uk-dropdown-bottom">
     <ul className="uk-nav uk-nav-dropdown">
@@ -23,7 +26,7 @@ storiesOf('Dropdown', module)
       This is the basic usage showing hover, and click mode.
     `,
     () => (
-      <div className="">
+      <div className="uk-margin-bottom">
         <Dropdown>
           <button className="uk-button">
             Hover <i className="uk-icon-caret-down" />
@@ -39,5 +42,5 @@ storiesOf('Dropdown', module)
         </Dropdown>
       </div>
   ),
-  { inline: true, propTables: [Dropdown] }
+  { header: false, inline: true, propTables: [Dropdown] }
 )

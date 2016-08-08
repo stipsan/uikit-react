@@ -7,3 +7,12 @@ $icon-font-path: "~uikit/dist/fonts";
 @import "~uikit/dist/scss/components/form-advanced.scss";
 
 @import "~uikit-react/scss/Select.scss";
+
+/* Storybook specific */
+.tm-navbar {
+  background: #fbfdfe;
+  border-bottom: 1px solid #ececec;
+}
+.tm-navbar > .uk-navbar-nav > li.uk-active > a.uk-navbar-nav-subtitle {
+  background: transparent;
+}
