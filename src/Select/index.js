@@ -792,79 +792,78 @@ export default class Select extends Component {
   renderInput(valueArray, focusedOptionIndex) {
     if (this.props.inputRenderer) {
       return this.props.inputRenderer()
-    } else {
-      let className = cx('uk-component-select__input', this.props.inputProps.className)
-      const isOpen = !!this.state.isOpen
+    }
+    let className = cx('uk-component-select__input', this.props.inputProps.className)
+    const isOpen = !!this.state.isOpen
 
-      const ariaOwns = cx({
-        [`${this._instancePrefix}-list`]: isOpen,
-        [`${this._instancePrefix}-backspace-remove-message`]: this.props.multi &&
+    const ariaOwns = cx({
+      [`${this._instancePrefix}-list`]: isOpen,
+      [`${this._instancePrefix}-backspace-remove-message`]: this.props.multi &&
                                                               !this.props.disabled &&
                                                               this.state.isFocused &&
                                                               !this.state.inputValue,
-      })
+    })
 
       // TODO: Check how this project includes Object.assign()
-      const inputProps = Object.assign({}, this.props.inputProps, {
-        role: 'combobox',
-        'aria-expanded': `${isOpen}`,
-        'aria-owns': ariaOwns,
-        'aria-haspopup': `${isOpen}`,
-        'aria-activedescendant': (
+    const inputProps = Object.assign({}, this.props.inputProps, {
+      role: 'combobox',
+      'aria-expanded': `${isOpen}`,
+      'aria-owns': ariaOwns,
+      'aria-haspopup': `${isOpen}`,
+      'aria-activedescendant': (
           isOpen ?
            `${this._instancePrefix}-option-${focusedOptionIndex}` :
            `${this._instancePrefix}-value`
         ),
-        'aria-labelledby': this.props['aria-labelledby'],
-        'aria-label': this.props['aria-label'],
-        className,
-        tabIndex: this.props.tabIndex,
-        onBlur: this.handleInputBlur,
-        onChange: this.handleInputChange,
-        onFocus: this.handleInputFocus,
-        ref: 'input',
-        required: this.state.required,
-        value: this.state.inputValue,
-      })
+      'aria-labelledby': this.props['aria-labelledby'],
+      'aria-label': this.props['aria-label'],
+      className,
+      tabIndex: this.props.tabIndex,
+      onBlur: this.handleInputBlur,
+      onChange: this.handleInputChange,
+      onFocus: this.handleInputFocus,
+      ref: 'input',
+      required: this.state.required,
+      value: this.state.inputValue,
+    })
 
-      if (this.props.disabled || !this.props.searchable) {
-        return (
-          <div // eslint-disable-line jsx-a11y/role-supports-aria-props
-            {...this.props.inputProps}
-            aria-activedescendant={
-              isOpen ?
-              `${this._instancePrefix}-option-${focusedOptionIndex}` :
-              `${this._instancePrefix}-value`
-            }
-            aria-expanded={isOpen}
-            aria-owns={
-              isOpen ?
-              `${this._instancePrefix}-list` :
-              `${this._instancePrefix}-value`
-            }
-            aria-readonly={this.props.disabled}
-            className={className}
-            ref="input" // eslint-disable-line react/no-string-refs
-            role="combobox"
-            style={{ border: 0, width: 1, display: 'inline-block' }}
-            tabIndex={this.props.tabIndex || 0}
-            onBlur={this.handleInputBlur}
-            onFocus={this.handleInputFocus}
-          />
-        )
-      }
-
-      if (this.props.autosize) {
-        return (
-          <Input {...inputProps} minWidth="5px" />
-        )
-      }
+    if (this.props.disabled || !this.props.searchable) {
       return (
-        <div className={className}>
-          <input {...inputProps} />
-        </div>
-      )
+        <div // eslint-disable-line jsx-a11y/role-supports-aria-props
+          {...this.props.inputProps}
+          aria-activedescendant={
+            isOpen ?
+            `${this._instancePrefix}-option-${focusedOptionIndex}` :
+            `${this._instancePrefix}-value`
+          }
+          aria-expanded={isOpen}
+          aria-owns={
+            isOpen ?
+            `${this._instancePrefix}-list` :
+            `${this._instancePrefix}-value`
+          }
+          aria-readonly={this.props.disabled}
+          className={className}
+          ref="input" // eslint-disable-line react/no-string-refs
+          role="combobox"
+          style={{ border: 0, width: 1, display: 'inline-block' }}
+          tabIndex={this.props.tabIndex || 0}
+          onBlur={this.handleInputBlur}
+          onFocus={this.handleInputFocus}
+        />
+        )
     }
+
+    if (this.props.autosize) {
+      return (
+        <Input {...inputProps} minWidth="5px" />
+        )
+    }
+    return (
+      <div className={className}>
+        <input {...inputProps} />
+      </div>
+      )
   }
 
   renderClear() {
@@ -920,48 +919,47 @@ export default class Select extends Component {
           handleSelect: this.handleSelect,
           valueArray,
         })
-      } else {
-        let OptionComponent = this.props.optionComponent
-        const renderLabel = this.props.optionRenderer || this.getOptionLabel
-
-        return options.map((option, i) => {
-          if (option.create) {
-            return false
-          }
-          let isSelected = valueArray && valueArray.indexOf(option) > -1
-          let isFocused = option === focusedOption
-          let optionRef = isFocused ? node => {
-            if (node) {
-              this.focusedNode = node
-            }
-          } : null
-          let optionClass = cx(this.props.optionClassName, {
-            'Select-option': true,
-            'is-selected': isSelected,
-            'uk-active': isFocused,
-            'is-disabled': option.disabled,
-          })
-
-          return (
-            <OptionComponent
-              addLabelText={this.props.addLabelText}
-              className={optionClass}
-              instancePrefix={this._instancePrefix}
-              isDisabled={option.disabled}
-              isFocused={isFocused}
-              isSelected={isSelected}
-              key={`option-${i}-${option[this.props.valueKey]}`}
-              option={option}
-              optionIndex={i}
-              ref={optionRef}
-              onFocus={this.focusOption}
-              onSelect={this.handleSelect}
-            >
-              {renderLabel(option)}
-            </OptionComponent>
-          )
-        })
       }
+      let OptionComponent = this.props.optionComponent
+      const renderLabel = this.props.optionRenderer || this.getOptionLabel
+
+      return options.map((option, i) => {
+        if (option.create) {
+          return false
+        }
+        let isSelected = valueArray && valueArray.indexOf(option) > -1
+        let isFocused = option === focusedOption
+        let optionRef = isFocused ? node => {
+          if (node) {
+            this.focusedNode = node
+          }
+        } : null
+        let optionClass = cx(this.props.optionClassName, {
+          'Select-option': true,
+          'is-selected': isSelected,
+          'uk-active': isFocused,
+          'is-disabled': option.disabled,
+        })
+
+        return (
+          <OptionComponent
+            addLabelText={this.props.addLabelText}
+            className={optionClass}
+            instancePrefix={this._instancePrefix}
+            isDisabled={option.disabled}
+            isFocused={isFocused}
+            isSelected={isSelected}
+            key={`option-${i}-${option[this.props.valueKey]}`}
+            option={option}
+            optionIndex={i}
+            ref={optionRef}
+            onFocus={this.focusOption}
+            onSelect={this.handleSelect}
+          >
+            {renderLabel(option)}
+          </OptionComponent>
+          )
+      })
     } else if (this.props.noResultsText && !this.props.allowCreate) {
       return (
         <li className="uk-skip">
