@@ -1,8 +1,8 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { PropTypes } from 'react'
 
 const CreateOption = ({ isFocused, addLabelText, children }) => (
-  <li className={classNames({ 'uk-active': isFocused })}>
+  <li className={cx({ 'uk-active': isFocused })}>
     <a>
       {addLabelText}&nbsp;
       <span className="uk-text-bold">
@@ -13,9 +13,9 @@ const CreateOption = ({ isFocused, addLabelText, children }) => (
 )
 
 CreateOption.propTypes = {
-  isFocused: PropTypes.bool.isRequired,
   addLabelText: PropTypes.node.isRequired,
   children: PropTypes.node.isRequired,
+  isFocused: PropTypes.bool.isRequired,
 }
 
 export default CreateOption

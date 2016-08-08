@@ -1,15 +1,15 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
 export default class Value extends Component {
 
   static propTypes = {
+    value: PropTypes.object.isRequired,     // the option object for this value
     children: PropTypes.node,
     disabled: PropTypes.bool,               // disabled prop passed to ReactSelect
     id: PropTypes.string,                   // Unique id for the value - used for aria
     onClick: PropTypes.func,                // method to handle click on value label
     onRemove: PropTypes.func,               // method to handle removal of the value
-    value: PropTypes.object.isRequired,     // the option object for this value
   }
 
   handleRemove = event => {
@@ -57,15 +57,13 @@ export default class Value extends Component {
     }
     return (
       <span
-        className="Select-value-icon"
         aria-hidden="true"
+        className="uk-close uk-component-select__delete"
         onMouseDown={this.handleRemove}
         onTouchEnd={this.handleTouchEndRemove}
-        onTouchStart={this.handleTouchStart}
         onTouchMove={this.handleTouchMove}
-      >
-        &times;
-      </span>
+        onTouchStart={this.handleTouchStart}
+      />
     )
   }
 
@@ -82,7 +80,7 @@ export default class Value extends Component {
         {this.props.children}
       </a>
     ) : (
-      <span className={className} role="option" aria-selected="true" id={this.props.id}>
+      <span aria-selected="true" className={className} id={this.props.id} role="option">
         {this.props.children}
       </span>
     )
@@ -91,7 +89,11 @@ export default class Value extends Component {
   render() {
     return (
       <div
-        className={classNames('uk-component-select__value', this.props.value.className)}
+        className={cx(
+          'uk-component-select__value',
+          this.props.value.className,
+          { 'uk-badge': !!this.props.onRemove }
+        )}
         style={this.props.value.style}
         title={this.props.value.title}
       >

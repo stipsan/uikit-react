@@ -8,12 +8,26 @@
     box-sizing: border-box;
   }
 
-  .uk-close {
+  .uk-component-select__clear {
     position: absolute;
     top: $form-border-width;
     right: $form-border-width;
     padding: $form-padding;
   }
+}
+
+.uk-component-select__aria-only {
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.uk-component-select__delete {
+  line-height: $badge-line-height - 4;
+  height: $badge-line-height - 2;
 }
 
 .uk-component-select__control {
@@ -86,7 +100,8 @@
 .uk-component-select__value {
   padding: $form-padding;
   padding-left: 0;
-  padding-right: 0;
+  padding-right: 2px;
+  margin-right: 3px;
 }
 
 .uk-component-select__placeholder {

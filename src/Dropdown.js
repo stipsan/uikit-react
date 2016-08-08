@@ -1,14 +1,14 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
 export default class Dropdown extends Component {
   static propTypes = {
-    className: PropTypes.string,
     children: PropTypes.node.isRequired,
     delay: PropTypes.number.isRequired,
+    label: PropTypes.string.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,
-    label: PropTypes.string.isRequired,
+    className: PropTypes.string,
   }
 
   static defaultProps = {
@@ -46,17 +46,17 @@ export default class Dropdown extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
   render() {
-    const className = classNames('uk-button-dropdown', {
+    const className = cx('uk-button-dropdown', {
       'uk-open': this.state.isOpen,
     })
     return (
       <div
+        aria-expanded={this.state.isOpen}
+        aria-haspopup="true"
         className={className}
+        onClick={this.props.mode === 'click' && this.handleClick}
         onMouseEnter={this.props.mode === 'hover' && this.handleMouseEnter}
         onMouseLeave={this.props.mode === 'hover' && this.handleMouseLeave}
-        onClick={this.props.mode === 'click' && this.handleClick}
-        aria-haspopup="true"
-        aria-expanded={this.state.isOpen}
       >
         {this.props.children}
       </div>

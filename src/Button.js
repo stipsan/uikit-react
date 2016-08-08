@@ -1,19 +1,19 @@
-import classNames from 'classnames'
+import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
 export default class Button extends Component {
 
   static propTypes = {
-    type: PropTypes.string,
-    primary: PropTypes.bool,
-    success: PropTypes.bool,
+    className: PropTypes.string,
     danger: PropTypes.bool,
+    disabled: PropTypes.bool,
+    large: PropTypes.bool,
     link: PropTypes.bool,
     mini: PropTypes.bool,
+    primary: PropTypes.bool,
     small: PropTypes.bool,
-    large: PropTypes.bool,
-    disabled: PropTypes.bool,
-    className: PropTypes.string,
+    success: PropTypes.bool,
+    type: PropTypes.string,
     onClick: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.func,
@@ -54,7 +54,7 @@ export default class Button extends Component {
       className: customClassName,
       ...other,
     } = this.props
-    const className = classNames('uk-button', customClassName, {
+    const className = cx('uk-button', customClassName, {
       'uk-button-primary': primary,
       'uk-button-success': success,
       'uk-button-danger': danger,
@@ -66,7 +66,7 @@ export default class Button extends Component {
     })
 
     return (
-      <button {...other} onClick={this.props.onClick || this.handleClick} className={className} />
+      <button {...other} className={className} onClick={this.props.onClick || this.handleClick} />
     )
   }
 }

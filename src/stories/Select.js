@@ -2,10 +2,17 @@
 // import Value from 'uikit-react/Select/Value'
 
 import { storiesOf, action } from '@kadira/storybook'
-import { cloneElement, Component } from 'react'
+import { cloneElement, Component, PropTypes } from 'react'
 import { Select } from 'uikit-react'
 
+// This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
+Select.displayName = 'Select'
+
 class Form extends Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    defaultValue: PropTypes.any,
+  }
   static props = {
     defaultValue: null,
   }
@@ -36,7 +43,7 @@ storiesOf('Select', module)
       This is the basic usage examples
     `,
     () => (
-      <div className="uk-grid">
+      <div className="uk-grid uk-margin-bottom">
         <Form>
           <Select
             allowCreate
@@ -60,5 +67,5 @@ storiesOf('Select', module)
         </Form>
       </div>
   ),
-  { inline: true, propTables: [/* Value, Option, */Select] }
+  { header: false, inline: true, propTables: [/* Value, Option, */Select] }
 )
