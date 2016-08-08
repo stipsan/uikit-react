@@ -11,7 +11,7 @@ Select.displayName = 'Select'
 class Form extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    defaultValue: PropTypes.any.isRequired,
+    defaultValue: PropTypes.any,
   }
   static props = {
     defaultValue: null,

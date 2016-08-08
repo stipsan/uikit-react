@@ -1,6 +1,5 @@
 import cx from 'classnames'
 import Input from 'react-input-autosize'
-import ReactDOM from 'react-dom'
 import { Component, PropTypes } from 'react'
 
 import CreateOption from './CreateOption'
@@ -178,29 +177,26 @@ export default class Select extends Component {
 
   componentDidUpdate(prevProps) {
     // focus to the selected option
-    if (this.refs.menu && this.refs.focused && this.state.isOpen && !this.hasScrolledToOption) {
-      const focusedOptionNode = ReactDOM.findDOMNode(this.refs.focused)
-      const menuNode = ReactDOM.findDOMNode(this.refs.menu)
-      menuNode.scrollTop = focusedOptionNode.offsetTop
+    if (this.menuNode && this.focusedNode && this.state.isOpen && !this.hasScrolledToOption) {
+      this.menuNode.scrollTop = this.focusedNode.offsetTop
       this.hasScrolledToOption = true
     } else if (!this.state.isOpen) {
       this.hasScrolledToOption = false
     }
 
-    if (this._scrollToFocusedOptionOnUpdate && this.refs.focused && this.refs.menu) {
+    if (this._scrollToFocusedOptionOnUpdate && this.focusedNode && this.menuNode) {
       this._scrollToFocusedOptionOnUpdate = false
-      const focusedDOM = ReactDOM.findDOMNode(this.refs.focused)
-      const menuDOM = ReactDOM.findDOMNode(this.refs.menu)
-      const focusedRect = focusedDOM.getBoundingClientRect()
-      const menuRect = menuDOM.getBoundingClientRect()
+      const focusedRect = this.focusedNode.getBoundingClientRect()
+      const menuRect = this.menuNode.getBoundingClientRect()
       if (focusedRect.bottom > menuRect.bottom || focusedRect.top < menuRect.top) {
-        menuDOM.scrollTop = (focusedDOM.offsetTop + focusedDOM.clientHeight - menuDOM.offsetHeight)
+        this.menuNode.scrollTop = (this.focusedNode.offsetTop + this.focusedNode.clientHeight) -
+                                  this.menuNode.offsetHeight
       }
     }
-    if (this.props.scrollMenuIntoView && this.refs.menuContainer) {
-      const menuContainerRect = this.refs.menuContainer.getBoundingClientRect()
+    if (this.props.scrollMenuIntoView && this.menuContainer) {
+      const menuContainerRect = this.menuContainer.getBoundingClientRect()
       if (window.innerHeight < menuContainerRect.bottom + this.props.menuBuffer) {
-        window.scrollBy(0, menuContainerRect.bottom + this.props.menuBuffer - window.innerHeight)
+        window.scrollBy(0, (menuContainerRect.bottom + this.props.menuBuffer) - window.innerHeight)
       }
     }
     if (prevProps.disabled !== this.props.disabled) {
@@ -210,8 +206,10 @@ export default class Select extends Component {
   }
 
   focus = () => {
-    if (!this.refs.input) return
-    this.refs.input.focus()
+    if (!this.refs.input) { // eslint-disable-line react/no-string-refs
+      return
+    }
+    this.refs.input.focus() // eslint-disable-line react/no-string-refs
 
     if (this.props.openAfterFocus) {
       this.setState({
@@ -221,8 +219,10 @@ export default class Select extends Component {
   }
 
   blurInput = () => {
-    if (!this.refs.input) return
-    this.refs.input.blur()
+    if (!this.refs.input) {  // eslint-disable-line react/no-string-refs
+      return
+    }
+    this.refs.input.blur() // eslint-disable-line react/no-string-refs
   }
 
   handleTouchMove = () => {
@@ -284,7 +284,7 @@ export default class Select extends Component {
       this.focus()
 
       // clears value so that the cursor will be a the end of input then the component re-renders
-      this.refs.input.getInput().value = ''
+      this.refs.input.getInput().value = '' // eslint-disable-line react/no-string-refs
 
       // if the input is focused, ensure the menu is open
       this.setState({
@@ -350,7 +350,7 @@ export default class Select extends Component {
   }
 
   handleInputBlur = (event) => {
-    if (this.refs.menu && document.activeElement === this.refs.menu) {
+    if (this.menuNode && document.activeElement === this.menuNode) {
       this.focus()
       return
     }
@@ -375,7 +375,7 @@ export default class Select extends Component {
       const nextState = this.props.onInputChange(newInputValue)
       // Note: != used deliberately here to catch undefined and null
       if (nextState != null && typeof nextState !== 'object') {
-        newInputValue = '' + nextState
+        newInputValue = `${nextState}`
       }
     }
     this.setState({
@@ -806,7 +806,11 @@ export default class Select extends Component {
         return (
           <div
             {...this.props.inputProps}
-            aria-activedescendant={isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value'}
+            aria-activedescendant={
+              isOpen ?
+              `${this._instancePrefix}-option-${focusedOptionIndex}` :
+              `${this._instancePrefix}-value`
+            }
             aria-expanded={isOpen}
             aria-owns={isOpen ? this._instancePrefix + '-list' : this._instancePrefix + '-value'}
             aria-readonly={`${!!this.props.disabled}`}
@@ -897,7 +901,11 @@ export default class Select extends Component {
           }
           let isSelected = valueArray && valueArray.indexOf(option) > -1
           let isFocused = option === focusedOption
-          let optionRef = isFocused ? 'focused' : null
+          let optionRef = isFocused ? node => {
+            if (node) {
+              this.focusedNode = node
+            }
+          } : null
           let optionClass = cx(this.props.optionClassName, {
             'Select-option': true,
             'is-selected': isSelected,
@@ -994,11 +1002,22 @@ export default class Select extends Component {
     const allowCreate = this.props.allowCreate && this.state.inputValue.trim() && createOption
 
     return (
-      <div className="uk-dropdown" ref="menuContainer">
+      <div
+        className="uk-dropdown"
+        ref={node => {
+          if (node) {
+            this.menuContainer = node
+          }
+        }}
+      >
         <ul
           className="uk-nav uk-nav-autocomplete"
           id={`${this._instancePrefix}-list`}
-          ref="menu"
+          ref={node => {
+            if (node) {
+              this.menuNode = node
+            }
+          }}
           role="listbox"
           style={this.props.menuStyle}
           onMouseDown={this.handleMouseDownOnMenu}
@@ -1068,14 +1087,10 @@ export default class Select extends Component {
     }
 
     return (
-      <div
-        className={className}
-        ref="wrapper"
-      >
+      <div className={className}>
         {this.renderHiddenField(valueArray)}
         <div
           className="uk-component-select__control"
-          ref="control"
           style={this.props.style}
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleMouseDown}
