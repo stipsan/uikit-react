@@ -429,6 +429,7 @@ export default class Select extends Component {
         break
       case 36: // home key
         this.focusStartOption()
+        break
       default:
         if (
           this.props.allowCreate &&
@@ -454,7 +455,10 @@ export default class Select extends Component {
   handleMenuScroll = (event) => {
     if (!this.props.onMenuScrollToBottom) return
     const { target } = event
-    if (target.scrollHeight > target.offsetHeight && !(target.scrollHeight - target.offsetHeight - target.scrollTop)) {
+    if (
+      target.scrollHeight > target.offsetHeight &&
+      !(target.scrollHeight - target.offsetHeight - target.scrollTop)
+    ) {
       this.props.onMenuScrollToBottom()
     }
   }
@@ -464,14 +468,15 @@ export default class Select extends Component {
     return (multi ? value.length === 0 : Object.keys(value).length === 0)
   }
 
-  getValueArray = (value) => {
+  getValueArray = value => {
     if (this.props.multi) {
-      if (typeof value === 'string') value = value.split(this.props.delimiter)
-      if (!Array.isArray(value)) {
-        if (value === null || value === undefined) return []
-        value = [value]
+      let valueArray = value
+      if (typeof valueArray === 'string') valueArray = valueArray.split(this.props.delimiter)
+      if (!Array.isArray(valueArray)) {
+        if (valueArray === null || valueArray === undefined) return []
+        valueArray = [valueArray]
       }
-      return value.map(this.expandValue).filter(i => i)
+      return valueArray.map(this.expandValue).filter(i => i)
     }
     const expandedValue = this.expandValue(value)
     return expandedValue ? [expandedValue] : []
@@ -504,12 +509,16 @@ export default class Select extends Component {
       this.setState({ required })
     }
     if (this.props.simpleValue && value) {
-      value = this.props.multi ? value.map(i => i[this.props.valueKey]).join(this.props.delimiter) : value[this.props.valueKey]
+      value = (
+        this.props.multi ?
+        value.map(i => i[this.props.valueKey]).join(this.props.delimiter) :
+        value[this.props.valueKey]
+      )
     }
     this.props.onChange(value)
   }
 
-  selectValue = (value) => {
+  handleSelect = (value) => {
     this.hasScrolledToOption = false
     if (this.props.multi) {
       this.addValue(value)
@@ -543,7 +552,10 @@ export default class Select extends Component {
     const valueArray = this.getValueArray(this.props.value)
     this.setValue(valueArray.filter(i => {
       if (i.create) {
-        return i[this.props.valueKey] !== value[this.props.valueKey] && i[this.props.labelKey] !== value[this.props.labelKey]
+        return (
+          i[this.props.valueKey] !== value[this.props.valueKey] &&
+          i[this.props.labelKey] !== value[this.props.labelKey]
+        )
       }
       return i !== value
     }))
@@ -604,7 +616,11 @@ export default class Select extends Component {
       this.setState({
         isOpen: true,
         inputValue: '',
-        focusedOption: this._focusedOption || options[dir === 'next' ? 0 : options.length - 1].option,
+        focusedOption: (
+          this._focusedOption || options[dir === 'next' ?
+          0 :
+          options.length - 1].option
+        ),
       })
       return
     }
@@ -629,14 +645,14 @@ export default class Select extends Component {
     } else if (dir === 'end') {
       focusedIndex = options.length - 1
     } else if (dir === 'page_up') {
-      var potentialIndex = focusedIndex - this.props.pageSize
+      const potentialIndex = focusedIndex - this.props.pageSize
       if (potentialIndex < 0) {
         focusedIndex = 0
       } else {
         focusedIndex = potentialIndex
       }
     } else if (dir === 'page_down') {
-      var potentialIndex = focusedIndex + this.props.pageSize
+      const potentialIndex = focusedIndex + this.props.pageSize
       if (potentialIndex > options.length - 1) {
         focusedIndex = options.length - 1
       } else {
@@ -656,10 +672,10 @@ export default class Select extends Component {
 
   selectFocusedOption = () => {
     // if (this.props.allowCreate && !this.state.focusedOption) {
-    //   return this.selectValue(this.state.inputValue);
+    //   return this.handleSelect(this.state.inputValue);
     // }
     if (this._focusedOption) {
-      return this.selectValue(this._focusedOption)
+      return this.handleSelect(this._focusedOption)
     }
   }
 
@@ -703,8 +719,14 @@ export default class Select extends Component {
           if (this.props.matchProp !== 'value') labelTest = labelTest.toLowerCase()
         }
         return this.props.matchPos === 'start' ? (
-          (this.props.matchProp !== 'label' && valueTest.substr(0, filterValue.length) === filterValue) ||
-          (this.props.matchProp !== 'value' && labelTest.substr(0, filterValue.length) === filterValue)
+          (
+            this.props.matchProp !== 'label' &&
+            valueTest.substr(0, filterValue.length) === filterValue
+          ) ||
+          (
+            this.props.matchProp !== 'value' &&
+            labelTest.substr(0, filterValue.length) === filterValue
+          )
         ) : (
           (this.props.matchProp !== 'label' && valueTest.indexOf(filterValue) >= 0) ||
           (this.props.matchProp !== 'value' && labelTest.indexOf(filterValue) >= 0)
@@ -789,7 +811,11 @@ export default class Select extends Component {
         'aria-expanded': `${isOpen}`,
         'aria-owns': ariaOwns,
         'aria-haspopup': `${isOpen}`,
-        'aria-activedescendant': isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value',
+        'aria-activedescendant': (
+          isOpen ?
+           `${this._instancePrefix}-option-${focusedOptionIndex}` :
+           `${this._instancePrefix}-value`
+        ),
         'aria-labelledby': this.props['aria-labelledby'],
         'aria-label': this.props['aria-label'],
         className,
@@ -815,7 +841,7 @@ export default class Select extends Component {
             aria-owns={isOpen ? this._instancePrefix + '-list' : this._instancePrefix + '-value'}
             aria-readonly={`${!!this.props.disabled}`}
             className={className}
-            ref="input"
+            ref="input" // eslint-disable-line react/no-string-refs
             role="combobox"
             style={{ border: 0, width: 1, display: 'inline-block' }}
             tabIndex={this.props.tabIndex || 0}
@@ -881,14 +907,14 @@ export default class Select extends Component {
   }
 
   renderMenu(options, valueArray, focusedOption) {
-    if (options && options.length || this.props.allowCreate) {
+    if ((options && options.length) || this.props.allowCreate) {
       if (this.props.menuRenderer) {
         return this.props.menuRenderer({
           focusedOption,
           focusOption: this.focusOption,
           labelKey: this.props.labelKey,
           options,
-          selectValue: this.selectValue,
+          handleSelect: this.handleSelect,
           valueArray,
         })
       } else {
@@ -926,7 +952,7 @@ export default class Select extends Component {
               optionIndex={i}
               ref={optionRef}
               onFocus={this.focusOption}
-              onSelect={this.selectValue}
+              onSelect={this.handleSelect}
             >
               {renderLabel(option)}
             </OptionComponent>
@@ -955,7 +981,6 @@ export default class Select extends Component {
         <input
           disabled={this.props.disabled}
           name={this.props.name}
-          ref="value"
           type="hidden"
           value={value}
         />
@@ -966,7 +991,6 @@ export default class Select extends Component {
         disabled={this.props.disabled}
         key={`hidden.${index}`}
         name={this.props.name}
-        ref={`value${index}`}
         type="hidden"
         value={stringifyValue(item[this.props.valueKey])}
       />
