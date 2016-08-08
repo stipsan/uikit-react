@@ -39,3 +39,4 @@ rules:
   import/no-extraneous-dependencies: off
   global-require: off
   no-underscore-dangle: off
+  import/imports-first: off

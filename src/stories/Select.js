@@ -5,6 +5,9 @@ import { storiesOf, action } from '@kadira/storybook'
 import { cloneElement, Component, PropTypes } from 'react'
 import { Select } from 'uikit-react'
 
+// This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
+Select.displayName = 'Select'
+
 class Form extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,

@@ -1,6 +1,9 @@
 import { storiesOf } from '@kadira/storybook'
 import { Button } from 'uikit-react'
 
+// This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
+Button.displayName = 'Button'
+
 storiesOf('Button', module)
   .addWithInfo(
     'Basic Usage',
