@@ -14,7 +14,7 @@ rules:
   react/jsx-boolean-value:
     - error
     - never
-  react/sort-comp: error
+  react/sort-comp: warn
   react/jsx-no-bind:
     - error
     - ignoreRefs: true
