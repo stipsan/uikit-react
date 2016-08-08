@@ -485,26 +485,6 @@ export default class Select extends Component {
     return undefined
   }
 
-  setValue = newValue => {
-    let value = newValue
-    if (this.props.autoBlur) {
-      this.blurInput()
-    }
-    if (!this.props.onChange) return
-    if (this.props.required) {
-      const required = this.handleRequired(value, this.props.multi)
-      this.setState({ required })
-    }
-    if (this.props.simpleValue && value) {
-      value = (
-        this.props.multi ?
-        value.map(i => i[this.props.valueKey]).join(this.props.delimiter) :
-        value[this.props.valueKey]
-      )
-    }
-    this.props.onChange(value)
-  }
-
   handleSelect = (value) => {
     this.hasScrolledToOption = false
     if (this.props.multi) {
@@ -688,6 +668,26 @@ export default class Select extends Component {
     }
     const expandedValue = this.expandValue(value)
     return expandedValue ? [expandedValue] : []
+  }
+
+  setValue = newValue => {
+    let value = newValue
+    if (this.props.autoBlur) {
+      this.blurInput()
+    }
+    if (!this.props.onChange) return
+    if (this.props.required) {
+      const required = this.handleRequired(value, this.props.multi)
+      this.setState({ required })
+    }
+    if (this.props.simpleValue && value) {
+      value = (
+        this.props.multi ?
+        value.map(i => i[this.props.valueKey]).join(this.props.delimiter) :
+        value[this.props.valueKey]
+      )
+    }
+    this.props.onChange(value)
   }
 
   filterOptions = (excludeOptions) => {
@@ -970,7 +970,7 @@ export default class Select extends Component {
     return null
   }
 
-  renderHiddenField(valueArray) {
+  renderHiddenField = (valueArray) => {
     if (!this.props.name) {
       return false
     }
