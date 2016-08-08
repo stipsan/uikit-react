@@ -535,7 +535,7 @@ export default class Select extends Component {
     this.setValue(valueArray.slice(0, valueArray.length - 1))
   }
 
-  removeValue = (value) => {
+  handleRemove = (value) => {
     const valueArray = this.getValueArray(this.props.value)
     this.setValue(valueArray.filter(i => {
       if (i.create) {
@@ -564,7 +564,7 @@ export default class Select extends Component {
     }, this.focus)
   }
 
-  focusOption = (option) => {
+  handleFocus = (option) => {
     this.setState({
       focusedOption: option,
     })
@@ -765,7 +765,7 @@ export default class Select extends Component {
           key={`value-${i}-${value[this.props.valueKey]}`}
           value={value}
           onClick={onClick}
-          onRemove={this.removeValue}
+          onRemove={this.handleRemove}
         >
           {renderLabel(value)}
           <span className="Select-aria-only">&nbsp;</span>
@@ -913,7 +913,7 @@ export default class Select extends Component {
       if (this.props.menuRenderer) {
         return this.props.menuRenderer({
           focusedOption,
-          focusOption: this.focusOption,
+          handleFocus: this.handleFocus,
           labelKey: this.props.labelKey,
           options,
           handleSelect: this.handleSelect,
@@ -953,7 +953,7 @@ export default class Select extends Component {
             option={option}
             optionIndex={i}
             ref={optionRef}
-            onFocus={this.focusOption}
+            onFocus={this.handleFocus}
             onSelect={this.handleSelect}
           >
             {renderLabel(option)}
