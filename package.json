@@ -12,7 +12,7 @@
     "coverage": "npm run coveralls && npm run codeclimate",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov > coverage/lcovcoverage.lcov && cat coverage/lcovcoverage.lcov | ./node_modules/coveralls/bin/coveralls.js",
     "prebuild": "rm -rf lib",
-    "build": "babel ./src --out-dir ./lib && cp -R ./src/scss ./lib/scss",
+    "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -o .out -s .storybook/static",
