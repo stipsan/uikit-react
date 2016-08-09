@@ -3,6 +3,9 @@ uikit-react
 
 [![Build Status](https://travis-ci.org/stipsan/uikit-react.svg)](https://travis-ci.org/stipsan/uikit-react)
 [![Coverage Status](https://coveralls.io/repos/github/stipsan/uikit-react/badge.svg)](https://coveralls.io/github/stipsan/uikit-react)
+[![npm package](https://img.shields.io/npm/dm/uikit-react.svg)](https://www.npmjs.com/package/uikit-react)
+
+[![NPM](https://nodei.co/npm/uikit-react.png)](https://www.npmjs.com/package/uikit-react)
 
 <img src="https://uikit-react.io/logo.svg" width="256"/>
 
