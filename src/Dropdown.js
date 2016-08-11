@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import { Component, PropTypes } from 'react'
+import { Component, PropTypes, createElement } from 'react'
 
 export default class Dropdown extends Component {
   static propTypes = {
@@ -9,12 +9,15 @@ export default class Dropdown extends Component {
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,
     className: PropTypes.string,
+    component: PropTypes.node,
   }
 
   static defaultProps = {
     mode: 'hover',
     remainTime: 800,
     delay: 0,
+    component: 'div',
+    className: 'uk-button-dropdown',
   }
 
   state = {
@@ -46,20 +49,20 @@ export default class Dropdown extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
   render() {
-    const className = cx('uk-button-dropdown', {
+    const className = cx(this.props.className, {
       'uk-open': this.state.isOpen,
     })
+    const DropdownProps = {
+      'aria-expanded': this.state.isOpen,
+      'aria-haspopup': true,
+      className,
+      onClick: this.props.mode === 'click' && this.handleClick,
+      onMouseEnter: this.props.mode === 'hover' && this.handleMouseEnter,
+      onMouseLeave: this.props.mode === 'hover' && this.handleMouseLeave,
+      children: this.props.children,
+    }
     return (
-      <div
-        aria-expanded={this.state.isOpen}
-        aria-haspopup="true"
-        className={className}
-        onClick={this.props.mode === 'click' && this.handleClick}
-        onMouseEnter={this.props.mode === 'hover' && this.handleMouseEnter}
-        onMouseLeave={this.props.mode === 'hover' && this.handleMouseLeave}
-      >
-        {this.props.children}
-      </div>
+      createElement(this.props.component, DropdownProps)
     )
   }
 }

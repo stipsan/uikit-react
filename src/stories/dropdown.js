@@ -41,6 +41,33 @@ storiesOf('Dropdown', module)
           <Menu />
         </Dropdown>
       </div>
-  ),
-  { header: false, inline: true, propTables: [Dropdown] }
-)
+    ),
+    { header: false, inline: true, propTables: [Dropdown] }
+    )
+    .add('Advanced', () => (
+      <div className="uk-margin-bottom">
+        <nav className="uk-navbar">
+          <ul className="uk-navbar-nav">
+            <li className="uk-active"><a>Active</a></li>
+            <li><a href="">Item</a></li>
+            <Dropdown className="uk-parent" component="li" >
+              <a>
+                Parent <i className="uk-icon-caret-down" />
+              </a>
+              <div className="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
+                <ul className="uk-nav uk-nav-dropdown">
+                  <li><a className="uk-warning" href="#">Item</a></li>
+                  <li><a href="#">Another item</a></li>
+                  <li className="uk-nav-header">Header</li>
+                  <li><a href="#">Item</a></li>
+                  <li><a href="#">Another item</a></li>
+                  <li className="uk-nav-divider" />
+                  <li><a href="#">Separated item</a></li>
+                </ul>
+              </div>
+            </Dropdown>
+          </ul>
+
+        </nav>
+      </div>
+    ))
