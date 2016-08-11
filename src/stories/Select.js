@@ -37,35 +37,28 @@ class Form extends Component {
 }
 
 storiesOf('Select', module)
-  .addWithInfo(
-    'Basic Usage',
-    `
-      This is the basic usage examples
-    `,
-    () => (
-      <div className="uk-grid uk-margin-bottom">
-        <Form>
-          <Select
-            allowCreate
-            options={[
-              { value: 1, label: 'Color' },
-              { value: 2, label: 'Size' },
-              { value: 3, label: 'Material' },
-            ]}
-          />
-        </Form>
-        <Form defaultValue={[]}>
-          <Select
-            allowCreate
-            multi
-            options={[
-              { value: 1, label: 'Red' },
-              { value: 2, label: 'Green' },
-              { value: 3, label: 'Blue' },
-            ]}
-          />
-        </Form>
-      </div>
-  ),
-  { header: false, inline: true, propTables: [/* Value, Option, */Select] }
-)
+  .addWithInfo('Basic Usage', '', () => (
+    <div className="uk-grid uk-margin-bottom">
+      <Form>
+        <Select
+          allowCreate
+          options={[
+            { value: 1, label: 'Color' },
+            { value: 2, label: 'Size' },
+            { value: 3, label: 'Material' },
+          ]}
+        />
+      </Form>
+      <Form defaultValue={[]}>
+        <Select
+          allowCreate
+          multi
+          options={[
+            { value: 1, label: 'Red' },
+            { value: 2, label: 'Green' },
+            { value: 3, label: 'Blue' },
+          ]}
+        />
+      </Form>
+    </div>
+  ), { header: false, inline: true, propTables: [/* Value, Option, */Select] })

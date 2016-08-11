@@ -5,19 +5,12 @@ import { Button } from 'uikit-react'
 Button.displayName = 'Button'
 
 storiesOf('Button', module)
-  .addWithInfo(
-    'Basic Usage',
-    `
-      This is the basic usage with the button with providing a label to show the text.
-    `,
-    () => (
-      <div className="uk-margin-bottom">
-        <Button primary>Primary</Button> &nbsp;
-        <Button success>Success</Button> &nbsp;
-        <Button danger>Danger</Button> &nbsp;
-        <Button link>Link</Button> &nbsp;
-        <Button type="submit">Submit</Button>
-      </div>
-  ),
-  { header: false, inline: true, propTables: [Button] }
-)
+  .addWithInfo('Basic Usage', '', () => (
+    <div className="uk-margin-bottom">
+      <Button primary>Primary</Button> &nbsp;
+      <Button success>Success</Button> &nbsp;
+      <Button danger>Danger</Button> &nbsp;
+      <Button link>Link</Button> &nbsp;
+      <Button type="submit">Submit</Button>
+    </div>
+  ), { header: false, inline: true, propTables: [Button] })
