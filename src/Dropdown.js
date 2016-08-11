@@ -17,7 +17,7 @@ export default class Dropdown extends Component {
     remainTime: 800,
     delay: 0,
     component: 'div',
-    'aria-haspopup': true,
+    className: 'uk-button-dropdown',
   }
 
   state = {
@@ -49,7 +49,7 @@ export default class Dropdown extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
   render() {
-    const className = cx('uk-button-dropdown', {
+    const className = cx(this.props.className, {
       'uk-open': this.state.isOpen,
     })
     const DropdownProps = {
