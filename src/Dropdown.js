@@ -17,6 +17,7 @@ export default class Dropdown extends Component {
     remainTime: 800,
     delay: 0,
     component: 'div',
+    'aria-haspopup': true,
   }
 
   state = {
@@ -52,6 +53,8 @@ export default class Dropdown extends Component {
       'uk-open': this.state.isOpen,
     })
     const DropdownProps = {
+      'aria-expanded': this.state.isOpen,
+      'aria-haspopup': true,
       className,
       onClick: this.props.mode === 'click' && this.handleClick,
       onMouseEnter: this.props.mode === 'hover' && this.handleMouseEnter,
