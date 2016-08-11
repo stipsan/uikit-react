@@ -27,20 +27,40 @@ storiesOf('Dropdown', module)
     `,
     () => (
       <div className="uk-margin-bottom">
-        <Dropdown>
+        <Dropdown component="div">
           <button className="uk-button">
             Hover <i className="uk-icon-caret-down" />
           </button>
           <Menu />
         </Dropdown>
         <br /> <br />
-        <Dropdown mode="click">
+        <Dropdown
+          component="div"
+          mode="click"
+        >
           <button className="uk-button">
             Click me <i className="uk-icon-caret-down" />
           </button>
           <Menu />
         </Dropdown>
       </div>
-  ),
-  { header: false, inline: true, propTables: [Dropdown] }
-)
+    ),
+    { header: false, inline: true, propTables: [Dropdown] }
+    )
+    .add('Advanced', () => (
+      <div className="uk-margin-bottom">
+        <nav className="uk-navbar">
+          <ul className="uk-navbar-nav">
+            <li className="uk-active"><a>Active</a></li>
+            <li><a href="">Item</a></li>
+            <Dropdown component="li">
+              <a className="uk-button">
+                Hover <i className="uk-icon-caret-down" />
+              </a>
+              <Menu />
+            </Dropdown>
+          </ul>
+
+        </nav>
+      </div>
+    ))
