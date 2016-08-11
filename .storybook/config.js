@@ -38,8 +38,8 @@ addDecorator((fn, { kind, story }) => <div>
 </div>)
 
 function loadStories() {
-  require('../src/stories/button')
-  require('../src/stories/dropdown')
+  require('../src/stories/Button')
+  require('../src/stories/Dropdown')
   require('../src/stories/Select')
 }
 
