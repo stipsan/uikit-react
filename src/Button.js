@@ -4,6 +4,7 @@ import { Component, PropTypes } from 'react'
 export default class Button extends Component {
 
   static propTypes = {
+    active: PropTypes.bool,
     className: PropTypes.string,
     danger: PropTypes.bool,
     disabled: PropTypes.bool,
@@ -22,6 +23,7 @@ export default class Button extends Component {
 
   static defaultProps = {
     type: 'button',
+    active: false,
     primary: false,
     success: false,
     danger: false,
@@ -29,21 +31,12 @@ export default class Button extends Component {
     mini: false,
     small: false,
     large: false,
-    disabled: false,
     className: '',
-    onClick: false,
-  }
-
-  state = { isActive: false }
-
-  handleClick = () => {
-    if (!this.props.disabled) {
-      this.setState({ isActive: !this.state.isActive })
-    }
   }
 
   render() {
     const {
+      active,
       primary,
       success,
       danger,
@@ -62,11 +55,11 @@ export default class Button extends Component {
       'uk-button-mini': mini,
       'uk-button-small': small,
       'uk-button-large': large,
-      'uk-active': this.state.isActive,
+      'uk-active': active,
     })
 
     return (
-      <button {...other} className={className} onClick={this.props.onClick || this.handleClick} />
+      <button {...other} className={className} />
     )
   }
 }
