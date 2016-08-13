@@ -1,20 +1,10 @@
-import React from 'react'
 import expect, { createSpy } from 'expect'
 import { shallow } from 'enzyme'
 
 import Button from '../src/Button'
 
 describe('<Button />', () => {
-  it('toggles the className uk-active after click', () => {
-    const wrapper = shallow(<Button />)
-
-    expect(wrapper.is('button.uk-button')).toBe(true)
-
-    wrapper.simulate('click')
-    expect(wrapper.hasClass('uk-active')).toBe(true)
-  })
-
-  it('toggles classNames based on props', () => {
+  it('toggles css class names based on props', () => {
     const wrapper = shallow(<Button primary />)
 
     expect(wrapper.hasClass('uk-button-primary')).toBe(true)

@@ -1,16 +1,42 @@
 parser: babel-eslint
 extends: airbnb
+env:
+  browser: true
 rules:
   semi:
     - error
     - never
-  react/no-danger:
+  react/no-danger: error
+  react/no-comment-textnodes: error
+  react/no-direct-mutation-state: error
+  react/no-string-refs: error
+  react/jsx-handler-names: error
+  react/jsx-boolean-value:
     - error
-  react/no-comment-textnodes:
+    - never
+  react/sort-comp: warn
+  react/jsx-no-bind:
     - error
-  react/no-direct-mutation-state:
+    - ignoreRefs: true
+      allowArrowFunctions: false
+      allowBind: false
+  react/jsx-no-duplicate-props: error
+  react/jsx-key:
     - error
-  react/no-string-refs:
+  react/sort-prop-types:
     - error
-  react/jsx-handler-names:
+    - ignoreCase: true
+      callbacksLast: true
+      requiredFirst: true
+  react/jsx-sort-props:
     - error
+    - callbacksLast: true
+      shorthandFirst: true
+      ignoreCase: true
+  react/react-in-jsx-scope: off
+  react/jsx-uses-react: off
+  react/jsx-filename-extension: off
+  import/no-extraneous-dependencies: off
+  global-require: off
+  no-underscore-dangle: off
+  import/imports-first: off

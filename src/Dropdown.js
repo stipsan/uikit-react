@@ -1,44 +1,68 @@
-import classNames from 'classnames'
-import React, { Component, PropTypes } from 'react'
+import cx from 'classnames'
+import { Component, PropTypes, createElement } from 'react'
 
 export default class Dropdown extends Component {
   static propTypes = {
+    children: PropTypes.node.isRequired,
+    delay: PropTypes.number.isRequired,
+    label: PropTypes.string.isRequired,
+    mode: PropTypes.oneOf(['hover', 'click']).isRequired,
+    remainTime: PropTypes.number.isRequired,
     className: PropTypes.string,
-    children: PropTypes.node,
-    onHover: PropTypes.bool,
+    component: PropTypes.node,
   }
 
   static defaultProps = {
-    type: 'button',
-    disabled: false,
-    className: '',
-    onHover: false,
-  }
-  state = { isActive: false, mode: true }
-
-  handleMouseOver = () => {
-    this.setState({ isActive: !this.state.isActive })
+    mode: 'hover',
+    remainTime: 800,
+    delay: 0,
+    component: 'div',
+    className: 'uk-button-dropdown',
   }
 
+  state = {
+    isOpen: false,
+  }
+
+  handleMouseEnter = () => {
+    if (this.leaveTimeout) {
+      clearTimeout(this.leaveTimeout)
+    }
+    if (this.props.delay) {
+      setTimeout(() => {
+        this.setState({ isOpen: true })
+      }, this.props.delay)
+    } else {
+      this.setState({ isOpen: true })
+    }
+  }
+  handleMouseLeave = () => {
+    if (this.props.remainTime) {
+      this.leaveTimeout = setTimeout(() => {
+        this.setState({ isOpen: false })
+      }, this.props.remainTime)
+    } else {
+      this.setState({ isOpen: false })
+    }
+  }
   handleClick = () => {
-    this.setState({ isActive: !this.state.isActive })
+    this.setState({ isOpen: !this.state.isOpen })
   }
-
   render() {
-    const className = classNames('uk-button-dropdown', {
-      'uk-open': this.state.isActive,
+    const className = cx(this.props.className, {
+      'uk-open': this.state.isOpen,
     })
+    const DropdownProps = {
+      'aria-expanded': this.state.isOpen,
+      'aria-haspopup': true,
+      className,
+      onClick: this.props.mode === 'click' && this.handleClick,
+      onMouseEnter: this.props.mode === 'hover' && this.handleMouseEnter,
+      onMouseLeave: this.props.mode === 'hover' && this.handleMouseLeave,
+      children: this.props.children,
+    }
     return (
-      <div
-        className={className}
-        onMouseOver={this.props.onHover && this.handleMouseOver}
-        onClick={this.handleClick}
-        data-uk-dropdown={this.state.mode}
-        aria-haspopup="true"
-        aria-expanded={this.state.isActive}
-      >
-        {this.props.children}
-      </div>
+      createElement(this.props.component, DropdownProps)
     )
   }
 }
