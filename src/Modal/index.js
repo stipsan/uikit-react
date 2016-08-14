@@ -1,8 +1,3 @@
-// import elementClass from 'element-class'
-// import Assign from 'lodash.assign'
-// import ExecutionEnvironment from 'exenv'
-// import ReactDOM from 'react-dom'
-
 import classNames from 'classnames'
 import React, { Component, PropTypes, createElement } from 'react'
 

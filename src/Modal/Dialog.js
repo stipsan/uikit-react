@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { Component, PropTypes } from 'react'
+import { Component, PropTypes } from 'react'
 
 export default class Dialog extends Component
 {
@@ -129,6 +129,7 @@ export default class Dialog extends Component
   //       this.focusContent()
   //   }
   // }
+
 
   requestClose = (event) => {
     if (this.ownerHandlesClose())
