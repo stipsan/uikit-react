@@ -8,10 +8,16 @@ import Dialog from './Dialog'
 export default class Modal extends Component {
 
   static propTypes = {
+    cancelLabel: PropTypes.string,
     children: PropTypes.node,
+    confirmLabel: PropTypes.string,
     className: PropTypes.string,
     isOpen: PropTypes.bool,
+    lightbox: PropTypes.string,
+    onCancel: PropTypes.func,
+    onConfirm: PropTypes.func,
     target: PropTypes.func,
+    type: PropTypes.string,
   }
 
   static defaultProps = {
@@ -80,12 +86,12 @@ export default class Modal extends Component {
       footer = [() => <Button onClick={handleConfirm} primary>{confirmLabel}</Button>]
     }
 
-    if (type === 'confirm') {
-      footer = [() => (<span>
-        <Button className="uk-margin-right" onClick={handleCancel}>{cancelLabel}</Button>
-        <Button onClick={handleConfirm} primary>{confirmLabel}</Button>
-      </span>
-      )]
+    if (type === 'confirm' || type === 'prompt') {
+      footer = [
+        () => <Button onClick={handleCancel}>{cancelLabel}</Button>,
+        () => <span>&nbsp;</span>,
+        () => <Button onClick={handleConfirm} primary>{confirmLabel}</Button>,
+      ]
     }
 
     return (

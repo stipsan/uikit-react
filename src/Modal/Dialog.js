@@ -56,9 +56,12 @@ export default class Dialog extends Component
         {children}
         { footer && footer.length > 0 &&
           (<div className="uk-modal-footer uk-text-right">
-            {footer.map(component => {
-              return createElement(component, { handleClose })
-            })}
+            {
+              footer.map(component => {
+                return createElement(component, { handleClose })
+              }
+              )
+            }
           </div>)
         }
       </div>
