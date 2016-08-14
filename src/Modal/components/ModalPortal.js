@@ -1,8 +1,9 @@
-const React = require('react')
+import Assign from 'lodash.assign'
+import React, { Component, PropTypes } from 'react'
+
 const div = React.DOM.div
 const focusManager = require('../helpers/focusManager')
 const scopeTab = require('../helpers/scopeTab')
-const Assign = require('lodash.assign')
 
 // so that our CSS is statically analyzable
 const CLASS_NAMES = {
@@ -18,39 +19,37 @@ const CLASS_NAMES = {
   },
 }
 
-const ModalPortal = module.exports = React.createClass({
+export default class ModalPortal extends Component
+{
+  static defaultProps = {
+    style: {
+      overlay: {},
+      content: {},
+    },
+  }
 
-  displayName: 'ModalPortal',
+  static propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+  }
+  displayName: 'ModalPortal'
+  state = {
+    afterOpen: false,
+    beforeClose: false,
+  }
 
-  getDefaultProps() {
-    return {
-      style: {
-        overlay: {},
-        content: {},
-      },
-    }
-  },
-
-  getInitialState() {
-    return {
-      afterOpen: false,
-      beforeClose: false,
-    }
-  },
-
-  componentDidMount() {
+  componentDidMount = () => {
     // Focus needs to be set when mounting and already open
     if (this.props.isOpen) {
       this.setFocusAfterRender(true)
       this.open()
     }
-  },
+  }
 
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     clearTimeout(this.closeTimer)
-  },
+  }
 
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps = (newProps) => {
     // Focus only needs to be set once when the modal is being opened
     if (!this.props.isOpen && newProps.isOpen) {
       this.setFocusAfterRender(true)
@@ -58,20 +57,20 @@ const ModalPortal = module.exports = React.createClass({
     } else if (this.props.isOpen && !newProps.isOpen) {
       this.close()
     }
-  },
+  }
 
-  componentDidUpdate() {
+  componentDidUpdate = () => {
     if (this.focusAfterRender) {
       this.focusContent()
       this.setFocusAfterRender(false)
     }
-  },
+  }
 
-  setFocusAfterRender(focus) {
+  setFocusAfterRender = (focus) => {
     this.focusAfterRender = focus
-  },
+  }
 
-  open() {
+  open = () => {
     if (this.state.afterOpen && this.state.beforeClose) {
       clearTimeout(this.closeTimer)
       this.setState({ beforeClose: false })
@@ -86,49 +85,49 @@ const ModalPortal = module.exports = React.createClass({
         }
       }.bind(this))
     }
-  },
+  }
 
-  close() {
+  close = () => {
     if (!this.ownerHandlesClose())
       return
     if (this.props.closeTimeoutMS > 0)
       this.closeWithTimeout()
     else
       this.closeWithoutTimeout()
-  },
+  }
 
-  focusContent() {
+  focusContent = () => {
     this.refs.content.focus()
-  },
+  }
 
-  closeWithTimeout() {
+  closeWithTimeout = () => {
     this.setState({ beforeClose: true }, function () {
       this.closeTimer = setTimeout(this.closeWithoutTimeout, this.props.closeTimeoutMS)
     }.bind(this))
-  },
+  }
 
-  closeWithoutTimeout() {
+  closeWithoutTimeout = () => {
     this.setState({
       beforeClose: false,
       isOpen: false,
       afterOpen: false,
     }, this.afterClose)
-  },
+  }
 
-  afterClose() {
+  afterClose = () => {
     focusManager.returnFocus()
     focusManager.teardownScopedFocus()
-  },
+  }
 
-  handleKeyDown(event) {
+  handleKeyDown = (event) => {
     if (event.keyCode == 9 /* tab*/) scopeTab(this.refs.content, event)
     if (event.keyCode == 27 /* esc*/) {
       event.preventDefault()
       this.requestClose(event)
     }
-  },
+  }
 
-  handleOverlayClick(event) {
+  handleOverlayClick = (event) => {
     let node = event.target
 
     while (node) {
@@ -142,29 +141,29 @@ const ModalPortal = module.exports = React.createClass({
       else
         this.focusContent()
     }
-  },
+  }
 
-  requestClose(event) {
+  requestClose = (event) => {
     if (this.ownerHandlesClose())
       this.props.onRequestClose(event)
-  },
+  }
 
-  ownerHandlesClose() {
+  ownerHandlesClose= () => {
     return this.props.onRequestClose
-  },
+  }
 
-  shouldBeClosed() {
+  shouldBeClosed = () => {
     return !this.props.isOpen && !this.state.beforeClose
-  },
+  }
 
-  buildClassName(which, additional) {
+  buildClassName = (which, additional) => {
     let className = CLASS_NAMES[which].base
     if (this.state.afterOpen)
       className += ' ' + CLASS_NAMES[which].afterOpen
     if (this.state.beforeClose)
       className += ' ' + CLASS_NAMES[which].beforeClose
     return additional ? className + ' ' + additional : className
-  },
+  }
 
   render() {
     const contentStyles = (this.props.className) ? {} : this.props.defaultStyles.content
@@ -188,5 +187,5 @@ const ModalPortal = module.exports = React.createClass({
         )
       )
     )
-  },
-})
+  }
+}

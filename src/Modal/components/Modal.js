@@ -1,12 +1,18 @@
+import elementClass from 'element-class'
+import Assign from 'lodash.assign'
 import ExecutionEnvironment from 'exenv'
+import ReactDOM from 'react-dom'
 import React, { Component, PropTypes } from 'react'
+
+import ariaAppHider from '../helpers/ariaAppHider'
+
+// import ModalPortal from './ModalPortal'
+// const elementClass = require('element-class')
 // const ExecutionEnvironment = require('exenv')
 const ModalPortal = React.createFactory(require('./ModalPortal'))
-const ariaAppHider = require('../helpers/ariaAppHider')
-const elementClass = require('element-class')
+// const ariaAppHider = require('../helpers/ariaAppHider')
 const renderSubtreeIntoContainer = require('react-dom').unstable_renderSubtreeIntoContainer
-const Assign = require('lodash.assign')
-
+// const Assign = require('lodash.assign')
 const SafeHTMLElement = ExecutionEnvironment.canUseDOM ? window.HTMLElement : {}
 const AppElement = ExecutionEnvironment.canUseDOM ? document.body : { appendChild() {} }
 
@@ -31,12 +37,12 @@ export default class Modal extends Component {
       content: PropTypes.object,
       overlay: PropTypes.object,
     }),
-    portalClassName: PropTypes.string,
     appElement: PropTypes.instanceOf(SafeHTMLElement),
+    ariaHideApp: PropTypes.bool,
+    closeTimeoutMS: PropTypes.number,
     onAfterOpen: PropTypes.func,
     onRequestClose: PropTypes.func,
-    closeTimeoutMS: PropTypes.number,
-    ariaHideApp: PropTypes.bool,
+    portalClassName: PropTypes.string,
     shouldCloseOnOverlayClick: PropTypes.bool,
   }
 

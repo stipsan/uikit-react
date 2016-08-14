@@ -5,11 +5,11 @@ export default class Dropdown extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     delay: PropTypes.number.isRequired,
-    label: PropTypes.string.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,
     className: PropTypes.string,
     component: PropTypes.node,
+    label: PropTypes.string,
   }
 
   static defaultProps = {
