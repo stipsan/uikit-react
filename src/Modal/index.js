@@ -22,6 +22,7 @@ export default class Modal extends Component {
     lightbox: false,
     type: 'default',
     confirmLabel: 'Ok',
+    cancelLabel: 'Cancel',
   }
 
   state = { shouldDisplay: false, isOpen: false }
@@ -49,13 +50,21 @@ export default class Modal extends Component {
     this.handleClose()
   }
 
+  handleCancel = () => {
+    this.props.onCancel()
+    this.handleClose()
+  }
+
   render() {
-    const { handleClose, handleOpen, handleConfirm } = this
+    const {
+      handleClose, handleOpen, handleConfirm, handleCancel,
+     } = this
     const {
       isOpen,
       lightbox,
       type,
       confirmLabel,
+      cancelLabel,
     } = this.props
     const target = this.props.target &&
           createElement(this.props.target, { handleOpen, children: 'Open' })
@@ -69,6 +78,14 @@ export default class Modal extends Component {
     let footer = []
     if (type === 'alert') {
       footer = [() => <Button onClick={handleConfirm} primary>{confirmLabel}</Button>]
+    }
+
+    if (type === 'confirm') {
+      footer = [() => (<span>
+        <Button className="uk-margin-right" onClick={handleCancel}>{cancelLabel}</Button>
+        <Button onClick={handleConfirm} primary>{confirmLabel}</Button>
+      </span>
+      )]
     }
 
     return (
