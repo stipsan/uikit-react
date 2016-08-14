@@ -10,7 +10,7 @@ export default class Modal extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     isOpen: PropTypes.bool,
-    target: PropTypes.node,
+    target: PropTypes.func,
   }
 
   static defaultProps = {

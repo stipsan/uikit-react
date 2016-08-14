@@ -11,7 +11,9 @@ export default class Dialog extends Component
 
   static propTypes = {
     children: PropTypes.node,
+    footer: PropTypes.func,
     handleClose: PropTypes.func,
+    header: PropTypes.string,
   }
 
   handleOverlayClick = event => event.stopPropagation()
@@ -23,7 +25,7 @@ export default class Dialog extends Component
 
   render() {
     const { handleOverlayClick, handleClose } = this
-    const { children, header } = this.props
+    const { children, header, footer } = this.props
 
     return (
       <div className="uk-modal-dialog" onClick={handleOverlayClick}>
@@ -33,6 +35,7 @@ export default class Dialog extends Component
         />
         {header && (<div className="uk-modal-header"><h2>{header}</h2></div>)}
         {children}
+        {footer && (<div className="uk-modal-footer">{footer}</div>)}
       </div>
         )
   }
