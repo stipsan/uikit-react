@@ -1,0 +1,7 @@
+exports[`test Button renders correctly 1`] = `
+<button
+  className="uk-button"
+  type="button">
+  Submit
+</button>
+`;
