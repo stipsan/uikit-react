@@ -23,7 +23,7 @@ export default class Dialog extends Component
 
   render() {
     const { handleOverlayClick, handleClose } = this
-    const { children } = this.props
+    const { children, header } = this.props
 
     return (
       <div className="uk-modal-dialog" onClick={handleOverlayClick}>
@@ -31,6 +31,7 @@ export default class Dialog extends Component
           className="uk-modal-close uk-close"
           onClick={handleClose}
         />
+        {header && (<div className="uk-modal-header"><h2>{header}</h2></div>)}
         {children}
       </div>
         )
