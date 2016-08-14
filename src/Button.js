@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 export default class Button extends Component {
 
@@ -15,10 +15,6 @@ export default class Button extends Component {
     small: PropTypes.bool,
     success: PropTypes.bool,
     type: PropTypes.string,
-    onClick: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.func,
-    ]),
   }
 
   static defaultProps = {
