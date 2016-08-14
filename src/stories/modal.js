@@ -12,30 +12,47 @@ class OpenButton extends Component {
   }
 }
 
+const LoremIpsum = `
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.`
+
 storiesOf('Modal', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
       <Modal headline="This is the Headline" target={OpenButton}>
         <h1>Headline</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>{LoremIpsum}</p>
       </Modal>
     </div>
   ), { header: false, inline: true, propTables: [Modal] })
   .addWithInfo('Header and Footer', '', () => (
     <div className="uk-margin-bottom">
-      <Modal headline="This is the Headline" target={OpenButton}>
-        <h1>Headline</h1>
+      <Modal
+        headline="This is the Headline"
+        target={OpenButton}
+        header="Headline"
+        footer={[
+          <button type="button" className="uk-button">Cancel</button>,
+          <button type="button" className="uk-button uk-button-primary">Save</button>,
+        ]}
+      >
+        <div className="uk-modal-header">
+          <h2>Headline</h2>
+        </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
           commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
         culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div className="uk-modal-footer uk-text-right">
+          <button type="button" className="uk-button">Cancel</button>
+          <button type="button" className="uk-button uk-button-primary">Save</button>
+        </div>
       </Modal>
     </div>
   ), { header: false, inline: true })
