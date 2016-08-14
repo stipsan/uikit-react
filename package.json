@@ -44,6 +44,10 @@
     "sourceMap": false,
     "instrument": false
   },
+  "jest": {
+    "automock": false,
+    "setupFiles": ["<rootDir>/test/setup.js"]
+  },
   "homepage": "https://github.com/stipsan/uikit-react",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.1.2",
@@ -53,6 +57,7 @@
     "babel-cli": "6.11.4",
     "babel-core": "6.13.2",
     "babel-eslint": "6.1.2",
+    "babel-jest": "14.1.0",
     "babel-plugin-istanbul": "2.0.0",
     "babel-plugin-react-transform": "2.0.2",
     "babel-plugin-transform-react-constant-elements": "6.9.1",
@@ -76,6 +81,7 @@
     "file-loader": "0.9.0",
     "growl": "1.9.2",
     "istanbul": "1.1.0-alpha.1",
+    "jest-cli": "14.1.0",
     "jsdom": "9.4.2",
     "json-loader": "0.5.4",
     "mocha": "3.0.2",
@@ -86,6 +92,7 @@
     "react": "15.3.0",
     "react-addons-test-utils": "15.3.0",
     "react-dom": "15.3.0",
+    "react-test-renderer": "15.3.0",
     "sass-loader": "4.0.0",
     "style-loader": "0.13.1",
     "uikit": "2.26.4",
