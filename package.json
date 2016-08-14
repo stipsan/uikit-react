@@ -46,7 +46,9 @@
   },
   "jest": {
     "automock": false,
-    "setupFiles": ["<rootDir>/test/setup.js"]
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ]
   },
   "homepage": "https://github.com/stipsan/uikit-react",
   "devDependencies": {
@@ -100,7 +102,8 @@
   },
   "dependencies": {
     "classnames": "2.2.5",
-    "react-input-autosize": "1.1.0"
+    "react-input-autosize": "1.1.0",
+    "react-key-handler": "^0.2.0"
   },
   "contributors": [
     {
