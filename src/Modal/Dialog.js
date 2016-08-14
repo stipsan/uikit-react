@@ -10,8 +10,9 @@ export default class Dialog extends Component
   }
 
   static propTypes = {
+    caption: PropTypes.string,
     children: PropTypes.node,
-    footer: PropTypes.func,
+    footer: PropTypes.array,
     handleClose: PropTypes.func,
     header: PropTypes.string,
   }
@@ -25,7 +26,7 @@ export default class Dialog extends Component
 
   render() {
     const { handleOverlayClick, handleClose } = this
-    const { children, header, footer } = this.props
+    const { children, header, footer, caption } = this.props
 
     return (
       <div className="uk-modal-dialog" onClick={handleOverlayClick}>
@@ -34,8 +35,15 @@ export default class Dialog extends Component
           onClick={handleClose}
         />
         {header && (<div className="uk-modal-header"><h2>{header}</h2></div>)}
+        {caption && (<div className="uk-modal-caption">{caption}</div>)}
         {children}
-        {footer && (<div className="uk-modal-footer">{footer}</div>)}
+        { footer &&
+          (<div className="uk-modal-footer">
+            {footer.map((node) => {
+              console.log(node)
+            })}
+          </div>)
+        }
       </div>
         )
   }
