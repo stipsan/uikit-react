@@ -1,38 +1,24 @@
-import Assign from 'lodash.assign'
+import classNames from 'classnames'
 import React, { Component, PropTypes } from 'react'
 
-const div = React.DOM.div
-
-// so that our CSS is statically analyzable
-const CLASS_NAMES = {
-  overlay: {
-    base: 'ReactModal__Overlay',
-    afterOpen: 'ReactModal__Overlay--after-open',
-    beforeClose: 'ReactModal__Overlay--before-close',
-  },
-  content: {
-    base: 'ReactModal__Content',
-    afterOpen: 'ReactModal__Content--after-open',
-    beforeClose: 'ReactModal__Content--before-close',
-  },
-}
-
-export default class ModalPortal extends Component
+export default class Dialog extends Component
 {
   static defaultProps = {
     style: {
       overlay: {},
       content: {},
     },
+    isOpen: false,
   }
 
   static propTypes = {
-    isOpen: PropTypes.bool.isRequired,
+    isOpen: PropTypes.bool,
   }
   displayName: 'ModalPortal'
   state = {
     afterOpen: false,
     beforeClose: false,
+    isActive: this.props.isActive,
   }
 
   componentDidMount = () => {
@@ -73,8 +59,8 @@ export default class ModalPortal extends Component
       clearTimeout(this.closeTimer)
       this.setState({ beforeClose: false })
     } else {
-      focusManager.setupScopedFocus(this.node)
-      focusManager.markForFocusLater()
+      // focusManager.setupScopedFocus(this.node)
+      // focusManager.markForFocusLater()
       this.setState({ isOpen: true }, function () {
         this.setState({ afterOpen: true })
 
@@ -121,25 +107,26 @@ export default class ModalPortal extends Component
     if (event.keyCode == 9 /* tab*/) scopeTab(this.refs.content, event)
     if (event.keyCode == 27 /* esc*/) {
       event.preventDefault()
+      console.log('test')
       this.requestClose(event)
     }
   }
 
-  handleOverlayClick = (event) => {
-    let node = event.target
-
-    while (node) {
-      if (node === this.refs.content) return
-      node = node.parentNode
-    }
-
-    if (this.props.shouldCloseOnOverlayClick) {
-      if (this.ownerHandlesClose())
-        this.requestClose(event)
-      else
-        this.focusContent()
-    }
-  }
+  // handleOverlayClick = (event) => {
+  //   let node = event.target
+  //
+  //   while (node) {
+  //     if (node === this.refs.content) return
+  //     node = node.parentNode
+  //   }
+  //
+  //   if (this.props.shouldCloseOnOverlayClick) {
+  //     if (this.ownerHandlesClose())
+  //       this.requestClose(event)
+  //     else
+  //       this.focusContent()
+  //   }
+  // }
 
   requestClose = (event) => {
     if (this.ownerHandlesClose())
@@ -164,26 +151,24 @@ export default class ModalPortal extends Component
   }
 
   render() {
-    const contentStyles = (this.props.className) ? {} : this.props.defaultStyles.content
-    const overlayStyles = (this.props.overlayClassName) ? {} : this.props.defaultStyles.overlay
+    const className = classNames('uk-modal', {
+      'uk-open uk-display-block': this.state.isActive,
+    })
+    const { handleOverlayClick, handleClick, handleKeyDown, handleBlockEvent } = this
+    const { children } = this.props
 
-    return this.shouldBeClosed() ? div() : (
-      div({
-        ref: 'overlay',
-        className: this.buildClassName('overlay', this.props.overlayClassName),
-        style: Assign({}, overlayStyles, this.props.style.overlay || {}),
-        onClick: this.handleOverlayClick,
-      },
-        div({
-          ref: 'content',
-          style: Assign({}, contentStyles, this.props.style.content || {}),
-          className: this.buildClassName('content', this.props.className),
-          tabIndex: '-1',
-          onKeyDown: this.handleKeyDown,
-        },
-          this.props.children
+    return (
+        <div className={className} aria-hidden={this.state.isActive}>
+          <div className="uk-modal-dialog">
+            <a
+              className="uk-modal-close uk-close"
+              onClick={handleClick}
+              onKeyDown={handleKeyDown}
+            >
+            </a>
+            {children}
+          </div>
+        </div>
         )
-      )
-    )
   }
 }
