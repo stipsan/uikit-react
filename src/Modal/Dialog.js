@@ -106,62 +106,26 @@ export default class Dialog extends Component
     if (event.keyCode == 9 /* tab*/) scopeTab(this.refs.content, event)
     if (event.keyCode == 27 /* esc*/) {
       event.preventDefault()
-      console.log('test')
-      this.requestClose(event)
+      this.props.handleClose()
     }
   }
 
   handleOverlayClick = event => event.stopPropagation()
 
-
-  // handleOverlayClick = (event) => {
-  //   let node = event.target
-  //
-  //   while (node) {
-  //     if (node === this.refs.content) return
-  //     node = node.parentNode
-  //   }
-  //
-  //   if (this.props.shouldCloseOnOverlayClick) {
-  //     if (this.ownerHandlesClose())
-  //       this.requestClose(event)
-  //     else
-  //       this.focusContent()
-  //   }
-  // }
-
-
-  requestClose = (event) => {
-    if (this.ownerHandlesClose())
-      this.props.onRequestClose(event)
-  }
-
-  ownerHandlesClose= () => {
-    return this.props.onRequestClose
-  }
-
-  shouldBeClosed = () => {
-    return !this.props.isOpen && !this.state.beforeClose
-  }
-
-  buildClassName = (which, additional) => {
-    let className = CLASS_NAMES[which].base
-    if (this.state.afterOpen)
-      className += ' ' + CLASS_NAMES[which].afterOpen
-    if (this.state.beforeClose)
-      className += ' ' + CLASS_NAMES[which].beforeClose
-    return additional ? className + ' ' + additional : className
+  handleClose = event => {
+    event.preventDefault()
+    this.props.handleClose()
   }
 
   render() {
-    const { handleOverlayClick, handleClick, handleKeyDown, handleBlockEvent } = this
+    const { handleOverlayClick, handleClose, handleKeyDown, handleBlockEvent } = this
     const { children, isOpen } = this.props
 
     return (
           <div className="uk-modal-dialog" onClick={handleOverlayClick}>
             <a
               className="uk-modal-close uk-close"
-              onClick={handleClick}
+              onClick={handleClose}
               onKeyDown={handleKeyDown}
             >
             </a>

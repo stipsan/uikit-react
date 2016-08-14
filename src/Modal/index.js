@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { Component, PropTypes, createElement } from 'react'
+import { Component, PropTypes, createElement } from 'react'
 
 import Dialog from './Dialog'
 
@@ -11,14 +11,14 @@ export default class Modal extends Component {
     isOpen: PropTypes.bool,
   }
 
-  state = { shouldDisplay: false, isOpen: false }
-
   static defaultProps = {
     isOpen: false,
     closeTimeoutMS: 0,
     shouldCloseOnOverlayClick: true,
     target: 'button',
   }
+
+  state = { shouldDisplay: false, isOpen: false }
 
   handleClick = () => {
     this.setState({ shouldDisplay: !this.state.shouldDisplay })
@@ -38,13 +38,17 @@ export default class Modal extends Component {
     )
   }
 
-  handleOverlayClick = (event) => {
-    event.preventDefault()
-    alert('test')
+  handleKeyDown = (event) => {
+    if (event.keyCode == 9 /* tab*/) scopeTab(this.refs.content, event)
+    if (event.keyCode == 27 /* esc*/) {
+      event.preventDefault()
+      alert('t')
+      this.handleClose()
+    }
   }
 
   render() {
-    const { handleOverlayClick, handleClick, handleClose, handleOpen } = this
+    const { handleClose, handleOpen, handleKeyDown } = this
     const { isOpen } = this.props
     const target = this.props.target &&
           createElement(this.props.target, { handleOpen, children: 'Open' })
@@ -63,9 +67,9 @@ export default class Modal extends Component {
           aria-hidden={isOpen}
           style={style}
           onClick={handleClose}
+          onKeyDown={handleKeyDown}
         >
           <Dialog
-
             handleClose={handleClose}
             {...this.props}
           />
