@@ -10,14 +10,13 @@ export default class Modal extends Component {
   static propTypes = {
     cancelLabel: PropTypes.string,
     children: PropTypes.node,
-    confirmLabel: PropTypes.string,
     className: PropTypes.string,
+    confirmLabel: PropTypes.string,
     isOpen: PropTypes.bool,
-    lightbox: PropTypes.string,
-    onCancel: PropTypes.func,
-    onConfirm: PropTypes.func,
     target: PropTypes.func,
     type: PropTypes.string,
+    onCancel: PropTypes.func,
+    onConfirm: PropTypes.func,
   }
 
   static defaultProps = {
@@ -32,6 +31,11 @@ export default class Modal extends Component {
   }
 
   state = { shouldDisplay: false, isOpen: false }
+
+  componentDidMount = () => {
+    console.log(this.input)
+    this.input.focus()
+  }
 
   handleClick = () => {
     this.setState({ shouldDisplay: !this.state.shouldDisplay })
@@ -67,7 +71,6 @@ export default class Modal extends Component {
      } = this
     const {
       isOpen,
-      lightbox,
       type,
       confirmLabel,
       cancelLabel,
@@ -83,14 +86,14 @@ export default class Modal extends Component {
 
     let footer = []
     if (type === 'alert') {
-      footer = [() => <Button onClick={handleConfirm} primary>{confirmLabel}</Button>]
+      footer = [() => <Button primary onClick={handleConfirm}>{confirmLabel}</Button>]
     }
 
     if (type === 'confirm' || type === 'prompt') {
       footer = [
         () => <Button onClick={handleCancel}>{cancelLabel}</Button>,
         () => <span>&nbsp;</span>,
-        () => <Button onClick={handleConfirm} primary>{confirmLabel}</Button>,
+        () => <Button primary onClick={handleConfirm}>{confirmLabel}</Button>,
       ]
     }
 
@@ -105,9 +108,9 @@ export default class Modal extends Component {
           onClick={type === 'default' && handleClose}
         >
           <Dialog
-            handleClose={handleClose}
             close={type === 'default'}
             footer={footer}
+            handleClose={handleClose}
             {...this.props}
           />
         </div>

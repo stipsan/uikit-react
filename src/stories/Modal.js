@@ -81,7 +81,7 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Blank', '', () => (
     <div className="uk-margin-bottom">
-      <Modal target={OpenButton} blank>
+      <Modal blank target={OpenButton} >
         <div className="uk-grid uk-flex-middle">
           <div
             className="uk-width-medium-1-2 uk-height-viewport uk-cover-background uk-row-first"
@@ -101,14 +101,17 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Spinner', '', () => (
     <div className="uk-margin-bottom">
-      <Modal target={OpenButton} close={false}>
+      <Modal
+        close={false}
+        target={OpenButton}
+      >
         <div className="uk-modal-spinner" />
       </Modal>
     </div>
   ), { header: false, inline: true })
   .addWithInfo('Center', '', () => (
     <div className="uk-margin-bottom">
-      <Modal target={OpenButton} center>
+      <Modal center target={OpenButton} >
         <h1>Headline</h1>
         <p>{LoremIpsum}</p>
       </Modal>
@@ -116,7 +119,7 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Large dialog modifier', '', () => (
     <div className="uk-margin-bottom">
-      <Modal target={OpenButton} large>
+      <Modal large target={OpenButton} >
         <h1>Headline</h1>
         <p>{LoremIpsum}</p>
       </Modal>
@@ -167,8 +170,8 @@ storiesOf('Modal', module)
       <Modal
         target={({ handleOpen }) => <Button onClick={handleOpen}>Confirm</Button>}
         type="confirm"
-        onConfirm={action('onConfirm')}
         onCancel={action('onCancel')}
+        onConfirm={action('onConfirm')}
       >
         Are you sure?
       </Modal>
@@ -184,8 +187,14 @@ storiesOf('Modal', module)
         onBlur={action('onBlur')}
         onFocus={action('onFocus')}
         onCancel={action('onCancel')}
+        ref={(c) => this.input = c}
       >
-        Name:
+        <div>
+          <div className="uk-modal-content uk-form">Name:</div>
+          <div className="uk-margin-small-top uk-modal-content uk-form">
+            <p><input className="uk-width-1-1" type="text" /></p>
+          </div>
+        </div>
       </Modal>
     </div>
   ), { header: false, inline: true })

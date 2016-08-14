@@ -8,11 +8,15 @@ export default class Dialog extends Component
   }
 
   static propTypes = {
+    blank: PropTypes.bool,
     caption: PropTypes.string,
     children: PropTypes.node,
+    close: PropTypes.bool,
     footer: PropTypes.array,
     handleClose: PropTypes.func,
     header: PropTypes.string,
+    large: PropTypes.bool,
+    lightbox: PropTypes.bool,
   }
 
   handleOverlayClick = event => event.stopPropagation()
@@ -57,10 +61,8 @@ export default class Dialog extends Component
         { footer && footer.length > 0 &&
           (<div className="uk-modal-footer uk-text-right">
             {
-              footer.map(component => {
-                return createElement(component, { handleClose })
-              }
-              )
+              footer.map((component, i) => createElement(component, { key: i, handleClose })
+                )
             }
           </div>)
         }
