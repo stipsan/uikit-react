@@ -103,18 +103,18 @@
   "dependencies": {
     "classnames": "2.2.5",
     "react-input-autosize": "1.1.0",
-    "react-key-handler": "^0.2.0"
+    "react-key-handler": "0.2.0"
   },
   "contributors": [
-    {
-      "name": "Zach Curtis",
-      "email": "zachariahtimothy@gmail.com",
-      "url": "https://github.com/zachariahtimothy"
-    },
     {
       "name": "Suresh KUMAR Mukhiya",
       "email": "itsmeskm99@gmail.com",
       "url": "https://github.com/sureshHARDIYA"
+    },
+    {
+      "name": "Zach Curtis",
+      "email": "zachariahtimothy@gmail.com",
+      "url": "https://github.com/zachariahtimothy"
     }
   ]
 }
