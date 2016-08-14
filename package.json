@@ -4,8 +4,8 @@
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
-    "test": "NODE_ENV=test mocha --colors --compilers js:babel-register --require ./test/.setup.js --require babel-polyfill --recursive",
-    "test:watch": "npm test -- --watch --growl",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint .",
     "check-coverage": "nyc npm test && nyc check-coverage --statements 80 --branches 80 --functions 80 --lines 80 ",
     "codeclimate": "codeclimate-test-reporter < coverage/lcovcoverage.lcov",
