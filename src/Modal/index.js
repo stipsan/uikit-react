@@ -16,11 +16,7 @@ export default class Modal extends Component {
     isOpen: PropTypes.bool,
   }
 
-  state = { isActive: false }
-
-  handleClick = () => {
-    this.setState({ isActive: !this.state.isActive })
-  }
+  state = { shouldDisplay: false, isOpen: false }
 
   static defaultProps = {
     isOpen: false,
@@ -29,26 +25,53 @@ export default class Modal extends Component {
     target: 'button',
   }
 
+  handleClick = () => {
+    this.setState({ shouldDisplay: !this.state.shouldDisplay })
+  }
+
+  handleOpen = () => {
+    this.setState(
+      { shouldDisplay: true },
+      () => setTimeout(() => this.setState({ isOpen: true }), 0)
+    )
+  }
+
+  handleClose = () => {
+    this.setState(
+      { isOpen: false },
+      () => setTimeout(() => this.setState({ shouldDisplay: false }), 300)
+    )
+  }
+
   handleOverlayClick = (event) => {
     event.preventDefault()
     alert('test')
   }
 
   render() {
-    const { handleOverlayClick, handleClick } = this
+    const { handleOverlayClick, handleClick, handleClose, handleOpen } = this
     const { isOpen } = this.props
     const target = this.props.target &&
-          createElement(this.props.target, { handleOpen: handleClick, children: 'Open' })
+          createElement(this.props.target, { handleOpen, children: 'Open' })
     const className = classNames('uk-modal', {
-      'uk-open': this.state.isActive,
+      'uk-open': this.state.shouldDisplay && this.state.isOpen,
     })
+    const style = {
+      display: this.state.shouldDisplay && 'block',
+    }
 
     return (
       <div>
         {target}
-        <div className={className} aria-hidden={this.state.isActive}>
+        <div
+          className={className}
+          aria-hidden={isOpen}
+          style={style}
+          onClick={handleClose}
+        >
           <Dialog
-            onClick={handleOverlayClick}
+
+            handleClose={handleClose}
             {...this.props}
           />
         </div>
