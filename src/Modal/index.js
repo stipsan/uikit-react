@@ -13,6 +13,7 @@ export default class Modal extends Component {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
+    isOpen: PropTypes.bool,
   }
 
   state = { isActive: false }
@@ -35,11 +36,17 @@ export default class Modal extends Component {
 
   render() {
     const { handleOverlayClick, handleClick } = this
-    const target = this.props.target && createElement(this.props.target, { handleOpen: this.handleClick, children: 'Open' })
+    const { isOpen } = this.props
+    const target = this.props.target &&
+          createElement(this.props.target, { handleOpen: handleClick, children: 'Open' })
+    const className = classNames('uk-modal', {
+      'uk-open': this.state.isActive,
+    })
+
     return (
       <div>
         {target}
-        <div className="uk-modal">
+        <div className={className} aria-hidden={this.state.isActive}>
           <Dialog
             onClick={handleOverlayClick}
             {...this.props}

@@ -8,11 +8,10 @@ export default class Dialog extends Component
       overlay: {},
       content: {},
     },
-    isOpen: false,
   }
 
   static propTypes = {
-    isOpen: PropTypes.bool,
+
   }
   displayName: 'ModalPortal'
   state = {
@@ -151,14 +150,10 @@ export default class Dialog extends Component
   }
 
   render() {
-    const className = classNames('uk-modal', {
-      'uk-open uk-display-block': this.state.isActive,
-    })
     const { handleOverlayClick, handleClick, handleKeyDown, handleBlockEvent } = this
-    const { children } = this.props
+    const { children, isOpen } = this.props
 
     return (
-        <div className={className} aria-hidden={this.state.isActive}>
           <div className="uk-modal-dialog">
             <a
               className="uk-modal-close uk-close"
@@ -168,7 +163,6 @@ export default class Dialog extends Component
             </a>
             {children}
           </div>
-        </div>
         )
   }
 }
