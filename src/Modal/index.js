@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import KeyHandler, { KEYDOWN } from 'react-key-handler'
 import { Component, PropTypes, createElement } from 'react'
 
+import Button from '../Button'
 import Dialog from './Dialog'
 
 export default class Modal extends Component {
@@ -18,6 +19,9 @@ export default class Modal extends Component {
     closeTimeoutMS: 0,
     shouldCloseOnOverlayClick: true,
     target: 'button',
+    lightbox: false,
+    type: 'default',
+    confirmLabel: 'Ok',
   }
 
   state = { shouldDisplay: false, isOpen: false }
@@ -29,7 +33,7 @@ export default class Modal extends Component {
   handleOpen = () => {
     this.setState(
       { shouldDisplay: true },
-      () => setTimeout(() => this.setState({ isOpen: true }), 0)
+      () => setTimeout(() => this.setState({ isOpen: true }), 50)
     )
   }
 
@@ -40,9 +44,19 @@ export default class Modal extends Component {
     )
   }
 
+  handleConfirm = () => {
+    this.props.onConfirm()
+    this.handleClose()
+  }
+
   render() {
-    const { handleClose, handleOpen } = this
-    const { isOpen } = this.props
+    const { handleClose, handleOpen, handleConfirm } = this
+    const {
+      isOpen,
+      lightbox,
+      type,
+      confirmLabel,
+    } = this.props
     const target = this.props.target &&
           createElement(this.props.target, { handleOpen, children: 'Open' })
     const className = classNames('uk-modal', {
@@ -50,6 +64,11 @@ export default class Modal extends Component {
     })
     const style = {
       display: this.state.shouldDisplay && 'block',
+    }
+
+    let footer = []
+    if (type === 'alert') {
+      footer = [() => <Button onClick={handleConfirm} primary>{confirmLabel}</Button>]
     }
 
     return (
@@ -60,10 +79,12 @@ export default class Modal extends Component {
           aria-hidden={isOpen}
           className={className}
           style={style}
-          onClick={handleClose}
+          onClick={type === 'default' && handleClose}
         >
           <Dialog
             handleClose={handleClose}
+            close={type === 'default'}
+            footer={footer}
             {...this.props}
           />
         </div>

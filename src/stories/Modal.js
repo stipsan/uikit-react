@@ -156,6 +156,7 @@ storiesOf('Modal', module)
       <Modal
         target={({ handleOpen }) => <Button onClick={handleOpen}>Alert</Button>}
         type="alert"
+        onConfirm={action('onConfirm')}
       >
         Attention!
       </Modal>
