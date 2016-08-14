@@ -1,12 +1,19 @@
-import React from 'react'
 import { storiesOf } from '@kadira/storybook'
+import { Component } from 'react'
 import { Button } from 'uikit-react'
 import { Modal } from 'uikit-react'
+
+class OpenButton extends Component {
+  render() {
+    const { handleOpen } = this.props
+    return <Button onClick={handleOpen}>Open</Button>
+  }
+}
 
 storiesOf('Modal', module)
   .add('with text', () => (
     <div className="uk-container uk-margin-top">
-      <Modal headline="This is the Headline">
+      <Modal headline="This is the Headline" target={OpenButton}>
         <h1>Headeline</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
