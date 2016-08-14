@@ -3,6 +3,8 @@ import { Component } from 'react'
 import { Button } from 'uikit-react'
 import { Modal } from 'uikit-react'
 
+Modal.displayName = 'Modal'
+
 class OpenButton extends Component {
   render() {
     const { handleOpen } = this.props
@@ -11,8 +13,8 @@ class OpenButton extends Component {
 }
 
 storiesOf('Modal', module)
-  .add('with text', () => (
-    <div className="uk-container uk-margin-top">
+  .addWithInfo('Basic Usage', '', () => (
+    <div className="uk-margin-bottom">
       <Modal headline="This is the Headline" target={OpenButton}>
         <h1>Headeline</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -26,4 +28,4 @@ storiesOf('Modal', module)
         <Button success>Submit</Button> &nbsp;
       </Modal>
     </div>
-  ))
+  ), { header: false, inline: true, propTables: [Modal] })
