@@ -2,8 +2,6 @@ import Assign from 'lodash.assign'
 import React, { Component, PropTypes } from 'react'
 
 const div = React.DOM.div
-const focusManager = require('../helpers/focusManager')
-const scopeTab = require('../helpers/scopeTab')
 
 // so that our CSS is statically analyzable
 const CLASS_NAMES = {
