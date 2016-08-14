@@ -111,6 +111,9 @@ export default class Dialog extends Component
     }
   }
 
+  handleOverlayClick = event => event.stopPropagation()
+
+
   // handleOverlayClick = (event) => {
   //   let node = event.target
   //
@@ -154,7 +157,7 @@ export default class Dialog extends Component
     const { children, isOpen } = this.props
 
     return (
-          <div className="uk-modal-dialog">
+          <div className="uk-modal-dialog" onClick={handleOverlayClick}>
             <a
               className="uk-modal-close uk-close"
               onClick={handleClick}

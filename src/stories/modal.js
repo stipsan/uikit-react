@@ -16,7 +16,7 @@ storiesOf('Modal', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
       <Modal headline="This is the Headline" target={OpenButton}>
-        <h1>Headeline</h1>
+        <h1>Headline</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
