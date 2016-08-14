@@ -47,7 +47,7 @@ culpa qui officia deserunt mollit anim id est laborum.`
 storiesOf('Modal', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <Modal headline="This is the Headline" target={OpenButton}>
+      <Modal target={OpenButton}>
         <h1>Headline</h1>
         <p>{LoremIpsum}</p>
       </Modal>
@@ -56,7 +56,6 @@ storiesOf('Modal', module)
   .addWithInfo('Header and Footer', '', () => (
     <div className="uk-margin-bottom">
       <Modal
-        headline="This is the Headline"
         target={OpenButton}
         header="Headline"
         footer={[CancelButton, SaveButton]}
@@ -67,27 +66,16 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Caption', '', () => (
     <div className="uk-margin-bottom">
-      <Modal headline="This is the Headline" target={OpenButton}>
+      <Modal target={OpenButton} caption="Caption">
         <h1>Headline</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>{LoremIpsum}</p>
       </Modal>
     </div>
   ), { header: false, inline: true })
   .addWithInfo('Lightbox modifier', '', () => (
     <div className="uk-margin-bottom">
-      <Modal headline="This is the Headline" target={OpenButton}>
-        <h1>Headline</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.</p>
+      <Modal target={OpenButton} lightbox>
+        <img src="http://getuikit.com/docs/images/placeholder_600x400.svg" width="600" height="400" />
       </Modal>
     </div>
   ), { header: false, inline: true })
