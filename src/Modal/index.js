@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import KeyHandler, { KEYDOWN } from 'react-key-handler'
 import { Component, PropTypes, createElement } from 'react'
 
 import Dialog from './Dialog'
@@ -6,9 +7,10 @@ import Dialog from './Dialog'
 export default class Modal extends Component {
 
   static propTypes = {
-    className: PropTypes.string,
     children: PropTypes.node,
+    className: PropTypes.string,
     isOpen: PropTypes.bool,
+    target: PropTypes.node,
   }
 
   static defaultProps = {
@@ -38,17 +40,8 @@ export default class Modal extends Component {
     )
   }
 
-  handleKeyDown = (event) => {
-    if (event.keyCode == 9 /* tab*/) scopeTab(this.refs.content, event)
-    if (event.keyCode == 27 /* esc*/) {
-      event.preventDefault()
-      alert('t')
-      this.handleClose()
-    }
-  }
-
   render() {
-    const { handleClose, handleOpen, handleKeyDown } = this
+    const { handleClose, handleOpen } = this
     const { isOpen } = this.props
     const target = this.props.target &&
           createElement(this.props.target, { handleOpen, children: 'Open' })
@@ -61,13 +54,13 @@ export default class Modal extends Component {
 
     return (
       <div>
+        <KeyHandler keyEventName={KEYDOWN} keyValue="Escape" onKeyHandle={handleClose} />
         {target}
         <div
-          className={className}
           aria-hidden={isOpen}
+          className={className}
           style={style}
           onClick={handleClose}
-          onKeyDown={handleKeyDown}
         >
           <Dialog
             handleClose={handleClose}
