@@ -32,10 +32,10 @@ export default class Modal extends Component {
 
   state = { shouldDisplay: false, isOpen: false }
 
-  componentDidMount = () => {
-    console.log(this.input)
-    this.input.focus()
-  }
+  // componentDidMount = () => {
+  //   // console.log(this.refs.input.children)
+  //   // this.props.children.input.focus()
+  // }
 
   handleClick = () => {
     this.setState({ shouldDisplay: !this.state.shouldDisplay })

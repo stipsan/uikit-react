@@ -187,12 +187,11 @@ storiesOf('Modal', module)
         onBlur={action('onBlur')}
         onFocus={action('onFocus')}
         onCancel={action('onCancel')}
-        ref={(c) => this.input = c}
       >
         <div>
           <div className="uk-modal-content uk-form">Name:</div>
           <div className="uk-margin-small-top uk-modal-content uk-form">
-            <p><input className="uk-width-1-1" type="text" /></p>
+            <p><input autoFocus className="uk-width-1-1" type="text" /></p>
           </div>
         </div>
       </Modal>
