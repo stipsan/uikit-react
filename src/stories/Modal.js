@@ -188,12 +188,7 @@ storiesOf('Modal', module)
         onFocus={action('onFocus')}
         onCancel={action('onCancel')}
       >
-        <div>
-          <div className="uk-modal-content uk-form">Name:</div>
-          <div className="uk-margin-small-top uk-modal-content uk-form">
-            <p><input autoFocus className="uk-width-1-1" type="text" /></p>
-          </div>
-        </div>
+        Name:
       </Modal>
     </div>
   ), { header: false, inline: true })

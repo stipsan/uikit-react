@@ -4,6 +4,7 @@ import { Component, PropTypes, createElement } from 'react'
 
 import Button from '../Button'
 import Dialog from './Dialog'
+import Prompt from './Prompt'
 
 export default class Modal extends Component {
 
@@ -32,10 +33,6 @@ export default class Modal extends Component {
 
   state = { shouldDisplay: false, isOpen: false }
 
-  // componentDidMount = () => {
-  //   // console.log(this.refs.input.children)
-  //   // this.props.children.input.focus()
-  // }
 
   handleClick = () => {
     this.setState({ shouldDisplay: !this.state.shouldDisplay })
@@ -96,6 +93,15 @@ export default class Modal extends Component {
         () => <Button primary onClick={handleConfirm}>{confirmLabel}</Button>,
       ]
     }
+    const { children, ...dialogProps } = this.props
+
+    let dialogChildren
+    if (type === 'prompt')
+    {
+      dialogChildren = <Prompt isOpen={this.state.isOpen}>{children}</Prompt>
+    } else {
+      dialogChildren = children
+    }
 
     return (
       <div>
@@ -111,9 +117,11 @@ export default class Modal extends Component {
             close={type === 'default'}
             footer={footer}
             handleClose={handleClose}
-            {...this.props}
-          />
-        </div>
+            {...dialogProps}
+          >
+            {dialogChildren}
+          </Dialog>
+          </div>
       </div>
     )
   }
