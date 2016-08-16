@@ -1,9 +1,13 @@
-import { Component } from 'react'
+import { Component, PropTypes } from 'react'
 
 export default class Prompt extends Component {
 
   static defaultProps = {
     isOpen: false,
+  }
+
+  static propTypes = {
+    isOpen: PropTypes.bool,
   }
 
   componentDidUpdate(prevProps) {
