@@ -116,6 +116,7 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  /*
   .addWithInfo('Center', '', () => (
     <div className="uk-margin-bottom">
       <Modal center target={OpenButton} >
@@ -124,6 +125,7 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  // */
   .addWithInfo('Large dialog modifier', '', () => (
     <div className="uk-margin-bottom">
       <Modal large target={OpenButton} >
@@ -132,6 +134,7 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  /*
   .addWithInfo('Overflow container in modal', '', () => (
     <div className="uk-margin-bottom">
       <Modal target={OpenButton}>
@@ -161,6 +164,7 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  // */
   .addWithInfo('Alert', '', () => (
     <div className="uk-margin-bottom">
       <Modal
@@ -186,6 +190,7 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  /*
   .addWithInfo('Prompt', '', () => (
     <div className="uk-margin-bottom">
       <Modal
@@ -215,3 +220,4 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  //*/
