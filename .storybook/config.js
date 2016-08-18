@@ -41,6 +41,7 @@ function loadStories() {
   require('../src/stories/Button')
   require('../src/stories/Dropdown')
   require('../src/stories/Select')
+  require('../src/stories/Modal')
 }
 
 configure(loadStories, module)

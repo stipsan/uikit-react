@@ -4,13 +4,10 @@
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
-    "test": "NODE_ENV=test mocha --colors --compilers js:babel-register --require ./test/.setup.js --require babel-polyfill --recursive",
-    "test:watch": "npm test -- --watch --growl",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint .",
-    "check-coverage": "nyc npm test && nyc check-coverage --statements 80 --branches 80 --functions 80 --lines 80 ",
-    "codeclimate": "codeclimate-test-reporter < coverage/lcovcoverage.lcov",
-    "coverage": "npm run coveralls && npm run codeclimate",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov > coverage/lcovcoverage.lcov && cat coverage/lcovcoverage.lcov | ./node_modules/coveralls/bin/coveralls.js",
+    "coveralls": "jest --coverage && coveralls < .coverage/lcov.info",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
@@ -34,26 +31,26 @@
   "bugs": {
     "url": "https://github.com/stipsan/uikit-react/issues"
   },
-  "nyc": {
-    "include": [
-      "src/**.js"
+  "jest": {
+    "automock": false,
+    "coverageReporters": [
+      "lcov"
     ],
-    "require": [
-      "babel-register"
-    ],
-    "sourceMap": false,
-    "instrument": false
+    "coverageDirectory": "<rootDir>/.coverage",
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ]
   },
   "homepage": "https://github.com/stipsan/uikit-react",
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "3.1.2",
-    "@kadira/storybook": "2.2.0",
-    "@kadira/storybook-deployer": "1.0.0",
+    "@kadira/react-storybook-addon-info": "3.2.1",
+    "@kadira/storybook": "2.3.0",
+    "@kadira/storybook-deployer": "1.1.0",
     "autoprefixer": "6.4.0",
     "babel-cli": "6.11.4",
     "babel-core": "6.13.2",
     "babel-eslint": "6.1.2",
-    "babel-plugin-istanbul": "2.0.0",
+    "babel-jest": "14.1.0",
     "babel-plugin-react-transform": "2.0.2",
     "babel-plugin-transform-react-constant-elements": "6.9.1",
     "babel-plugin-transform-react-inline-elements": "6.8.0",
@@ -62,10 +59,8 @@
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-0": "6.5.0",
     "babel-register": "6.11.6",
-    "codeclimate-test-reporter": "0.3.3",
     "coveralls": "2.11.12",
     "css-loader": "0.23.1",
-    "enzyme": "2.4.1",
     "eslint": "3.3.1",
     "eslint-config-airbnb": "10.0.1",
     "eslint-plugin-import": "1.13.0",
@@ -75,17 +70,17 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "growl": "1.9.2",
-    "istanbul": "1.1.0-alpha.1",
+    "jest-cli": "14.1.0",
     "jsdom": "9.4.2",
     "json-loader": "0.5.4",
     "mocha": "3.0.2",
     "node-sass": "3.8.0",
-    "nyc": "8.1.0",
     "postcss-loader": "0.10.1",
     "raw-loader": "^0.5.1",
     "react": "15.3.0",
     "react-addons-test-utils": "15.3.0",
     "react-dom": "15.3.0",
+    "react-test-renderer": "15.3.0",
     "sass-loader": "4.0.0",
     "style-loader": "0.13.1",
     "uikit": "2.26.4",
@@ -93,18 +88,19 @@
   },
   "dependencies": {
     "classnames": "2.2.5",
-    "react-input-autosize": "1.1.0"
+    "react-input-autosize": "1.1.0",
+    "react-key-handler": "0.2.0"
   },
   "contributors": [
-    {
-      "name": "Zach Curtis",
-      "email": "zachariahtimothy@gmail.com",
-      "url": "https://github.com/zachariahtimothy"
-    },
     {
       "name": "Suresh KUMAR Mukhiya",
       "email": "itsmeskm99@gmail.com",
       "url": "https://github.com/sureshHARDIYA"
+    },
+    {
+      "name": "Zach Curtis",
+      "email": "zachariahtimothy@gmail.com",
+      "url": "https://github.com/zachariahtimothy"
     }
   ]
 }

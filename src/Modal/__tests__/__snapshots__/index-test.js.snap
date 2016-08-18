@@ -1,0 +1,199 @@
+exports[`Modal renders a Blank Modal 1`] = `
+<div>
+  <button
+    handleOpen={[Function anonymous]}>
+    Open
+  </button>
+  <div
+    aria-hidden={false}
+    className="uk-modal"
+    onClick={[Function anonymous]}
+    style={
+      Object {
+        "display": false
+      }
+    }>
+    <div
+      className="uk-modal-dialog uk-modal-dialog-blank"
+      onClick={[Function anonymous]}>
+      <a
+        className="uk-modal-close uk-close"
+        onClick={[Function anonymous]} />
+      <div
+        className="uk-grid uk-flex-middle">
+        <div
+          className="uk-width-medium-1-2 uk-height-viewport uk-cover-background uk-row-first"
+          style={
+            Object {
+              "backgroundImage": "url(http://getuikit.com/docs/images/placeholder_120x255.svg)"
+            }
+          } />
+        <div
+          className="uk-width-medium-1-2">
+          <h1>
+            Headline
+          </h1>
+          <div
+            className="uk-width-medium-1-3">
+            <p>
+              Lorem ipsum
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal renders a Caption 1`] = `
+<div>
+  <button
+    handleOpen={[Function anonymous]}>
+    Open
+  </button>
+  <div
+    aria-hidden={false}
+    className="uk-modal"
+    onClick={[Function anonymous]}
+    style={
+      Object {
+        "display": false
+      }
+    }>
+    <div
+      className="uk-modal-dialog"
+      onClick={[Function anonymous]}>
+      <a
+        className="uk-modal-close uk-close"
+        onClick={[Function anonymous]} />
+      <div
+        className="uk-modal-caption">
+        Caption
+      </div>
+      Lorem ipsum
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal renders a Header and Footer 1`] = `
+<div>
+  <button
+    handleOpen={[Function anonymous]}>
+    Open
+  </button>
+  <div
+    aria-hidden={false}
+    className="uk-modal"
+    onClick={[Function anonymous]}
+    style={
+      Object {
+        "display": false
+      }
+    }>
+    <div
+      className="uk-modal-dialog"
+      onClick={[Function anonymous]}>
+      <a
+        className="uk-modal-close uk-close"
+        onClick={[Function anonymous]} />
+      <div
+        className="uk-modal-header">
+        <h2>
+          Headline
+        </h2>
+      </div>
+      Lorem ipsum
+      <div
+        className="uk-modal-footer uk-text-right">
+        <button
+          onClick={[Function anonymous]}>
+          Yes!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal renders a Lightbox 1`] = `
+<div>
+  <button
+    handleOpen={[Function anonymous]}>
+    Open
+  </button>
+  <div
+    aria-hidden={false}
+    className="uk-modal"
+    onClick={[Function anonymous]}
+    style={
+      Object {
+        "display": false
+      }
+    }>
+    <div
+      className="uk-modal-dialog uk-modal-dialog-lightbox"
+      onClick={[Function anonymous]}>
+      <a
+        className="uk-modal-close uk-close uk-close-alt"
+        onClick={[Function anonymous]} />
+      <img
+        role="presentation"
+        src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal renders a Spinner 1`] = `
+<div>
+  <button
+    handleOpen={[Function anonymous]}>
+    Open
+  </button>
+  <div
+    aria-hidden={false}
+    className="uk-modal"
+    onClick={[Function anonymous]}
+    style={
+      Object {
+        "display": false
+      }
+    }>
+    <div
+      className="uk-modal-dialog"
+      onClick={[Function anonymous]}>
+      <div
+        className="uk-modal-spinner" />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal renders correctly 1`] = `
+<div>
+  <button
+    handleOpen={[Function anonymous]}>
+    Open
+  </button>
+  <div
+    aria-hidden={false}
+    className="uk-modal"
+    onClick={[Function anonymous]}
+    style={
+      Object {
+        "display": false
+      }
+    }>
+    <div
+      className="uk-modal-dialog"
+      onClick={[Function anonymous]}>
+      <a
+        className="uk-modal-close uk-close"
+        onClick={[Function anonymous]} />
+      Lorem ipsum
+    </div>
+  </div>
+</div>
+`;
