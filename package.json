@@ -4,13 +4,10 @@
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint .",
-    "check-coverage": "nyc npm test && nyc check-coverage --statements 80 --branches 80 --functions 80 --lines 80 ",
-    "codeclimate": "codeclimate-test-reporter < coverage/lcovcoverage.lcov",
-    "coverage": "npm run coveralls && npm run codeclimate",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov > coverage/lcovcoverage.lcov && cat coverage/lcovcoverage.lcov | ./node_modules/coveralls/bin/coveralls.js",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
@@ -34,18 +31,9 @@
   "bugs": {
     "url": "https://github.com/stipsan/uikit-react/issues"
   },
-  "nyc": {
-    "include": [
-      "src/**.js"
-    ],
-    "require": [
-      "babel-register"
-    ],
-    "sourceMap": false,
-    "instrument": false
-  },
   "jest": {
     "automock": false,
+    "collectCoverage": true,
     "setupFiles": [
       "<rootDir>/test/setup.js"
     ]
