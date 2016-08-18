@@ -96,8 +96,7 @@ export default class Modal extends Component {
     const { children, ...dialogProps } = this.props
 
     let dialogChildren
-    if (type === 'prompt')
-    {
+    if (type === 'prompt') {
       dialogChildren = <Prompt isOpen={this.state.isOpen}>{children}</Prompt>
     } else {
       dialogChildren = children
@@ -121,7 +120,7 @@ export default class Modal extends Component {
           >
             {dialogChildren}
           </Dialog>
-          </div>
+        </div>
       </div>
     )
   }

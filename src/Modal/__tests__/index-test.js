@@ -13,10 +13,11 @@ describe('Modal', () => {
   it('renders a Header and Footer', () => {
     const component = renderer.create(
       <Modal
-        header="Headline"
         footer={[
+          // eslint-disable-next-line react/prop-types
           ({ handleClose }) => <button onClick={handleClose}>Yes!</button>,
         ]}
+        header="Headline"
       >
         Lorem ipsum
       </Modal>
@@ -40,7 +41,7 @@ describe('Modal', () => {
       <Modal
         lightbox
       >
-        <img src="http://getuikit.com/docs/images/placeholder_600x400.svg" role="presentation" />
+        <img role="presentation" src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
       </Modal>
     )
     expect(component.toJSON()).toMatchSnapshot()

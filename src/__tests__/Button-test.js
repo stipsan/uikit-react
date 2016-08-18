@@ -44,6 +44,6 @@ test('Button renders correctly', () => {
   ).toJSON()).toMatchSnapshot()
 
   expect(renderer.create(
-    <Button large disabled className="save-button">Save</Button>
+    <Button disabled large className="save-button">Save</Button>
   ).toJSON()).toMatchSnapshot()
 })

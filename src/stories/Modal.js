@@ -4,6 +4,7 @@ import { Button, Modal } from 'uikit-react'
 
 Modal.displayName = 'Modal'
 
+/* eslint-disable */
 class OpenButton extends Component {
   handleClick = () => {
     action('handleOpen')()
@@ -36,6 +37,7 @@ class SaveButton extends Component {
     return <Button primary onClick={handleClick}>Save</Button>
   }
 }
+/* eslint-enable */
 
 const LoremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -56,9 +58,9 @@ storiesOf('Modal', module)
   .addWithInfo('Header and Footer', '', () => (
     <div className="uk-margin-bottom">
       <Modal
-        target={OpenButton}
-        header="Headline"
         footer={[CancelButton, SaveButton]}
+        header="Headline"
+        target={OpenButton}
       >
         <p>{LoremIpsum}</p>
       </Modal>
@@ -66,7 +68,7 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Caption', '', () => (
     <div className="uk-margin-bottom">
-      <Modal target={OpenButton} caption="Caption">
+      <Modal caption="Caption" target={OpenButton}>
         <h1>Headline</h1>
         <p>{LoremIpsum}</p>
       </Modal>
@@ -74,8 +76,13 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Lightbox modifier', '', () => (
     <div className="uk-margin-bottom">
-      <Modal target={OpenButton} lightbox>
-        <img src="http://getuikit.com/docs/images/placeholder_600x400.svg" width="600" height="400" />
+      <Modal lightbox target={OpenButton}>
+        <img
+          height="400"
+          role="presentation"
+          src="http://getuikit.com/docs/images/placeholder_600x400.svg"
+          width="600"
+        />
       </Modal>
     </div>
   ), { header: false, inline: true })
@@ -157,6 +164,7 @@ storiesOf('Modal', module)
   .addWithInfo('Alert', '', () => (
     <div className="uk-margin-bottom">
       <Modal
+        // eslint-disable-next-line react/prop-types,react/jsx-no-bind
         target={({ handleOpen }) => <Button onClick={handleOpen}>Alert</Button>}
         type="alert"
         onConfirm={action('onConfirm')}
@@ -168,6 +176,7 @@ storiesOf('Modal', module)
   .addWithInfo('Confirm', '', () => (
     <div className="uk-margin-bottom">
       <Modal
+        // eslint-disable-next-line react/prop-types,react/jsx-no-bind
         target={({ handleOpen }) => <Button onClick={handleOpen}>Confirm</Button>}
         type="confirm"
         onCancel={action('onCancel')}
@@ -180,13 +189,14 @@ storiesOf('Modal', module)
   .addWithInfo('Prompt', '', () => (
     <div className="uk-margin-bottom">
       <Modal
+        // eslint-disable-next-line react/prop-types,react/jsx-no-bind
         target={({ handleOpen }) => <Button onClick={handleOpen}>Prompt</Button>}
         type="prompt"
-        onConfirm={action('onConfirm')}
-        onChange={action('onChange')}
         onBlur={action('onBlur')}
-        onFocus={action('onFocus')}
         onCancel={action('onCancel')}
+        onChange={action('onChange')}
+        onConfirm={action('onConfirm')}
+        onFocus={action('onFocus')}
       >
         Name:
       </Modal>
@@ -195,9 +205,11 @@ storiesOf('Modal', module)
   .addWithInfo('Block UI', '', () => (
     <div className="uk-margin-bottom">
       <Modal
+        // eslint-disable-next-line react/prop-types,react/jsx-no-bind
         target={({ handleOpen }) => <Button onClick={handleOpen}>Block UI</Button>}
-        onOpen={close => setTimeout(() => close(), 5000)}
         type="blockUI"
+        // eslint-disable-next-line react/jsx-no-bind
+        onOpen={close => setTimeout(() => close(), 5000)}
       >
         Wait 5 sec...
       </Modal>
