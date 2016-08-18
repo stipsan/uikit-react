@@ -36,6 +36,7 @@
     "coverageReporters": [
       "lcov"
     ],
+    "coverageDirectory": "<rootDir>/.coverage",
     "setupFiles": [
       "<rootDir>/test/setup.js"
     ]
