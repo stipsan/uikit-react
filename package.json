@@ -4,10 +4,10 @@
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint .",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
@@ -33,7 +33,9 @@
   },
   "jest": {
     "automock": false,
-    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
     "setupFiles": [
       "<rootDir>/test/setup.js"
     ]
