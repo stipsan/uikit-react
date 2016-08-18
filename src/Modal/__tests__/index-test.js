@@ -81,4 +81,15 @@ describe('Modal', () => {
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
+
+  it('renders an alert modal', () => {
+    const component = renderer.create(
+      <Modal
+        type="alert"
+      >
+        Something bad happened!
+      </Modal>
+    )
+    expect(component.toJSON()).toMatchSnapshot()
+  })
 })
