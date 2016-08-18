@@ -92,4 +92,15 @@ describe('Modal', () => {
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
+
+  it('renders an confirm modal', () => {
+    const component = renderer.create(
+      <Modal
+        type="confirm"
+      >
+        Are you absolutely sure about this?
+      </Modal>
+    )
+    expect(component.toJSON()).toMatchSnapshot()
+  })
 })

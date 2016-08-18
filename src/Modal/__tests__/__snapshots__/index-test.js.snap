@@ -204,6 +204,48 @@ exports[`Modal renders an alert modal 1`] = `
 </div>
 `;
 
+exports[`Modal renders an confirm modal 1`] = `
+<div>
+  <button
+    handleOpen={[Function anonymous]}>
+    Open
+  </button>
+  <div
+    aria-hidden={false}
+    className="uk-modal"
+    onClick={false}
+    style={
+      Object {
+        "display": false
+      }
+    }>
+    <div
+      className="uk-modal-dialog"
+      onClick={[Function anonymous]}>
+      Are you absolutely sure about this?
+      <div
+        className="uk-modal-footer uk-text-right">
+        <button
+          className="uk-button"
+          onClick={[Function anonymous]}
+          type="button">
+          Cancel
+        </button>
+        <span>
+           
+        </span>
+        <button
+          className="uk-button uk-button-primary"
+          onClick={[Function anonymous]}
+          type="button">
+          Ok
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Modal renders correctly 1`] = `
 <div>
   <button
