@@ -36,6 +36,7 @@
     "coverageReporters": [
       "lcov"
     ],
+    "coveragePathIgnorePatterns": ["<rootDir>/lib/", "<rootDir>/node_modules/"],
     "coverageDirectory": "<rootDir>/.coverage",
     "setupFiles": [
       "<rootDir>/test/setup.js"
