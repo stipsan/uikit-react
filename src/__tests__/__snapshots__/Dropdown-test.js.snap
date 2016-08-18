@@ -1,11 +1,11 @@
-exports[`Dropdown Dropdown renders correctly 1`] = `
+exports[`Dropdown changes the class when clicked 1`] = `
 <div
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
+  onClick={[Function anonymous]}
+  onMouseEnter={false}
+  onMouseLeave={false}>
   <button
     className="uk-button">
     Hover 
@@ -15,20 +15,38 @@ exports[`Dropdown Dropdown renders correctly 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown renders correctly 2`] = `
-<li
-  aria-expanded={false}
+exports[`Dropdown changes the class when clicked 2`] = `
+<div
+  aria-expanded={true}
   aria-haspopup={true}
-  className="uk-parent"
-  onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
-  <a>
-    Parent 
+  className="uk-button-dropdown uk-open"
+  onClick={[Function anonymous]}
+  onMouseEnter={false}
+  onMouseLeave={false}>
+  <button
+    className="uk-button">
+    Hover 
     <i
       className="uk-icon-caret-down" />
-  </a>
-</li>
+  </button>
+</div>
+`;
+
+exports[`Dropdown changes the class when clicked 3`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={[Function anonymous]}
+  onMouseEnter={false}
+  onMouseLeave={false}>
+  <button
+    className="uk-button">
+    Hover 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
 `;
 
 exports[`Dropdown changes the class when hovered 1`] = `
@@ -80,4 +98,54 @@ exports[`Dropdown changes the class when hovered 3`] = `
       className="uk-icon-caret-down" />
   </button>
 </div>
+`;
+
+exports[`Dropdown changes the class when hovered 4`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={false}
+  onMouseEnter={[Function anonymous]}
+  onMouseLeave={[Function anonymous]}>
+  <button
+    className="uk-button">
+    Hover 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
+exports[`Dropdown renders correctly 1`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={false}
+  onMouseEnter={[Function anonymous]}
+  onMouseLeave={[Function anonymous]}>
+  <button
+    className="uk-button">
+    Hover 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
+exports[`Dropdown renders correctly 2`] = `
+<li
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-parent"
+  onClick={false}
+  onMouseEnter={[Function anonymous]}
+  onMouseLeave={[Function anonymous]}>
+  <a>
+    Parent 
+    <i
+      className="uk-icon-caret-down" />
+  </a>
+</li>
 `;

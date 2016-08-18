@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import Dropdown from '../Dropdown'
 
 describe('Dropdown', () => {
-  it('Dropdown renders correctly', () => {
+  it('renders correctly', () => {
     expect(renderer.create(
       <Dropdown>
         <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
@@ -34,6 +34,33 @@ describe('Dropdown', () => {
 
     // manually trigger the callback
     tree.props.onMouseLeave()
+    // re-rendering
+    tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+
+    // Fast forward timers, class should now be gone
+    jest.runAllTimers()
+    tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('changes the class when clicked', () => {
+    const component = renderer.create(
+      <Dropdown mode="click">
+        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+      </Dropdown>
+    )
+    let tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+
+    // manually trigger the callback
+    tree.props.onClick()
+    // re-rendering
+    tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+
+    // manually trigger the callback
+    tree.props.onClick()
     // re-rendering
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
