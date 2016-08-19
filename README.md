@@ -18,7 +18,7 @@ Check our [Storybook](http://uikit-react.io) to see docs and usage examples for 
 We use GitHub Releases as our [Changelog](https://github.com/stipsan/uikit-react/releases).
 
 Inspired by:
-* [material ui](http://material-ui.com/)
+* [Material-UI](http://material-ui.com/)
 * [React-Bootstrap](http://react-bootstrap.github.io)
 * [React Foundation Apps](https://github.com/akiran/react-foundation-apps)
 * [React Forms](http://prometheusresearch.github.io/react-forms/)
