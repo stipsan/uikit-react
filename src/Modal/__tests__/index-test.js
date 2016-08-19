@@ -103,4 +103,15 @@ describe('Modal', () => {
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
+
+  it('renders an prompt modal', () => {
+    const component = renderer.create(
+      <Modal
+        type="prompt"
+      >
+        Please enter the name of the repo you're deleting:
+      </Modal>
+    )
+    expect(component.toJSON()).toMatchSnapshot()
+  })
 })
