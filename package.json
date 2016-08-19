@@ -1,6 +1,6 @@
 {
   "name": "uikit-react",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
@@ -36,7 +36,10 @@
     "coverageReporters": [
       "lcov"
     ],
-    "coveragePathIgnorePatterns": ["<rootDir>/lib/", "<rootDir>/node_modules/"],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/lib/",
+      "<rootDir>/node_modules/"
+    ],
     "coverageDirectory": "<rootDir>/.coverage",
     "setupFiles": [
       "<rootDir>/test/setup.js"
