@@ -77,15 +77,15 @@
     "jest-cli": "14.1.0",
     "jsdom": "9.4.2",
     "json-loader": "0.5.4",
+    "less": "2.7.1",
+    "less-loader": "2.2.3",
     "mocha": "3.0.2",
-    "node-sass": "3.8.0",
     "postcss-loader": "0.10.1",
     "raw-loader": "^0.5.1",
     "react": "15.3.0",
     "react-addons-test-utils": "15.3.0",
     "react-dom": "15.3.0",
     "react-test-renderer": "15.3.0",
-    "sass-loader": "4.0.0",
     "style-loader": "0.13.1",
     "uikit": "2.26.4",
     "url-loader": "0.5.7"
@@ -100,6 +100,11 @@
       "name": "Suresh KUMAR Mukhiya",
       "email": "itsmeskm99@gmail.com",
       "url": "https://github.com/sureshHARDIYA"
+    },
+    {
+      "name": "Torkil Johnsen",
+      "email": "torkil@torkiljohnsen.com",
+      "url": "https://github.com/torkiljohnsen"
     },
     {
       "name": "Zach Curtis",

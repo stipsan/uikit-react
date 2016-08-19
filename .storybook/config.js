@@ -1,4 +1,4 @@
-import './uikit.scss'
+import './uikit.less'
 
 import infoAddon from '@kadira/react-storybook-addon-info'
 import { configure, setAddon, addDecorator } from '@kadira/storybook'
@@ -8,7 +8,7 @@ import Logo from './Logo'
 setAddon(infoAddon)
 
 addDecorator((fn, { kind, story }) => <div>
-  <nav className="tm-navbar uk-navbar">
+  <nav className="tm-navbar uk-navbar uk-navbar-attached">
     <Logo />
     <ul className="uk-navbar-nav">
       <li className="uk-active">

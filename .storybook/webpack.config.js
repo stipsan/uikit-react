@@ -22,9 +22,9 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.scss$/,
+        test: /\.less/,
         loader: ExtractTextPlugin.extract(
-          'style-loader', 'css!postcss!sass?sourceMap'
+          'style-loader', 'css!postcss!less'
         ),
       },
       { test: /\.css$/, loaders: ['style', 'css'] },

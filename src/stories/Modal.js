@@ -34,7 +34,7 @@ class SaveButton extends Component {
   }
   render() {
     const { handleClick } = this
-    return <Button primary onClick={handleClick}>Save</Button>
+    return <Button primary onClick={handleClick} className="uk-margin-small-left">Save</Button>
   }
 }
 /* eslint-enable */
