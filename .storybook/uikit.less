@@ -1,0 +1,23 @@
+// uikit deps
+@theme: 'gradient';
+@import "~uikit/themes/@{theme}/uikit";
+
+@import "~uikit/dist/less/components/autocomplete";
+@import "~uikit/dist/less/components/form-advanced";
+
+@import "~uikit/themes/@{theme}/autocomplete";
+@import "~uikit/themes/@{theme}/form-advanced";
+
+// uikit-react deps
+@import "../less/select.less";
+
+@icon-font-path: "~uikit/dist/fonts";
+
+// Storybook specific
+.tm-navbar {
+  background: #fbfdfe;
+  border-bottom: 1px solid #ececec;
+}
+.tm-navbar > .uk-navbar-nav > li.uk-active > a.uk-navbar-nav-subtitle {
+  background: transparent;
+}
