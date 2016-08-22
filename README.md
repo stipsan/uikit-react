@@ -9,6 +9,19 @@ uikit-react
 
 <img src="https://uikit-react.io/logo.svg" width="256"/>
 
+## Installation
+
+```bash
+  $ npm install --save uikit-react
+```
+
+## Available Components
+
+* [Button](http://uikit-react.io/?selectedKind=Button&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
+* [Dropdown](http://uikit-react.io/?selectedKind=Dropdown&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
+* [Modal](http://uikit-react.io/?selectedKind=Modal&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
+* [Select](http://uikit-react.io/?selectedKind=Select&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
+
 React UI component built on top of the UIkit CSS.
 This library makes no assumptions on how you provide the CSS; load it in any way you like.
 The minimum required css for components to function can be seen in the [LESS file](.storybook/uikit.less) we use to compile UIkit for our [Storybook](http://uikit-react.io).
