@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint .",
-    "coveralls": "jest --coverage && coveralls < .coverage/lcov.info",
+    "coveralls": "coveralls < .coverage/lcov.info",
     "prebuild": "rm -rf lib",
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
@@ -45,7 +45,7 @@
       "<rootDir>/test/setup.js"
     ]
   },
-  "homepage": "https://github.com/stipsan/uikit-react",
+  "homepage": "https://uikit-react.io",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.2.1",
     "@kadira/storybook": "2.3.0",

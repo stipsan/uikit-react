@@ -2,7 +2,7 @@ sudo: false
 language: node_js
 node_js:
 - "node"
-script: "npm test && npm run lint"
+script: "npm test -- --coverage && npm run lint"
 after_script: "npm run coveralls"
 notifications:
   email: false
