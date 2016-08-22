@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import React, { Component, PropTypes } from 'react'
+import { Component, PropTypes } from 'react'
 
 export default class Button extends Component {
 

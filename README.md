@@ -21,6 +21,7 @@ uikit-react
 * [Dropdown](http://uikit-react.io/?selectedKind=Dropdown&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Modal](http://uikit-react.io/?selectedKind=Modal&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Select](http://uikit-react.io/?selectedKind=Select&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
+* [Input](http://uikit-react.io/?selectedKind=Input&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 
 React UI component built on top of the UIkit CSS.
 This library makes no assumptions on how you provide the CSS; load it in any way you like.
