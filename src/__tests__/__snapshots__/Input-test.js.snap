@@ -18,3 +18,13 @@ exports[`Input renders correctly 4`] = `
 <input
   className="uk-form-success" />
 `;
+
+exports[`Input renders correctly 5`] = `
+<input
+  className="uk-form-large" />
+`;
+
+exports[`Input renders correctly 6`] = `
+<input
+  className="uk-form-small" />
+`;
