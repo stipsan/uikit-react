@@ -51,5 +51,9 @@ describe('Input', () => {
     expect(renderer.create(
       <Input width="mini" />
     ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input icon="calendar" />
+    ).toJSON()).toMatchSnapshot()
   })
 })
