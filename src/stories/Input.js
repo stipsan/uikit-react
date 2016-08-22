@@ -7,8 +7,8 @@ Input.displayName = 'Input'
 storiesOf('Input', module)
   .addWithInfo('Basic Usage', '', () => (
     <form className="uk-margin-bottom uk-form">
-      <Input placeholder="Default" /> &nbsp;
-      <Input danger placeholder="Danger" /> &nbsp;
-      <Input success placeholder="Success" />
+      <Input /> &nbsp;
+      <Input danger /> &nbsp;
+      <Input success />
     </form>
   ), { header: false, inline: true, propTables: [Input] })

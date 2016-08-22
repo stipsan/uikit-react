@@ -7,5 +7,17 @@ describe('Input', () => {
     expect(renderer.create(
       <Input />
     ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input className="uk-search-field" type="search" />
+    ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input danger />
+    ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input success />
+    ).toJSON()).toMatchSnapshot()
   })
 })

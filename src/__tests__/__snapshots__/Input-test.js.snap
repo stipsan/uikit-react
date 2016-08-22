@@ -1,1 +1,20 @@
-exports[`Input renders correctly 1`] = `<input />`;
+exports[`Input renders correctly 1`] = `
+<input
+  className="" />
+`;
+
+exports[`Input renders correctly 2`] = `
+<input
+  className="uk-search-field"
+  type="search" />
+`;
+
+exports[`Input renders correctly 3`] = `
+<input
+  className="uk-form-danger" />
+`;
+
+exports[`Input renders correctly 4`] = `
+<input
+  className="uk-form-success" />
+`;

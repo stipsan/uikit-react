@@ -2,10 +2,17 @@ import cx from 'classnames'
 import { PropTypes } from 'react'
 
 const Input = ({
+  danger,
+  success,
+  className: customClassName,
   ...other,
 }) => {
+  const className = cx(customClassName, {
+    'uk-form-danger': danger,
+    'uk-form-success': success,
+  })
   return (
-    <input {...other} />
+    <input {...other} className={className} />
   )
 }
 
