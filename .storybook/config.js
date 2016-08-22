@@ -12,7 +12,7 @@ addDecorator((fn, { kind, story }) => <div>
     <Logo />
     <ul className="uk-navbar-nav">
       <li className="uk-active">
-        <a className="uk-navbar-nav-subtitle" href="#/getting-started">
+        <a className="uk-navbar-nav-subtitle">
           {kind}
           <div>{story}</div>
         </a>
