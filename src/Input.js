@@ -8,6 +8,7 @@ const Input = ({
   large,
   small,
   success,
+  width,
   ...other,
 }) => {
   const className = cx(customClassName, {
@@ -16,6 +17,7 @@ const Input = ({
     'uk-form-large': large,
     'uk-form-small': small,
     'uk-form-success': success,
+    'uk-width-1-1': width === 'full',
   })
   return (
     <input {...other} className={className} />
@@ -29,6 +31,11 @@ Input.propTypes = {
   large: PropTypes.bool,
   small: PropTypes.bool,
   success: PropTypes.bool,
+  width: PropTypes.oneOf(['full', 'large', 'medium', 'small', 'mini', '']),
+}
+
+Input.defaultProps = {
+  width: '',
 }
 
 export default Input

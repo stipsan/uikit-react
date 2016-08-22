@@ -31,5 +31,25 @@ describe('Input', () => {
     expect(renderer.create(
       <Input small />
     ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input width="full" />
+    ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input width="large" />
+    ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input width="medium" />
+    ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input width="small" />
+    ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
+      <Input width="mini" />
+    ).toJSON()).toMatchSnapshot()
   })
 })

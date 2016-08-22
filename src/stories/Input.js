@@ -10,7 +10,7 @@ storiesOf('Input', module)
       <Input placeholder="Text input" /> &nbsp;
       <Input danger defaultValue="danger" /> &nbsp;
       <Input success defaultValue="success" /> &nbsp;
-      <Input blank defaultValue="blank" />
+      <Input blank placeholder="blank" />
     </form>
   ), { header: false, inline: true, propTables: [Input] })
   .addWithInfo('Size modifiers', '', () => (
