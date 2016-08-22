@@ -21,6 +21,10 @@ describe('Input', () => {
     ).toJSON()).toMatchSnapshot()
 
     expect(renderer.create(
+      <Input blank />
+    ).toJSON()).toMatchSnapshot()
+
+    expect(renderer.create(
       <Input large />
     ).toJSON()).toMatchSnapshot()
 

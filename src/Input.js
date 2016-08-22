@@ -4,6 +4,7 @@ import { PropTypes } from 'react'
 const Input = ({
   danger,
   success,
+  blank,
   large,
   small,
   className: customClassName,
@@ -12,6 +13,7 @@ const Input = ({
   const className = cx(customClassName, {
     'uk-form-danger': danger,
     'uk-form-success': success,
+    'uk-form-blank': blank,
     'uk-form-large': large,
     'uk-form-small': small,
   })
