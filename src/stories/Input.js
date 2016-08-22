@@ -26,3 +26,22 @@ storiesOf('Input', module)
       </div>
     </form>
   ), { header: false, inline: true })
+  .addWithInfo('Width modifiers', '', () => (
+    <form className="uk-margin-bottom uk-form">
+      <div className="uk-form-row">
+        <Input placeholder="width=full" width="full" />
+      </div>
+      <div className="uk-form-row">
+        <Input placeholder="width=large" width="large" />
+      </div>
+      <div className="uk-form-row">
+        <Input placeholder="width=medium" width="medium" />
+      </div>
+      <div className="uk-form-row">
+        <Input placeholder="width=small" width="small" />
+      </div>
+      <div className="uk-form-row">
+        <Input placeholder="width=mini" width="mini" />
+      </div>
+    </form>
+  ), { header: false, inline: true })
