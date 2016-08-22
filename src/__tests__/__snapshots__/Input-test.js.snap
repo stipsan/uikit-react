@@ -5,17 +5,17 @@ exports[`Input renders correctly 1`] = `
 
 exports[`Input renders correctly 10`] = `
 <input
-  className="" />
+  className="uk-form-width-medium" />
 `;
 
 exports[`Input renders correctly 11`] = `
 <input
-  className="" />
+  className="uk-form-width-small" />
 `;
 
 exports[`Input renders correctly 12`] = `
 <input
-  className="" />
+  className="uk-form-width-mini" />
 `;
 
 exports[`Input renders correctly 2`] = `
@@ -56,5 +56,5 @@ exports[`Input renders correctly 8`] = `
 
 exports[`Input renders correctly 9`] = `
 <input
-  className="" />
+  className="uk-form-width-large" />
 `;

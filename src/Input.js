@@ -18,6 +18,10 @@ const Input = ({
     'uk-form-small': small,
     'uk-form-success': success,
     'uk-width-1-1': width === 'full',
+    'uk-form-width-large': width === 'large',
+    'uk-form-width-medium': width === 'medium',
+    'uk-form-width-small': width === 'small',
+    'uk-form-width-mini': width === 'mini',
   })
   return (
     <input {...other} className={className} />
@@ -31,11 +35,7 @@ Input.propTypes = {
   large: PropTypes.bool,
   small: PropTypes.bool,
   success: PropTypes.bool,
-  width: PropTypes.oneOf(['full', 'large', 'medium', 'small', 'mini', '']),
-}
-
-Input.defaultProps = {
-  width: '',
+  width: PropTypes.oneOf(['full', 'large', 'medium', 'small', 'mini']),
 }
 
 export default Input
