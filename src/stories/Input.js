@@ -47,7 +47,9 @@ storiesOf('Input', module)
   ), { header: false, inline: true })
   .addWithInfo('Form and icons', '', () => (
     <form className="uk-margin-bottom uk-form">
-      <Input icon="calendar" /> &nbsp;
-      <Input icon="clock-o" />
+      <div className="uk-form-row">
+        <Input icon="calendar" /> &nbsp;
+        <Input flip icon="clock-o" />
+      </div>
     </form>
   ), { header: false, inline: true })

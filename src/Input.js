@@ -5,6 +5,7 @@ const Input = ({
   blank,
   className: customClassName,
   danger,
+  flip,
   icon,
   large,
   small,
@@ -27,8 +28,11 @@ const Input = ({
   const input = <input {...other} className={className} />
   if (icon) {
     return (
-      <div className="uk-form-icon">
-        <i className={`uk-icon-${icon}`} />
+      <div className={cx('uk-form-icon', { 'uk-form-icon-flip': flip })}>
+        <i
+          className={cx(`uk-icon-${icon}`, {
+          })}
+        />
         {input}
       </div>
     )
@@ -40,6 +44,7 @@ Input.propTypes = {
   blank: PropTypes.bool,
   className: PropTypes.string,
   danger: PropTypes.bool,
+  flip: PropTypes.bool,
   icon: PropTypes.string,
   large: PropTypes.bool,
   small: PropTypes.bool,
