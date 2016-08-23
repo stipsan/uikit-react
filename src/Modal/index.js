@@ -14,7 +14,7 @@ export default class Modal extends Component {
     className: PropTypes.string,
     confirmLabel: PropTypes.string,
     isOpen: PropTypes.bool,
-    target: PropTypes.func,
+    target: PropTypes.node,
     type: PropTypes.string,
     onCancel: PropTypes.func,
     onConfirm: PropTypes.func,

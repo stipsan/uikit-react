@@ -28,6 +28,36 @@ exports[`Input renders correctly 13`] = `
 </div>
 `;
 
+exports[`Input renders correctly 14`] = `
+<div
+  className="uk-form-icon uk-form-icon-flip">
+  <i
+    className="uk-icon-calendar" />
+  <input
+    className="" />
+</div>
+`;
+
+exports[`Input renders correctly 15`] = `
+<div
+  className="uk-form-icon">
+  <i
+    className="uk-icon-spinner uk-icon-spin" />
+  <input
+    className="" />
+</div>
+`;
+
+exports[`Input renders correctly 16`] = `
+<div
+  className="uk-form-icon uk-form-icon-flip">
+  <i
+    className="uk-icon-refresh uk-icon-spin" />
+  <input
+    className="" />
+</div>
+`;
+
 exports[`Input renders correctly 2`] = `
 <input
   className="uk-search-field"
