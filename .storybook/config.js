@@ -49,7 +49,7 @@ addDecorator((fn, { kind, story }) => <div>
 function loadStories() {
   require('../src/stories/Button')
   require('../src/stories/Dropdown')
-  require('../src/stories/Select')
+  // require('../src/stories/Select')
   require('../src/stories/Modal')
   require('../src/stories/Input')
 }
