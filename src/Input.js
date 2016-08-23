@@ -31,6 +31,7 @@ const Input = ({
       <div className={cx('uk-form-icon', { 'uk-form-icon-flip': flip })}>
         <i
           className={cx(`uk-icon-${icon}`, {
+            'uk-icon-spin': icon === 'spinner' || icon === 'refresh',
           })}
         />
         {input}

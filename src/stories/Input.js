@@ -51,5 +51,9 @@ storiesOf('Input', module)
         <Input icon="calendar" /> &nbsp;
         <Input flip icon="clock-o" />
       </div>
+      <div className="uk-form-row">
+        <Input icon="spinner" /> &nbsp;
+        <Input flip icon="refresh" />
+      </div>
     </form>
   ), { header: false, inline: true })
