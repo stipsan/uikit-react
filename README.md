@@ -20,7 +20,6 @@ uikit-react
 * [Button](http://uikit-react.io/?selectedKind=Button&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Dropdown](http://uikit-react.io/?selectedKind=Dropdown&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Modal](http://uikit-react.io/?selectedKind=Modal&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
-* [Select](http://uikit-react.io/?selectedKind=Select&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Input](http://uikit-react.io/?selectedKind=Input&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 
 React UI component built on top of the UIkit CSS.
