@@ -15,7 +15,9 @@ storiesOf('Input', module)
       <Input success defaultValue="success" /> &nbsp;
       <Input blank placeholder="blank" />
     </form>
-  ), { header: false, inline: true, propTables: [Input] })
+  ), { header: false, inline: true, propTables: [Input], mtrcConf: {
+    a: ({ href, children }) => <a href={href} target="_blank">{children}</a>,
+  } })
   .addWithInfo('Size modifiers', '', () => (
     <form className="uk-margin-bottom uk-form">
       <div className="uk-form-row">
