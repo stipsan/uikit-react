@@ -15,7 +15,7 @@ storiesOf('Input', module)
       <Input success defaultValue="success" /> &nbsp;
       <Input blank placeholder="blank" />
     </form>
-  ), { header: false, inline: true, propTables: [Input], mtrcConf: {
+  ), { header: false, inline: true, propTables: [Input], mtrcConf: { // eslint-disable-line
     a: ({ href, children }) => <a href={href} target="_blank">{children}</a>, // eslint-disable-line
   } })
   .addWithInfo('Size modifiers', '', () => (

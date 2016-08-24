@@ -20,11 +20,11 @@ addDecorator((fn, { kind, story }) => <div>
     </ul>
     <div className="uk-navbar-content">
       <iframe
-        src="https://ghbtns.com/github-btn.html?user=stipsan&repo=uikit-react&type=star&count=true"
         frameBorder="0"
-        scrolling="0"
-        width="170px"
         height="20px"
+        scrolling="0"
+        src="https://ghbtns.com/github-btn.html?user=stipsan&repo=uikit-react&type=star&count=true"
+        width="170px"
       />
     </div>
     <div className="uk-navbar-flip">
