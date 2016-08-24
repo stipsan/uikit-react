@@ -22,6 +22,10 @@ uikit-react
 * [Modal](http://uikit-react.io/?selectedKind=Modal&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Input](http://uikit-react.io/?selectedKind=Input&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 
+## Addons
+
+* [redux-form-uikit](https://github.com/stipsan/redux-form-uikit) Plug-and-Play UIkit and [redux-form](https://github.com/erikras/redux-form).
+
 React UI component built on top of the UIkit CSS.
 This library makes no assumptions on how you provide the CSS; load it in any way you like.
 The minimum required css for components to function can be seen in the [LESS file](.storybook/uikit.less) we use to compile UIkit for our [Storybook](http://uikit-react.io).
