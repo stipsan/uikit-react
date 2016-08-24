@@ -48,7 +48,7 @@
   "homepage": "https://uikit-react.io",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.2.1",
-    "@kadira/storybook": "2.3.0",
+    "@kadira/storybook": "2.5.1",
     "@kadira/storybook-deployer": "1.1.0",
     "autoprefixer": "6.4.0",
     "babel-cli": "6.11.4",
@@ -64,7 +64,7 @@
     "babel-preset-stage-0": "6.5.0",
     "babel-register": "6.11.6",
     "coveralls": "2.11.12",
-    "css-loader": "0.23.1",
+    "css-loader": "0.24.0",
     "eslint": "3.3.1",
     "eslint-config-airbnb": "10.0.1",
     "eslint-plugin-import": "1.14.0",
