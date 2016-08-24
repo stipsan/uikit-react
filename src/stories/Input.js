@@ -16,7 +16,7 @@ storiesOf('Input', module)
       <Input blank placeholder="blank" />
     </form>
   ), { header: false, inline: true, propTables: [Input], mtrcConf: {
-    a: ({ href, children }) => <a href={href} target="_blank">{children}</a>,
+    a: ({ href, children }) => <a href={href} target="_blank">{children}</a>, // eslint-disable-line
   } })
   .addWithInfo('Size modifiers', '', () => (
     <form className="uk-margin-bottom uk-form">
