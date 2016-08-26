@@ -5,7 +5,8 @@ uikit-react
 [![Coverage Status](https://coveralls.io/repos/github/stipsan/uikit-react/badge.svg)](https://coveralls.io/github/stipsan/uikit-react)
 [![npm package](https://img.shields.io/npm/dm/uikit-react.svg)](https://www.npmjs.com/package/uikit-react)
 
-[![NPM](https://nodei.co/npm/uikit-react.png)](https://www.npmjs.com/package/uikit-react)
+[![NPM](https://nodei.co/npm/uikit-react.png?downloadRank=true)](https://www.npmjs.com/package/uikit-react)
+[![NPM](https://nodei.co/npm-dl/uikit-react.png?months=3&height=2&chrome)](https://nodei.co/npm/uikit-react/)
 
 <img src="https://uikit-react.io/logo.svg" width="256"/>
 
