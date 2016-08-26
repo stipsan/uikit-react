@@ -6,7 +6,7 @@ uikit-react
 [![npm package](https://img.shields.io/npm/dm/uikit-react.svg)](https://www.npmjs.com/package/uikit-react)
 
 [![NPM](https://nodei.co/npm/uikit-react.png?downloadRank=true)](https://www.npmjs.com/package/uikit-react)
-[![NPM](https://nodei.co/npm-dl/uikit-react.png?months=3&height=2&chrome)](https://nodei.co/npm/uikit-react/)
+[![NPM](https://nodei.co/npm-dl/uikit-react.png?months=3&height=2)](https://nodei.co/npm/uikit-react/)
 
 <img src="https://uikit-react.io/logo.svg" width="256"/>
 
