@@ -68,7 +68,7 @@ export default class Value extends Component {
   }
 
   renderLabel() {
-    let className = 'Select-value-label'
+    const className = 'Select-value-label'
     return this.props.onClick || this.props.value.href ? (
       <a
         className={className}

@@ -62,7 +62,7 @@ export default class Option extends Component {
 
   render() {
     const { option, instancePrefix, optionIndex } = this.props
-    let className = cx(this.props.className, option.className)
+    const className = cx(this.props.className, option.className)
     return option.disabled ? (
       <li
         className={className}
