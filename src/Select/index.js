@@ -749,7 +749,7 @@ export default class Select extends Component {
 
   renderValue(valueArray, isOpen) {
     const renderLabel = this.props.valueRenderer || this.getOptionLabel
-    let ValueComponent = this.props.valueComponent
+    const ValueComponent = this.props.valueComponent
     if (!valueArray.length) {
       return !this.state.inputValue && (
         <div className="uk-component-select__placeholder">{this.props.placeholder}</div>
@@ -793,7 +793,7 @@ export default class Select extends Component {
     if (this.props.inputRenderer) {
       return this.props.inputRenderer()
     }
-    let className = cx('uk-component-select__input', this.props.inputProps.className)
+    const className = cx('uk-component-select__input', this.props.inputProps.className)
     const isOpen = !!this.state.isOpen
 
     const ariaOwns = cx({
@@ -920,21 +920,21 @@ export default class Select extends Component {
           valueArray,
         })
       }
-      let OptionComponent = this.props.optionComponent
+      const OptionComponent = this.props.optionComponent
       const renderLabel = this.props.optionRenderer || this.getOptionLabel
 
       return options.map((option, i) => {
         if (option.create) {
           return false
         }
-        let isSelected = valueArray && valueArray.indexOf(option) > -1
-        let isFocused = option === focusedOption
-        let optionRef = isFocused ? node => {
+        const isSelected = valueArray && valueArray.indexOf(option) > -1
+        const isFocused = option === focusedOption
+        const optionRef = isFocused ? node => {
           if (node) {
             this.focusedNode = node
           }
         } : null
-        let optionClass = cx(this.props.optionClassName, {
+        const optionClass = cx(this.props.optionClassName, {
           'Select-option': true,
           'is-selected': isSelected,
           'uk-active': isFocused,
@@ -975,7 +975,7 @@ export default class Select extends Component {
       return false
     }
     if (this.props.joinValues) {
-      let value = valueArray
+      const value = valueArray
                     .map(i => stringifyValue(i[this.props.valueKey]))
                     .join(this.props.delimiter)
       return (
@@ -1017,7 +1017,7 @@ export default class Select extends Component {
   }
 
   renderOuter(options, valueArray, focusedOption) {
-    let menu = this.renderMenu(options, valueArray, focusedOption)
+    const menu = this.renderMenu(options, valueArray, focusedOption)
     if (!menu) {
       return null
     }
@@ -1078,7 +1078,7 @@ export default class Select extends Component {
     } else {
       focusedOption = this._focusedOption = null
     }
-    let className = cx('uk-autocomplete uk-component-select', this.props.className, {
+    const className = cx('uk-autocomplete uk-component-select', this.props.className, {
       'uk-component-select--multi': this.props.multi,
       'uk-component-select--single': !this.props.multi,
       'uk-component-select--disabled': this.props.disabled,
