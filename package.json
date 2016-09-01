@@ -24,6 +24,7 @@
     "react",
     "react-component",
     "uikit",
+    "react-uikit",
     "ecosystem-react"
   ],
   "author": "Stian Didriksen <stipsan@gmail.com> (http://github.com/stipsan)",
@@ -32,7 +33,6 @@
     "url": "https://github.com/stipsan/uikit-react/issues"
   },
   "jest": {
-    "automock": false,
     "coverageReporters": [
       "lcov"
     ],
@@ -74,7 +74,7 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "growl": "1.9.2",
-    "jest-cli": "14.1.0",
+    "jest-cli": "15.0.0",
     "jsdom": "9.4.5",
     "json-loader": "0.5.4",
     "less": "2.7.1",

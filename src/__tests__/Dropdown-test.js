@@ -2,6 +2,8 @@ import renderer from 'react-test-renderer'
 
 import Dropdown from '../Dropdown'
 
+jest.useFakeTimers()
+
 describe('Dropdown', () => {
   it('renders correctly', () => {
     expect(renderer.create(
