@@ -33,7 +33,6 @@
     "url": "https://github.com/stipsan/uikit-react/issues"
   },
   "jest": {
-    "automock": false,
     "coverageReporters": [
       "lcov"
     ],
