@@ -84,7 +84,7 @@
     "raw-loader": "^0.5.1",
     "react": "15.3.2",
     "react-addons-test-utils": "15.3.2",
-    "react-dom": "15.3.1",
+    "react-dom": "15.3.2",
     "react-test-renderer": "15.3.2",
     "style-loader": "0.13.1",
     "uikit": "2.27.1",
