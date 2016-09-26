@@ -9,7 +9,6 @@ export default class Dropdown extends Component {
     remainTime: PropTypes.number.isRequired,
     className: PropTypes.string,
     component: PropTypes.node,
-    label: PropTypes.string,
   }
 
   static defaultProps = {
