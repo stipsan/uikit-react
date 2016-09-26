@@ -1,3 +1,6 @@
+/* eslint-disable */
+// temporary disable linting in this file
+
 import cx from 'classnames'
 import Input from 'react-input-autosize'
 import { Component, PropTypes } from 'react'
@@ -517,7 +520,7 @@ export default class Select extends Component {
 
   handleRemove = (value) => {
     const valueArray = this.getValueArray(this.props.value)
-    this.setValue(valueArray.filter(i => {
+    this.setValue(valueArray.filter((i) => {
       if (i.create) {
         return (
           i[this.props.valueKey] !== value[this.props.valueKey] &&
@@ -529,7 +532,7 @@ export default class Select extends Component {
     this.focus()
   }
 
-  handleClearValue = event => {
+  handleClearValue = (event) => {
     // if the event was triggered by a mousedown and not the primary
     // button, ignore it.
     if (event && event.type === 'mousedown' && event.button !== 0) {
@@ -656,7 +659,7 @@ export default class Select extends Component {
 
   getOptionLabel = op => op[this.props.labelKey]
 
-  getValueArray = value => {
+  getValueArray = (value) => {
     if (this.props.multi) {
       let valueArray = value
       if (typeof valueArray === 'string') valueArray = valueArray.split(this.props.delimiter)
@@ -670,7 +673,7 @@ export default class Select extends Component {
     return expandedValue ? [expandedValue] : []
   }
 
-  setValue = newValue => {
+  setValue = (newValue) => {
     let value = newValue
     if (this.props.autoBlur) {
       this.blurInput()
@@ -702,7 +705,7 @@ export default class Select extends Component {
         filterValue = filterValue.toLowerCase()
       }
       const skipOptions = excludeOptions ? excludeOptions.map(i => i[this.props.valueKey]) : false
-      filteredOptions = options.filter(option => {
+      filteredOptions = options.filter((option) => {
         if (skipOptions && skipOptions.indexOf(option[this.props.valueKey]) > -1) return false
         if (this.props.filterOption) return this.props.filterOption.call(this, option, filterValue)
         if (!filterValue) return true
@@ -732,7 +735,7 @@ export default class Select extends Component {
     if (this.props.allowCreate && filterValue) {
       let addNewOption = true
       // @TODO: only add the "Add" option if none of the options are an exact match
-      filteredOptions.forEach(option => {
+      filteredOptions.forEach((option) => {
         if (
           String(option.label).toLowerCase() === filterValue ||
           String(option.value).toLowerCase() === filterValue
@@ -929,7 +932,7 @@ export default class Select extends Component {
         }
         const isSelected = valueArray && valueArray.indexOf(option) > -1
         const isFocused = option === focusedOption
-        const optionRef = isFocused ? node => {
+        const optionRef = isFocused ? (node) => {
           if (node) {
             this.focusedNode = node
           }
@@ -1029,7 +1032,7 @@ export default class Select extends Component {
     return (
       <div
         className="uk-dropdown"
-        ref={node => {
+        ref={(node) => {
           if (node) {
             this.menuContainer = node
           }
@@ -1038,7 +1041,7 @@ export default class Select extends Component {
         <ul
           className="uk-nav uk-nav-autocomplete"
           id={`${this._instancePrefix}-list`}
-          ref={node => {
+          ref={(node) => {
             if (node) {
               this.menuNode = node
             }

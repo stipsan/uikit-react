@@ -22,7 +22,7 @@ export default class Prompt extends Component {
         <p>
           <input
             className="uk-width-1-1"
-            ref={node => {
+            ref={(node) => {
               if (node) {
                 this.input = node
               }

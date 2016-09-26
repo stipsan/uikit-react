@@ -11,7 +11,7 @@ Select.displayName = 'Select'
 class Form extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    defaultValue: PropTypes.any,
+    defaultValue: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   }
   static props = {
     defaultValue: null,
@@ -20,7 +20,7 @@ class Form extends Component {
     value: this.props.defaultValue,
   }
   logChange = action('onChange')
-  handleChange = value => {
+  handleChange = (value) => {
     this.setState({ value })
     this.logChange(value)
   }
