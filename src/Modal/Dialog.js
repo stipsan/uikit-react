@@ -12,7 +12,7 @@ export default class Dialog extends Component
     caption: PropTypes.string,
     children: PropTypes.node,
     close: PropTypes.bool,
-    footer: PropTypes.array,
+    footer: PropTypes.array, // eslint-disable-line react/forbid-prop-types
     handleClose: PropTypes.func,
     header: PropTypes.string,
     large: PropTypes.bool,
@@ -61,8 +61,7 @@ export default class Dialog extends Component
         { footer && footer.length > 0 &&
           (<div className="uk-modal-footer uk-text-right">
             {
-              footer.map((component, i) => createElement(component, { key: i, handleClose })
-                )
+              footer.map((component, i) => createElement(component, { key: i, handleClose }))
             }
           </div>)
         }

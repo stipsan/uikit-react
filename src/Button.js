@@ -7,14 +7,12 @@ export default class Button extends Component {
     active: PropTypes.bool,
     className: PropTypes.string,
     danger: PropTypes.bool,
-    disabled: PropTypes.bool,
     large: PropTypes.bool,
     link: PropTypes.bool,
     mini: PropTypes.bool,
     primary: PropTypes.bool,
     small: PropTypes.bool,
     success: PropTypes.bool,
-    type: PropTypes.string,
   }
 
   static defaultProps = {

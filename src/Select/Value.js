@@ -1,3 +1,6 @@
+/* eslint-disable */
+// temporary disable linting in this file
+
 import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
@@ -12,13 +15,13 @@ export default class Value extends Component {
     onRemove: PropTypes.func,               // method to handle removal of the value
   }
 
-  handleRemove = event => {
+  handleRemove = (event) => {
     event.preventDefault()
     event.stopPropagation()
     this.props.onRemove(this.props.value)
   }
 
-  handleMouseDown = event => {
+  handleMouseDown = (event) => {
     if (event.type === 'mousedown' && event.button !== 0) {
       return
     }
@@ -32,7 +35,7 @@ export default class Value extends Component {
     }
   }
 
-  handleTouchEndRemove = event => {
+  handleTouchEndRemove = (event) => {
     // Check if the view is being dragged, In this case
     // we don't want to fire the click event (because the user only wants to scroll)
     if (this.dragging) return

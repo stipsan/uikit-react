@@ -109,7 +109,7 @@ describe('Modal', () => {
       <Modal
         type="prompt"
       >
-        Please enter the name of the repo you're deleting:
+        Please enter the name of the repo you&quot;re deleting:
       </Modal>
     )
     expect(component.toJSON()).toMatchSnapshot()

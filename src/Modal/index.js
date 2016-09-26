@@ -11,7 +11,6 @@ export default class Modal extends Component {
   static propTypes = {
     cancelLabel: PropTypes.string,
     children: PropTypes.node,
-    className: PropTypes.string,
     confirmLabel: PropTypes.string,
     isOpen: PropTypes.bool,
     target: PropTypes.node,

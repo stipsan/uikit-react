@@ -1,3 +1,6 @@
+/* eslint-disable */
+// temporary disable linting in this file
+
 import cx from 'classnames'
 import { Component, PropTypes } from 'react'
 
@@ -23,7 +26,7 @@ export default class Option extends Component {
     }
   }
 
-  handleBlockEvent = event => {
+  handleBlockEvent = (event) => {
     event.preventDefault()
     event.stopPropagation()
   }
