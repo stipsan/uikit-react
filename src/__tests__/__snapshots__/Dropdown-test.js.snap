@@ -3,7 +3,7 @@ exports[`Dropdown changes the class when clicked 1`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={[Function anonymous]}
+  onClick={[Function]}
   onMouseEnter={false}
   onMouseLeave={false}>
   <button
@@ -20,7 +20,7 @@ exports[`Dropdown changes the class when clicked 2`] = `
   aria-expanded={true}
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
-  onClick={[Function anonymous]}
+  onClick={[Function]}
   onMouseEnter={false}
   onMouseLeave={false}>
   <button
@@ -37,7 +37,7 @@ exports[`Dropdown changes the class when clicked 3`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={[Function anonymous]}
+  onClick={[Function]}
   onMouseEnter={false}
   onMouseLeave={false}>
   <button
@@ -55,8 +55,8 @@ exports[`Dropdown changes the class when hovered 1`] = `
   aria-haspopup={true}
   className="uk-button-dropdown"
   onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
   <button
     className="uk-button">
     Hover 
@@ -72,8 +72,8 @@ exports[`Dropdown changes the class when hovered 2`] = `
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
   onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
   <button
     className="uk-button">
     Hover 
@@ -89,8 +89,8 @@ exports[`Dropdown changes the class when hovered 3`] = `
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
   onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
   <button
     className="uk-button">
     Hover 
@@ -106,8 +106,8 @@ exports[`Dropdown changes the class when hovered 4`] = `
   aria-haspopup={true}
   className="uk-button-dropdown"
   onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
   <button
     className="uk-button">
     Hover 
@@ -123,8 +123,8 @@ exports[`Dropdown renders correctly 1`] = `
   aria-haspopup={true}
   className="uk-button-dropdown"
   onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
   <button
     className="uk-button">
     Hover 
@@ -140,8 +140,8 @@ exports[`Dropdown renders correctly 2`] = `
   aria-haspopup={true}
   className="uk-parent"
   onClick={false}
-  onMouseEnter={[Function anonymous]}
-  onMouseLeave={[Function anonymous]}>
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
   <a>
     Parent 
     <i
