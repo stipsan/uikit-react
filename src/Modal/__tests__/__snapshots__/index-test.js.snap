@@ -1,31 +1,31 @@
 exports[`Modal renders a Blank Modal 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={[Function anonymous]}
+    onClick={[Function]}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog uk-modal-dialog-blank"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function anonymous]} />
+        onClick={[Function]} />
       <div
         className="uk-grid uk-flex-middle">
         <div
           className="uk-width-medium-1-2 uk-height-viewport uk-cover-background uk-row-first"
           style={
             Object {
-              "backgroundImage": "url(http://getuikit.com/docs/images/placeholder_120x255.svg)"
+              "backgroundImage": "url(http://getuikit.com/docs/images/placeholder_120x255.svg)",
             }
           } />
         <div
@@ -49,24 +49,24 @@ exports[`Modal renders a Blank Modal 1`] = `
 exports[`Modal renders a Caption 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={[Function anonymous]}
+    onClick={[Function]}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function anonymous]} />
+        onClick={[Function]} />
       <div
         className="uk-modal-caption">
         Caption
@@ -80,24 +80,24 @@ exports[`Modal renders a Caption 1`] = `
 exports[`Modal renders a Header and Footer 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={[Function anonymous]}
+    onClick={[Function]}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function anonymous]} />
+        onClick={[Function]} />
       <div
         className="uk-modal-header">
         <h2>
@@ -108,7 +108,7 @@ exports[`Modal renders a Header and Footer 1`] = `
       <div
         className="uk-modal-footer uk-text-right">
         <button
-          onClick={[Function anonymous]}>
+          onClick={[Function]}>
           Yes!
         </button>
       </div>
@@ -120,24 +120,24 @@ exports[`Modal renders a Header and Footer 1`] = `
 exports[`Modal renders a Lightbox 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={[Function anonymous]}
+    onClick={[Function]}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog uk-modal-dialog-lightbox"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       <a
         className="uk-modal-close uk-close uk-close-alt"
-        onClick={[Function anonymous]} />
+        onClick={[Function]} />
       <img
         role="presentation"
         src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
@@ -149,21 +149,21 @@ exports[`Modal renders a Lightbox 1`] = `
 exports[`Modal renders a Spinner 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={[Function anonymous]}
+    onClick={[Function]}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       <div
         className="uk-modal-spinner" />
     </div>
@@ -174,7 +174,7 @@ exports[`Modal renders a Spinner 1`] = `
 exports[`Modal renders an alert modal 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
@@ -183,18 +183,18 @@ exports[`Modal renders an alert modal 1`] = `
     onClick={false}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       Something bad happened!
       <div
         className="uk-modal-footer uk-text-right">
         <button
           className="uk-button uk-button-primary"
-          onClick={[Function anonymous]}
+          onClick={[Function]}
           type="button">
           Ok
         </button>
@@ -207,7 +207,7 @@ exports[`Modal renders an alert modal 1`] = `
 exports[`Modal renders an confirm modal 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
@@ -216,18 +216,18 @@ exports[`Modal renders an confirm modal 1`] = `
     onClick={false}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       Are you absolutely sure about this?
       <div
         className="uk-modal-footer uk-text-right">
         <button
           className="uk-button"
-          onClick={[Function anonymous]}
+          onClick={[Function]}
           type="button">
           Cancel
         </button>
@@ -236,7 +236,7 @@ exports[`Modal renders an confirm modal 1`] = `
         </span>
         <button
           className="uk-button uk-button-primary"
-          onClick={[Function anonymous]}
+          onClick={[Function]}
           type="button">
           Ok
         </button>
@@ -249,7 +249,7 @@ exports[`Modal renders an confirm modal 1`] = `
 exports[`Modal renders an prompt modal 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
@@ -258,12 +258,12 @@ exports[`Modal renders an prompt modal 1`] = `
     onClick={false}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       <div
         className="uk-margin-small-top uk-modal-content uk-form">
         <p>
@@ -276,7 +276,7 @@ exports[`Modal renders an prompt modal 1`] = `
         className="uk-modal-footer uk-text-right">
         <button
           className="uk-button"
-          onClick={[Function anonymous]}
+          onClick={[Function]}
           type="button">
           Cancel
         </button>
@@ -285,7 +285,7 @@ exports[`Modal renders an prompt modal 1`] = `
         </span>
         <button
           className="uk-button uk-button-primary"
-          onClick={[Function anonymous]}
+          onClick={[Function]}
           type="button">
           Ok
         </button>
@@ -298,24 +298,24 @@ exports[`Modal renders an prompt modal 1`] = `
 exports[`Modal renders correctly 1`] = `
 <div>
   <button
-    handleOpen={[Function anonymous]}>
+    handleOpen={[Function]}>
     Open
   </button>
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={[Function anonymous]}
+    onClick={[Function]}
     style={
       Object {
-        "display": false
+        "display": false,
       }
     }>
     <div
       className="uk-modal-dialog"
-      onClick={[Function anonymous]}>
+      onClick={[Function]}>
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function anonymous]} />
+        onClick={[Function]} />
       Lorem ipsum
     </div>
   </div>
