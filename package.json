@@ -48,7 +48,7 @@
   "homepage": "https://uikit-react.io",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.2.1",
-    "@kadira/storybook": "2.23.0",
+    "@kadira/storybook": "2.24.0",
     "@kadira/storybook-deployer": "1.1.0",
     "autoprefixer": "6.5.0",
     "babel-cli": "6.16.0",
