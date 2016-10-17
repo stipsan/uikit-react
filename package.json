@@ -47,9 +47,9 @@
   },
   "homepage": "https://uikit-react.io",
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "3.2.1",
+    "@kadira/react-storybook-addon-info": "3.2.2",
     "@kadira/storybook": "2.24.0",
-    "@kadira/storybook-deployer": "1.1.0",
+    "@kadira/storybook-deployer": "1.2.0",
     "autoprefixer": "6.5.1",
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",
@@ -93,7 +93,8 @@
   "dependencies": {
     "classnames": "2.2.5",
     "react-input-autosize": "1.1.0",
-    "react-key-handler": "0.3.0"
+    "react-key-handler": "0.3.0",
+    "react-portal": "^2.2.1"
   },
   "contributors": [
     {
