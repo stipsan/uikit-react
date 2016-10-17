@@ -11,7 +11,7 @@ const Input = ({
   small,
   success,
   width,
-  ...other,
+  ...other
 }) => {
   const className = cx(customClassName, {
     'uk-form-blank': blank,

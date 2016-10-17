@@ -39,7 +39,7 @@ export default class Button extends Component {
       small,
       large,
       className: customClassName,
-      ...other,
+      ...other
     } = this.props
     const className = cx('uk-button', customClassName, {
       'uk-button-primary': primary,
