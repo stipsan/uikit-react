@@ -53,7 +53,7 @@
     "autoprefixer": "6.5.1",
     "babel-cli": "6.18.0",
     "babel-core": "6.18.0",
-    "babel-eslint": "7.0.0",
+    "babel-eslint": "7.1.0",
     "babel-jest": "16.0.0",
     "babel-plugin-react-transform": "2.0.2",
     "babel-plugin-transform-react-constant-elements": "6.9.1",
