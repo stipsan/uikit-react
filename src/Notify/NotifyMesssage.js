@@ -4,6 +4,8 @@ import cx from 'classnames'
 export default class NotifyMesssage extends Component {
   static propTypes = {
     children: PropTypes.node,
+    icon: PropTypes.string,
+    isSticky: PropTypes.bool,
     timeout: PropTypes.number,
     type: PropTypes.string,
   }
@@ -19,7 +21,7 @@ export default class NotifyMesssage extends Component {
   componentDidMount() {
     setTimeout(this.openNotification, 100)
 
-    if (this.props.timeout) {
+    if (this.props.timeout && !this.props.isSticky) {
       setTimeout(this.handleClose, this.props.timeout)
     }
   }
@@ -31,7 +33,7 @@ export default class NotifyMesssage extends Component {
   }
 
   render() {
-    const { children, type } = this.props
+    const { children, type, icon } = this.props
     const className = cx('uk-notify-message', {
       'uk-notify-message-info': type === 'info',
       'uk-notify-message-success': type === 'success',
@@ -46,10 +48,16 @@ export default class NotifyMesssage extends Component {
       return false
     }
     return (
-      <div className={className} style={{ overflow: 'hidden', transition: 'margin ease-out 300ms', ...styles[this.state.isOpen ? 1 : 0] }}>
+      <div
+        className={className}
+        style={{ overflow: 'hidden', transition: 'margin ease-out 300ms', ...styles[this.state.isOpen ? 1 : 0] }}
+      >
         <a className="uk-close" onClick={this.handleClose} />
-        <div>{children}</div>
+        <div>
+          {icon && <i className={`uk-icon-justify uk-icon-${icon}`} /> }
+          {children}
+        </div>
       </div>
-    )
+        )
   }
 }

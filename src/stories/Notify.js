@@ -6,9 +6,13 @@ class NotificationsContainer extends PureComponent {
   static propTypes = {
     position: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
+    icon: PropTypes.string,
+    isSticky: PropTypes.bool,
+    timeout: PropTypes.number,
   }
 
   static defaultProps = {
+    isSticky: false,
     position: 'top-center',
     type: 'info',
   }
@@ -28,10 +32,17 @@ class NotificationsContainer extends PureComponent {
 
   render() {
     const { notifications } = this.state
-    const { position, type } = this.props
+    const { position, type, isSticky, icon, timeout } = this.props
     return (<div>
-      <Button onClick={this.handleClick}>Show {`${type} ${position}`} notification</Button>
-      <Notify notifications={notifications} position={position} type={type} />
+      <Button className={`uk-margin-bottom uk-button uk-button-${type}`} onClick={this.handleClick}>Show {`${type} ${position}`} notification</Button>
+      <Notify
+        icon={icon}
+        isSticky={isSticky}
+        notifications={notifications}
+        position={position}
+        timeout={timeout}
+        type={type}
+      />
     </div>)
   }
 }
@@ -39,9 +50,12 @@ class NotificationsContainer extends PureComponent {
 storiesOf('Notify', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <NotificationsContainer type="info" /> <br />
-      <NotificationsContainer position="bottom-center" type="warning" /> <br />
-      <NotificationsContainer position="top-right" type="success" /> <br />
-      <NotificationsContainer position="top-left" type="danger" /> <br />
+      <NotificationsContainer type="info" />
+      <NotificationsContainer position="bottom-center" type="warning" />
+      <NotificationsContainer position="top-right" type="success" />
+      <NotificationsContainer position="top-left" type="danger" />
+      <NotificationsContainer isSticky position="top-right" type="info" />
+      <NotificationsContainer icon="check" position="bottom-right" type="success" />
+      <NotificationsContainer icon="check" position="bottom-left" timeout="5000" type="danger" />
     </div>
-  ))
+  ), { header: false, inline: true, propTables: [Notify] })
