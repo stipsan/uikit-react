@@ -2,19 +2,18 @@ import { Component, PropTypes } from 'react'
 import Portal from 'react-portal'
 import NotifyMesssage from './NotifyMesssage'
 import cx from 'classnames'
-import Button from '../Button'
 
 export default class Notify extends Component {
   static propTypes = {
-    children: PropTypes.node,
+    notifications: PropTypes.arrayOf(PropTypes.object).isRequired,
     position: PropTypes.string,
-    type: PropTypes.string,
   }
 
   static defaultProps = {
     type: 'primary',
     className: 'uk-notify',
     position: 'top-center',
+    notifications: [],
   }
 
   state = {
@@ -25,14 +24,12 @@ export default class Notify extends Component {
     this.setState({
       isOpened: true,
     })
-    this.onClose()
   }
 
   render() {
-    const button1 = <Button onClick={this.handleClick}>{this.props.children}</Button>
     const {
-      type,
       position,
+      notifications,
     } = this.props
 
     const className = cx('uk-notify', {
@@ -45,14 +42,15 @@ export default class Notify extends Component {
     })
     return (
       <Portal
-        isOpened={this.state.isOpened}
-        openByClickOn={button1}
+        isOpened={notifications.length > 0}
         onClose={this.handleClick}
       >
         <div className={className}>
-          <NotifyMesssage type={type}>
-            <p>This react component is appended to the document body.</p>
-          </NotifyMesssage>
+          {notifications.map(({ type, message, id }) => (
+            <NotifyMesssage key={id} type={type} >
+              {message}
+            </NotifyMesssage>
+          ))}
         </div>
       </Portal>
     )

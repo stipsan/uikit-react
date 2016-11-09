@@ -1,14 +1,34 @@
 import { storiesOf } from '@kadira/storybook'
-import { Notify } from 'uikit-react'
+import { Notify, Button } from 'uikit-react'
+import { PureComponent } from 'react'
 
-Notify.displayName = 'Notify'
+class NotificationsContainer extends PureComponent {
+
+  state = {
+    notifications: [],
+    count: 1,
+  }
+
+  handleClick = (event) => {
+    event.preventDefault()
+    this.setState({
+      notifications: [{ id: this.state.count, type: 'success', message: `Notification #${this.state.count}` }, ...this.state.notifications],
+      count: this.state.count + 1,
+    })
+  }
+
+  render() {
+    const { notifications } = this.state
+    return (<div>
+      <Button onClick={this.handleClick}>Show notification</Button>
+      <Notify notifications={notifications} position="top-center" type="info" />
+    </div>)
+  }
+}
 
 storiesOf('Notify', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <Notify position="top-center" type="info">Notify Info</Notify> <br /><br />
-      <Notify position="top-left" type="success">Notify Success</Notify><br /><br />
-      <Notify position="top-left" type="success">Notify Success</Notify><br /><br />
-      <Notify position="bottom-center" type="danger">Bottom Center Danger</Notify><br /><br />
+      <NotificationsContainer /> <br />
     </div>
   ))
