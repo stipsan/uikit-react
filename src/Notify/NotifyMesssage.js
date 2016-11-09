@@ -44,6 +44,7 @@ export default class NotifyMesssage extends Component {
       { marginTop: '-64px' },
       { marginTop: '0px' },
     ]
+
     if (this.state.isClosed) {
       return false
     }
@@ -58,6 +59,6 @@ export default class NotifyMesssage extends Component {
           {children}
         </div>
       </div>
-        )
+    )
   }
 }

@@ -34,7 +34,8 @@
   },
   "jest": {
     "coverageReporters": [
-      "lcov"
+      "lcov",
+      "text"
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/lib/",
