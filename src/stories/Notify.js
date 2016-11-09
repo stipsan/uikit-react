@@ -1,8 +1,17 @@
 import { storiesOf } from '@kadira/storybook'
 import { Notify, Button } from 'uikit-react'
-import { PureComponent } from 'react'
+import { PureComponent, PropTypes } from 'react'
 
 class NotificationsContainer extends PureComponent {
+  static propTypes = {
+    position: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  }
+
+  static defaultProps = {
+    position: 'top-center',
+    type: 'info',
+  }
 
   state = {
     notifications: [],
@@ -12,16 +21,17 @@ class NotificationsContainer extends PureComponent {
   handleClick = (event) => {
     event.preventDefault()
     this.setState({
-      notifications: [{ id: this.state.count, type: 'success', message: `Notification #${this.state.count}` }, ...this.state.notifications],
+      notifications: [{ id: this.state.count, type: this.props.type, message: `Notification #${this.state.count}` }, ...this.state.notifications],
       count: this.state.count + 1,
     })
   }
 
   render() {
     const { notifications } = this.state
+    const { position, type } = this.props
     return (<div>
-      <Button onClick={this.handleClick}>Show notification</Button>
-      <Notify notifications={notifications} position="top-center" type="info" />
+      <Button onClick={this.handleClick}>Show {`${type} ${position}`} notification</Button>
+      <Notify notifications={notifications} position={position} type={type} />
     </div>)
   }
 }
@@ -29,6 +39,9 @@ class NotificationsContainer extends PureComponent {
 storiesOf('Notify', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <NotificationsContainer /> <br />
+      <NotificationsContainer type="info" /> <br />
+      <NotificationsContainer position="bottom-center" type="warning" /> <br />
+      <NotificationsContainer position="top-right" type="success" /> <br />
+      <NotificationsContainer position="top-left" type="danger" /> <br />
     </div>
   ))
