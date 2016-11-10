@@ -1,0 +1,27 @@
+exports[`Notify should render correctly 1`] = `
+<Portal
+  isOpened={true}
+  onClose={[Function]}>
+  <div
+    className="uk-notify uk-notify-top-center">
+    <div
+      className="uk-notify-message uk-notify-message-warning"
+      style={
+        Object {
+          "marginTop": "-64px",
+          "overflow": "hidden",
+          "transition": "margin ease-out 300ms",
+        }
+      }>
+      <a
+        className="uk-close"
+        onClick={[Function]} />
+      <div>
+        <i
+          className="uk-icon-justify uk-icon-check" />
+        Notification #1
+      </div>
+    </div>
+  </div>
+</Portal>
+`;
