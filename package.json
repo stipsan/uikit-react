@@ -14,7 +14,8 @@
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -o .out -s .storybook/static",
     "deploy-storybook": "storybook-to-ghpages",
-    "postpublish": "npm run deploy-storybook"
+    "postpublish": "gh-release && yarn run deploy-storybook",
+    "postversion": "git add package.json && git commit -m \"chore(package): update version\""
   },
   "repository": {
     "type": "git",
@@ -74,6 +75,7 @@
     "expect": "1.20.2",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
+    "gh-release": "2.1.0",
     "growl": "1.9.2",
     "jest-cli": "16.0.2",
     "jsdom": "9.8.3",
