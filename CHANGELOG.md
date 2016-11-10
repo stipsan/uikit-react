@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-* Added new component [Notify](http://uikit-react.io/?selectedKind=Notify&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
+* Added new component [Notify](http://uikit-react.io/?selectedKind=Notify&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel).
 
 ## [0.6.2] - 2016-08-24
 ### Documentation
