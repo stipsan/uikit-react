@@ -13,7 +13,7 @@ uikit-react
 ## Installation
 
 ```bash
-  $ npm install --save uikit-react
+  $ yarn add uikit-react
 ```
 
 ## Available Components
