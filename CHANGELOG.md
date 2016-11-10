@@ -1,9 +1,13 @@
-# react-uikit change log
+# uikit-react change log
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased]
+### Added
+* Added new component `[Notify]`(http://uikit-react.io/?selectedKind=Notify&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
 
 ## [0.6.2] - 2016-08-24
 ### Documentation

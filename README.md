@@ -22,6 +22,7 @@ uikit-react
 * [Dropdown](http://uikit-react.io/?selectedKind=Dropdown&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Modal](http://uikit-react.io/?selectedKind=Modal&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Input](http://uikit-react.io/?selectedKind=Input&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
+* [Notify](http://uikit-react.io/?selectedKind=Notify&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
 
 ## Addons
 
