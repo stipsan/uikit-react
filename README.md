@@ -34,8 +34,6 @@ The minimum required css for components to function can be seen in the [LESS fil
 
 Check our [Storybook](http://uikit-react.io) to see docs and usage examples for each component in the library.
 
-We use GitHub Releases as our [Changelog](https://github.com/stipsan/uikit-react/releases).
-
 Inspired by:
 * [Vuikit](http://vuikit.github.io/vuikit/)
 * [Material-UI](http://material-ui.com/)
