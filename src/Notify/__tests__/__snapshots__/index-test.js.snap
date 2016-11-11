@@ -17,8 +17,6 @@ exports[`Notify should render correctly 1`] = `
         className="uk-close"
         onClick={[Function]} />
       <div>
-        <i
-          className="uk-icon-justify uk-icon-check" />
         Notification #1
       </div>
     </div>
