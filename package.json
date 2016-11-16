@@ -100,7 +100,7 @@
     "classnames": "2.2.5",
     "react-input-autosize": "1.1.0",
     "react-key-handler": "0.3.0",
-    "react-portal": "^2.2.1"
+    "react-portal": "^3.0.0"
   },
   "contributors": [
     {
