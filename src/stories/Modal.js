@@ -6,9 +6,9 @@ Modal.displayName = 'Modal'
 
 /* eslint-disable */
 class OpenButton extends Component {
-  handleClick = () => {
+  handleClick = (event) => {
     action('handleOpen')()
-    this.props.handleOpen()
+    this.props.onClick(event)
   }
   render() {
     const { handleClick } = this
