@@ -116,4 +116,33 @@ describe('Modal', () => {
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
+
+  const component = renderer.create(
+    <Modal>Lorem ipsum</Modal>
+  )
+
+  it('should handle handleClick', () => {
+    const instance = component.getInstance()
+    instance.handleClick()
+    expect(instance.state.shouldDisplay).toBeTruthy()
+  })
+
+  it('should handle handleOpen', () => {
+    const instance = component.getInstance()
+    instance.handleOpen()
+    expect(instance.state.isOpen).toBeFalsy()
+  })
+
+  it('should handle handleClose', () => {
+    const instance = component.getInstance()
+    instance.handleClose()
+    instance.closePortal = jest.fn()
+    expect(instance.state.isOpen).toBeFalsy()
+  })
+
+  it('should handle handleAfterClose', () => {
+    const instance = component.getInstance()
+    instance.handleAfterClose()
+    expect(instance.state.shouldDisplay).toBeFalsy()
+  })
 })
