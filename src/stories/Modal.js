@@ -48,27 +48,28 @@ culpa qui officia deserunt mollit anim id est laborum.`
 
 storiesOf('Modal', module)
   .addWithInfo('Basic Usage', '', () => (
+
     <div className="uk-margin-bottom">
-      <Modal target={OpenButton}>
+      <Modal target={<OpenButton />}>
         <h1>Headline</h1>
         <p>{LoremIpsum}</p>
       </Modal>
     </div>
-  ), { header: false, inline: true, propTables: [Modal] })
-  .addWithInfo('Header and Footer', '', () => (
-    <div className="uk-margin-bottom">
-      <Modal
-        footer={[CancelButton, SaveButton]}
-        header="Headline"
-        target={OpenButton}
-      >
-        <p>{LoremIpsum}</p>
-      </Modal>
-    </div>
+        ), { header: false, inline: true, propTables: [Modal] })
+        .addWithInfo('Header and Footer', '', () => (
+          <div className="uk-margin-bottom">
+            <Modal
+              footer={[CancelButton, SaveButton]}
+              header="Headline"
+              target={<OpenButton />}
+            >
+              <p>{LoremIpsum}</p>
+            </Modal>
+          </div>
   ), { header: false, inline: true })
   .addWithInfo('Caption', '', () => (
     <div className="uk-margin-bottom">
-      <Modal caption="Caption" target={OpenButton}>
+      <Modal caption="Caption" target={<OpenButton />}>
         <h1>Headline</h1>
         <p>{LoremIpsum}</p>
       </Modal>
@@ -76,7 +77,7 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Lightbox modifier', '', () => (
     <div className="uk-margin-bottom">
-      <Modal lightbox target={OpenButton}>
+      <Modal lightbox target={<OpenButton />}>
         <img
           height="400"
           role="presentation"
@@ -88,7 +89,7 @@ storiesOf('Modal', module)
   ), { header: false, inline: true })
   .addWithInfo('Blank', '', () => (
     <div className="uk-margin-bottom">
-      <Modal blank target={OpenButton} >
+      <Modal blank target={<OpenButton />} >
         <div className="uk-grid uk-flex-middle">
           <div
             className="uk-width-medium-1-2 uk-height-viewport uk-cover-background uk-row-first"
@@ -110,7 +111,7 @@ storiesOf('Modal', module)
     <div className="uk-margin-bottom">
       <Modal
         close={false}
-        target={OpenButton}
+        target={<OpenButton />}
       >
         <div className="uk-modal-spinner" />
       </Modal>
@@ -128,7 +129,7 @@ storiesOf('Modal', module)
   // */
   .addWithInfo('Large dialog modifier', '', () => (
     <div className="uk-margin-bottom">
-      <Modal large target={OpenButton} >
+      <Modal large target={<OpenButton />} >
         <h1>Headline</h1>
         <p>{LoremIpsum}</p>
       </Modal>
@@ -169,7 +170,7 @@ storiesOf('Modal', module)
     <div className="uk-margin-bottom">
       <Modal
         // eslint-disable-next-line react/prop-types,react/jsx-no-bind
-        target={({ handleOpen }) => <Button onClick={handleOpen}>Alert</Button>}
+        target={<Button>Alert</Button>}
         type="alert"
         onConfirm={action('onConfirm')}
       >
@@ -181,7 +182,7 @@ storiesOf('Modal', module)
     <div className="uk-margin-bottom">
       <Modal
         // eslint-disable-next-line react/prop-types,react/jsx-no-bind
-        target={({ handleOpen }) => <Button onClick={handleOpen}>Confirm</Button>}
+        target={<Button>Confirm</Button>}
         type="confirm"
         onCancel={action('onCancel')}
         onConfirm={action('onConfirm')}

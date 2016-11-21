@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { Component, PropTypes, createElement } from 'react'
+import { Component, PropTypes } from 'react'
 import Portal from 'react-portal'
 
 import Button from '../Button'
@@ -82,9 +82,9 @@ export default class Modal extends Component {
       type,
       confirmLabel,
       cancelLabel,
+      target,
     } = this.props
-    const target = this.props.target &&
-          createElement(this.props.target, { handleOpen, children: 'Open' })
+
     const className = classNames('uk-modal', {
       'uk-open': this.state.isOpen,
     })
@@ -117,15 +117,15 @@ export default class Modal extends Component {
       <Portal
         closeOnEsc
         closeOnOutsideClick
+        beforeClose={handleBeforeClose}
+        openByClickOn={target}
         ref={(node) => {
           if (node) {
             this.modal = node
           }
         }}
-        onOpen={handleOpen}
-        openByClickOn={target}
-        beforeClose={handleBeforeClose}
         onClose={handleAfterClose}
+        onOpen={handleOpen}
       >
         <div
           aria-hidden={isOpen}
