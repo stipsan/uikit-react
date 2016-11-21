@@ -1,16 +1,18 @@
 exports[`Modal renders a Blank Modal 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={[Function]}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -43,22 +45,24 @@ exports[`Modal renders a Blank Modal 1`] = `
       </div>
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders a Caption 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={[Function]}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -74,22 +78,24 @@ exports[`Modal renders a Caption 1`] = `
       Lorem ipsum
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders a Header and Footer 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={[Function]}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -114,22 +120,24 @@ exports[`Modal renders a Header and Footer 1`] = `
       </div>
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders a Lightbox 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={[Function]}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -143,22 +151,24 @@ exports[`Modal renders a Lightbox 1`] = `
         src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders a Spinner 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={[Function]}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -168,22 +178,24 @@ exports[`Modal renders a Spinner 1`] = `
         className="uk-modal-spinner" />
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders an alert modal 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={false}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -201,22 +213,24 @@ exports[`Modal renders an alert modal 1`] = `
       </div>
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders an confirm modal 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={false}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -243,22 +257,24 @@ exports[`Modal renders an confirm modal 1`] = `
       </div>
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders an prompt modal 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={false}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -292,22 +308,24 @@ exports[`Modal renders an prompt modal 1`] = `
       </div>
     </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Modal renders correctly 1`] = `
-<div>
-  <button
-    handleOpen={[Function]}>
-    Open
-  </button>
+<Portal
+  beforeClose={[Function]}
+  closeOnEsc={true}
+  closeOnOutsideClick={true}
+  onClose={[Function]}
+  onOpen={[Function]}
+  openByClickOn="button">
   <div
     aria-hidden={false}
     className="uk-modal"
     onClick={[Function]}
     style={
       Object {
-        "display": false,
+        "display": "block",
       }
     }>
     <div
@@ -319,5 +337,5 @@ exports[`Modal renders correctly 1`] = `
       Lorem ipsum
     </div>
   </div>
-</div>
+</Portal>
 `;

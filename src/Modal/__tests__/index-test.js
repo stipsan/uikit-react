@@ -2,6 +2,8 @@ import renderer from 'react-test-renderer'
 
 import Modal from '../index'
 
+jest.mock('react-portal', () => 'Portal')
+
 describe('Modal', () => {
   it('renders correctly', () => {
     const component = renderer.create(
