@@ -151,6 +151,15 @@ describe('Modal', () => {
     expect(instance.state.isOpen).toBeFalsy()
   })
 
+  it('should set modal to Portal', () => {
+    const instance = component.getInstance()
+    const node = { closePortal: jest.fn() }
+    instance.setModal(node)
+    instance.handleClose()
+    jest.runAllTimers()
+    expect(node.closePortal).toHaveBeenCalled()
+  })
+
   it('should handle handleAfterClose', () => {
     const instance = component.getInstance()
     instance.handleAfterClose()
@@ -163,14 +172,15 @@ describe('Modal', () => {
     expect(instance.state.isOpen).toBeFalsy()
   })
 
-  component = renderer.create(<Modal
-    // eslint-disable-next-line react/prop-types,react/jsx-no-bind
-    target={<button>Confirm</button>}
-    type="confirm"
-    onCancel={jest.fn()}
-    onConfirm={jest.fn()}
-  >
-    Are you sure?
+  component = renderer.create(
+    <Modal
+      // eslint-disable-next-line react/prop-types,react/jsx-no-bind
+      target={<button>Confirm</button>}
+      type="confirm"
+      onCancel={jest.fn()}
+      onConfirm={jest.fn()}
+    >
+      Are you sure?
   </Modal>)
 
   it('should handle handleCancel', () => {

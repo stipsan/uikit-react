@@ -32,6 +32,12 @@ export default class Modal extends Component {
 
   state = { shouldDisplay: false, isOpen: false }
 
+  setModal = (node) => {
+    if (node) {
+      this.modal = node
+    }
+  }
+
   handleClick = () => {
     this.setState({ shouldDisplay: !this.state.shouldDisplay })
   }
@@ -75,7 +81,13 @@ export default class Modal extends Component {
 
   render() {
     const {
-      handleClose, handleOpen, handleConfirm, handleCancel, handleAfterClose, handleBeforeClose,
+      handleClose,
+      handleOpen,
+      handleConfirm,
+      handleCancel,
+      handleAfterClose,
+      handleBeforeClose,
+      setModal,
      } = this
     const {
       isOpen,
@@ -119,11 +131,7 @@ export default class Modal extends Component {
         closeOnOutsideClick
         beforeClose={handleBeforeClose}
         openByClickOn={target}
-        ref={(node) => {
-          if (node) {
-            this.modal = node
-          }
-        }}
+        ref={setModal}
         onClose={handleAfterClose}
         onOpen={handleOpen}
       >

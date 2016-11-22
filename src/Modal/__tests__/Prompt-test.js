@@ -13,16 +13,15 @@ function createNodeMock(element) {
 describe('Prompt', () => {
   it('renders correctly', () => {
     const options = { createNodeMock }
-    let component = renderer.create(
+    const component = renderer.create(
       <Prompt isOpen={false} />, options
     )
 
-    let tree = component.toJSON()
-    expect(tree).toMatchSnapshot()
-    component = renderer.create(
-      <Prompt isOpen>Lorem ipsum</Prompt>, options
+    expect(component.toJSON()).toMatchSnapshot()
+
+    component.update(
+      <Prompt isOpen />, options
     )
-    tree = component.toJSON()
-    expect(tree).toMatchSnapshot()
+    expect(component.toJSON()).toMatchSnapshot()
   })
 })
