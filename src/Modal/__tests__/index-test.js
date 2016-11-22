@@ -17,7 +17,7 @@ describe('Modal', () => {
   it('renders correctly', () => {
     const options = { createNodeMock }
     const component = renderer.create(
-      <Modal>Lorem ipsum</Modal>, options
+      <Modal target={<button>Open</button>}>Lorem ipsum</Modal>, options
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
@@ -30,6 +30,7 @@ describe('Modal', () => {
           ({ handleClose }) => <button onClick={handleClose}>Yes!</button>,
         ]}
         header="Headline"
+        target={<button>Open</button>}
       >
         Lorem ipsum
       </Modal>
@@ -41,6 +42,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         caption="Caption"
+        target={<button>Open</button>}
       >
         Lorem ipsum
       </Modal>
@@ -52,6 +54,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         lightbox
+        target={<button>Open</button>}
       >
         <img role="presentation" src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
       </Modal>
@@ -63,6 +66,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         blank
+        target={<button>Open</button>}
       >
         <div className="uk-grid uk-flex-middle">
           <div
@@ -87,6 +91,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         close={false}
+        target={<button>Open</button>}
       >
         <div className="uk-modal-spinner" />
       </Modal>
@@ -97,6 +102,7 @@ describe('Modal', () => {
   it('renders an alert modal', () => {
     const component = renderer.create(
       <Modal
+        target={<button>Open</button>}
         type="alert"
       >
         Something bad happened!
@@ -108,6 +114,7 @@ describe('Modal', () => {
   it('renders an confirm modal', () => {
     const component = renderer.create(
       <Modal
+        target={<button>Open</button>}
         type="confirm"
       >
         Are you absolutely sure about this?
@@ -119,6 +126,7 @@ describe('Modal', () => {
   it('renders an prompt modal', () => {
     const component = renderer.create(
       <Modal
+        target={<button>Open</button>}
         type="prompt"
       >
         Please enter the name of the repo you&quot;re deleting:
@@ -128,7 +136,11 @@ describe('Modal', () => {
   })
 
   let component = renderer.create(
-    <Modal>Lorem ipsum</Modal>
+    <Modal
+      target={<button>Open</button>}
+    >
+      Lorem ipsum
+    </Modal>
   )
 
   it('should handle handleClick', () => {

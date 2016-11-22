@@ -5,7 +5,11 @@ exports[`Modal renders a Blank Modal 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -55,7 +59,11 @@ exports[`Modal renders a Caption 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -88,7 +96,11 @@ exports[`Modal renders a Header and Footer 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -130,7 +142,11 @@ exports[`Modal renders a Lightbox 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -161,7 +177,11 @@ exports[`Modal renders a Spinner 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -188,7 +208,11 @@ exports[`Modal renders an alert modal 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -223,7 +247,11 @@ exports[`Modal renders an confirm modal 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -267,7 +295,11 @@ exports[`Modal renders an prompt modal 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -318,7 +350,11 @@ exports[`Modal renders correctly 1`] = `
   closeOnOutsideClick={true}
   onClose={[Function]}
   onOpen={[Function]}
-  openByClickOn="button">
+  openByClickOn={
+    <button>
+      Open
+    </button>
+  }>
   <div
     aria-hidden={false}
     className="uk-modal"
