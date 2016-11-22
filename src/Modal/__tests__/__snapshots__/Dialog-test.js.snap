@@ -1,0 +1,10 @@
+exports[`Dialog renders correctly 1`] = `
+<div
+  className="uk-modal-dialog"
+  onClick={[Function]}>
+  <a
+    className="uk-modal-close uk-close"
+    onClick={[Function]} />
+  Lorem Ipsum
+</div>
+`;

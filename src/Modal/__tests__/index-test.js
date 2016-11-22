@@ -1,11 +1,23 @@
 import renderer from 'react-test-renderer'
-
 import Modal from '../index'
+
+jest.mock('react-portal', () => 'Portal')
+jest.useFakeTimers()
+
+function createNodeMock(element) {
+  if (element.type === 'modal') {
+    return {
+      focus() {},
+    }
+  }
+  return null
+}
 
 describe('Modal', () => {
   it('renders correctly', () => {
+    const options = { createNodeMock }
     const component = renderer.create(
-      <Modal>Lorem ipsum</Modal>
+      <Modal target={<button>Open</button>}>Lorem ipsum</Modal>, options
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
@@ -18,6 +30,7 @@ describe('Modal', () => {
           ({ handleClose }) => <button onClick={handleClose}>Yes!</button>,
         ]}
         header="Headline"
+        target={<button>Open</button>}
       >
         Lorem ipsum
       </Modal>
@@ -29,6 +42,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         caption="Caption"
+        target={<button>Open</button>}
       >
         Lorem ipsum
       </Modal>
@@ -40,6 +54,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         lightbox
+        target={<button>Open</button>}
       >
         <img role="presentation" src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
       </Modal>
@@ -51,6 +66,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         blank
+        target={<button>Open</button>}
       >
         <div className="uk-grid uk-flex-middle">
           <div
@@ -75,6 +91,7 @@ describe('Modal', () => {
     const component = renderer.create(
       <Modal
         close={false}
+        target={<button>Open</button>}
       >
         <div className="uk-modal-spinner" />
       </Modal>
@@ -85,6 +102,7 @@ describe('Modal', () => {
   it('renders an alert modal', () => {
     const component = renderer.create(
       <Modal
+        target={<button>Open</button>}
         type="alert"
       >
         Something bad happened!
@@ -96,6 +114,7 @@ describe('Modal', () => {
   it('renders an confirm modal', () => {
     const component = renderer.create(
       <Modal
+        target={<button>Open</button>}
         type="confirm"
       >
         Are you absolutely sure about this?
@@ -107,11 +126,84 @@ describe('Modal', () => {
   it('renders an prompt modal', () => {
     const component = renderer.create(
       <Modal
+        target={<button>Open</button>}
         type="prompt"
       >
         Please enter the name of the repo you&quot;re deleting:
       </Modal>
     )
     expect(component.toJSON()).toMatchSnapshot()
+  })
+
+  let component = renderer.create(
+    <Modal
+      target={<button>Open</button>}
+    >
+      Lorem ipsum
+    </Modal>
+  )
+
+  it('should handle handleClick', () => {
+    const instance = component.getInstance()
+    instance.handleClick()
+    expect(instance.state.shouldDisplay).toBeTruthy()
+  })
+
+  it('should handle handleOpen', () => {
+    const instance = component.getInstance()
+    instance.handleOpen()
+    jest.runAllTimers()
+    expect(instance.state.isOpen).toBeTruthy()
+  })
+
+  it('should handle handleClose', () => {
+    const instance = component.getInstance()
+    instance.closePortal = jest.fn()
+    instance.handleClose()
+    expect(instance.state.isOpen).toBeFalsy()
+  })
+
+  it('should set modal ref to Portal', () => {
+    const instance = component.getInstance()
+    const node = { closePortal: jest.fn() }
+    instance.setModal(node)
+    instance.handleClose()
+    jest.runAllTimers()
+    expect(node.closePortal).toHaveBeenCalled()
+  })
+
+  it('should handle handleAfterClose', () => {
+    const instance = component.getInstance()
+    instance.handleAfterClose()
+    expect(instance.state.shouldDisplay).toBeFalsy()
+  })
+
+  it('should handle handleBeforeClose', () => {
+    const instance = component.getInstance()
+    instance.handleBeforeClose({ removeFromDOM: jest.fn() })
+    expect(instance.state.isOpen).toBeFalsy()
+  })
+
+  component = renderer.create(
+    <Modal
+      // eslint-disable-next-line react/prop-types,react/jsx-no-bind
+      target={<button>Confirm</button>}
+      type="confirm"
+      onCancel={jest.fn()}
+      onConfirm={jest.fn()}
+    >
+      Are you sure?
+  </Modal>)
+
+  it('should handle handleCancel', () => {
+    const instance = component.getInstance()
+    instance.handleCancel()
+    expect(instance.props.onCancel).toHaveBeenCalled()
+  })
+
+  it('should handle handleConfirm', () => {
+    const instance = component.getInstance()
+    instance.handleConfirm()
+    expect(instance.props.onConfirm).toHaveBeenCalled()
   })
 })

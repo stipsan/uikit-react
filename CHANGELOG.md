@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Bugfixes
 * `Notify` component was not passing all the props.
 
+### Breaking Changes
+* `Modal` component needs to pass `target` as Element instead of Node. `target` is required.
+
+### Coverage
+* uikit-react has 100% test coverage now.
+
+### Features
+* `Modal` component is rendered using [react-portal](https://github.com/tajo/react-portal) for better positioning and styling
+
 ## [1.0.0] - 2016-11-10
 ### Added
 * Added new component [Notify](http://uikit-react.io/?selectedKind=Notify&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel).
@@ -105,7 +114,7 @@ $icon-font-path: "~uikit/dist/fonts";
 
 ### Docs
 In the initial alphas we had a docs site up on firebase: https://uikit-react.firebaseapp.com/#/
-But instead of a conventional OSS project site we decided to host the React Storybook of the project here: [uikit-react.io](uikit-react.io) which will serve as documentation and usage examples of the UIkit React components included in `uikit-react`
+But instead of a conventional OSS project site we decided to host the React Storybook of the project here: [uikit-react.io](https://uikit-react.io) which will serve as documentation and usage examples of the UIkit React components included in `uikit-react`
 
 Proved stable enough for a stable semver major version 💃
 

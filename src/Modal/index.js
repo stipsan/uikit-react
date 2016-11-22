@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import KeyHandler, { KEYDOWN } from 'react-key-handler'
-import { Component, PropTypes, createElement } from 'react'
+import { Component, PropTypes } from 'react'
+import Portal from 'react-portal'
 
 import Button from '../Button'
 import Dialog from './Dialog'
@@ -9,11 +9,11 @@ import Prompt from './Prompt'
 export default class Modal extends Component {
 
   static propTypes = {
+    target: PropTypes.element.isRequired,
     cancelLabel: PropTypes.string,
     children: PropTypes.node,
     confirmLabel: PropTypes.string,
     isOpen: PropTypes.bool,
-    target: PropTypes.node,
     type: PropTypes.string,
     onCancel: PropTypes.func,
     onConfirm: PropTypes.func,
@@ -32,23 +32,41 @@ export default class Modal extends Component {
 
   state = { shouldDisplay: false, isOpen: false }
 
+  setModal = (node) => {
+    if (node) {
+      this.modal = node
+    }
+  }
 
   handleClick = () => {
     this.setState({ shouldDisplay: !this.state.shouldDisplay })
   }
 
   handleOpen = () => {
-    this.setState(
-      { shouldDisplay: true },
-      () => setTimeout(() => this.setState({ isOpen: true }), 50)
-    )
+    setTimeout(() => this.setState({ isOpen: true }), 0)
   }
 
   handleClose = () => {
     this.setState(
       { isOpen: false },
-      () => setTimeout(() => this.setState({ shouldDisplay: false }), 300)
+      () => setTimeout(
+        () => {
+          this.modal.closePortal()
+        },
+        300
+      )
     )
+  }
+
+  handleBeforeClose = (DOMNode, removeFromDOM) => {
+    this.setState(
+      { isOpen: false },
+      () => setTimeout(removeFromDOM, 300)
+    )
+  }
+
+  handleAfterClose = () => {
+    this.setState({ shouldDisplay: false })
   }
 
   handleConfirm = () => {
@@ -63,21 +81,27 @@ export default class Modal extends Component {
 
   render() {
     const {
-      handleClose, handleOpen, handleConfirm, handleCancel,
+      handleClose,
+      handleOpen,
+      handleConfirm,
+      handleCancel,
+      handleAfterClose,
+      handleBeforeClose,
+      setModal,
      } = this
     const {
       isOpen,
       type,
       confirmLabel,
       cancelLabel,
+      target,
     } = this.props
-    const target = this.props.target &&
-          createElement(this.props.target, { handleOpen, children: 'Open' })
+
     const className = classNames('uk-modal', {
-      'uk-open': this.state.shouldDisplay && this.state.isOpen,
+      'uk-open': this.state.isOpen,
     })
     const style = {
-      display: this.state.shouldDisplay && 'block',
+      display: 'block',
     }
 
     let footer = []
@@ -102,9 +126,15 @@ export default class Modal extends Component {
     }
 
     return (
-      <div>
-        <KeyHandler keyEventName={KEYDOWN} keyValue="Escape" onKeyHandle={handleClose} />
-        {target}
+      <Portal
+        closeOnEsc
+        closeOnOutsideClick
+        beforeClose={handleBeforeClose}
+        openByClickOn={target}
+        ref={setModal}
+        onClose={handleAfterClose}
+        onOpen={handleOpen}
+      >
         <div
           aria-hidden={isOpen}
           className={className}
@@ -120,7 +150,7 @@ export default class Modal extends Component {
             {dialogChildren}
           </Dialog>
         </div>
-      </div>
+      </Portal>
     )
   }
 }

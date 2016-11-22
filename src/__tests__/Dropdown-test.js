@@ -20,7 +20,7 @@ describe('Dropdown', () => {
   })
 
   it('changes the class when hovered', () => {
-    const component = renderer.create(
+    let component = renderer.create(
       <Dropdown>
         <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
       </Dropdown>
@@ -44,6 +44,28 @@ describe('Dropdown', () => {
     jest.runAllTimers()
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
+
+    let instance = component.getInstance()
+    instance.handleMouseEnter()
+    expect(instance.state.isOpen).toBeTruthy()
+
+    component = renderer.create(
+      <Dropdown delay={400} remainTime={0}>
+        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+      </Dropdown>
+    )
+    instance = component.getInstance()
+    instance.handleMouseEnter()
+    expect(instance.state.isOpen).toBeFalsy()
+
+    jest.runAllTimers()
+    tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+
+    instance.handleMouseLeave()
+    jest.runAllTimers()
+    expect(tree).toMatchSnapshot()
+    expect(instance.state.isOpen).toBe(false)
   })
 
   it('changes the class when clicked', () => {
