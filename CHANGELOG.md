@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 * uikit-react has 100% test coverage now.
 
 ### Features
-* `Modal` component is rendered using `[react-portal]`(https://github.com/tajo/react-portal) for better positioning and styling
+* `Modal` component is rendered using [react-portal](https://github.com/tajo/react-portal) for better positioning and styling
 
 ## [1.0.0] - 2016-11-10
 ### Added
