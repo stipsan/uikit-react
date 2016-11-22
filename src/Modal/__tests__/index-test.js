@@ -4,10 +4,20 @@ import Modal from '../index'
 jest.mock('react-portal', () => 'Portal')
 jest.useFakeTimers()
 
+function createNodeMock(element) {
+  if (element.type === 'modal') {
+    return {
+      focus() {},
+    }
+  }
+  return null
+}
+
 describe('Modal', () => {
   it('renders correctly', () => {
+    const options = { createNodeMock }
     const component = renderer.create(
-      <Modal>Lorem ipsum</Modal>
+      <Modal>Lorem ipsum</Modal>, options
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
