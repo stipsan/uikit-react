@@ -1,8 +1,8 @@
 import renderer from 'react-test-renderer'
-
 import Modal from '../index'
 
 jest.mock('react-portal', () => 'Portal')
+jest.useFakeTimers()
 
 describe('Modal', () => {
   it('renders correctly', () => {
@@ -117,7 +117,7 @@ describe('Modal', () => {
     expect(component.toJSON()).toMatchSnapshot()
   })
 
-  const component = renderer.create(
+  let component = renderer.create(
     <Modal>Lorem ipsum</Modal>
   )
 
@@ -130,13 +130,14 @@ describe('Modal', () => {
   it('should handle handleOpen', () => {
     const instance = component.getInstance()
     instance.handleOpen()
-    expect(instance.state.isOpen).toBeFalsy()
+    jest.runAllTimers()
+    expect(instance.state.isOpen).toBeTruthy()
   })
 
   it('should handle handleClose', () => {
     const instance = component.getInstance()
-    instance.handleClose()
     instance.closePortal = jest.fn()
+    instance.handleClose()
     expect(instance.state.isOpen).toBeFalsy()
   })
 
@@ -146,9 +147,31 @@ describe('Modal', () => {
     expect(instance.state.shouldDisplay).toBeFalsy()
   })
 
-  // it('should handle handleCancel', () => {
-  //   const instance = component.getInstance()
-  //   instance.handleCancel()
-  //   expect(instance.state.shouldDisplay).toBeFalsy()
-  // })
+  it('should handle handleBeforeClose', () => {
+    const instance = component.getInstance()
+    instance.handleBeforeClose({ removeFromDOM: jest.fn() })
+    expect(instance.state.isOpen).toBeFalsy()
+  })
+
+  component = renderer.create(<Modal
+    // eslint-disable-next-line react/prop-types,react/jsx-no-bind
+    target={<button>Confirm</button>}
+    type="confirm"
+    onCancel={jest.fn()}
+    onConfirm={jest.fn()}
+  >
+    Are you sure?
+  </Modal>)
+
+  it('should handle handleCancel', () => {
+    const instance = component.getInstance()
+    instance.handleCancel()
+    expect(instance.props.onCancel).toHaveBeenCalled()
+  })
+
+  it('should handle handleConfirm', () => {
+    const instance = component.getInstance()
+    instance.handleConfirm()
+    expect(instance.props.onConfirm).toHaveBeenCalled()
+  })
 })
