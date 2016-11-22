@@ -1,7 +1,8 @@
 import { Component, PropTypes } from 'react'
 import Portal from 'react-portal'
-import NotifyMesssage from './NotifyMesssage'
 import cx from 'classnames'
+
+import NotifyMesssage from './NotifyMesssage'
 
 export default class Notify extends Component {
   static propTypes = {
