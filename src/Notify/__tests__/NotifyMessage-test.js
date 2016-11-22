@@ -2,6 +2,8 @@ import renderer from 'react-test-renderer'
 
 import NotifyMesssage from '../NotifyMesssage'
 
+jest.useFakeTimers()
+
 describe('NotifyMesssage', () => {
   const defaultProps = {
     children: 'children',
@@ -18,6 +20,7 @@ describe('NotifyMesssage', () => {
   it('should return if state is closed', () => {
     const instance = component.getInstance()
     instance.handleClose()
+    jest.runAllTimers()
     expect(instance.state.isOpen).toBe(false)
 
     instance.openNotification()
