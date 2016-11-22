@@ -117,6 +117,40 @@ exports[`Dropdown changes the class when hovered 4`] = `
 </div>
 `;
 
+exports[`Dropdown changes the class when hovered 5`] = `
+<div
+  aria-expanded={true}
+  aria-haspopup={true}
+  className="uk-button-dropdown uk-open"
+  onClick={false}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <button
+    className="uk-button">
+    Hover 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
+exports[`Dropdown changes the class when hovered 6`] = `
+<div
+  aria-expanded={true}
+  aria-haspopup={true}
+  className="uk-button-dropdown uk-open"
+  onClick={false}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <button
+    className="uk-button">
+    Hover 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
 exports[`Dropdown renders correctly 1`] = `
 <div
   aria-expanded={false}

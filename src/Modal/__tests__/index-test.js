@@ -145,4 +145,10 @@ describe('Modal', () => {
     instance.handleAfterClose()
     expect(instance.state.shouldDisplay).toBeFalsy()
   })
+
+  // it('should handle handleCancel', () => {
+  //   const instance = component.getInstance()
+  //   instance.handleCancel()
+  //   expect(instance.state.shouldDisplay).toBeFalsy()
+  // })
 })
