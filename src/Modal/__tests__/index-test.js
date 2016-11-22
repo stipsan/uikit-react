@@ -163,7 +163,7 @@ describe('Modal', () => {
     expect(instance.state.isOpen).toBeFalsy()
   })
 
-  it('should set modal to Portal', () => {
+  it('should set modal ref to Portal', () => {
     const instance = component.getInstance()
     const node = { closePortal: jest.fn() }
     instance.setModal(node)
