@@ -66,6 +66,6 @@ export default class Dialog extends Component
           </div>)
         }
       </div>
-        )
+    )
   }
 }
