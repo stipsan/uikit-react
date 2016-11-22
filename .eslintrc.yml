@@ -43,3 +43,10 @@ rules:
   jsx-a11y/no-static-element-interactions: off
   jsx-a11y/anchor-has-content: off
   import/extensions: off
+  comma-dangle:
+   - error
+   - arrays: always-multiline
+     objects: always-multiline
+     imports: always-multiline
+     exports: always-multiline
+     functions: never
