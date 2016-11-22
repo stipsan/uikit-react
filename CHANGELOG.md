@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 * `Notify` component was not passing all the props.
 
 ### Breaking Changes
-* `Modal` component needs to pass `target` as Element instead of Node
+* `Modal` component needs to pass `target` as Element instead of Node. `target` is required. 
 
 ### Coverage
 * uikit-react has 100% test coverage now.

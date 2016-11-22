@@ -9,11 +9,11 @@ import Prompt from './Prompt'
 export default class Modal extends Component {
 
   static propTypes = {
+    target: PropTypes.element.isRequired,
     cancelLabel: PropTypes.string,
     children: PropTypes.node,
     confirmLabel: PropTypes.string,
     isOpen: PropTypes.bool,
-    target: PropTypes.element,
     type: PropTypes.string,
     onCancel: PropTypes.func,
     onConfirm: PropTypes.func,
