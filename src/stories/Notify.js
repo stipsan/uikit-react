@@ -35,7 +35,15 @@ class NotificationsContainer extends PureComponent {
     const { notifications } = this.state
     const { position, type, isSticky, icon, timeout, onClick } = this.props
     return (<div>
-      <Button className={`uk-margin-bottom uk-button uk-button-${type}`} onClick={this.handleClick}>Show {`${type} ${position}`} notification</Button>
+      <Button
+        className={`uk-margin-bottom uk-button uk-button-${type}`}
+        onClick={this.handleClick}
+      >
+        {`${type} ${position}`}
+        {timeout !== undefined ? ' timeout' : ''}
+        {isSticky === true ? ' isSticky' : ''}
+        {typeof onClick === 'function' ? ' onClick' : ''}
+      </Button>
       {onClick}
       <Notify
         handleMessageClick={onClick}
@@ -64,6 +72,8 @@ storiesOf('Notify', module)
       <NotificationsContainer position="top-left" type="danger" />
       <NotificationsContainer isSticky position="top-right" type="info" />
       <NotificationsContainer icon="check" position="bottom-right" type="success" />
-      <NotificationsContainer isSticky icon="check" position="bottom-left" type="success" onClick={handleMessageClick} />
+      <NotificationsContainer icon="check" position="bottom-left" timeout={5000} type="success" />
+      <NotificationsContainer icon="check" position="bottom-left" type="danger" onClick={handleMessageClick} />
+
     </div>
   ), { header: false, inline: true, propTables: [Notify] })
