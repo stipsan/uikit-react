@@ -7,7 +7,10 @@ import NotifyMesssage from './NotifyMesssage'
 export default class Notify extends Component {
   static propTypes = {
     notifications: PropTypes.arrayOf(PropTypes.object).isRequired,
+    handleMessageClick: PropTypes.func,
+    isSticky: PropTypes.bool,
     position: PropTypes.string,
+    timeout: PropTypes.number,
   }
 
   static defaultProps = {
@@ -31,6 +34,9 @@ export default class Notify extends Component {
     const {
       position,
       notifications,
+      handleMessageClick,
+      isSticky,
+      timeout,
     } = this.props
 
     const className = cx('uk-notify', {
@@ -47,8 +53,9 @@ export default class Notify extends Component {
         onClose={this.handleClick}
       >
         <div className={className}>
-          {notifications.map(({ type, message, id, isSticky, timeout, icon }) => (
+          {notifications.map(({ type, message, id, icon }) => (
             <NotifyMesssage
+              handleMessageClick={handleMessageClick}
               icon={icon}
               isSticky={isSticky}
               key={id}

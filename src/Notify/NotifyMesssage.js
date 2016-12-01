@@ -4,6 +4,7 @@ import cx from 'classnames'
 export default class NotifyMesssage extends Component {
   static propTypes = {
     children: PropTypes.node,
+    handleMessageClick: PropTypes.func,
     icon: PropTypes.string,
     isSticky: PropTypes.bool,
     timeout: PropTypes.number,
@@ -32,6 +33,12 @@ export default class NotifyMesssage extends Component {
     this.setState({ isOpen: false }, () => setTimeout(() => this.setState({ isClosed: true }), 300))
   }
 
+  handleClick = () => {
+    if (this.props.handleMessageClick) {
+      this.props.handleMessageClick()
+    }
+  }
+
   render() {
     const { children, type, icon } = this.props
     const className = cx('uk-notify-message', {
@@ -54,7 +61,7 @@ export default class NotifyMesssage extends Component {
         style={{ overflow: 'hidden', transition: 'margin ease-out 300ms', ...styles[this.state.isOpen ? 1 : 0] }}
       >
         <a className="uk-close" onClick={this.handleClose} />
-        <div>
+        <div onClick={this.handleClick}>
           {icon && <i className={`uk-icon-justify uk-icon-${icon}`} /> }
           {children}
         </div>

@@ -11,7 +11,8 @@ exports[`NotifyMesssage should render correctly 1`] = `
   <a
     className="uk-close"
     onClick={[Function]} />
-  <div>
+  <div
+    onClick={[Function]}>
     <i
       className="uk-icon-justify uk-icon-check" />
     children

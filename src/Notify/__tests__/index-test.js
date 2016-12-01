@@ -10,6 +10,7 @@ describe('Notify', () => {
     icon: 'check',
     isSticky: false,
     position: 'top-center',
+    handleMessageClick: jest.fn(),
   }
   const component = renderer.create(
     <Notify {...defaultProps} />
