@@ -1,4 +1,4 @@
-import { storiesOf, linkTo } from '@kadira/storybook'
+import { storiesOf } from '@kadira/storybook'
 import { Notify, Button } from 'uikit-react'
 import { PureComponent, PropTypes } from 'react'
 
@@ -51,7 +51,8 @@ class NotificationsContainer extends PureComponent {
 }
 
 const handleMessageClick = () => {
-  linkTo('Button', 'Basic Usage')()
+  // eslint-disable-next-line no-alert
+  alert('You clicked on this notification')
 }
 
 storiesOf('Notify', module)
