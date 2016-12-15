@@ -10,8 +10,10 @@ export default class Modal extends Component {
 
   static propTypes = {
     target: PropTypes.element.isRequired,
+    cancelButtonClass: PropTypes.string,
     cancelLabel: PropTypes.string,
     children: PropTypes.node,
+    confirmButtonClass: PropTypes.string,
     confirmLabel: PropTypes.string,
     isOpen: PropTypes.bool,
     type: PropTypes.string,
@@ -106,14 +108,31 @@ export default class Modal extends Component {
 
     let footer = []
     if (type === 'alert') {
-      footer = [() => <Button primary onClick={handleConfirm}>{confirmLabel}</Button>]
+      footer = [
+        () =>
+          <Button
+            primary
+            className={this.props.confirmButtonClass}
+            onClick={handleConfirm}
+          >{confirmLabel}
+          </Button>,
+      ]
     }
 
     if (type === 'confirm' || type === 'prompt') {
       footer = [
-        () => <Button onClick={handleCancel}>{cancelLabel}</Button>,
+        () => <Button className={this.props.cancelButtonClass} onClick={handleCancel}>
+          {cancelLabel}
+        </Button>,
         () => <span>&nbsp;</span>,
-        () => <Button primary onClick={handleConfirm}>{confirmLabel}</Button>,
+        () =>
+          <Button
+            primary
+            className={this.props.confirmButtonClass}
+            onClick={handleConfirm}
+          >
+            {confirmLabel}
+          </Button>,
       ]
     }
     const { children, ...dialogProps } = this.props
