@@ -50,11 +50,11 @@
   "homepage": "https://uikit-react.io",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.2.2",
-    "@kadira/storybook": "2.34.0",
+    "@kadira/storybook": "2.35.0",
     "@kadira/storybook-deployer": "1.2.0",
     "autoprefixer": "6.5.4",
     "babel-cli": "6.18.0",
-    "babel-core": "6.20.0",
+    "babel-core": "6.21.0",
     "babel-eslint": "7.1.1",
     "babel-jest": "17.0.2",
     "babel-plugin-react-transform": "2.0.2",
