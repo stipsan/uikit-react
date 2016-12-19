@@ -78,7 +78,7 @@
     "gh-release": "2.2.0",
     "growl": "1.9.2",
     "jest-cli": "17.0.3",
-    "jsdom": "9.8.3",
+    "jsdom": "9.9.0",
     "json-loader": "0.5.4",
     "less": "2.7.1",
     "less-loader": "2.2.3",
