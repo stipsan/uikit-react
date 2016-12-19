@@ -54,7 +54,7 @@ export default class Modal extends Component {
       () => setTimeout(
         () => {
           this.modal.closePortal()
-          if (callback) {
+          if (typeof callback === 'function') {
             callback()
           }
         },
