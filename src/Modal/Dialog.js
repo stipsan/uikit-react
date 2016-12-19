@@ -21,8 +21,8 @@ export default class Dialog extends Component
 
   handleOverlayClick = event => event.stopPropagation()
 
-  handleClose = () => {
-    this.props.handleClose()
+  handleClose = (callback) => {
+    this.props.handleClose(callback)
   }
 
   render() {

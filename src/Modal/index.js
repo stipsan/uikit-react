@@ -48,12 +48,15 @@ export default class Modal extends Component {
     setTimeout(() => this.setState({ isOpen: true }), 0)
   }
 
-  handleClose = () => {
+  handleClose = (callback) => {
     this.setState(
       { isOpen: false },
       () => setTimeout(
         () => {
           this.modal.closePortal()
+          if (callback) {
+            callback()
+          }
         },
         300
       )
