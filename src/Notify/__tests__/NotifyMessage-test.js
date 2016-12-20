@@ -9,6 +9,7 @@ describe('NotifyMesssage', () => {
     children: 'children',
     icon: 'check',
     position: 'top-center',
+    onClick: jest.fn(),
   }
   const component = renderer.create(
     <NotifyMesssage {...defaultProps} />

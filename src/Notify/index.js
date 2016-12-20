@@ -47,13 +47,14 @@ export default class Notify extends Component {
         onClose={this.handleClick}
       >
         <div className={className}>
-          {notifications.map(({ type, message, id, isSticky, timeout, icon }) => (
+          {notifications.map(({ type, message, id, icon, isSticky, onClick, timeout }) => (
             <NotifyMesssage
               icon={icon}
               isSticky={isSticky}
               key={id}
               timeout={timeout}
               type={type}
+              onClick={onClick}
             >
               {message}
             </NotifyMesssage>
