@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 * Added two props, `confirmButtonClass` and `cancelButtonClass` to footer buttons that allows to pass CSS classes.
 * `handleClose` allows callbacks.
+* `Notify` component allows to pass `onClick` props that can be used trigger `onClick` event on `NotifyMesssage`
 
 ## [2.0.0] - 2016-11-22
 ### Bugfixes
