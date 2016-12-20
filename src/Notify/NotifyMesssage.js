@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 export default class NotifyMesssage extends Component {
   static propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.node.isRequired,
     icon: PropTypes.string,
     isSticky: PropTypes.bool,
     timeout: PropTypes.number,
