@@ -163,6 +163,14 @@ describe('Modal', () => {
     expect(instance.state.isOpen).toBeFalsy()
   })
 
+  it('should handle callback function if handleClose has it', () => {
+    const instance = component.getInstance()
+    const callback = jest.fn()
+    instance.closePortal = jest.fn()
+    instance.handleClose(callback)
+    expect(instance.state.isOpen).toBeFalsy()
+  })
+
   it('should set modal ref to Portal', () => {
     const instance = component.getInstance()
     const node = { closePortal: jest.fn() }

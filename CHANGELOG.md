@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+* Added two props, `confirmButtonClass` and `cancelButtonClass` to footer buttons that allows to pass CSS classes.
+* `handleClose` allows callbacks.
 
 ## [2.0.0] - 2016-11-22
 ### Bugfixes
