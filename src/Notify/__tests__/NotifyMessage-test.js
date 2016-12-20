@@ -27,12 +27,4 @@ describe('NotifyMesssage', () => {
     instance.openNotification()
     expect(instance.state.isOpen).toBe(true)
   })
-
-  it('should handle Message Click', () => {
-    const instance = component.getInstance()
-
-    instance.handleClick()
-
-    expect(defaultProps.onClick).toHaveBeenCalled()
-  })
 })

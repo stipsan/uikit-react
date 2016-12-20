@@ -72,7 +72,7 @@ storiesOf('Notify', module)
       <NotificationsContainer isSticky position="top-right" type="info" />
       <NotificationsContainer icon="check" position="bottom-right" type="success" />
       <NotificationsContainer icon="check" position="bottom-left" timeout={10000} type="success" />
-      <NotificationsContainer icon="check" position="bottom-left" type="danger" onClick={action('handleClick')} />
+      <NotificationsContainer icon="check" position="top-right" timeout={5000} type="danger" onClick={action('handleClick')} />
 
     </div>
   ), { header: false, inline: true, propTables: [Notify] })

@@ -17,7 +17,7 @@ exports[`Notify should render correctly 1`] = `
         className="uk-close"
         onClick={[Function]} />
       <div
-        onClick={[Function]}>
+        onClick={undefined}>
         Notification #1
       </div>
     </div>
