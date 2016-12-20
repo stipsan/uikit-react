@@ -9,7 +9,7 @@ describe('NotifyMesssage', () => {
     children: 'children',
     icon: 'check',
     position: 'top-center',
-    handleMessageClick: jest.fn(),
+    onClick: jest.fn(),
   }
   const component = renderer.create(
     <NotifyMesssage {...defaultProps} />
@@ -33,6 +33,6 @@ describe('NotifyMesssage', () => {
 
     instance.handleClick()
 
-    expect(defaultProps.handleMessageClick).toHaveBeenCalled()
+    expect(defaultProps.onClick).toHaveBeenCalled()
   })
 })

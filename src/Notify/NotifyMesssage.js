@@ -4,11 +4,11 @@ import cx from 'classnames'
 export default class NotifyMesssage extends Component {
   static propTypes = {
     children: PropTypes.node,
-    handleMessageClick: PropTypes.func,
     icon: PropTypes.string,
     isSticky: PropTypes.bool,
     timeout: PropTypes.number,
     type: PropTypes.string,
+    onClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -34,8 +34,8 @@ export default class NotifyMesssage extends Component {
   }
 
   handleClick = () => {
-    if (this.props.handleMessageClick) {
-      this.props.handleMessageClick()
+    if (this.props.onClick) {
+      this.props.onClick()
     }
   }
 

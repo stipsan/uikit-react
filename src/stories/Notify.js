@@ -1,4 +1,4 @@
-import { storiesOf } from '@kadira/storybook'
+import { storiesOf, action } from '@kadira/storybook'
 import { Notify, Button } from 'uikit-react'
 import { PureComponent, PropTypes } from 'react'
 
@@ -26,41 +26,40 @@ class NotificationsContainer extends PureComponent {
   handleClick = (event) => {
     event.preventDefault()
     this.setState({
-      notifications: [{ id: this.state.count, type: this.props.type, message: `Notification #${this.state.count}` }, ...this.state.notifications],
+      notifications: [
+        {
+          id: this.state.count,
+          type: this.props.type,
+          message: `Notification #${this.state.count}`,
+          isSticky: this.props.isSticky,
+          timeout: this.props.timeout,
+          onClick: this.props.onClick ? this.props.onClick : () => {},
+        },
+        ...this.state.notifications],
       count: this.state.count + 1,
     })
   }
 
   render() {
     const { notifications } = this.state
-    const { position, type, isSticky, icon, timeout, onClick } = this.props
+    const { position, type } = this.props
     return (<div>
       <Button
         className={`uk-margin-bottom uk-button uk-button-${type}`}
         onClick={this.handleClick}
       >
-        {`${type} ${position}`}
-        {timeout !== undefined ? ' timeout' : ''}
-        {isSticky === true ? ' isSticky' : ''}
-        {typeof onClick === 'function' ? ' onClick' : ''}
+        {`${type}-${position}`}
+        {this.props.isSticky ? '- isSticky' : ''}
+        {this.props.icon ? '- icon' : ''}
+        {this.props.onClick ? '- click' : ''}
+        {this.props.timeout ? '- timeout' : ''}
       </Button>
-      {onClick}
       <Notify
-        handleMessageClick={onClick}
-        icon={icon}
-        isSticky={isSticky}
         notifications={notifications}
         position={position}
-        timeout={timeout}
-        type={type}
       />
     </div>)
   }
-}
-
-const handleMessageClick = () => {
-  // eslint-disable-next-line no-alert
-  alert('You clicked on this notification')
 }
 
 storiesOf('Notify', module)
@@ -72,8 +71,8 @@ storiesOf('Notify', module)
       <NotificationsContainer position="top-left" type="danger" />
       <NotificationsContainer isSticky position="top-right" type="info" />
       <NotificationsContainer icon="check" position="bottom-right" type="success" />
-      <NotificationsContainer icon="check" position="bottom-left" timeout={5000} type="success" />
-      <NotificationsContainer icon="check" position="bottom-left" type="danger" onClick={handleMessageClick} />
+      <NotificationsContainer icon="check" position="bottom-left" timeout={10000} type="success" />
+      <NotificationsContainer icon="check" position="bottom-left" type="danger" onClick={action('handleClick')} />
 
     </div>
   ), { header: false, inline: true, propTables: [Notify] })
