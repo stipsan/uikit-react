@@ -18,6 +18,8 @@ exports[`Notify should render correctly 1`] = `
         onClick={[Function]} />
       <div
         onClick={undefined}>
+        <i
+          className="uk-icon-justify uk-icon-check" />
         Notification #1
       </div>
     </div>
