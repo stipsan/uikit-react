@@ -181,6 +181,9 @@ storiesOf('Modal', module)
   .addWithInfo('Confirm', '', () => (
     <div className="uk-margin-bottom">
       <Modal
+        cancelButtonClass="uk-button-primary"
+        confirmButtonClass="uk-button-danger"
+        confirmLabel="Delete"
         // eslint-disable-next-line react/prop-types,react/jsx-no-bind
         target={<Button>Confirm</Button>}
         type="confirm"
