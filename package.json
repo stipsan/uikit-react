@@ -52,7 +52,7 @@
     "@kadira/react-storybook-addon-info": "3.2.2",
     "@kadira/storybook": "2.35.3",
     "@kadira/storybook-deployer": "1.2.0",
-    "autoprefixer": "6.6.1",
+    "autoprefixer": "6.7.0",
     "babel-cli": "6.22.2",
     "babel-core": "6.22.0",
     "babel-eslint": "7.1.1",
