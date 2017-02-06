@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.0.2] - 2017-02-06
 ### Bugfixes
 * `Notify` component was not passing `icon` props in the storybook.
 * Added space between NotifyMesssage and `icon` if `icon` is added.
@@ -128,7 +130,8 @@ But instead of a conventional OSS project site we decided to host the React Stor
 
 Proved stable enough for a stable semver major version 💃
 
-[Unreleased]: https://github.com/stipsan/uikit-react/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/stipsan/uikit-react/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/stipsan/uikit-react/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/stipsan/uikit-react/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/stipsan/uikit-react/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/stipsan/uikit-react/compare/v0.6.2...v1.0.0
