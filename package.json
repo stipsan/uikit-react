@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "coverage": "yarn test -- --coverage",
     "lint": "eslint .",
     "coveralls": "coveralls < .coverage/lcov.info",
     "prebuild": "rm -rf lib",

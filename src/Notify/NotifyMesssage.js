@@ -56,7 +56,7 @@ export default class NotifyMesssage extends Component {
       >
         <a className="uk-close" onClick={this.handleClose} />
         <div onClick={onClick}>
-          {icon && <i className={`uk-icon-justify uk-icon-${icon}`} /> }
+          {icon && <span><i className={`uk-icon-${icon}`} />&nbsp;</span> }
           {children}
         </div>
       </div>

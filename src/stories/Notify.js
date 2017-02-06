@@ -30,6 +30,7 @@ class NotificationsContainer extends PureComponent {
         {
           id: this.state.count,
           type: this.props.type,
+          icon: this.props.icon,
           message: `Notification #${this.state.count}`,
           isSticky: this.props.isSticky,
           timeout: this.props.timeout,
@@ -71,8 +72,8 @@ storiesOf('Notify', module)
       <NotificationsContainer position="top-left" type="danger" />
       <NotificationsContainer isSticky position="top-right" type="info" />
       <NotificationsContainer icon="check" position="bottom-right" type="success" />
-      <NotificationsContainer icon="check" position="bottom-left" timeout={10000} type="success" />
-      <NotificationsContainer icon="check" position="top-right" timeout={5000} type="danger" onClick={action('handleClick')} />
+      <NotificationsContainer icon="warning" position="bottom-left" timeout={10000} type="warning" />
+      <NotificationsContainer icon="warning" position="top-right" timeout={5000} type="danger" onClick={action('handleClick')} />
 
     </div>
   ), { header: false, inline: true, propTables: [Notify] })

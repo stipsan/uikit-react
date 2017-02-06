@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Bugfixes
+* `Notify` component was not passing `icon` props in the storybook.
+* Added space between NotifyMesssage and `icon` if `icon` is added.
 
 ## [2.0.1] - 2017-01-04
 * Added two props, `confirmButtonClass` and `cancelButtonClass` to footer buttons that allows to pass CSS classes.
