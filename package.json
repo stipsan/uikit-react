@@ -1,6 +1,6 @@
 {
   "name": "uikit-react",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
