@@ -95,7 +95,7 @@
     "react-test-renderer": "15.4.1",
     "style-loader": "0.13.1",
     "uikit": "2.27.2",
-    "url-loader": "0.5.7"
+    "url-loader": "0.5.8"
   },
   "dependencies": {
     "classnames": "2.2.5",
