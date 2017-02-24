@@ -68,7 +68,7 @@
     "babel-register": "6.23.0",
     "coveralls": "2.11.16",
     "css-loader": "0.26.1",
-    "eslint": "3.13.1",
+    "eslint": "3.14.0",
     "eslint-config-airbnb": "13.0.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
