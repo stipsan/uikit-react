@@ -1,6 +1,8 @@
 uikit-react
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/stipsan/uikit-react.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/stipsan/uikit-react.svg?branch=master)](https://travis-ci.org/stipsan/uikit-react)
 [![Coverage Status](https://coveralls.io/repos/github/stipsan/uikit-react/badge.svg)](https://coveralls.io/github/stipsan/uikit-react)
 [![npm package](https://img.shields.io/npm/dm/uikit-react.svg)](https://www.npmjs.com/package/uikit-react)
