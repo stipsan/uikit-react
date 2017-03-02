@@ -8,7 +8,7 @@ exports[`Dropdown changes the class when clicked 1`] = `
   onMouseLeave={false}>
   <button
     className="uk-button">
-    Hover 
+    Click 
     <i
       className="uk-icon-caret-down" />
   </button>
@@ -25,7 +25,7 @@ exports[`Dropdown changes the class when clicked 2`] = `
   onMouseLeave={false}>
   <button
     className="uk-button">
-    Hover 
+    Click 
     <i
       className="uk-icon-caret-down" />
   </button>
@@ -42,7 +42,7 @@ exports[`Dropdown changes the class when clicked 3`] = `
   onMouseLeave={false}>
   <button
     className="uk-button">
-    Hover 
+    Click 
     <i
       className="uk-icon-caret-down" />
   </button>
@@ -151,6 +151,57 @@ exports[`Dropdown changes the class when hovered 6`] = `
 </div>
 `;
 
+exports[`Dropdown closes sibling Dropdown on open 1`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={false}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <button
+    className="uk-button">
+    First Instance 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
+exports[`Dropdown closes sibling Dropdown on open 2`] = `
+<div
+  aria-expanded={true}
+  aria-haspopup={true}
+  className="uk-button-dropdown uk-open"
+  onClick={false}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <button
+    className="uk-button">
+    First Instance 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
+exports[`Dropdown closes sibling Dropdown on open 3`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={false}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <button
+    className="uk-button">
+    Second Instance 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
 exports[`Dropdown renders correctly 1`] = `
 <div
   aria-expanded={false}
@@ -182,4 +233,38 @@ exports[`Dropdown renders correctly 2`] = `
       className="uk-icon-caret-down" />
   </a>
 </li>
+`;
+
+exports[`should be closed 1`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={false}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <button
+    className="uk-button">
+    First Instance 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
+`;
+
+exports[`should be open 1`] = `
+<div
+  aria-expanded={true}
+  aria-haspopup={true}
+  className="uk-button-dropdown uk-open"
+  onClick={false}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <button
+    className="uk-button">
+    Second Instance 
+    <i
+      className="uk-icon-caret-down" />
+  </button>
+</div>
 `;

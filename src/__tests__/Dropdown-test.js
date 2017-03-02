@@ -71,7 +71,7 @@ describe('Dropdown', () => {
   it('changes the class when clicked', () => {
     const component = renderer.create(
       <Dropdown mode="click">
-        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+        <button className="uk-button">Click <i className="uk-icon-caret-down" /></button>
       </Dropdown>
     )
     let tree = component.toJSON()
@@ -88,5 +88,55 @@ describe('Dropdown', () => {
     // re-rendering
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
+  })
+
+  it('closes sibling Dropdown on open', () => {
+    const firstComponent = renderer.create(
+      <Dropdown link="menu">
+        <button className="uk-button">First Instance <i className="uk-icon-caret-down" /></button>
+      </Dropdown>
+    )
+    let first = firstComponent.toJSON()
+    expect(first).toMatchSnapshot()
+
+    // manually trigger the callback
+    first.props.onMouseEnter()
+
+    first = firstComponent.toJSON()
+    expect(first).toMatchSnapshot()
+    expect(firstComponent.getInstance().state.isOpen).toBe(true)
+
+    const secondComponent = renderer.create(
+      <Dropdown link="menu">
+        <button className="uk-button">Second Instance <i className="uk-icon-caret-down" /></button>
+      </Dropdown>
+    )
+    let second = secondComponent.toJSON()
+    expect(second).toMatchSnapshot()
+
+    // manually trigger the callback
+    second.props.onMouseEnter()
+
+    // Verify that it is open
+    second = secondComponent.toJSON()
+    expect(second).toMatchSnapshot('should be open')
+    expect(secondComponent.getInstance().state.isOpen).toBe(true)
+    // Verify that the first component is closed
+    first = firstComponent.toJSON()
+    expect(first).toMatchSnapshot('should be closed')
+    expect(firstComponent.getInstance().state.isOpen).toBe(false)
+
+    // Verify there is a subscription
+    const secondInstance = secondComponent.getInstance()
+    expect({}.hasOwnProperty.call(secondInstance, 'unsubscribe')).toBe(true)
+    const unsubscribe = secondInstance.unsubscribe
+
+    // Start leave timeout before unmount
+    second.props.onMouseLeave()
+
+    // Trigger unmount
+    secondComponent.update(<span />)
+    // Should be no error from calling this again
+    unsubscribe()
   })
 })
