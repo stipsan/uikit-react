@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Bugfixes
+* `Dropdown` component was not clearing its hover timeout when unmounting.
+
+### Features
+* `Dropdown` component got a link prop to prevent sibling dropdowns from overlapping.
+
 ## [2.1.1] - 2017-02-06
 ### Bugfixes
 * `Notify` component was not passing `icon` props in the storybook.

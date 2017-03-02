@@ -1,6 +1,36 @@
 import cx from 'classnames'
 import { Component, PropTypes, createElement } from 'react'
 
+const links = {}
+
+const subscribe = (namespace, listener) => {
+  if (!links[namespace]) {
+    links[namespace] = []
+  }
+
+  let isSubscribed = true
+
+  links[namespace].push(listener)
+
+  return function unsubscribe() {
+    if (!isSubscribed) {
+      return
+    }
+
+    isSubscribed = false
+
+    const index = links[namespace].indexOf(listener)
+    links[namespace].splice(index, 1)
+  }
+}
+const dispatch = (namespace) => {
+  const listeners = links[namespace]
+  for (let i = 0; i < listeners.length; i++) { // eslint-disable-line no-plusplus
+    const listener = listeners[i]
+    listener()
+  }
+}
+
 export default class Dropdown extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
@@ -9,6 +39,7 @@ export default class Dropdown extends Component {
     remainTime: PropTypes.number.isRequired,
     className: PropTypes.string,
     component: PropTypes.node,
+    link: PropTypes.string,
   }
 
   static defaultProps = {
@@ -23,6 +54,28 @@ export default class Dropdown extends Component {
     isOpen: false,
   }
 
+  componentDidMount() {
+    if (this.props.link) {
+      // listen to linked components
+      this.unsubscribe = subscribe(this.props.link, () => {
+        if (this.state.isOpen) {
+          this.setState({ isOpen: false })
+        }
+      })
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.leaveTimeout) {
+      clearTimeout(this.leaveTimeout)
+    }
+
+    if (this.unsubscribe) {
+      this.unsubscribe()
+      this.unsubscribe = false
+    }
+  }
+
   handleMouseEnter = () => {
     if (this.leaveTimeout) {
       clearTimeout(this.leaveTimeout)
@@ -32,6 +85,9 @@ export default class Dropdown extends Component {
         this.setState({ isOpen: true })
       }, this.props.delay)
     } else {
+      if (this.props.link) {
+        dispatch(this.props.link)
+      }
       this.setState({ isOpen: true })
     }
   }
@@ -47,6 +103,7 @@ export default class Dropdown extends Component {
   handleClick = () => {
     this.setState({ isOpen: !this.state.isOpen })
   }
+
   render() {
     const className = cx(this.props.className, {
       'uk-open': this.state.isOpen,
