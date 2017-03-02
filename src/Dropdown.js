@@ -25,7 +25,7 @@ const subscribe = (namespace, listener) => {
 }
 const dispatch = (namespace) => {
   const listeners = links[namespace]
-  for (let i = 0; i < listeners.length; i++) {
+  for (let i = 0; i < listeners.length; i++) { // eslint-disable-line no-plusplus
     const listener = listeners[i]
     listener()
   }
@@ -54,6 +54,28 @@ export default class Dropdown extends Component {
     isOpen: false,
   }
 
+  componentDidMount() {
+    if (this.props.link) {
+      // listen to linked components
+      this.unsubscribe = subscribe(this.props.link, () => {
+        if (this.state.isOpen) {
+          this.setState({ isOpen: false })
+        }
+      })
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.leaveTimeout) {
+      clearTimeout(this.leaveTimeout)
+    }
+
+    if (this.unsubscribe) {
+      this.unsubscribe()
+      this.unsubscribe = false
+    }
+  }
+
   handleMouseEnter = () => {
     if (this.leaveTimeout) {
       clearTimeout(this.leaveTimeout)
@@ -80,28 +102,6 @@ export default class Dropdown extends Component {
   }
   handleClick = () => {
     this.setState({ isOpen: !this.state.isOpen })
-  }
-
-  componentDidMount() {
-    if (this.props.link) {
-      // listen to linked components
-      this.unsubscribe = subscribe(this.props.link, () => {
-        if (this.state.isOpen) {
-          this.setState({ isOpen: false })
-        }
-      })
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.leaveTimeout) {
-      clearTimeout(this.leaveTimeout)
-    }
-
-    if (this.unsubscribe) {
-      this.unsubscribe()
-      this.unsubscribe = false
-    }
   }
 
   render() {
