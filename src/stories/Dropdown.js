@@ -49,7 +49,11 @@ storiesOf('Dropdown', module)
         <ul className="uk-navbar-nav">
           <li className="uk-active"><a>Active</a></li>
           <li><a href="">Item</a></li>
-          <Dropdown className="uk-parent" component="li" >
+          <Dropdown className="uk-parent" component="li" link="navbar">
+            <a>Parent <i className="uk-icon-caret-down" /></a>
+            <DropdownMenu />
+          </Dropdown>
+          <Dropdown className="uk-parent" component="li" link="navbar">
             <a>Parent <i className="uk-icon-caret-down" /></a>
             <DropdownMenu />
           </Dropdown>
