@@ -7,12 +7,15 @@ export default class NotifyMesssage extends Component {
     icon: PropTypes.string,
     isSticky: PropTypes.bool,
     timeout: PropTypes.number,
-    type: PropTypes.string,
-    onClick: PropTypes.func,
+    type: PropTypes.oneOf(['info', 'success', 'danger', 'warning', false]),
+    onClick: PropTypes.func, // eslint-disable-line react/require-default-props
   }
 
   static defaultProps = {
+    icon: '',
+    isSticky: false,
     timeout: 3000,
+    type: false,
   }
 
   state = {

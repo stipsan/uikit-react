@@ -6,10 +6,10 @@ class NotificationsContainer extends PureComponent {
   static propTypes = {
     position: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    icon: PropTypes.string,
-    isSticky: PropTypes.bool,
-    timeout: PropTypes.number,
-    onClick: PropTypes.func,
+    icon: PropTypes.string, // eslint-disable-line react/require-default-props
+    isSticky: PropTypes.bool, // eslint-disable-line react/require-default-props
+    timeout: PropTypes.number, // eslint-disable-line react/require-default-props
+    onClick: PropTypes.func, // eslint-disable-line react/require-default-props
   }
 
   static defaultProps = {

@@ -1,19 +1,24 @@
 import classNames from 'classnames'
 import { Component, PropTypes, createElement } from 'react'
 
-export default class Dialog extends Component
-{
+export default class Dialog extends Component {
   static defaultProps = {
+    blank: false,
+    caption: '',
     close: true,
+    footer: [],
+    header: '',
+    large: false,
+    lightbox: false,
   }
 
   static propTypes = {
+    children: PropTypes.node.isRequired,
+    handleClose: PropTypes.func.isRequired,
     blank: PropTypes.bool,
     caption: PropTypes.string,
-    children: PropTypes.node,
     close: PropTypes.bool,
     footer: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-    handleClose: PropTypes.func,
     header: PropTypes.string,
     large: PropTypes.bool,
     lightbox: PropTypes.bool,
@@ -58,7 +63,7 @@ export default class Dialog extends Component
         {header && (<div className="uk-modal-header"><h2>{header}</h2></div>)}
         {caption && (<div className="uk-modal-caption">{caption}</div>)}
         {children}
-        { footer && footer.length > 0 &&
+        { footer.length > 0 &&
           (<div className="uk-modal-footer uk-text-right">
             {
               footer.map((component, i) => createElement(component, { key: i, handleClose }))

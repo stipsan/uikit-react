@@ -9,27 +9,29 @@ import Prompt from './Prompt'
 export default class Modal extends Component {
 
   static propTypes = {
+    children: PropTypes.node.isRequired,
     target: PropTypes.element.isRequired,
     cancelButtonClass: PropTypes.string,
     cancelLabel: PropTypes.string,
-    children: PropTypes.node,
     confirmButtonClass: PropTypes.string,
     confirmLabel: PropTypes.string,
     isOpen: PropTypes.bool,
     type: PropTypes.string,
-    onCancel: PropTypes.func,
-    onConfirm: PropTypes.func,
+    onCancel: PropTypes.func, // eslint-disable-line react/require-default-props
+    onConfirm: PropTypes.func, // eslint-disable-line react/require-default-props
   }
 
   static defaultProps = {
-    isOpen: false,
+    cancelButtonClass: '',
+    cancelLabel: 'Cancel',
     closeTimeoutMS: 0,
+    confirmButtonClass: '',
+    confirmLabel: 'Ok',
+    isOpen: false,
+    lightbox: false,
     shouldCloseOnOverlayClick: true,
     target: 'button',
-    lightbox: false,
     type: 'default',
-    confirmLabel: 'Ok',
-    cancelLabel: 'Cancel',
   }
 
   state = { shouldDisplay: false, isOpen: false }
