@@ -2,10 +2,10 @@ sudo: false
 language: node_js
 node_js:
 - "node"
-script: "npm test -- --coverage && npm run lint"
-after_script: "npm run coveralls"
+cache: yarn
+script: "yarn test -- --coverage && yarn lint"
+after_script: "yarn coveralls"
+after_success:
+  - bash yarn.sh
 notifications:
   email: false
-env:
-  global:
-    - NPM_CONFIG_PROGRESS="false"
