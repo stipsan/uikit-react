@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`NotifyMesssage should render correctly 1`] = `
 <div
   className="uk-notify-message"
@@ -7,15 +9,19 @@ exports[`NotifyMesssage should render correctly 1`] = `
       "overflow": "hidden",
       "transition": "margin ease-out 300ms",
     }
-  }>
+  }
+>
   <a
     className="uk-close"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <div
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     <span>
       <i
-        className="uk-icon-check" />
+        className="uk-icon-check"
+      />
        
     </span>
     children

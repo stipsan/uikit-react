@@ -1,21 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Prompt renders correctly 1`] = `
 <div
-  className="uk-margin-small-top uk-modal-content uk-form">
+  className="uk-margin-small-top uk-modal-content uk-form"
+>
   <p>
     <input
       className="uk-width-1-1"
-      type="text" />
+      type="text"
+    />
   </p>
 </div>
 `;
 
 exports[`Prompt renders correctly 2`] = `
 <div
-  className="uk-margin-small-top uk-modal-content uk-form">
+  className="uk-margin-small-top uk-modal-content uk-form"
+>
   <p>
     <input
       className="uk-width-1-1"
-      type="text" />
+      type="text"
+    />
   </p>
 </div>
 `;

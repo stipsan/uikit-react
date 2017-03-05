@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Modal renders a Blank Modal 1`] = `
 <Portal
   beforeClose={[Function]}
@@ -9,7 +11,8 @@ exports[`Modal renders a Blank Modal 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -18,29 +21,36 @@ exports[`Modal renders a Blank Modal 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog uk-modal-dialog-blank"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function]} />
+        onClick={[Function]}
+      />
       <div
-        className="uk-grid uk-flex-middle">
+        className="uk-grid uk-flex-middle"
+      >
         <div
           className="uk-width-medium-1-2 uk-height-viewport uk-cover-background uk-row-first"
           style={
             Object {
               "backgroundImage": "url(http://getuikit.com/docs/images/placeholder_120x255.svg)",
             }
-          } />
+          }
+        />
         <div
-          className="uk-width-medium-1-2">
+          className="uk-width-medium-1-2"
+        >
           <h1>
             Headline
           </h1>
           <div
-            className="uk-width-medium-1-3">
+            className="uk-width-medium-1-3"
+          >
             <p>
               Lorem ipsum
             </p>
@@ -63,7 +73,8 @@ exports[`Modal renders a Caption 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -72,15 +83,19 @@ exports[`Modal renders a Caption 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function]} />
+        onClick={[Function]}
+      />
       <div
-        className="uk-modal-caption">
+        className="uk-modal-caption"
+      >
         Caption
       </div>
       Lorem ipsum
@@ -100,7 +115,8 @@ exports[`Modal renders a Header and Footer 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -109,24 +125,30 @@ exports[`Modal renders a Header and Footer 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function]} />
+        onClick={[Function]}
+      />
       <div
-        className="uk-modal-header">
+        className="uk-modal-header"
+      >
         <h2>
           Headline
         </h2>
       </div>
       Lorem ipsum
       <div
-        className="uk-modal-footer uk-text-right">
+        className="uk-modal-footer uk-text-right"
+      >
         <button
-          onClick={[Function]}>
+          onClick={[Function]}
+        >
           Yes!
         </button>
       </div>
@@ -146,7 +168,8 @@ exports[`Modal renders a Lightbox 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -155,16 +178,20 @@ exports[`Modal renders a Lightbox 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog uk-modal-dialog-lightbox"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <a
         className="uk-modal-close uk-close uk-close-alt"
-        onClick={[Function]} />
+        onClick={[Function]}
+      />
       <img
         role="presentation"
-        src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
+        src="http://getuikit.com/docs/images/placeholder_600x400.svg"
+      />
     </div>
   </div>
 </Portal>
@@ -181,7 +208,8 @@ exports[`Modal renders a Spinner 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -190,12 +218,15 @@ exports[`Modal renders a Spinner 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <div
-        className="uk-modal-spinner" />
+        className="uk-modal-spinner"
+      />
     </div>
   </div>
 </Portal>
@@ -212,7 +243,8 @@ exports[`Modal renders an alert modal 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -221,17 +253,21 @@ exports[`Modal renders an alert modal 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       Something bad happened!
       <div
-        className="uk-modal-footer uk-text-right">
+        className="uk-modal-footer uk-text-right"
+      >
         <button
           className="uk-button uk-button-primary"
           onClick={[Function]}
-          type="button">
+          type="button"
+        >
           Ok
         </button>
       </div>
@@ -251,7 +287,8 @@ exports[`Modal renders an confirm modal 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -260,17 +297,21 @@ exports[`Modal renders an confirm modal 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       Are you absolutely sure about this?
       <div
-        className="uk-modal-footer uk-text-right">
+        className="uk-modal-footer uk-text-right"
+      >
         <button
           className="uk-button"
           onClick={[Function]}
-          type="button">
+          type="button"
+        >
           Cancel
         </button>
         <span>
@@ -279,7 +320,8 @@ exports[`Modal renders an confirm modal 1`] = `
         <button
           className="uk-button uk-button-primary"
           onClick={[Function]}
-          type="button">
+          type="button"
+        >
           Ok
         </button>
       </div>
@@ -299,7 +341,8 @@ exports[`Modal renders an prompt modal 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -308,24 +351,30 @@ exports[`Modal renders an prompt modal 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <div
-        className="uk-margin-small-top uk-modal-content uk-form">
+        className="uk-margin-small-top uk-modal-content uk-form"
+      >
         <p>
           <input
             className="uk-width-1-1"
-            type="text" />
+            type="text"
+          />
         </p>
       </div>
       <div
-        className="uk-modal-footer uk-text-right">
+        className="uk-modal-footer uk-text-right"
+      >
         <button
           className="uk-button"
           onClick={[Function]}
-          type="button">
+          type="button"
+        >
           Cancel
         </button>
         <span>
@@ -334,7 +383,8 @@ exports[`Modal renders an prompt modal 1`] = `
         <button
           className="uk-button uk-button-primary"
           onClick={[Function]}
-          type="button">
+          type="button"
+        >
           Ok
         </button>
       </div>
@@ -354,7 +404,8 @@ exports[`Modal renders correctly 1`] = `
     <button>
       Open
     </button>
-  }>
+  }
+>
   <div
     aria-hidden={false}
     className="uk-modal"
@@ -363,13 +414,16 @@ exports[`Modal renders correctly 1`] = `
       Object {
         "display": "block",
       }
-    }>
+    }
+  >
     <div
       className="uk-modal-dialog"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <a
         className="uk-modal-close uk-close"
-        onClick={[Function]} />
+        onClick={[Function]}
+      />
       Lorem ipsum
     </div>
   </div>

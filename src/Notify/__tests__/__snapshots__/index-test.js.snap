@@ -1,9 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Notify should render correctly 1`] = `
 <Portal
   isOpened={true}
-  onClose={[Function]}>
+  onClose={[Function]}
+>
   <div
-    className="uk-notify uk-notify-top-center">
+    className="uk-notify uk-notify-top-center"
+  >
     <div
       className="uk-notify-message uk-notify-message-warning"
       style={
@@ -12,15 +16,19 @@ exports[`Notify should render correctly 1`] = `
           "overflow": "hidden",
           "transition": "margin ease-out 300ms",
         }
-      }>
+      }
+    >
       <a
         className="uk-close"
-        onClick={[Function]} />
+        onClick={[Function]}
+      />
       <div
-        onClick={undefined}>
+        onClick={undefined}
+      >
         <span>
           <i
-            className="uk-icon-check" />
+            className="uk-icon-check"
+          />
            
         </span>
         Notification #1

@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Dropdown changes the class when clicked 1`] = `
 <div
   aria-expanded={false}
@@ -5,12 +7,15 @@ exports[`Dropdown changes the class when clicked 1`] = `
   className="uk-button-dropdown"
   onClick={[Function]}
   onMouseEnter={false}
-  onMouseLeave={false}>
+  onMouseLeave={false}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Click 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -22,12 +27,15 @@ exports[`Dropdown changes the class when clicked 2`] = `
   className="uk-button-dropdown uk-open"
   onClick={[Function]}
   onMouseEnter={false}
-  onMouseLeave={false}>
+  onMouseLeave={false}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Click 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -39,12 +47,15 @@ exports[`Dropdown changes the class when clicked 3`] = `
   className="uk-button-dropdown"
   onClick={[Function]}
   onMouseEnter={false}
-  onMouseLeave={false}>
+  onMouseLeave={false}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Click 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -56,12 +67,15 @@ exports[`Dropdown changes the class when hovered 1`] = `
   className="uk-button-dropdown"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Hover 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -73,12 +87,15 @@ exports[`Dropdown changes the class when hovered 2`] = `
   className="uk-button-dropdown uk-open"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Hover 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -90,12 +107,15 @@ exports[`Dropdown changes the class when hovered 3`] = `
   className="uk-button-dropdown uk-open"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Hover 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -107,12 +127,15 @@ exports[`Dropdown changes the class when hovered 4`] = `
   className="uk-button-dropdown"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Hover 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -124,12 +147,15 @@ exports[`Dropdown changes the class when hovered 5`] = `
   className="uk-button-dropdown uk-open"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Hover 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -141,12 +167,15 @@ exports[`Dropdown changes the class when hovered 6`] = `
   className="uk-button-dropdown uk-open"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Hover 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -158,12 +187,15 @@ exports[`Dropdown closes sibling Dropdown on open 1`] = `
   className="uk-button-dropdown"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     First Instance 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -175,12 +207,15 @@ exports[`Dropdown closes sibling Dropdown on open 2`] = `
   className="uk-button-dropdown uk-open"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     First Instance 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -192,12 +227,15 @@ exports[`Dropdown closes sibling Dropdown on open 3`] = `
   className="uk-button-dropdown"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Second Instance 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -209,12 +247,15 @@ exports[`Dropdown renders correctly 1`] = `
   className="uk-button-dropdown"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Hover 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -226,11 +267,13 @@ exports[`Dropdown renders correctly 2`] = `
   className="uk-parent"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <a>
     Parent 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </a>
 </li>
 `;
@@ -242,12 +285,15 @@ exports[`should be closed 1`] = `
   className="uk-button-dropdown"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     First Instance 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;
@@ -259,12 +305,15 @@ exports[`should be open 1`] = `
   className="uk-button-dropdown uk-open"
   onClick={false}
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <button
-    className="uk-button">
+    className="uk-button"
+  >
     Second Instance 
     <i
-      className="uk-icon-caret-down" />
+      className="uk-icon-caret-down"
+    />
   </button>
 </div>
 `;

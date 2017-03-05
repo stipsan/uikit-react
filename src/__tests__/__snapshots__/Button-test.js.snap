@@ -1,88 +1,101 @@
-exports[`test Button renders correctly 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
 <button
   className="uk-button"
-  type="button">
+  type="button"
+>
   Submit
 </button>
 `;
 
-exports[`test Button renders correctly 10`] = `
+exports[`Button renders correctly 2`] = `
+<button
+  className="uk-button uk-active"
+  type="button"
+>
+  Submit
+</button>
+`;
+
+exports[`Button renders correctly 3`] = `
+<button
+  className="uk-button"
+  type="submit"
+>
+  Save
+</button>
+`;
+
+exports[`Button renders correctly 4`] = `
+<button
+  className="uk-button uk-button-primary"
+  type="button"
+>
+  Submit
+</button>
+`;
+
+exports[`Button renders correctly 5`] = `
+<button
+  className="uk-button uk-button-success"
+  type="button"
+>
+  Submit
+</button>
+`;
+
+exports[`Button renders correctly 6`] = `
+<button
+  className="uk-button uk-button-danger"
+  type="button"
+>
+  Submit
+</button>
+`;
+
+exports[`Button renders correctly 7`] = `
+<button
+  className="uk-button uk-button-link"
+  type="button"
+>
+  Submit
+</button>
+`;
+
+exports[`Button renders correctly 8`] = `
+<button
+  className="uk-button uk-button-mini"
+  type="button"
+>
+  Submit
+</button>
+`;
+
+exports[`Button renders correctly 9`] = `
+<button
+  className="uk-button uk-button-small"
+  type="button"
+>
+  Submit
+</button>
+`;
+
+exports[`Button renders correctly 10`] = `
 <button
   className="uk-button uk-button-large"
-  type="button">
+  type="button"
+>
   Submit
 </button>
 `;
 
-exports[`test Button renders correctly 11`] = `
+exports[`Button renders correctly 11`] = `
 <button
   className="uk-button save-button uk-button-large"
   disabled={true}
-  type="button">
+  type="button"
+>
   Save
-</button>
-`;
-
-exports[`test Button renders correctly 2`] = `
-<button
-  className="uk-button uk-active"
-  type="button">
-  Submit
-</button>
-`;
-
-exports[`test Button renders correctly 3`] = `
-<button
-  className="uk-button"
-  type="submit">
-  Save
-</button>
-`;
-
-exports[`test Button renders correctly 4`] = `
-<button
-  className="uk-button uk-button-primary"
-  type="button">
-  Submit
-</button>
-`;
-
-exports[`test Button renders correctly 5`] = `
-<button
-  className="uk-button uk-button-success"
-  type="button">
-  Submit
-</button>
-`;
-
-exports[`test Button renders correctly 6`] = `
-<button
-  className="uk-button uk-button-danger"
-  type="button">
-  Submit
-</button>
-`;
-
-exports[`test Button renders correctly 7`] = `
-<button
-  className="uk-button uk-button-link"
-  type="button">
-  Submit
-</button>
-`;
-
-exports[`test Button renders correctly 8`] = `
-<button
-  className="uk-button uk-button-mini"
-  type="button">
-  Submit
-</button>
-`;
-
-exports[`test Button renders correctly 9`] = `
-<button
-  className="uk-button uk-button-small"
-  type="button">
-  Submit
 </button>
 `;
