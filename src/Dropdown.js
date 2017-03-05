@@ -48,6 +48,7 @@ export default class Dropdown extends Component {
     delay: 0,
     component: 'div',
     className: 'uk-button-dropdown',
+    link: '',
   }
 
   state = {

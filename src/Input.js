@@ -50,7 +50,19 @@ Input.propTypes = {
   large: PropTypes.bool,
   small: PropTypes.bool,
   success: PropTypes.bool,
-  width: PropTypes.oneOf(['full', 'large', 'medium', 'small', 'mini']),
+  width: PropTypes.oneOf(['full', 'large', 'medium', 'small', 'mini', false]),
+}
+
+Input.defaultProps = {
+  blank: false,
+  className: '',
+  danger: false,
+  flip: false,
+  icon: '',
+  large: false,
+  small: false,
+  success: false,
+  width: false,
 }
 
 export default Input

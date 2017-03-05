@@ -79,6 +79,7 @@ storiesOf('Modal', module)
     <div className="uk-margin-bottom">
       <Modal lightbox target={<OpenButton />}>
         <img
+          alt=""
           height="400"
           role="presentation"
           src="http://getuikit.com/docs/images/placeholder_600x400.svg"

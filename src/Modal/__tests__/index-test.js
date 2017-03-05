@@ -56,7 +56,7 @@ describe('Modal', () => {
         lightbox
         target={<button>Open</button>}
       >
-        <img role="presentation" src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
+        <img alt="" role="presentation" src="http://getuikit.com/docs/images/placeholder_600x400.svg" />
       </Modal>
     )
     expect(component.toJSON()).toMatchSnapshot()
