@@ -31,6 +31,8 @@ exports[`Modal renders a Blank Modal 1`] = `
         className="uk-modal-close uk-close"
         onClick={[Function]}
       />
+      
+      
       <div
         className="uk-grid uk-flex-middle"
       >
@@ -93,6 +95,7 @@ exports[`Modal renders a Caption 1`] = `
         className="uk-modal-close uk-close"
         onClick={[Function]}
       />
+      
       <div
         className="uk-modal-caption"
       >
@@ -142,6 +145,7 @@ exports[`Modal renders a Header and Footer 1`] = `
           Headline
         </h2>
       </div>
+      
       Lorem ipsum
       <div
         className="uk-modal-footer uk-text-right"
@@ -188,7 +192,10 @@ exports[`Modal renders a Lightbox 1`] = `
         className="uk-modal-close uk-close uk-close-alt"
         onClick={[Function]}
       />
+      
+      
       <img
+        alt=""
         role="presentation"
         src="http://getuikit.com/docs/images/placeholder_600x400.svg"
       />
@@ -224,6 +231,8 @@ exports[`Modal renders a Spinner 1`] = `
       className="uk-modal-dialog"
       onClick={[Function]}
     >
+      
+      
       <div
         className="uk-modal-spinner"
       />
@@ -259,6 +268,8 @@ exports[`Modal renders an alert modal 1`] = `
       className="uk-modal-dialog"
       onClick={[Function]}
     >
+      
+      
       Something bad happened!
       <div
         className="uk-modal-footer uk-text-right"
@@ -303,6 +314,8 @@ exports[`Modal renders an confirm modal 1`] = `
       className="uk-modal-dialog"
       onClick={[Function]}
     >
+      
+      
       Are you absolutely sure about this?
       <div
         className="uk-modal-footer uk-text-right"
@@ -357,6 +370,8 @@ exports[`Modal renders an prompt modal 1`] = `
       className="uk-modal-dialog"
       onClick={[Function]}
     >
+      
+      
       <div
         className="uk-margin-small-top uk-modal-content uk-form"
       >
@@ -424,6 +439,8 @@ exports[`Modal renders correctly 1`] = `
         className="uk-modal-close uk-close"
         onClick={[Function]}
       />
+      
+      
       Lorem ipsum
     </div>
   </div>
