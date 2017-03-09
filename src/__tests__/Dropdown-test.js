@@ -30,20 +30,15 @@ describe('Dropdown', () => {
 
     // manually trigger the callback
     tree.props.onMouseEnter()
-    // re-rendering
-    tree = component.toJSON()
-    expect(tree).toMatchSnapshot()
+    expect(component.toJSON()).toMatchSnapshot()
 
     // manually trigger the callback
     tree.props.onMouseLeave()
-    // re-rendering
-    tree = component.toJSON()
-    expect(tree).toMatchSnapshot()
+    expect(component.toJSON()).toMatchSnapshot()
 
     // Fast forward timers, class should now be gone
     jest.runAllTimers()
-    tree = component.toJSON()
-    expect(tree).toMatchSnapshot()
+    expect(component.toJSON()).toMatchSnapshot()
 
     let instance = component.getInstance()
     instance.handleMouseEnter()
@@ -138,5 +133,37 @@ describe('Dropdown', () => {
     secondComponent.update(<span />)
     // Should be no error from calling this again
     unsubscribe()
+  })
+
+  it.skip('closes when clicked when in hover mode', () => {
+    const component = renderer.create(
+      <Dropdown mode="hover">
+        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+      </Dropdown>
+    )
+    let tree = component.toJSON()
+
+    // clicking the dropdown should not open it
+    tree.props.onClick()
+    tree = component.toJSON()
+    expect(component.getInstance().state.isOpen).toBe(false)
+
+    // open the dropdown
+    tree.props.onMouseEnter()
+    tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+    expect(component.getInstance().state.isOpen).toBe(true)
+
+    // close the dropdown by click
+    tree.props.onClick()
+    tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+    expect(component.getInstance().state.isOpen).toBe(false)
+
+    // clicking the dropdown again shouldn't open it
+    tree.props.onClick()
+    tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+    expect(component.getInstance().state.isOpen).toBe(false)
   })
 })
