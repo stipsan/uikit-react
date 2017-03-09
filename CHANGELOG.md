@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.3.0] - 2017-03-09
+### Bugfixes
+* Clicking inside a `Dropdown` when in hover mode closes it.
+
 ## [2.2.0] - 2017-03-02
 ### Bugfixes
 * `Dropdown` component was not clearing its hover timeout when unmounting.
@@ -137,7 +141,8 @@ But instead of a conventional OSS project site we decided to host the React Stor
 
 Proved stable enough for a stable semver major version 💃
 
-[Unreleased]: https://github.com/stipsan/uikit-react/compare/v2.2.0...HEAD
+[Unreleased]: https://github.com/stipsan/uikit-react/compare/v2.3.0...HEAD
+[2.3.0]: https://github.com/stipsan/uikit-react/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/stipsan/uikit-react/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/stipsan/uikit-react/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/stipsan/uikit-react/compare/v2.0.0...v2.1.0
