@@ -91,7 +91,12 @@ export default class Dropdown extends Component {
       }
       this.setState({ isOpen: true })
     }
+
+    if (this.props.mode === 'hover') {
+      this.setState({ isOpen: true })
+    }
   }
+
   handleMouseLeave = () => {
     if (this.props.remainTime) {
       this.leaveTimeout = setTimeout(() => {
@@ -101,25 +106,35 @@ export default class Dropdown extends Component {
       this.setState({ isOpen: false })
     }
   }
+
   handleClick = () => {
-    this.setState({ isOpen: !this.state.isOpen })
+    if (this.props.mode === 'click') {
+      this.setState({ isOpen: !this.state.isOpen })
+    }
+
+    if (this.props.mode === 'hover') {
+      this.setState({ isOpen: false })
+    }
   }
 
   render() {
+    const { handleMouseEnter, handleMouseLeave, handleClick } = this
+    const { mode, children, component } = this.props
+    const { isOpen } = this.state
     const className = cx(this.props.className, {
-      'uk-open': this.state.isOpen,
+      'uk-open': isOpen,
     })
     const DropdownProps = {
-      'aria-expanded': this.state.isOpen,
+      'aria-expanded': isOpen,
       'aria-haspopup': true,
       className,
-      onClick: this.props.mode === 'click' && this.handleClick,
-      onMouseEnter: this.props.mode === 'hover' && this.handleMouseEnter,
-      onMouseLeave: this.props.mode === 'hover' && this.handleMouseLeave,
-      children: this.props.children,
+      onClick: handleClick,
+      onMouseEnter: mode === 'hover' && handleMouseEnter,
+      onMouseLeave: mode === 'hover' && handleMouseLeave,
+      children,
     }
     return (
-      createElement(this.props.component, DropdownProps)
+      createElement(component, DropdownProps)
     )
   }
 }

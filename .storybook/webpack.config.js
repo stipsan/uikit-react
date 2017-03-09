@@ -1,14 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       React: 'react',
     }),
-    new ExtractTextPlugin('styles.css', { disable: true }),
   ],
   resolve: {
     root: path.join(__dirname, '..'),
@@ -23,9 +21,7 @@ module.exports = {
     loaders: [
       {
         test: /\.less/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader', 'css!postcss!less'
-        ),
+        loader: 'style-loader!css-loader!postcss-loader!less-loader',
       },
       { test: /\.css$/, loaders: ['style', 'css'] },
       { test: /\.svg$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
