@@ -2,74 +2,74 @@
 
 exports[`Input renders correctly 1`] = `
 <input
-  className=""
+  className="uk-input "
 />
 `;
 
 exports[`Input renders correctly 2`] = `
 <input
-  className="uk-search-field"
+  className="uk-input uk-search-field"
   type="search"
 />
 `;
 
 exports[`Input renders correctly 3`] = `
 <input
-  className="uk-form-danger"
+  className="uk-input  uk-form-danger"
 />
 `;
 
 exports[`Input renders correctly 4`] = `
 <input
-  className="uk-form-success"
+  className="uk-input  uk-form-success"
 />
 `;
 
 exports[`Input renders correctly 5`] = `
 <input
-  className="uk-form-blank"
+  className="uk-input  uk-form-blank"
 />
 `;
 
 exports[`Input renders correctly 6`] = `
 <input
-  className="uk-form-large"
+  className="uk-input  uk-form-large"
 />
 `;
 
 exports[`Input renders correctly 7`] = `
 <input
-  className="uk-form-small"
+  className="uk-input  uk-form-small"
 />
 `;
 
 exports[`Input renders correctly 8`] = `
 <input
-  className="uk-width-1-1"
+  className="uk-input  uk-width-1-1"
 />
 `;
 
 exports[`Input renders correctly 9`] = `
 <input
-  className="uk-form-width-large"
+  className="uk-input  uk-form-width-large"
 />
 `;
 
 exports[`Input renders correctly 10`] = `
 <input
-  className="uk-form-width-medium"
+  className="uk-input  uk-form-width-medium"
 />
 `;
 
 exports[`Input renders correctly 11`] = `
 <input
-  className="uk-form-width-small"
+  className="uk-input  uk-form-width-small"
 />
 `;
 
 exports[`Input renders correctly 12`] = `
 <input
-  className="uk-form-width-mini"
+  className="uk-input  uk-form-width-mini"
 />
 `;
 
@@ -81,7 +81,7 @@ exports[`Input renders correctly 13`] = `
     className="uk-icon-calendar"
   />
   <input
-    className=""
+    className="uk-input "
   />
 </div>
 `;
@@ -94,7 +94,7 @@ exports[`Input renders correctly 14`] = `
     className="uk-icon-calendar"
   />
   <input
-    className=""
+    className="uk-input "
   />
 </div>
 `;
@@ -107,7 +107,7 @@ exports[`Input renders correctly 15`] = `
     className="uk-icon-spinner uk-icon-spin"
   />
   <input
-    className=""
+    className="uk-input "
   />
 </div>
 `;
@@ -120,7 +120,7 @@ exports[`Input renders correctly 16`] = `
     className="uk-icon-refresh uk-icon-spin"
   />
   <input
-    className=""
+    className="uk-input "
   />
 </div>
 `;
