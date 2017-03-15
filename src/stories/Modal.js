@@ -88,6 +88,7 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  /* Removed from UIkit v3
   .addWithInfo('Blank', '', () => (
     <div className="uk-margin-bottom">
       <Modal blank target={<OpenButton />} >
@@ -118,6 +119,7 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
+  */
   /*
   .addWithInfo('Center', '', () => (
     <div className="uk-margin-bottom">
