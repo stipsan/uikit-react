@@ -1,5 +1,4 @@
 import renderer from 'react-test-renderer'
-
 import Dropdown from '../Dropdown'
 
 jest.useFakeTimers()

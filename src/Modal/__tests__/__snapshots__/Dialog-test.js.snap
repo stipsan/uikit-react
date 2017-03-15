@@ -11,6 +11,10 @@ exports[`Dialog renders correctly 1`] = `
   />
   
   
-  Lorem Ipsum
+  <div
+    className="uk-modal-body"
+  >
+    Lorem Ipsum
+  </div>
 </div>
 `;

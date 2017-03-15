@@ -13,7 +13,7 @@ const Input = ({
   width,
   ...other
 }) => {
-  const className = cx(customClassName, {
+  const className = cx(`uk-input ${customClassName}`, {
     'uk-form-blank': blank,
     'uk-form-danger': danger,
     'uk-form-large': large,
