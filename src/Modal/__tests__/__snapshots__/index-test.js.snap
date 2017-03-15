@@ -349,7 +349,7 @@ exports[`Modal renders an confirm modal 1`] = `
         className="uk-modal-footer uk-text-right"
       >
         <button
-          className="uk-button"
+          className="uk-button uk-button-default"
           onClick={[Function]}
           type="button"
         >
@@ -418,7 +418,7 @@ exports[`Modal renders an prompt modal 1`] = `
         className="uk-modal-footer uk-text-right"
       >
         <button
-          className="uk-button"
+          className="uk-button uk-button-default"
           onClick={[Function]}
           type="button"
         >
