@@ -69,7 +69,7 @@ exports[`Input renders correctly 11`] = `
 
 exports[`Input renders correctly 12`] = `
 <input
-  className="uk-input  uk-form-width-mini"
+  className="uk-input "
 />
 `;
 
