@@ -1,5 +1,5 @@
 export Button from './Button'
 export Dropdown from './Dropdown'
 export Modal from './Modal'
-export Notify from './Notify'
+export Notify from './Notification'
 export Input from './Input'

@@ -38,11 +38,11 @@ export default class NotifyMesssage extends Component {
 
   render() {
     const { children, type, icon, onClick } = this.props
-    const className = cx('uk-notify-message', {
-      'uk-notify-message-info': type === 'info',
-      'uk-notify-message-success': type === 'success',
-      'uk-notify-message-danger': type === 'danger',
-      'uk-notify-message-warning': type === 'warning',
+    const className = cx('uk-notification-message', {
+      'uk-notification-message-info': type === 'info',
+      'uk-notification-message-success': type === 'success',
+      'uk-notification-message-danger': type === 'danger',
+      'uk-notification-message-warning': type === 'warning',
     })
     const styles = [
       { marginTop: '-64px' },

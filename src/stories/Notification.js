@@ -1,5 +1,5 @@
 import { storiesOf, action } from '@kadira/storybook'
-import { Notify, Button } from 'uikit-react'
+import { Notification, Button } from 'uikit-react'
 import { PureComponent, PropTypes } from 'react'
 
 class NotificationsContainer extends PureComponent {
@@ -55,7 +55,7 @@ class NotificationsContainer extends PureComponent {
         {this.props.onClick ? '- click' : ''}
         {this.props.timeout ? '- timeout' : ''}
       </Button>
-      <Notify
+      <Notification
         notifications={notifications}
         position={position}
       />
@@ -63,10 +63,16 @@ class NotificationsContainer extends PureComponent {
   }
 }
 
-storiesOf('Notify', module)
+// Notification.displayName = 'Notification'
+
+storiesOf('Notification', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
       <NotificationsContainer type="info" />
+    </div>
+  ), { header: false, inline: true, propTables: [Notification] })
+  .addWithInfo('Position', '', () => (
+    <div className="uk-margin-bottom">
       <NotificationsContainer position="bottom-center" type="warning" />
       <NotificationsContainer position="top-right" type="success" />
       <NotificationsContainer position="top-left" type="danger" />
@@ -74,6 +80,5 @@ storiesOf('Notify', module)
       <NotificationsContainer icon="check" position="bottom-right" type="success" />
       <NotificationsContainer icon="warning" position="bottom-left" timeout={10000} type="warning" />
       <NotificationsContainer icon="warning" position="top-right" timeout={5000} type="danger" onClick={action('handleClick')} />
-
     </div>
-  ), { header: false, inline: true, propTables: [Notify] })
+  ), { header: false, inline: true, propTables: [Notification] })

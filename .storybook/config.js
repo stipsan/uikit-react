@@ -56,7 +56,7 @@ function loadStories() {
   require('../src/stories/Button')
   require('../src/stories/Dropdown')
   require('../src/stories/Modal')
-  require('../src/stories/Notify')
+  require('../src/stories/Notification')
   require('../src/stories/Input')
 }
 
