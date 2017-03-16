@@ -65,7 +65,7 @@ exports[`Dropdown changes the class when hovered 1`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -85,7 +85,7 @@ exports[`Dropdown changes the class when hovered 2`] = `
   aria-expanded={true}
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -105,7 +105,7 @@ exports[`Dropdown changes the class when hovered 3`] = `
   aria-expanded={true}
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -125,7 +125,7 @@ exports[`Dropdown changes the class when hovered 4`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -145,7 +145,7 @@ exports[`Dropdown changes the class when hovered 5`] = `
   aria-expanded={true}
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -165,7 +165,7 @@ exports[`Dropdown changes the class when hovered 6`] = `
   aria-expanded={true}
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -185,7 +185,7 @@ exports[`Dropdown closes sibling Dropdown on open 1`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -205,7 +205,7 @@ exports[`Dropdown closes sibling Dropdown on open 2`] = `
   aria-expanded={true}
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -225,7 +225,7 @@ exports[`Dropdown closes sibling Dropdown on open 3`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -240,12 +240,72 @@ exports[`Dropdown closes sibling Dropdown on open 3`] = `
 </div>
 `;
 
+exports[`Dropdown closes when clicked when in hover mode 1`] = `
+<div
+  aria-expanded={true}
+  aria-haspopup={true}
+  className="uk-button-dropdown uk-open"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <button
+    className="uk-button"
+  >
+    Hover 
+    <i
+      className="uk-icon-caret-down"
+    />
+  </button>
+</div>
+`;
+
+exports[`Dropdown closes when clicked when in hover mode 2`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <button
+    className="uk-button"
+  >
+    Hover 
+    <i
+      className="uk-icon-caret-down"
+    />
+  </button>
+</div>
+`;
+
+exports[`Dropdown closes when clicked when in hover mode 3`] = `
+<div
+  aria-expanded={false}
+  aria-haspopup={true}
+  className="uk-button-dropdown"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <button
+    className="uk-button"
+  >
+    Hover 
+    <i
+      className="uk-icon-caret-down"
+    />
+  </button>
+</div>
+`;
+
 exports[`Dropdown renders correctly 1`] = `
 <div
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -265,7 +325,7 @@ exports[`Dropdown renders correctly 2`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-parent"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -283,7 +343,7 @@ exports[`should be closed 1`] = `
   aria-expanded={false}
   aria-haspopup={true}
   className="uk-button-dropdown"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -303,7 +363,7 @@ exports[`should be open 1`] = `
   aria-expanded={true}
   aria-haspopup={true}
   className="uk-button-dropdown uk-open"
-  onClick={false}
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >

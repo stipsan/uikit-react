@@ -45,13 +45,13 @@ describe('Dropdown', () => {
     expect(instance.state.isOpen).toBeTruthy()
 
     component = renderer.create(
-      <Dropdown delay={400} remainTime={0}>
+      <Dropdown delay={400} mode="hover" remainTime={0}>
         <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
       </Dropdown>
     )
     instance = component.getInstance()
     instance.handleMouseEnter()
-    expect(instance.state.isOpen).toBeFalsy()
+    expect(instance.state.isOpen).toBeTruthy()
 
     jest.runAllTimers()
     tree = component.toJSON()
@@ -135,7 +135,7 @@ describe('Dropdown', () => {
     unsubscribe()
   })
 
-  it.skip('closes when clicked when in hover mode', () => {
+  it('closes when clicked when in hover mode', () => {
     const component = renderer.create(
       <Dropdown mode="hover">
         <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
