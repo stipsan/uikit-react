@@ -7,7 +7,7 @@ export default class NotifyMesssage extends Component {
     icon: PropTypes.string,
     isSticky: PropTypes.bool,
     timeout: PropTypes.number,
-    type: PropTypes.oneOf(['info', 'success', 'danger', 'warning', false]),
+    type: PropTypes.oneOf(['info', 'success', 'danger', 'warning', 'primary', false]),
     onClick: PropTypes.func, // eslint-disable-line react/require-default-props
   }
 
@@ -43,6 +43,7 @@ export default class NotifyMesssage extends Component {
       'uk-notification-message-success': type === 'success',
       'uk-notification-message-danger': type === 'danger',
       'uk-notification-message-warning': type === 'warning',
+      'uk-notification-message-primary': type === 'primary',
     })
     const styles = [
       { marginTop: '-64px' },
