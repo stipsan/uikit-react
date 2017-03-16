@@ -3,7 +3,10 @@ language: node_js
 node_js:
 - "node"
 cache: yarn
-before_script: "TRAVIS_PULL_REQUEST_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH node guard.js"
+before_script:
+  - echo $TRAVIS_PULL_REQUEST_BRANCH
+  - echo $TRAVIS_BRANCH
+  - "TRAVIS_PULL_REQUEST_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH node guard.js"
 script: "yarn test -- --coverage && yarn lint"
 after_script: "yarn coveralls"
 after_success:
