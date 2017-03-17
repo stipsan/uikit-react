@@ -1,33 +1,47 @@
-import './uikit.less'
-
 import infoAddon from '@kadira/react-storybook-addon-info'
 import { configure, setAddon, addDecorator } from '@kadira/storybook'
+
+import './uikit.less'
 
 import Logo from './Logo'
 
 setAddon(infoAddon)
 
+const iframeWrapperStyle = Object.freeze({
+  height: '80px',
+})
+
 addDecorator((fn, { kind, story }) => <div>
-  <nav className="tm-navbar uk-navbar uk-navbar-attached">
-    <Logo />
-    <ul className="uk-navbar-nav">
-      <li className="uk-active">
-        <a className="uk-navbar-nav-subtitle">
-          {kind}
-          <div>{story}</div>
-        </a>
-      </li>
-    </ul>
-    <div className="uk-navbar-content">
-      <iframe
-        frameBorder="0"
-        height="20px"
-        scrolling="0"
-        src="https://ghbtns.com/github-btn.html?user=stipsan&repo=uikit-react&type=star&count=true"
-        width="170px"
-      />
+  <nav className="uk-navbar-container uk-navbar">
+    <div className="uk-navbar-left">
+      <ul className="uk-navbar-nav">
+        <li className="uk-active">
+          <a>
+            <div>
+              {kind}
+              <div className="uk-navbar-subtitle">{story}</div>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div className="uk-navbar-flip">
+    <div className="uk-navbar-center">
+      <Logo />
+      <div className="uk-navbar-center-right">
+        <div>
+          <div className="uk-flex uk-flex-middle" style={iframeWrapperStyle}>
+            <iframe
+              frameBorder="0"
+              height="20px"
+              scrolling="0"
+              src="https://ghbtns.com/github-btn.html?user=stipsan&repo=uikit-react&type=star&count=true"
+              width="170px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="uk-navbar-right">
       <ul className="uk-navbar-nav">
         <li>
           <a

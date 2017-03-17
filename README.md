@@ -10,7 +10,7 @@ uikit-react
 [![NPM](https://nodei.co/npm/uikit-react.png?downloadRank=true)](https://www.npmjs.com/package/uikit-react)
 [![NPM](https://nodei.co/npm-dl/uikit-react.png?months=3&height=2)](https://nodei.co/npm/uikit-react/)
 
-<img src="https://uikit-react.io/public/logo.svg" width="256"/>
+<img src="https://uikit-react.io/logo-inverse.svg" width="256"/>
 
 ## Installation
 
