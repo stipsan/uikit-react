@@ -13,50 +13,48 @@ storiesOf('Input', module)
       <Input placeholder="Text input" /> &nbsp;
       <Input danger defaultValue="danger" /> &nbsp;
       <Input success defaultValue="success" /> &nbsp;
-      <Input blank placeholder="blank" />
+      <Input blank placeholder="blank" />&nbsp;
+      <Input disabled placeholder="disabled" />&nbsp;
     </form>
   ), { header: false, inline: true, propTables: [Input], mtrcConf: { // eslint-disable-line
     a: ({ href, children }) => <a href={href} target="_blank">{children}</a>, // eslint-disable-line
   } })
   .addWithInfo('Size modifiers', '', () => (
     <form className="uk-margin-bottom uk-form">
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input large placeholder="large" />
       </div>
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input placeholder="default" />
       </div>
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input small placeholder="small" />
       </div>
     </form>
   ), { header: false, inline: true })
   .addWithInfo('Width modifiers', '', () => (
     <form className="uk-margin-bottom uk-form">
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input placeholder="full" width="full" />
       </div>
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input placeholder="large" width="large" />
       </div>
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input placeholder="medium" width="medium" />
       </div>
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input placeholder="small" width="small" />
-      </div>
-      <div className="uk-form-row">
-        <Input placeholder="mini" width="mini" />
       </div>
     </form>
   ), { header: false, inline: true })
   .addWithInfo('Form and icons', '', () => (
     <form className="uk-margin-bottom uk-form">
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input icon="calendar" /> &nbsp;
         <Input flip icon="clock-o" />
       </div>
-      <div className="uk-form-row">
+      <div className="uk-margin">
         <Input icon="spinner" /> &nbsp;
         <Input flip icon="refresh" />
       </div>
