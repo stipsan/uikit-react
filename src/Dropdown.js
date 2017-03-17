@@ -46,8 +46,8 @@ export default class Dropdown extends Component {
     mode: 'hover',
     remainTime: 800,
     delay: 0,
-    component: 'div',
-    className: 'uk-inline',
+    component: 'button',
+    className: 'uk-button uk-button-default',
     link: '',
   }
 
@@ -124,6 +124,9 @@ export default class Dropdown extends Component {
     const className = cx(this.props.className, {
       'uk-open': isOpen,
     })
+    const dropdownClassnames = cx('uk-dropdown', {
+      'uk-open': isOpen,
+    })
     const DropdownProps = {
       'aria-expanded': isOpen,
       'aria-haspopup': true,
@@ -131,10 +134,15 @@ export default class Dropdown extends Component {
       onClick: handleClick,
       onMouseEnter: mode === 'hover' && handleMouseEnter,
       onMouseLeave: mode === 'hover' && handleMouseLeave,
-      children,
+      children: 'Open',
     }
     return (
-      createElement(component, DropdownProps)
+      <div className="uk-inline">
+        {createElement(component, DropdownProps)}
+        <div className={dropdownClassnames}>
+          {children}
+        </div>
+      </div>
     )
   }
 }

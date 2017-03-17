@@ -16,9 +16,7 @@ const Nav = () => <ul className="uk-nav uk-nav-dropdown">
 </ul>
 
 const Menu = () => (
-  <div className="uk-dropdown uk-dropdown-bottom">
-    <Nav />
-  </div>
+  <Nav />
 )
 Menu.displayName = 'Menu'
 
@@ -33,12 +31,10 @@ storiesOf('Dropdown', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
       <Dropdown>
-        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
         <Menu />
       </Dropdown>
       <br /> <br />
       <Dropdown mode="click">
-        <button className="uk-button">Click me <i className="uk-icon-caret-down" /></button>
         <Menu />
       </Dropdown>
     </div>
