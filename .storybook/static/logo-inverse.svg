@@ -5,12 +5,12 @@
     <desc>Created with Sketch.</desc>
     <defs>
       <radialGradient id="outer">
-        <stop offset="0%" stop-color="#1e87f0"/>
-        <stop offset="100%" stop-color="#28a5f5"/>
+        <stop offset="0%" stop-color="#28a5f5"/>
+        <stop offset="100%" stop-color="#1e87f0"/>
       </radialGradient>
       <radialGradient id="inner">
         <stop offset="0%" stop-color="#28a5f5"/>
-        <stop offset="100%" stop-color="#2294f2" />
+        <stop offset="100%" stop-color="#2498f3" />
       </radialGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
