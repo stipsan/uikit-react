@@ -2,7 +2,7 @@
 
 exports[`Button renders correctly 1`] = `
 <button
-  className="uk-button uk-button-default"
+  className="uk-button"
   type="button"
 >
   Submit
@@ -11,7 +11,7 @@ exports[`Button renders correctly 1`] = `
 
 exports[`Button renders correctly 2`] = `
 <button
-  className="uk-button uk-button-default uk-active"
+  className="uk-button uk-active"
   type="button"
 >
   Submit
@@ -20,7 +20,7 @@ exports[`Button renders correctly 2`] = `
 
 exports[`Button renders correctly 3`] = `
 <button
-  className="uk-button uk-button-default"
+  className="uk-button"
   type="submit"
 >
   Save
@@ -38,8 +38,7 @@ exports[`Button renders correctly 4`] = `
 
 exports[`Button renders correctly 5`] = `
 <button
-  className="uk-button uk-button-default"
-  success={true}
+  className="uk-button uk-button-success"
   type="button"
 >
   Submit
@@ -66,8 +65,7 @@ exports[`Button renders correctly 7`] = `
 
 exports[`Button renders correctly 8`] = `
 <button
-  className="uk-button uk-button-default"
-  mini={true}
+  className="uk-button uk-button-mini"
   type="button"
 >
   Submit
@@ -76,7 +74,7 @@ exports[`Button renders correctly 8`] = `
 
 exports[`Button renders correctly 9`] = `
 <button
-  className="uk-button uk-button-default uk-button-small"
+  className="uk-button uk-button-small"
   type="button"
 >
   Submit
@@ -85,7 +83,7 @@ exports[`Button renders correctly 9`] = `
 
 exports[`Button renders correctly 10`] = `
 <button
-  className="uk-button uk-button-default uk-button-large"
+  className="uk-button uk-button-large"
   type="button"
 >
   Submit
@@ -94,7 +92,7 @@ exports[`Button renders correctly 10`] = `
 
 exports[`Button renders correctly 11`] = `
 <button
-  className="uk-button save-button uk-button-default uk-button-large"
+  className="uk-button save-button uk-button-large"
   disabled={true}
   type="button"
 >

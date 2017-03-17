@@ -2,7 +2,7 @@
 
 exports[`NotifyMesssage should render correctly 1`] = `
 <div
-  className="uk-notification-message"
+  className="uk-notify-message"
   style={
     Object {
       "marginTop": "-64px",
