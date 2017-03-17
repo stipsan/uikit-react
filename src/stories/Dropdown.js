@@ -27,8 +27,23 @@ const DropdownMenu = () => (
 )
 DropdownMenu.displayName = 'Menu'
 
+const LoremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+
 storiesOf('Dropdown', module)
   .addWithInfo('Basic Usage', '', () => (
+    <div className="uk-margin-bottom">
+      <Dropdown>
+        {LoremIpsum}
+      </Dropdown>
+      <br />
+      <Dropdown mode="click">
+        {LoremIpsum}
+      </Dropdown>
+    </div>
+  ), { header: false, inline: true, propTables: [Dropdown] })
+
+  .addWithInfo('Nav in dropdown', '', () => (
     <div className="uk-margin-bottom">
       <Dropdown>
         <Menu />
@@ -39,6 +54,7 @@ storiesOf('Dropdown', module)
       </Dropdown>
     </div>
   ), { header: false, inline: true, propTables: [Dropdown] })
+
   .addWithInfo('Advanced', '', () => (
     <div className="uk-margin-bottom">
       <nav className="uk-navbar">

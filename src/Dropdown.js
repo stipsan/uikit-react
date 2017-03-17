@@ -124,7 +124,7 @@ export default class Dropdown extends Component {
     const className = cx(this.props.className, {
       'uk-open': isOpen,
     })
-    const dropdownClassnames = cx('uk-dropdown', {
+    const dropdownClassnames = cx('uk-dropdown uk-dropdown-bottom-left', {
       'uk-open': isOpen,
     })
     const DropdownProps = {
