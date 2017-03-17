@@ -37,12 +37,14 @@ export default class Dropdown extends Component {
     delay: PropTypes.number.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,
+    buttonLabel: PropTypes.string,
     className: PropTypes.string,
     component: PropTypes.node,
     link: PropTypes.string,
   }
 
   static defaultProps = {
+    buttonLabel: 'hover',
     mode: 'hover',
     remainTime: 800,
     delay: 0,
@@ -119,7 +121,7 @@ export default class Dropdown extends Component {
 
   render() {
     const { handleMouseEnter, handleMouseLeave, handleClick } = this
-    const { mode, children, component } = this.props
+    const { mode, children, component, buttonLabel } = this.props
     const { isOpen } = this.state
     const className = cx(this.props.className, {
       'uk-open': isOpen,
@@ -134,7 +136,7 @@ export default class Dropdown extends Component {
       onClick: handleClick,
       onMouseEnter: mode === 'hover' && handleMouseEnter,
       onMouseLeave: mode === 'hover' && handleMouseLeave,
-      children: 'Open',
+      children: buttonLabel || mode,
     }
     return (
       <div className="uk-inline">

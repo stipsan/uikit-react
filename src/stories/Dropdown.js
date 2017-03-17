@@ -33,7 +33,7 @@ const LoremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 storiesOf('Dropdown', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <Dropdown>
+      <Dropdown buttonLabel="Button Label">
         {LoremIpsum}
       </Dropdown>
       <br />
