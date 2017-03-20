@@ -2,26 +2,27 @@ import renderer from 'react-test-renderer'
 import Dropdown from '../Dropdown'
 
 jest.useFakeTimers()
+const LoremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
 
 describe('Dropdown', () => {
   it('renders correctly', () => {
     expect(renderer.create(
-      <Dropdown>
-        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+      <Dropdown dropdownLabel="Hover">
+        {LoremIpsum}
       </Dropdown>
     ).toJSON()).toMatchSnapshot()
 
     expect(renderer.create(
-      <Dropdown className="uk-parent" component="li" >
-        <a>Parent <i className="uk-icon-caret-down" /></a>
+      <Dropdown component="li" dropdownLabel="Parent" link="navbar">
+        {LoremIpsum}
       </Dropdown>
     ).toJSON()).toMatchSnapshot()
   })
 
   it('changes the class when hovered', () => {
     let component = renderer.create(
-      <Dropdown>
-        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+      <Dropdown dropdownLabel="Hover">
+        {LoremIpsum}
       </Dropdown>
     )
     let tree = component.toJSON()

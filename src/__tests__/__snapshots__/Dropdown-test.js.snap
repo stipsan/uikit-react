@@ -86,7 +86,7 @@ exports[`Dropdown changes the class when hovered 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    Open
+    Hover
   </button>
   <div
     aria-expanded={false}
@@ -96,14 +96,7 @@ exports[`Dropdown changes the class when hovered 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <button
-      className="uk-button"
-    >
-      Hover 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </button>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </div>
 </div>
 `;
@@ -354,7 +347,7 @@ exports[`Dropdown renders correctly 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    Open
+    Hover
   </button>
   <div
     aria-expanded={false}
@@ -364,32 +357,25 @@ exports[`Dropdown renders correctly 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <button
-      className="uk-button"
-    >
-      Hover 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </button>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </div>
 </div>
 `;
 
 exports[`Dropdown renders correctly 2`] = `
 <li
-  className="uk-inline"
+  className=""
 >
-  <button
+  <a
     aria-expanded={false}
     aria-haspopup={true}
-    className="uk-button uk-button-default"
+    className=""
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    Open
-  </button>
+    Parent
+  </a>
   <div
     aria-expanded={false}
     aria-haspopup={true}
@@ -398,12 +384,7 @@ exports[`Dropdown renders correctly 2`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <a>
-      Parent 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </a>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </div>
 </li>
 `;
