@@ -126,11 +126,11 @@ export default class Dropdown extends Component {
       'uk-open': isOpen,
     })
 
-    const dropdownClassName = cx({
-      'uk-dropdown uk-open uk-dropdown-bottom-left': isOpen,
+    const dropdownClassName = cx('uk-dropdown uk-dropdown-bottom-left', {
+      'uk-open': isOpen,
     })
 
-    const DropdownProps = {
+    const labelProps = {
       'aria-expanded': isOpen,
       'aria-haspopup': true,
       className: link !== 'navbar' ? className : '',
@@ -140,26 +140,26 @@ export default class Dropdown extends Component {
       children: this.props.dropdownLabel || mode,
     }
 
-    const innerDropDownProps = {
+    const childrenProps = {
       'aria-expanded': isOpen,
       'aria-haspopup': true,
-      className: isOpen ? dropdownClassName : 'uk-hidden',
+      className: dropdownClassName,
       onClick: handleClick,
       onMouseEnter: mode === 'hover' && handleMouseEnter,
       onMouseLeave: mode === 'hover' && handleMouseLeave,
       children,
     }
 
-    const baseProps = {
+    const parentProps = {
       className: link !== 'navbar' ? 'uk-inline' : '',
       children: [
-        createElement(link === 'navbar' ? 'a' : 'button', DropdownProps),
-        createElement('div', innerDropDownProps),
+        createElement(link === 'navbar' ? 'a' : 'button', labelProps),
+        createElement('div', childrenProps),
       ],
     }
 
     return (
-      createElement(component, baseProps)
+      createElement(component, parentProps)
     )
   }
 }
