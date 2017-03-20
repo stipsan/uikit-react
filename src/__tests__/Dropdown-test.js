@@ -88,7 +88,7 @@ describe('Dropdown', () => {
   it('closes sibling Dropdown on open', () => {
     const firstComponent = renderer.create(
       <Dropdown dropdownLabel="Hover" link="menu">
-        <button className="uk-button">First Instance <i className="uk-icon-caret-down" /></button>
+        First Instance
       </Dropdown>
     )
     let first = firstComponent.toJSON()
@@ -103,7 +103,7 @@ describe('Dropdown', () => {
 
     const secondComponent = renderer.create(
       <Dropdown dropdownLabel="Hover" link="menu">
-        <button className="uk-button">Second Instance <i className="uk-icon-caret-down" /></button>
+        Second Instance
       </Dropdown>
     )
     let second = secondComponent.toJSON()

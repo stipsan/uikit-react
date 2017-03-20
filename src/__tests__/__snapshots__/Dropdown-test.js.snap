@@ -265,14 +265,7 @@ exports[`Dropdown closes sibling Dropdown on open 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <button
-      className="uk-button"
-    >
-      First Instance 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </button>
+    First Instance
   </div>
 </div>
 `;
@@ -299,14 +292,7 @@ exports[`Dropdown closes sibling Dropdown on open 2`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <button
-      className="uk-button"
-    >
-      First Instance 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </button>
+    First Instance
   </div>
 </div>
 `;
@@ -333,14 +319,7 @@ exports[`Dropdown closes sibling Dropdown on open 3`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <button
-      className="uk-button"
-    >
-      Second Instance 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </button>
+    Second Instance
   </div>
 </div>
 `;
@@ -502,14 +481,7 @@ exports[`should be closed 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <button
-      className="uk-button"
-    >
-      First Instance 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </button>
+    First Instance
   </div>
 </div>
 `;
@@ -536,14 +508,7 @@ exports[`should be open 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <button
-      className="uk-button"
-    >
-      Second Instance 
-      <i
-        className="uk-icon-caret-down"
-      />
-    </button>
+    Second Instance
   </div>
 </div>
 `;
