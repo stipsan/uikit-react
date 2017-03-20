@@ -30,17 +30,19 @@ storiesOf('Dropdown', module)
     <Dropdown dropdownLabel="Hover" >
       {LoremIpsum}
     </Dropdown>
+    &nbsp;
     <Dropdown dropdownLabel="Click" mode="click">
       {LoremIpsum}
     </Dropdown>
   </div>
 ), { header: false, inline: true, propTables: [Dropdown] })
 
-  .addWithInfo('Navbar in Dropdown', '', () => (
+  .addWithInfo('Nav in dropdown', '', () => (
     <div className="uk-margin-bottom">
       <Dropdown dropdownLabel="Hover">
         <Menu />
       </Dropdown>
+      &nbsp;
       <Dropdown dropdownLabel="Click" mode="click">
         <Menu />
       </Dropdown>
