@@ -29,11 +29,11 @@ describe('Dropdown', () => {
     expect(tree).toMatchSnapshot()
 
     // manually trigger the callback
-    tree.props.onMouseEnter()
+    tree.children[1].props.onMouseEnter()
     expect(component.toJSON()).toMatchSnapshot()
 
     // manually trigger the callback
-    tree.props.onMouseLeave()
+    tree.children[1].props.onMouseLeave()
     expect(component.toJSON()).toMatchSnapshot()
 
     // Fast forward timers, class should now be gone
@@ -45,8 +45,8 @@ describe('Dropdown', () => {
     expect(instance.state.isOpen).toBeTruthy()
 
     component = renderer.create(
-      <Dropdown delay={400} mode="hover" remainTime={0}>
-        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+      <Dropdown delay={400} dropdownLabel="Hover" mode="hover" remainTime={0}>
+        {LoremIpsum}
       </Dropdown>
     )
     instance = component.getInstance()
@@ -65,21 +65,21 @@ describe('Dropdown', () => {
 
   it('changes the class when clicked', () => {
     const component = renderer.create(
-      <Dropdown mode="click">
-        <button className="uk-button">Click <i className="uk-icon-caret-down" /></button>
+      <Dropdown dropdownLabel="Click" mode="click" >
+        Click
       </Dropdown>
     )
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
 
     // manually trigger the callback
-    tree.props.onClick()
+    tree.children[0].props.onClick()
     // re-rendering
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
 
     // manually trigger the callback
-    tree.props.onClick()
+    tree.children[0].props.onClick()
     // re-rendering
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
@@ -87,7 +87,7 @@ describe('Dropdown', () => {
 
   it('closes sibling Dropdown on open', () => {
     const firstComponent = renderer.create(
-      <Dropdown link="menu">
+      <Dropdown dropdownLabel="Hover" link="menu">
         <button className="uk-button">First Instance <i className="uk-icon-caret-down" /></button>
       </Dropdown>
     )
@@ -95,14 +95,14 @@ describe('Dropdown', () => {
     expect(first).toMatchSnapshot()
 
     // manually trigger the callback
-    first.props.onMouseEnter()
+    first.children[1].props.onMouseEnter()
 
     first = firstComponent.toJSON()
     expect(first).toMatchSnapshot()
     expect(firstComponent.getInstance().state.isOpen).toBe(true)
 
     const secondComponent = renderer.create(
-      <Dropdown link="menu">
+      <Dropdown dropdownLabel="Hover" link="menu">
         <button className="uk-button">Second Instance <i className="uk-icon-caret-down" /></button>
       </Dropdown>
     )
@@ -110,7 +110,7 @@ describe('Dropdown', () => {
     expect(second).toMatchSnapshot()
 
     // manually trigger the callback
-    second.props.onMouseEnter()
+    second.children[1].props.onMouseEnter()
 
     // Verify that it is open
     second = secondComponent.toJSON()
@@ -127,7 +127,7 @@ describe('Dropdown', () => {
     const unsubscribe = secondInstance.unsubscribe
 
     // Start leave timeout before unmount
-    second.props.onMouseLeave()
+    second.children[1].props.onMouseLeave()
 
     // Trigger unmount
     secondComponent.update(<span />)
@@ -137,31 +137,31 @@ describe('Dropdown', () => {
 
   it('closes when clicked when in hover mode', () => {
     const component = renderer.create(
-      <Dropdown mode="hover">
-        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
+      <Dropdown dropdownLabel="Hover" mode="hover">
+        Hover
       </Dropdown>
     )
     let tree = component.toJSON()
 
     // clicking the dropdown should not open it
-    tree.props.onClick()
+    tree.children[0].props.onClick()
     tree = component.toJSON()
     expect(component.getInstance().state.isOpen).toBe(false)
 
     // open the dropdown
-    tree.props.onMouseEnter()
+    tree.children[0].props.onMouseEnter()
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
     expect(component.getInstance().state.isOpen).toBe(true)
 
     // close the dropdown by click
-    tree.props.onClick()
+    tree.children[0].props.onClick()
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
     expect(component.getInstance().state.isOpen).toBe(false)
 
     // clicking the dropdown again shouldn't open it
-    tree.props.onClick()
+    tree.children[0].props.onClick()
     tree = component.toJSON()
     expect(tree).toMatchSnapshot()
     expect(component.getInstance().state.isOpen).toBe(false)
