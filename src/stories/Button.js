@@ -8,9 +8,13 @@ storiesOf('Button', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
       <Button primary>Primary</Button>
+      &nbsp;
       <Button success>Success</Button>
+      &nbsp;
       <Button danger>Danger</Button>
+      &nbsp;
       <Button link>Link</Button>
+      &nbsp;
       <Button type="submit">Submit</Button>
     </div>
   ), { header: false, inline: true, propTables: [Button] })
