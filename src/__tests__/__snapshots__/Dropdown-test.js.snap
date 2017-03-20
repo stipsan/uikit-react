@@ -2,21 +2,35 @@
 
 exports[`Dropdown changes the class when clicked 1`] = `
 <div
-  aria-expanded={false}
-  aria-haspopup={true}
   className="uk-inline"
-  onClick={[Function]}
-  onMouseEnter={false}
-  onMouseLeave={false}
 >
   <button
-    className="uk-button"
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-button uk-button-default"
+    onClick={[Function]}
+    onMouseEnter={false}
+    onMouseLeave={false}
   >
-    Click 
-    <i
-      className="uk-icon-caret-down"
-    />
+    Open
   </button>
+  <div
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-hidden"
+    onClick={[Function]}
+    onMouseEnter={false}
+    onMouseLeave={false}
+  >
+    <button
+      className="uk-button"
+    >
+      Click 
+      <i
+        className="uk-icon-caret-down"
+      />
+    </button>
+  </div>
 </div>
 `;
 
@@ -62,21 +76,35 @@ exports[`Dropdown changes the class when clicked 3`] = `
 
 exports[`Dropdown changes the class when hovered 1`] = `
 <div
-  aria-expanded={false}
-  aria-haspopup={true}
   className="uk-inline"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
 >
   <button
-    className="uk-button"
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-button uk-button-default"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
-    Hover 
-    <i
-      className="uk-icon-caret-down"
-    />
+    Open
   </button>
+  <div
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-hidden"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <button
+      className="uk-button"
+    >
+      Hover 
+      <i
+        className="uk-icon-caret-down"
+      />
+    </button>
+  </div>
 </div>
 `;
 
@@ -182,21 +210,35 @@ exports[`Dropdown changes the class when hovered 6`] = `
 
 exports[`Dropdown closes sibling Dropdown on open 1`] = `
 <div
-  aria-expanded={false}
-  aria-haspopup={true}
   className="uk-inline"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
 >
   <button
-    className="uk-button"
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-button uk-button-default"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
-    First Instance 
-    <i
-      className="uk-icon-caret-down"
-    />
+    Open
   </button>
+  <div
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-hidden"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <button
+      className="uk-button"
+    >
+      First Instance 
+      <i
+        className="uk-icon-caret-down"
+      />
+    </button>
+  </div>
 </div>
 `;
 
@@ -302,78 +344,66 @@ exports[`Dropdown closes when clicked when in hover mode 3`] = `
 
 exports[`Dropdown renders correctly 1`] = `
 <div
-  aria-expanded={false}
-  aria-haspopup={true}
   className="uk-inline"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
 >
   <button
-    className="uk-button"
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-button uk-button-default"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
-    Hover 
-    <i
-      className="uk-icon-caret-down"
-    />
+    Open
   </button>
+  <div
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-hidden"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <button
+      className="uk-button"
+    >
+      Hover 
+      <i
+        className="uk-icon-caret-down"
+      />
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Dropdown renders correctly 2`] = `
 <li
-  aria-expanded={false}
-  aria-haspopup={true}
-  className="uk-parent"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <a>
-    Parent 
-    <i
-      className="uk-icon-caret-down"
-    />
-  </a>
-</li>
-`;
-
-exports[`should be closed 1`] = `
-<div
-  aria-expanded={false}
-  aria-haspopup={true}
   className="uk-inline"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
 >
   <button
-    className="uk-button"
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-button uk-button-default"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
-    First Instance 
-    <i
-      className="uk-icon-caret-down"
-    />
+    Open
   </button>
-</div>
-`;
-
-exports[`should be open 1`] = `
-<div
-  aria-expanded={true}
-  aria-haspopup={true}
-  className="uk-inline uk-open"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <button
-    className="uk-button"
+  <div
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="uk-hidden"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
-    Second Instance 
-    <i
-      className="uk-icon-caret-down"
-    />
-  </button>
-</div>
+    <a>
+      Parent 
+      <i
+        className="uk-icon-caret-down"
+      />
+    </a>
+  </div>
+</li>
 `;

@@ -15,41 +15,33 @@ const Nav = () => <ul className="uk-nav uk-nav-dropdown">
   <li><a href="#">Separated item</a></li>
 </ul>
 
-const Menu = () => (
-  <Nav />
-)
+const Menu = () => <Nav />
 Menu.displayName = 'Menu'
 
-const DropdownMenu = () => (
-  <div className="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
-    <Nav />
-  </div>
-)
+const DropdownMenu = () => <Nav />
 DropdownMenu.displayName = 'Menu'
 
 const LoremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
 
 storiesOf('Dropdown', module)
-  .addWithInfo('Basic Usage', '', () => (
-    <div className="uk-margin-bottom">
-      <Dropdown buttonLabel="Button Label">
-        {LoremIpsum}
-      </Dropdown>
-      <br />
-      <Dropdown mode="click">
-        {LoremIpsum}
-      </Dropdown>
-    </div>
-  ), { header: false, inline: true, propTables: [Dropdown] })
+.addWithInfo('Basic Usage', '', () => (
+  <div className="uk-margin-bottom">
+    <Dropdown dropdownLabel="Hover" >
+      {LoremIpsum}
+    </Dropdown>
+    <Dropdown dropdownLabel="Click" mode="click">
+      {LoremIpsum}
+    </Dropdown>
+  </div>
+), { header: false, inline: true, propTables: [Dropdown] })
 
-  .addWithInfo('Nav in dropdown', '', () => (
+  .addWithInfo('Navbar in Dropdown', '', () => (
     <div className="uk-margin-bottom">
-      <Dropdown>
+      <Dropdown dropdownLabel="Hover">
         <Menu />
       </Dropdown>
-      <br /> <br />
-      <Dropdown mode="click">
+      <Dropdown dropdownLabel="Click" mode="click">
         <Menu />
       </Dropdown>
     </div>
@@ -57,16 +49,24 @@ storiesOf('Dropdown', module)
 
   .addWithInfo('Advanced', '', () => (
     <div className="uk-margin-bottom">
-      <nav className="uk-navbar">
+      <nav className="uk-navbar-container">
         <ul className="uk-navbar-nav">
           <li className="uk-active"><a>Active</a></li>
           <li><a href="">Item</a></li>
-          <Dropdown className="uk-parent" component="li" link="navbar">
-            <a>Parent <i className="uk-icon-caret-down" /></a>
+          <Dropdown
+            className="uk-parent"
+            component="li"
+            dropdownLabel="Parent"
+            link="navbar"
+          >
             <DropdownMenu />
           </Dropdown>
-          <Dropdown className="uk-parent" component="li" link="navbar">
-            <a>Parent <i className="uk-icon-caret-down" /></a>
+          <Dropdown
+            className="uk-parent"
+            component="li"
+            dropdownLabel="Parent"
+            link="navbar"
+          >
             <DropdownMenu />
           </Dropdown>
         </ul>

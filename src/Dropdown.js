@@ -37,19 +37,18 @@ export default class Dropdown extends Component {
     delay: PropTypes.number.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,
-    buttonLabel: PropTypes.string,
-    className: PropTypes.string,
     component: PropTypes.node,
+    dropdownLabel: PropTypes.string,
     link: PropTypes.string,
   }
 
   static defaultProps = {
-    buttonLabel: 'hover',
+    dropdownIcon: '',
+    dropdownLabel: 'Open',
     mode: 'hover',
     remainTime: 800,
     delay: 0,
-    component: 'button',
-    className: 'uk-button uk-button-default',
+    component: 'div',
     link: '',
   }
 
@@ -121,30 +120,46 @@ export default class Dropdown extends Component {
 
   render() {
     const { handleMouseEnter, handleMouseLeave, handleClick } = this
-    const { mode, children, component, buttonLabel } = this.props
+    const { mode, children, component, link } = this.props
     const { isOpen } = this.state
-    const className = cx(this.props.className, {
+    const className = cx('uk-button uk-button-default', {
       'uk-open': isOpen,
     })
-    const dropdownClassnames = cx('uk-dropdown uk-dropdown-bottom-left', {
-      'uk-open': isOpen,
+
+    const dropdownClassName = cx({
+      'uk-dropdown uk-open uk-dropdown-bottom-left': isOpen,
     })
+
     const DropdownProps = {
       'aria-expanded': isOpen,
       'aria-haspopup': true,
-      className,
+      className: link !== 'navbar' ? className : '',
       onClick: handleClick,
       onMouseEnter: mode === 'hover' && handleMouseEnter,
       onMouseLeave: mode === 'hover' && handleMouseLeave,
-      children: buttonLabel || mode,
+      children: this.props.dropdownLabel || mode,
     }
+
+    const innerDropDownProps = {
+      'aria-expanded': isOpen,
+      'aria-haspopup': true,
+      className: isOpen ? dropdownClassName : 'uk-hidden',
+      onClick: handleClick,
+      onMouseEnter: mode === 'hover' && handleMouseEnter,
+      onMouseLeave: mode === 'hover' && handleMouseLeave,
+      children,
+    }
+
+    const baseProps = {
+      className: link !== 'navbar' ? 'uk-inline' : '',
+      children: [
+        createElement(link === 'navbar' ? 'a' : 'button', DropdownProps),
+        createElement('div', innerDropDownProps),
+      ],
+    }
+
     return (
-      <div className="uk-inline">
-        {createElement(component, DropdownProps)}
-        <div className={dropdownClassnames}>
-          {children}
-        </div>
-      </div>
+      createElement(component, baseProps)
     )
   }
 }
