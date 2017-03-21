@@ -10,9 +10,12 @@ storiesOf('Input', module)
   For more advanced use cases please check out [\`redux-form-uikit\`](http://form.uikit-react.io).
   `, () => (
     <form className="uk-margin-bottom uk-form">
-      <Input placeholder="Text input" /> &nbsp;
-      <Input danger defaultValue="danger" /> &nbsp;
-      <Input success defaultValue="success" /> &nbsp;
+      <Input placeholder="Text input" />
+      &nbsp;
+      <Input danger defaultValue="danger" />
+      &nbsp;
+      <Input success defaultValue="success" />
+      &nbsp;
       <Input blank placeholder="blank" />
     </form>
   ), { header: false, inline: true, propTables: [Input], mtrcConf: { // eslint-disable-line
@@ -53,11 +56,13 @@ storiesOf('Input', module)
   .addWithInfo('Form and icons', '', () => (
     <form className="uk-margin-bottom uk-form">
       <div className="uk-form-row">
-        <Input icon="calendar" /> &nbsp;
+        <Input icon="calendar" />
+        &nbsp;
         <Input flip icon="clock-o" />
       </div>
       <div className="uk-form-row">
-        <Input icon="spinner" /> &nbsp;
+        <Input icon="spinner" />
+        &nbsp;
         <Input flip icon="refresh" />
       </div>
     </form>
