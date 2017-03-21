@@ -7,10 +7,9 @@ Icon.displayName = 'Icon'
 storiesOf('Icon', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <Icon primary>Primary</Icon> &nbsp;
-      <Icon success>Success</Icon> &nbsp;
-      <Icon danger>Danger</Icon> &nbsp;
-      <Icon link>Link</Icon> &nbsp;
-      <Icon type="submit">Submit</Icon>
+      <Icon icon="check" />&nbsp;
+      <Icon icon="check" ratio={2} />&nbsp;
+      <span className="uk-text-danger"><Icon icon="heart" /></span>
+      <span className="uk-text-success"><Icon icon="hearts" /></span>
     </div>
   ), { header: false, inline: true, propTables: [Icon] })

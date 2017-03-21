@@ -1,9 +1,15 @@
-import { Component, PropTypes } from 'react'
+import { Component, PropTypes, createElement } from 'react'
+import loader from 'uikit/dist/js/uikit-icons.min.js'
+
+let icons
+loader({ icon: { add: (UIkitIcons) => { icons = UIkitIcons } } })
+
+const iconNames = Object.keys(icons)
 
 export default class Icon extends Component {
 
   static propTypes = {
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.oneOf(iconNames).isRequired,
     load: PropTypes.func.isRequired,
     ratio: PropTypes.number.isRequired,
     // @TODO custom viewBox validator
@@ -20,17 +26,18 @@ export default class Icon extends Component {
     const height = 20
     const width = 20
 
-    const { ratio, viewBox } = this.props
+    const { ratio, viewBox, icon, ...props } = this.props
 
     return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height={height * ratio}
-        width={width * ratio}
-      >
-        <line fill="none" stroke="#000" strokeWidth="1.1" x1="1" y1="1" x2="13" y2="13" />
-        <line fill="none" stroke="#000" strokeWidth="1.1" x1="13" y1="1" x2="1" y2="13" />
-      </svg>
+      <span className="uk-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height={height * ratio}
+          width={width * ratio}
+          viewBox={viewBox}
+          dangerouslySetInnerHTML={{ __html: icons[icon] }}
+        />
+      </span>
     )
   }
 }
