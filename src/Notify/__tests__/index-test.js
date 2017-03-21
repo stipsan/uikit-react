@@ -1,16 +1,16 @@
 import renderer from 'react-test-renderer'
 
-import Notification from '../index'
+import Notify from '../index'
 
 jest.mock('react-portal', () => 'Portal')
 
-describe('Notification', () => {
+describe('Notify', () => {
   const defaultProps = {
     notifications: [{ id: 1, type: 'warning', message: 'Notification #1', icon: 'check' }],
     position: 'top-center',
   }
   const component = renderer.create(
-    <Notification {...defaultProps} />
+    <Notify {...defaultProps} />
   )
   it('should render correctly', () => {
     expect(component.toJSON()).toMatchSnapshot()

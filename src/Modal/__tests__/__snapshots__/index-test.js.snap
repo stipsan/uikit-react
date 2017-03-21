@@ -34,32 +34,28 @@ exports[`Modal renders a Blank Modal 1`] = `
       
       
       <div
-        className="uk-modal-body"
+        className="uk-grid uk-flex-middle"
       >
         <div
-          className="uk-grid uk-flex-middle"
-        >
-          <div
-            className="uk-width-medium-1-2 uk-height-viewport uk-cover-background uk-row-first"
-            style={
-              Object {
-                "backgroundImage": "url(http://getuikit.com/docs/images/placeholder_120x255.svg)",
-              }
+          className="uk-width-medium-1-2 uk-height-viewport uk-cover-background uk-row-first"
+          style={
+            Object {
+              "backgroundImage": "url(http://getuikit.com/docs/images/placeholder_120x255.svg)",
             }
-          />
+          }
+        />
+        <div
+          className="uk-width-medium-1-2"
+        >
+          <h1>
+            Headline
+          </h1>
           <div
-            className="uk-width-medium-1-2"
+            className="uk-width-medium-1-3"
           >
-            <h1>
-              Headline
-            </h1>
-            <div
-              className="uk-width-medium-1-3"
-            >
-              <p>
-                Lorem ipsum
-              </p>
-            </div>
+            <p>
+              Lorem ipsum
+            </p>
           </div>
         </div>
       </div>
@@ -105,11 +101,7 @@ exports[`Modal renders a Caption 1`] = `
       >
         Caption
       </div>
-      <div
-        className="uk-modal-body"
-      >
-        Lorem ipsum
-      </div>
+      Lorem ipsum
     </div>
   </div>
 </Portal>
@@ -154,11 +146,7 @@ exports[`Modal renders a Header and Footer 1`] = `
         </h2>
       </div>
       
-      <div
-        className="uk-modal-body"
-      >
-        Lorem ipsum
-      </div>
+      Lorem ipsum
       <div
         className="uk-modal-footer uk-text-right"
       >
@@ -206,15 +194,11 @@ exports[`Modal renders a Lightbox 1`] = `
       />
       
       
-      <div
-        className="uk-modal-body"
-      >
-        <img
-          alt=""
-          role="presentation"
-          src="http://getuikit.com/docs/images/placeholder_600x400.svg"
-        />
-      </div>
+      <img
+        alt=""
+        role="presentation"
+        src="http://getuikit.com/docs/images/placeholder_600x400.svg"
+      />
     </div>
   </div>
 </Portal>
@@ -250,12 +234,8 @@ exports[`Modal renders a Spinner 1`] = `
       
       
       <div
-        className="uk-modal-body"
-      >
-        <div
-          className="uk-modal-spinner"
-        />
-      </div>
+        className="uk-modal-spinner"
+      />
     </div>
   </div>
 </Portal>
@@ -290,11 +270,7 @@ exports[`Modal renders an alert modal 1`] = `
     >
       
       
-      <div
-        className="uk-modal-body"
-      >
-        Something bad happened!
-      </div>
+      Something bad happened!
       <div
         className="uk-modal-footer uk-text-right"
       >
@@ -340,16 +316,12 @@ exports[`Modal renders an confirm modal 1`] = `
     >
       
       
-      <div
-        className="uk-modal-body"
-      >
-        Are you absolutely sure about this?
-      </div>
+      Are you absolutely sure about this?
       <div
         className="uk-modal-footer uk-text-right"
       >
         <button
-          className="uk-button uk-button-default"
+          className="uk-button"
           onClick={[Function]}
           type="button"
         >
@@ -401,24 +373,20 @@ exports[`Modal renders an prompt modal 1`] = `
       
       
       <div
-        className="uk-modal-body"
+        className="uk-margin-small-top uk-modal-content uk-form"
       >
-        <div
-          className="uk-margin-small-top uk-modal-content uk-form"
-        >
-          <p>
-            <input
-              className="uk-width-1-1"
-              type="text"
-            />
-          </p>
-        </div>
+        <p>
+          <input
+            className="uk-width-1-1"
+            type="text"
+          />
+        </p>
       </div>
       <div
         className="uk-modal-footer uk-text-right"
       >
         <button
-          className="uk-button uk-button-default"
+          className="uk-button"
           onClick={[Function]}
           type="button"
         >
@@ -473,11 +441,7 @@ exports[`Modal renders correctly 1`] = `
       />
       
       
-      <div
-        className="uk-modal-body"
-      >
-        Lorem ipsum
-      </div>
+      Lorem ipsum
     </div>
   </div>
 </Portal>

@@ -47,7 +47,7 @@ export default class Dropdown extends Component {
     remainTime: 800,
     delay: 0,
     component: 'div',
-    className: 'uk-inline',
+    className: 'uk-button-dropdown',
     link: '',
   }
 

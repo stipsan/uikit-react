@@ -62,7 +62,7 @@ export default class Dialog extends Component {
         )}
         {header && (<div className="uk-modal-header"><h2>{header}</h2></div>)}
         {caption && (<div className="uk-modal-caption">{caption}</div>)}
-        <div className="uk-modal-body">{children}</div>
+        {children}
         { footer.length > 0 &&
           (<div className="uk-modal-footer uk-text-right">
             {
