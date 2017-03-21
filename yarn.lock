@@ -3667,9 +3667,9 @@ lcov-parse@0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/lcov-parse/-/lcov-parse-0.0.10.tgz#1b0b8ff9ac9c7889250582b70b71315d9da6d9a3"
 
-less-loader@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-4.0.0.tgz#1bc89e6ed1f817972d8fbf79dc6845c35dd8a7f8"
+less-loader@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-4.0.1.tgz#bf0a5d6c5f61f272de592421d0ea87a168d1edf7"
   dependencies:
     clone-deep "^0.2.4"
     loader-utils "^1.0.2"
