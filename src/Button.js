@@ -9,44 +9,45 @@ export default class Button extends Component {
     danger: PropTypes.bool,
     large: PropTypes.bool,
     link: PropTypes.bool,
-    mini: PropTypes.bool,
     primary: PropTypes.bool,
+    secondary: PropTypes.bool,
     small: PropTypes.bool,
-    success: PropTypes.bool,
+    text: PropTypes.bool,
   }
 
   static defaultProps = {
     type: 'button',
     active: false,
     primary: false,
-    success: false,
     danger: false,
     link: false,
-    mini: false,
     small: false,
     large: false,
     className: '',
+    secondary: false,
+    text: false,
   }
 
   render() {
     const {
       active,
       primary,
-      success,
       danger,
       link,
-      mini,
       small,
       large,
+      secondary,
+      text,
       className: customClassName,
       ...other
     } = this.props
     const className = cx('uk-button', customClassName, {
+      'uk-button-default': !primary && !secondary && !danger && !text && !link,
       'uk-button-primary': primary,
-      'uk-button-success': success,
+      'uk-button-secondary': secondary,
       'uk-button-danger': danger,
+      'uk-button-text': text,
       'uk-button-link': link,
-      'uk-button-mini': mini,
       'uk-button-small': small,
       'uk-button-large': large,
       'uk-active': active,
