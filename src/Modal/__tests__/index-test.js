@@ -201,7 +201,8 @@ describe('Modal', () => {
       onConfirm={jest.fn()}
     >
       Are you sure?
-  </Modal>)
+    </Modal>
+  )
 
   it('should handle handleCancel', () => {
     const instance = component.getInstance()
