@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import { Component, PropTypes, createElement } from 'react'
+import { Component, PropTypes, cloneElement } from 'react'
 
 const links = {}
 
@@ -37,19 +37,18 @@ export default class Dropdown extends Component {
     delay: PropTypes.number.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,
+    className: PropTypes.string,
     component: PropTypes.node,
-    dropdownLabel: PropTypes.string,
     link: PropTypes.string,
   }
 
   static defaultProps = {
-    dropdownIcon: '',
-    dropdownLabel: 'Open',
     mode: 'hover',
     remainTime: 800,
     delay: 0,
     component: 'div',
     link: '',
+    className: 'uk-inline',
   }
 
   state = {
@@ -120,46 +119,49 @@ export default class Dropdown extends Component {
 
   render() {
     const { handleMouseEnter, handleMouseLeave, handleClick } = this
-    const { mode, children, component, link } = this.props
+    const { mode, component, children, className } = this.props
     const { isOpen } = this.state
-    const className = cx('uk-button uk-button-default', {
-      'uk-open': isOpen,
-    })
 
-    const dropdownClassName = cx('uk-dropdown uk-dropdown-bottom-left', {
-      'uk-open': isOpen,
-    })
-
-    const labelProps = {
-      'aria-expanded': isOpen,
-      'aria-haspopup': true,
-      className: link !== 'navbar' ? className : '',
+    const eventHandlers = {
       onClick: handleClick,
       onMouseEnter: mode === 'hover' && handleMouseEnter,
       onMouseLeave: mode === 'hover' && handleMouseLeave,
-      children: this.props.dropdownLabel || mode,
     }
 
-    const childrenProps = {
-      'aria-expanded': isOpen,
-      'aria-haspopup': true,
-      className: dropdownClassName,
-      onClick: handleClick,
-      onMouseEnter: mode === 'hover' && handleMouseEnter,
-      onMouseLeave: mode === 'hover' && handleMouseLeave,
-      children,
+    if (typeof this.props.children === 'function') {
+      return this.props.children({ isOpen, ...eventHandlers })
     }
 
-    const parentProps = {
-      className: link !== 'navbar' ? 'uk-inline' : '',
-      children: [
-        createElement(link === 'navbar' ? 'a' : 'button', labelProps),
-        createElement('div', childrenProps),
-      ],
+    if (!Array.isArray(children) || !children.length === 2) {
+      return new Error('Children must be passed as array and must have two components.')
     }
+    const [target, body] = this.props.children
+
+    // construct target Element
+    const targetElement = cloneElement(target, {
+      ...target.props,
+      ...eventHandlers,
+      className: cx(target.props.className, {
+        'uk-open': isOpen,
+      }),
+    })
+
+    // construct body Element
+    const bodyElement = cloneElement(body, {
+      ...body.props,
+      ...eventHandlers,
+      className: cx(body.props.className, {
+        'uk-open': isOpen,
+      }),
+    })
+
+    const WrapperComponent = component
 
     return (
-      createElement(component, parentProps)
+      <WrapperComponent className={className}>
+        {targetElement}
+        {bodyElement}
+      </WrapperComponent>
     )
   }
 }
