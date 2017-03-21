@@ -135,7 +135,7 @@ export default class Dropdown extends Component {
       return this.props.children({ isOpen, ...eventHandlers })
     }
 
-    if (!Array.isArray(children) || !children.length === 2) {
+    if (!Array.isArray(children) || children.length !== 2) {
       return new Error('Children must be passed as array and must have two components.')
     }
     const [target, body] = this.props.children

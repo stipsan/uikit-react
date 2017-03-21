@@ -196,8 +196,15 @@ it('closes when clicked when in hover mode', () => {
   expect(component.getInstance().state.isOpen).toBe(false)
 })
 
-it('it should catch invalid childrend', () => {
-  expect(() => renderer.create(<Dropdown mode="hover">Hover</Dropdown>)).toThrowErrorMatchingSnapshot()
+it('it should throw error on invalid children', () => {
+  expect(() => {
+    const component = renderer.create(
+      <Dropdown mode="hover">
+        {[<Button key="button">Hover</Button>]}
+      </Dropdown>
+   )
+    component.toJSON()
+  }).toThrowErrorMatchingSnapshot()
 })
 
 it('it should render correctly when children are passed as function', () => {
@@ -205,7 +212,7 @@ it('it should render correctly when children are passed as function', () => {
     <Dropdown mode="hover">
       {({ open, onClick }) => (
         <div onClick={onClick}>
-          <a className={cx({ 'uk-open': open })}>Target</a>
+          <button className={cx({ 'uk-open': open })}>Target</button>
           <div className={cx('uk-navbar-dropdown', { 'uk-open': open })}>
             Dropdown content here
           </div>

@@ -360,20 +360,15 @@ exports[`closes when clicked when in hover mode 3`] = `
 </div>
 `;
 
-exports[`it should catch invalid childrend 1`] = `
-"Warning: Failed prop type: Invalid prop \`children\` supplied to \`Dropdown\`.
-    in Dropdown"
-`;
-
 exports[`it should render correctly when children are passed as function 1`] = `
 <div
   onClick={[Function]}
 >
-  <a
+  <button
     className=""
   >
     Target
-  </a>
+  </button>
   <div
     className="uk-navbar-dropdown"
   >
@@ -381,6 +376,8 @@ exports[`it should render correctly when children are passed as function 1`] = `
   </div>
 </div>
 `;
+
+exports[`it should throw error on invalid children 1`] = `"Dropdown.render(): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object."`;
 
 exports[`renders correctly 1`] = `
 <div
