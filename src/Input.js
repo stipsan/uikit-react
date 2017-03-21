@@ -13,7 +13,7 @@ const Input = ({
   width,
   ...other
 }) => {
-  const className = cx(customClassName, {
+  const className = cx(`uk-input ${customClassName}`, {
     'uk-form-blank': blank,
     'uk-form-danger': danger,
     'uk-form-large': large,
@@ -21,7 +21,6 @@ const Input = ({
     'uk-form-success': success,
     'uk-form-width-large': width === 'large',
     'uk-form-width-medium': width === 'medium',
-    'uk-form-width-mini': width === 'mini',
     'uk-form-width-small': width === 'small',
     'uk-width-1-1': width === 'full',
   })
@@ -50,7 +49,7 @@ Input.propTypes = {
   large: PropTypes.bool,
   small: PropTypes.bool,
   success: PropTypes.bool,
-  width: PropTypes.oneOf(['full', 'large', 'medium', 'small', 'mini', false]),
+  width: PropTypes.oneOf(['full', 'large', 'medium', 'small', false]),
 }
 
 Input.defaultProps = {

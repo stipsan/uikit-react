@@ -56,6 +56,12 @@ addDecorator((fn, { kind, story }) => <div>
     </div>
   </nav>
   <div className="uk-margin-top uk-margin-left uk-margin-right uk-margin-bottom">
+    {/* <a
+      href={`javascript:
+      var script = document.createElement('script');
+      script.setAttribute('src', 'https://getuikit.com/migrate.min.js');
+      document.body.appendChild(script);
+    `}>test</a> */}
     {fn()}
   </div>
 </div>)
@@ -64,7 +70,7 @@ function loadStories() {
   require('../src/stories/Button')
   require('../src/stories/Dropdown')
   require('../src/stories/Modal')
-  require('../src/stories/Notify')
+  require('../src/stories/Notification')
   require('../src/stories/Input')
 }
 
