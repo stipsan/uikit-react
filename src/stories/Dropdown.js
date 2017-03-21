@@ -51,7 +51,8 @@ class MyDropdown extends Component {
         onMouseLeave={handleMouseLeave}
       >
         {LoremIpsum}
-      </div>)
+      </div>
+    )
   }
 }
 

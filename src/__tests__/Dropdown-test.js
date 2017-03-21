@@ -1,5 +1,6 @@
 import renderer from 'react-test-renderer'
 import Dropdown from '../Dropdown'
+import Button from '../Button'
 
 jest.useFakeTimers()
 const LoremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
@@ -7,22 +8,34 @@ const LoremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
 describe('Dropdown', () => {
   it('renders correctly', () => {
     expect(renderer.create(
-      <Dropdown dropdownLabel="Hover">
-        {LoremIpsum}
+      <Dropdown mode="hover">
+        <Button>Hover</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          {LoremIpsum}
+        </div>
       </Dropdown>
     ).toJSON()).toMatchSnapshot()
 
     expect(renderer.create(
-      <Dropdown component="li" dropdownLabel="Parent" link="navbar">
-        {LoremIpsum}
+      <Dropdown component="li" mode="hover" >
+        <Button link>Parent</Button>
+        <div className="uk-navbar-dropdown">
+          <ul className="uk-nav uk-navbar-dropdown-nav">
+            <li className="uk-active">Active</li>
+            <li>Item</li>
+          </ul>
+        </div>
       </Dropdown>
     ).toJSON()).toMatchSnapshot()
   })
 
   it('changes the class when hovered', () => {
     let component = renderer.create(
-      <Dropdown dropdownLabel="Hover">
-        {LoremIpsum}
+      <Dropdown mode="hover">
+        <Button>Hover</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          {LoremIpsum}
+        </div>
       </Dropdown>
     )
     let tree = component.toJSON()
@@ -45,8 +58,11 @@ describe('Dropdown', () => {
     expect(instance.state.isOpen).toBeTruthy()
 
     component = renderer.create(
-      <Dropdown delay={400} dropdownLabel="Hover" mode="hover" remainTime={0}>
-        {LoremIpsum}
+      <Dropdown mode="hover">
+        <Button>Hover</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          {LoremIpsum}
+        </div>
       </Dropdown>
     )
     instance = component.getInstance()
@@ -65,8 +81,11 @@ describe('Dropdown', () => {
 
   it('changes the class when clicked', () => {
     const component = renderer.create(
-      <Dropdown dropdownLabel="Click" mode="click" >
-        Click
+      <Dropdown mode="click">
+        <Button>Click</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          {LoremIpsum}
+        </div>
       </Dropdown>
     )
     let tree = component.toJSON()
@@ -87,14 +106,17 @@ describe('Dropdown', () => {
 
   it('closes sibling Dropdown on open', () => {
     const firstComponent = renderer.create(
-      <Dropdown dropdownLabel="Hover" link="menu">
-        First Instance
+      <Dropdown link="menu" mode="hover">
+        <Button>Hover</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          {LoremIpsum}
+        </div>
       </Dropdown>
-    )
+   )
     let first = firstComponent.toJSON()
     expect(first).toMatchSnapshot()
 
-    // manually trigger the callback
+   // manually trigger the callback
     first.children[1].props.onMouseEnter()
 
     first = firstComponent.toJSON()
@@ -102,34 +124,38 @@ describe('Dropdown', () => {
     expect(firstComponent.getInstance().state.isOpen).toBe(true)
 
     const secondComponent = renderer.create(
-      <Dropdown dropdownLabel="Hover" link="menu">
-        Second Instance
+      <Dropdown link="menu" mode="hover">
+        <Button>Hover</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          {LoremIpsum}
+        </div>
       </Dropdown>
-    )
+   )
     let second = secondComponent.toJSON()
     expect(second).toMatchSnapshot()
 
-    // manually trigger the callback
+   // manually trigger the callback
     second.children[1].props.onMouseEnter()
 
-    // Verify that it is open
+   // Verify that it is open
     second = secondComponent.toJSON()
     expect(second).toMatchSnapshot('should be open')
     expect(secondComponent.getInstance().state.isOpen).toBe(true)
-    // Verify that the first component is closed
+
+   // Verify that the first component is closed
     first = firstComponent.toJSON()
     expect(first).toMatchSnapshot('should be closed')
     expect(firstComponent.getInstance().state.isOpen).toBe(false)
 
-    // Verify there is a subscription
+   // Verify there is a subscription
     const secondInstance = secondComponent.getInstance()
     expect({}.hasOwnProperty.call(secondInstance, 'unsubscribe')).toBe(true)
     const unsubscribe = secondInstance.unsubscribe
 
-    // Start leave timeout before unmount
+   // Start leave timeout before unmount
     second.children[1].props.onMouseLeave()
 
-    // Trigger unmount
+   // Trigger unmount
     secondComponent.update(<span />)
     // Should be no error from calling this again
     unsubscribe()
@@ -137,8 +163,11 @@ describe('Dropdown', () => {
 
   it('closes when clicked when in hover mode', () => {
     const component = renderer.create(
-      <Dropdown dropdownLabel="Hover" mode="hover">
-        Hover
+      <Dropdown mode="hover">
+        <Button>Hover</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          {LoremIpsum}
+        </div>
       </Dropdown>
     )
     let tree = component.toJSON()
