@@ -27,6 +27,7 @@ export default class Icon extends Component {
     const width = 20
 
     const { ratio, viewBox, icon, ...props } = this.props
+    const svg = icons[icon] && icons[icon].replace(/^<svg[^>]*>|<\/svg>$/g, '')
 
     return (
       <span className="uk-icon">
@@ -35,7 +36,8 @@ export default class Icon extends Component {
           height={height * ratio}
           width={width * ratio}
           viewBox={viewBox}
-          dangerouslySetInnerHTML={{ __html: icons[icon] }}
+          // @TODO optimize
+          dangerouslySetInnerHTML={{ __html: svg }}
         />
       </span>
     )

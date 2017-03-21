@@ -10,6 +10,5 @@ storiesOf('Icon', module)
       <Icon icon="check" />&nbsp;
       <Icon icon="check" ratio={2} />&nbsp;
       <span className="uk-text-danger"><Icon icon="heart" /></span>
-      <span className="uk-text-success"><Icon icon="hearts" /></span>
     </div>
   ), { header: false, inline: true, propTables: [Icon] })
