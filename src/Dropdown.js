@@ -33,7 +33,10 @@ const dispatch = (namespace) => {
 
 export default class Dropdown extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.arrayOf(PropTypes.element),
+    ]).isRequired,
     delay: PropTypes.number.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,

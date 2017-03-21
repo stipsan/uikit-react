@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown changes the class when clicked 1`] = `
+exports[`changes the class when clicked 1`] = `
 <div
   className="uk-inline"
 >
@@ -24,7 +24,7 @@ exports[`Dropdown changes the class when clicked 1`] = `
 </div>
 `;
 
-exports[`Dropdown changes the class when clicked 2`] = `
+exports[`changes the class when clicked 2`] = `
 <div
   className="uk-inline"
 >
@@ -48,7 +48,7 @@ exports[`Dropdown changes the class when clicked 2`] = `
 </div>
 `;
 
-exports[`Dropdown changes the class when clicked 3`] = `
+exports[`changes the class when clicked 3`] = `
 <div
   className="uk-inline"
 >
@@ -72,7 +72,7 @@ exports[`Dropdown changes the class when clicked 3`] = `
 </div>
 `;
 
-exports[`Dropdown changes the class when hovered 1`] = `
+exports[`changes the class when hovered 1`] = `
 <div
   className="uk-inline"
 >
@@ -96,7 +96,7 @@ exports[`Dropdown changes the class when hovered 1`] = `
 </div>
 `;
 
-exports[`Dropdown changes the class when hovered 2`] = `
+exports[`changes the class when hovered 2`] = `
 <div
   className="uk-inline"
 >
@@ -120,7 +120,31 @@ exports[`Dropdown changes the class when hovered 2`] = `
 </div>
 `;
 
-exports[`Dropdown changes the class when hovered 3`] = `
+exports[`changes the class when hovered 3`] = `
+<div
+  className="uk-inline"
+>
+  <button
+    className="uk-button uk-button-default"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    type="button"
+  >
+    Hover
+  </button>
+  <div
+    className="uk-dropdown uk-dropdown-bottom-left"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  </div>
+</div>
+`;
+
+exports[`changes the class when hovered 4`] = `
 <div
   className="uk-inline"
 >
@@ -144,31 +168,7 @@ exports[`Dropdown changes the class when hovered 3`] = `
 </div>
 `;
 
-exports[`Dropdown changes the class when hovered 4`] = `
-<div
-  className="uk-inline"
->
-  <button
-    className="uk-button uk-button-default"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    type="button"
-  >
-    Hover
-  </button>
-  <div
-    className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit
-  </div>
-</div>
-`;
-
-exports[`Dropdown changes the class when hovered 5`] = `
+exports[`changes the class when hovered 5`] = `
 <div
   className="uk-inline"
 >
@@ -192,7 +192,7 @@ exports[`Dropdown changes the class when hovered 5`] = `
 </div>
 `;
 
-exports[`Dropdown changes the class when hovered 6`] = `
+exports[`changes the class when hovered 6`] = `
 <div
   className="uk-inline"
 >
@@ -216,7 +216,7 @@ exports[`Dropdown changes the class when hovered 6`] = `
 </div>
 `;
 
-exports[`Dropdown closes sibling Dropdown on open 1`] = `
+exports[`closes sibling Dropdown on open 1`] = `
 <div
   className="uk-inline"
 >
@@ -240,7 +240,7 @@ exports[`Dropdown closes sibling Dropdown on open 1`] = `
 </div>
 `;
 
-exports[`Dropdown closes sibling Dropdown on open 2`] = `
+exports[`closes sibling Dropdown on open 2`] = `
 <div
   className="uk-inline"
 >
@@ -264,7 +264,7 @@ exports[`Dropdown closes sibling Dropdown on open 2`] = `
 </div>
 `;
 
-exports[`Dropdown closes sibling Dropdown on open 3`] = `
+exports[`closes sibling Dropdown on open 3`] = `
 <div
   className="uk-inline"
 >
@@ -288,7 +288,7 @@ exports[`Dropdown closes sibling Dropdown on open 3`] = `
 </div>
 `;
 
-exports[`Dropdown closes when clicked when in hover mode 1`] = `
+exports[`closes when clicked when in hover mode 1`] = `
 <div
   className="uk-inline"
 >
@@ -312,7 +312,7 @@ exports[`Dropdown closes when clicked when in hover mode 1`] = `
 </div>
 `;
 
-exports[`Dropdown closes when clicked when in hover mode 2`] = `
+exports[`closes when clicked when in hover mode 2`] = `
 <div
   className="uk-inline"
 >
@@ -336,7 +336,7 @@ exports[`Dropdown closes when clicked when in hover mode 2`] = `
 </div>
 `;
 
-exports[`Dropdown closes when clicked when in hover mode 3`] = `
+exports[`closes when clicked when in hover mode 3`] = `
 <div
   className="uk-inline"
 >
@@ -360,7 +360,29 @@ exports[`Dropdown closes when clicked when in hover mode 3`] = `
 </div>
 `;
 
-exports[`Dropdown renders correctly 1`] = `
+exports[`it should catch invalid childrend 1`] = `
+"Warning: Failed prop type: Invalid prop \`children\` supplied to \`Dropdown\`.
+    in Dropdown"
+`;
+
+exports[`it should render correctly when children are passed as function 1`] = `
+<div
+  onClick={[Function]}
+>
+  <a
+    className=""
+  >
+    Target
+  </a>
+  <div
+    className="uk-navbar-dropdown"
+  >
+    Dropdown content here
+  </div>
+</div>
+`;
+
+exports[`renders correctly 1`] = `
 <div
   className="uk-inline"
 >
@@ -384,7 +406,7 @@ exports[`Dropdown renders correctly 1`] = `
 </div>
 `;
 
-exports[`Dropdown renders correctly 2`] = `
+exports[`renders correctly 2`] = `
 <li
   className="uk-inline"
 >

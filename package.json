@@ -43,6 +43,10 @@
       "<rootDir>/lib/",
       "<rootDir>/node_modules/"
     ],
+    "collectCoverageFrom": [
+      "**/src/**/*.js",
+      "!**/src/stories/**/*.js"
+    ],
     "coverageDirectory": "<rootDir>/.coverage",
     "setupFiles": [
       "<rootDir>/test/setup.js"
