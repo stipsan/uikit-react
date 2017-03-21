@@ -41,15 +41,15 @@ it('changes the class when hovered', () => {
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
-    // manually trigger the callback
+  // manually trigger the callback
   tree.children[1].props.onMouseEnter()
   expect(component.toJSON()).toMatchSnapshot()
 
-    // manually trigger the callback
+  // manually trigger the callback
   tree.children[1].props.onMouseLeave()
   expect(component.toJSON()).toMatchSnapshot()
 
-    // Fast forward timers, class should now be gone
+  // Fast forward timers, class should now be gone
   jest.runAllTimers()
   expect(component.toJSON()).toMatchSnapshot()
 
@@ -58,13 +58,13 @@ it('changes the class when hovered', () => {
   expect(instance.state.isOpen).toBeTruthy()
 
   component = renderer.create(
-    <Dropdown mode="hover">
+    <Dropdown delay={400} mode="hover">
       <Button>Hover</Button>
       <div className="uk-dropdown uk-dropdown-bottom-left">
         {LoremIpsum}
       </div>
     </Dropdown>
-    )
+  )
   instance = component.getInstance()
   instance.handleMouseEnter()
   expect(instance.state.isOpen).toBeTruthy()
