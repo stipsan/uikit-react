@@ -1,5 +1,4 @@
 import renderer from 'react-test-renderer'
-
 import Button from '../Button'
 
 test('Button renders correctly', () => {
