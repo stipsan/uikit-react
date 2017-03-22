@@ -26,7 +26,7 @@ it('renders correctly', () => {
         </ul>
       </div>
     </Dropdown>
-    ).toJSON()).toMatchSnapshot()
+  ).toJSON()).toMatchSnapshot()
 })
 
 it('changes the class when hovered', () => {
@@ -37,7 +37,7 @@ it('changes the class when hovered', () => {
         {LoremIpsum}
       </div>
     </Dropdown>
-    )
+  )
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
