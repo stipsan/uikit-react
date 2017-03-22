@@ -1,4 +1,4 @@
-import { Component, PropTypes, createElement } from 'react'
+import { Component, PropTypes } from 'react'
 import loader from 'uikit/dist/js/uikit-icons.min.js'
 
 let icons
@@ -32,12 +32,14 @@ export default class Icon extends Component {
     return (
       <span className="uk-icon">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height={height * ratio}
-          width={width * ratio}
-          viewBox={viewBox}
+          {...props}
           // @TODO optimize
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: svg }}
+          height={height * ratio}
+          viewBox={viewBox}
+          width={width * ratio}
+          xmlns="http://www.w3.org/2000/svg"
         />
       </span>
     )
