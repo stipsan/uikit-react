@@ -382,8 +382,6 @@ exports[`it should throw Invalid proptytype error on invalid children 1`] = `
     in Dropdown"
 `;
 
-exports[`it should throw Invalid proptytype error on invalid children 2`] = `"Children must be passed as array and must have two components."`;
-
 exports[`renders correctly 1`] = `
 <div
   className="uk-inline"
