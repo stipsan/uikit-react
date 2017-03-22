@@ -31,7 +31,7 @@ it('renders correctly', () => {
 
 it('changes the class when hovered', () => {
   let component = renderer.create(
-    <Dropdown delay={400} mode="hover" remainTime={0}>
+    <Dropdown delay={400} mode="hover">
       <Button>Hover</Button>
       <div className="uk-dropdown uk-dropdown-bottom-left">
         {LoremIpsum}
@@ -61,7 +61,7 @@ it('changes the class when hovered', () => {
   expect(instance.state.isOpen).toBeTruthy()
 
   component = renderer.create(
-    <Dropdown delay={400} mode="hover">
+    <Dropdown delay={400} mode="hover" remainTime={0}>
       <Button>Hover</Button>
       <div className="uk-dropdown uk-dropdown-bottom-left">
         {LoremIpsum}
@@ -117,7 +117,7 @@ it('closes sibling Dropdown on open', () => {
         {LoremIpsum}
       </div>
     </Dropdown>
-   )
+  )
   let first = firstComponent.toJSON()
   expect(first).toMatchSnapshot()
 
@@ -177,7 +177,7 @@ it('closes when clicked when in hover mode', () => {
         {LoremIpsum}
       </div>
     </Dropdown>
-    )
+  )
   let tree = component.toJSON()
   const treeInstance = component.getInstance()
 

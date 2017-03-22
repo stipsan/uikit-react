@@ -125,7 +125,7 @@ exports[`changes the class when hovered 3`] = `
   className="uk-inline"
 >
   <button
-    className="uk-button uk-button-default"
+    className="uk-button uk-open uk-button-default"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -134,7 +134,7 @@ exports[`changes the class when hovered 3`] = `
     Hover
   </button>
   <div
-    className="uk-dropdown uk-dropdown-bottom-left"
+    className="uk-dropdown uk-dropdown-bottom-left uk-open"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -149,7 +149,7 @@ exports[`changes the class when hovered 4`] = `
   className="uk-inline"
 >
   <button
-    className="uk-button uk-open uk-button-default"
+    className="uk-button uk-button-default"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -158,7 +158,7 @@ exports[`changes the class when hovered 4`] = `
     Hover
   </button>
   <div
-    className="uk-dropdown uk-dropdown-bottom-left uk-open"
+    className="uk-dropdown uk-dropdown-bottom-left"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
