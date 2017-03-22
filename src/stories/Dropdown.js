@@ -1,64 +1,109 @@
 import { storiesOf } from '@kadira/storybook'
-
+import cx from 'classnames'
+import { PropTypes, Component } from 'react'
 import Dropdown from '../Dropdown'
+import Button from '../Button'
 
 // This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
 Dropdown.displayName = 'Dropdown'
 
-const Nav = () => <ul className="uk-nav uk-nav-dropdown">
-  <li><a className="uk-warning" href="#">Item</a></li>
-  <li><a href="#">Another item</a></li>
-  <li className="uk-nav-header">Header</li>
-  <li><a href="#">Item</a></li>
-  <li><a href="#">Another item</a></li>
-  <li className="uk-nav-divider" />
-  <li><a href="#">Separated item</a></li>
-</ul>
-
-const Menu = () => (
-  <div className="uk-dropdown uk-dropdown-bottom">
-    <Nav />
-  </div>
+const Nav = () => (
+  <ul className="uk-nav uk-nav-dropdown">
+    <li><a className="uk-warning" href="#">Item</a></li>
+    <li><a href="#">Another item</a></li>
+    <li className="uk-nav-header">Header</li>
+    <li><a href="#">Item</a></li>
+    <li><a href="#">Another item</a></li>
+    <li className="uk-nav-divider" />
+    <li><a href="#">Separated item</a></li>
+  </ul>
 )
+
+const Menu = () => <Nav />
 Menu.displayName = 'Menu'
 
-const DropdownMenu = () => (
-  <div className="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
-    <Nav />
-  </div>
-)
-DropdownMenu.displayName = 'Menu'
+const LoremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+
+class MyDropdown extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func,
+  }
+
+  handleMouseLeave = () => {
+    this.props.onMouseLeave()
+  }
+
+  handleMouseEnter = () => {
+    this.props.onMouseEnter()
+  }
+
+  render() {
+    const { ...props } = this.props
+    const { handleMouseEnter, handleMouseLeave } = this
+    return (
+      <div
+        {...props}
+        className={cx('uk-dropdown uk-dropdown-bottom-left', props.className)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {LoremIpsum}
+      </div>
+    )
+  }
+}
 
 storiesOf('Dropdown', module)
-  .addWithInfo('Basic Usage', '', () => (
+    .addWithInfo('Basic Usage', '', () => (
+      <div className="uk-margin-bottom">
+        <Dropdown mode="hover">
+          <Button>Hover</Button>
+          <MyDropdown />
+        </Dropdown>
+        &nbsp;
+        <Dropdown mode="click">
+          <Button primary>Click</Button>
+          <MyDropdown />
+        </Dropdown>
+      </div>
+), { header: false, inline: true, propTables: [Dropdown] })
+
+  .addWithInfo('Nav in dropdown', '', () => (
     <div className="uk-margin-bottom">
       <Dropdown>
-        <button className="uk-button">Hover <i className="uk-icon-caret-down" /></button>
-        <Menu />
-      </Dropdown>
-      <br /> <br />
-      <Dropdown mode="click">
-        <button className="uk-button">Click me <i className="uk-icon-caret-down" /></button>
-        <Menu />
+        <Button>Hover</Button>
+        <div className="uk-dropdown uk-dropdown-bottom-left">
+          <Nav />
+        </div>
       </Dropdown>
     </div>
   ), { header: false, inline: true, propTables: [Dropdown] })
+
   .addWithInfo('Advanced', '', () => (
     <div className="uk-margin-bottom">
-      <nav className="uk-navbar">
+      <nav className="uk-navbar-container">
         <ul className="uk-navbar-nav">
           <li className="uk-active"><a>Active</a></li>
           <li><a href="">Item</a></li>
-          <Dropdown className="uk-parent" component="li" link="navbar">
-            <a>Parent <i className="uk-icon-caret-down" /></a>
-            <DropdownMenu />
+          <Dropdown className="" component="li" >
+            <a href="#">Parent</a>
+            <div className="uk-navbar-dropdown">
+              <ul className="uk-nav uk-navbar-dropdown-nav">
+                <li className="uk-active"><a href="#">Active</a></li>
+                <li><a href="#">Item</a></li>
+                <li className="uk-nav-header">Header</li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li className="uk-nav-divider" />
+                <li><a href="#">Item</a></li>
+              </ul>
+            </div>
           </Dropdown>
-          <Dropdown className="uk-parent" component="li" link="navbar">
-            <a>Parent <i className="uk-icon-caret-down" /></a>
-            <DropdownMenu />
-          </Dropdown>
+          <li><a href="">Item</a></li>
         </ul>
-
       </nav>
     </div>
   ), { header: false, inline: true })
