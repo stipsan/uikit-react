@@ -135,6 +135,9 @@ export default class Dropdown extends Component {
       return children({ isOpen, ...eventHandlers })
     }
 
+    if (!Array.isArray(children) || children.length !== 2) {
+      throw new Error('Children must be passed as array and must have two components.')
+    }
     const [target, body] = children
 
     // construct target Element

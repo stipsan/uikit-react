@@ -200,11 +200,22 @@ it('it should throw Invalid proptytype error on invalid children', () => {
   expect(() => {
     const component = renderer.create(
       <Dropdown mode="hover">
-        <Button key="button">Hover</Button>
+        <Button>Hover</Button>
       </Dropdown>
    )
     component.toJSON()
   }).toThrowErrorMatchingSnapshot()
+
+  expect(() => {
+    const component = renderer.create(
+      <Dropdown mode="hover">
+        <Button>Hover</Button>
+        <Button>Hover</Button>
+        <Button>Hover</Button>
+      </Dropdown>
+   )
+    component.toJSON()
+  }).toThrowError('Children must be passed as array and must have two components.')
 })
 
 it('it should render correctly when children are passed as function', () => {
