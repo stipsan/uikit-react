@@ -31,10 +31,6 @@ test('Button renders correctly', () => {
   ).toJSON()).toMatchSnapshot()
 
   expect(renderer.create(
-    <Button mini>Submit</Button>
-  ).toJSON()).toMatchSnapshot()
-
-  expect(renderer.create(
     <Button small>Submit</Button>
   ).toJSON()).toMatchSnapshot()
 

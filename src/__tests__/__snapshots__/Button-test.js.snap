@@ -66,8 +66,7 @@ exports[`Button renders correctly 7`] = `
 
 exports[`Button renders correctly 8`] = `
 <button
-  className="uk-button uk-button-default"
-  mini={true}
+  className="uk-button uk-button-default uk-button-small"
   type="button"
 >
   Submit
@@ -76,15 +75,6 @@ exports[`Button renders correctly 8`] = `
 
 exports[`Button renders correctly 9`] = `
 <button
-  className="uk-button uk-button-default uk-button-small"
-  type="button"
->
-  Submit
-</button>
-`;
-
-exports[`Button renders correctly 10`] = `
-<button
   className="uk-button uk-button-default uk-button-large"
   type="button"
 >
@@ -92,7 +82,7 @@ exports[`Button renders correctly 10`] = `
 </button>
 `;
 
-exports[`Button renders correctly 11`] = `
+exports[`Button renders correctly 10`] = `
 <button
   className="uk-button save-button uk-button-default uk-button-large"
   disabled={true}
