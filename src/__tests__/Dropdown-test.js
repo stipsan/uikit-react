@@ -41,19 +41,22 @@ it('changes the class when hovered', () => {
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
+  let instance = component.getInstance()
+
   // manually trigger the callback
-  tree.children[1].props.onMouseEnter()
+  instance.handleMouseEnter()
   expect(component.toJSON()).toMatchSnapshot()
 
   // manually trigger the callback
-  tree.children[1].props.onMouseLeave()
+  instance = component.getInstance()
+  instance.handleMouseLeave()
   expect(component.toJSON()).toMatchSnapshot()
 
   // Fast forward timers, class should now be gone
   jest.runAllTimers()
   expect(component.toJSON()).toMatchSnapshot()
 
-  let instance = component.getInstance()
+  instance = component.getInstance()
   instance.handleMouseEnter()
   expect(instance.state.isOpen).toBeTruthy()
 
@@ -91,15 +94,17 @@ it('changes the class when clicked', () => {
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
-    // manually trigger the callback
+  // manually trigger the callback
   tree.children[0].props.onClick()
-    // re-rendering
+
+  // re-rendering
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
-    // manually trigger the callback
+  // manually trigger the callback
   tree.children[0].props.onClick()
-    // re-rendering
+
+  // re-rendering
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
@@ -116,12 +121,14 @@ it('closes sibling Dropdown on open', () => {
   let first = firstComponent.toJSON()
   expect(first).toMatchSnapshot()
 
-   // manually trigger the callback
-  first.children[1].props.onMouseEnter()
+  const firstInstance = firstComponent.getInstance()
+
+  // manually trigger the callback
+  firstInstance.handleMouseEnter()
 
   first = firstComponent.toJSON()
   expect(first).toMatchSnapshot()
-  expect(firstComponent.getInstance().state.isOpen).toBe(true)
+  expect(firstInstance.state.isOpen).toBe(true)
 
   const secondComponent = renderer.create(
     <Dropdown link="menu" mode="hover">
@@ -134,30 +141,31 @@ it('closes sibling Dropdown on open', () => {
   let second = secondComponent.toJSON()
   expect(second).toMatchSnapshot()
 
-   // manually trigger the callback
-  second.children[1].props.onMouseEnter()
+  const secondInstance = secondComponent.getInstance()
 
-   // Verify that it is open
+  // manually trigger the callback
+  secondInstance.handleMouseEnter()
+
+  // Verify that it is open
   second = secondComponent.toJSON()
   expect(second).toMatchSnapshot('should be open')
-  expect(secondComponent.getInstance().state.isOpen).toBe(true)
+  expect(secondInstance.state.isOpen).toBe(true)
 
-   // Verify that the first component is closed
+  // Verify that the first component is closed
   first = firstComponent.toJSON()
   expect(first).toMatchSnapshot('should be closed')
-  expect(firstComponent.getInstance().state.isOpen).toBe(false)
+  expect(firstInstance.state.isOpen).toBe(false)
 
-   // Verify there is a subscription
-  const secondInstance = secondComponent.getInstance()
+  // Verify there is a subscription
   expect({}.hasOwnProperty.call(secondInstance, 'unsubscribe')).toBe(true)
   const unsubscribe = secondInstance.unsubscribe
 
-   // Start leave timeout before unmount
-  second.children[1].props.onMouseLeave()
+  // Start leave timeout before unmount
+  secondInstance.handleMouseLeave()
 
-   // Trigger unmount
+  // Trigger unmount
   secondComponent.update(<span />)
-    // Should be no error from calling this again
+  // Should be no error from calling this again
   unsubscribe()
 })
 
@@ -171,29 +179,30 @@ it('closes when clicked when in hover mode', () => {
     </Dropdown>
     )
   let tree = component.toJSON()
+  const treeInstance = component.getInstance()
 
-    // clicking the dropdown should not open it
-  tree.children[0].props.onClick()
+  // clicking the dropdown should not open it
+  treeInstance.handleClick()
   tree = component.toJSON()
-  expect(component.getInstance().state.isOpen).toBe(false)
+  expect(treeInstance.state.isOpen).toBe(false)
 
-    // open the dropdown
-  tree.children[0].props.onMouseEnter()
-  tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-  expect(component.getInstance().state.isOpen).toBe(true)
-
-    // close the dropdown by click
-  tree.children[0].props.onClick()
+  // open the dropdown
+  treeInstance.handleMouseEnter()
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
-  expect(component.getInstance().state.isOpen).toBe(false)
+  expect(treeInstance.state.isOpen).toBe(true)
 
-    // clicking the dropdown again shouldn't open it
-  tree.children[0].props.onClick()
+  // close the dropdown by click
+  treeInstance.handleClick()
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
-  expect(component.getInstance().state.isOpen).toBe(false)
+  expect(treeInstance.state.isOpen).toBe(false)
+
+  // clicking the dropdown again shouldn't open it
+  treeInstance.handleClick()
+  tree = component.toJSON()
+  expect(tree).toMatchSnapshot()
+  expect(treeInstance.state.isOpen).toBe(false)
 })
 
 it('it should throw Invalid proptytype error on invalid children', () => {
