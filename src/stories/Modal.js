@@ -75,19 +75,6 @@ storiesOf('Modal', module)
       </Modal>
     </div>
   ), { header: false, inline: true })
-  .addWithInfo('Lightbox modifier', '', () => (
-    <div className="uk-margin-bottom">
-      <Modal lightbox target={<OpenButton />}>
-        <img
-          alt=""
-          height="400"
-          role="presentation"
-          src="http://getuikit.com/docs/images/placeholder_600x400.svg"
-          width="600"
-        />
-      </Modal>
-    </div>
-  ), { header: false, inline: true })
   /* Removed from UIkit v3
   .addWithInfo('Blank', '', () => (
     <div className="uk-margin-bottom">
@@ -130,13 +117,7 @@ storiesOf('Modal', module)
     </div>
   ), { header: false, inline: true })
   // */
-  .addWithInfo('Large dialog modifier', '', () => (
-    <div className="uk-margin-bottom">
-      <Modal large target={<OpenButton />} >
-        <p>{LoremIpsum}</p>
-      </Modal>
-    </div>
-  ), { header: false, inline: true })
+
   /*
   .addWithInfo('Overflow container in modal', '', () => (
     <div className="uk-margin-bottom">

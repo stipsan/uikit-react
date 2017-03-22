@@ -72,6 +72,7 @@ function loadStories() {
   require('../src/stories/Modal')
   require('../src/stories/Notification')
   require('../src/stories/Input')
+  require('../src/stories/Icon')
 }
 
 configure(loadStories, module)
