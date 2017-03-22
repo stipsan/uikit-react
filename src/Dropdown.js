@@ -131,14 +131,11 @@ export default class Dropdown extends Component {
       onMouseLeave: mode === 'hover' && handleMouseLeave,
     }
 
-    if (typeof this.props.children === 'function') {
-      return this.props.children({ isOpen, ...eventHandlers })
+    if (typeof children === 'function') {
+      return children({ isOpen, ...eventHandlers })
     }
 
-    if (!Array.isArray(children) || children.length !== 2) {
-      return new Error('Children must be passed as array and must have two components.')
-    }
-    const [target, body] = this.props.children
+    const [target, body] = children
 
     // construct target Element
     const targetElement = cloneElement(target, {

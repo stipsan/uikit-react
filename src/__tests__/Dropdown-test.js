@@ -196,11 +196,11 @@ it('closes when clicked when in hover mode', () => {
   expect(component.getInstance().state.isOpen).toBe(false)
 })
 
-it('it should throw error on invalid children', () => {
+it('it should throw Invalid proptytype error on invalid children', () => {
   expect(() => {
     const component = renderer.create(
       <Dropdown mode="hover">
-        {[<Button key="button">Hover</Button>]}
+        <Button key="button">Hover</Button>
       </Dropdown>
    )
     component.toJSON()
