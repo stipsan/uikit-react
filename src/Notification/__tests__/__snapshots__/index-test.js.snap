@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Notify should render correctly 1`] = `
+exports[`Notification should render correctly 1`] = `
 <Portal
   isOpened={true}
   onClose={[Function]}
 >
   <div
-    className="uk-notify uk-notify-top-center"
+    className="uk-notification uk-notification-top-center"
   >
     <div
-      className="uk-notify-message uk-notify-message-warning"
+      className="uk-notification-message uk-notification-message-warning"
       style={
         Object {
           "marginTop": "-64px",
