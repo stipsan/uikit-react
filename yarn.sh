@@ -3,7 +3,8 @@
 # Installation instructions for Travis CI, example repo using it in production: https://github.com/stipsan/uikit-react
 
 # .travis.yml
-#
+# before_install:
+#   - bash yarn.sh
 
 echo "Should yarn.lock be regenerated?"
 if [[ $TRAVIS_PULL_REQUEST_BRANCH != *"greenkeeper"* ]]; then
@@ -34,7 +35,7 @@ git commit -m "chore: update yarn.lock"
 git push
 PUSH_STATUS=$(git push 2>&1)
 
-if [[ $PUSH_STATUS === "Everything up-to-date" ]]; then
+if [[ $PUSH_STATUS == "Everything up-to-date" ]]; then
 	exit 0
 fi
 
