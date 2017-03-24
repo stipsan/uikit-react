@@ -11,7 +11,6 @@ export default class Icon extends Component {
 
   static propTypes = {
     icon: PropTypes.oneOf(iconNames).isRequired,
-    load: PropTypes.func.isRequired,
     ratio: PropTypes.number.isRequired,
     // @TODO custom viewBox validator
     viewBox: PropTypes.string.isRequired,
