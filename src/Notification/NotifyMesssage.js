@@ -59,9 +59,12 @@ export default class NotifyMesssage extends Component {
         className={className}
         style={{ overflow: 'hidden', transition: 'margin ease-out 300ms', ...styles[this.state.isOpen ? 1 : 0] }}
       >
-        <a className="uk-close" onClick={this.handleClose} />
+        <a className="uk-notification-close uk-close uk-icon" onClick={this.handleClose} >
+          <Icon icon="close" />
+        </a>
         <div onClick={onClick}>
-          {icon && <Icon className="uk-margin-small-right" icon={icon} /> }
+          {icon && <Icon icon={icon} /> }
+          &nbsp;
           {children}
         </div>
       </div>

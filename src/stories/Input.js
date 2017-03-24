@@ -67,7 +67,7 @@ storiesOf('Input', module)
           &nbsp;
         </div>
         <div className="uk-margin">
-          <Input flip icon="refresh" />
+          <Input flip icon="spinner" />
         </div>
       </div>
     </form>

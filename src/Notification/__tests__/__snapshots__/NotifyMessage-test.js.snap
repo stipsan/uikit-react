@@ -12,19 +12,16 @@ exports[`NotifyMesssage should render correctly 1`] = `
   }
 >
   <a
-    className="uk-close"
-    onClick={[Function]}
-  />
-  <div
+    className="uk-notification-close uk-close uk-icon"
     onClick={[Function]}
   >
     <span
-      className="uk-icon uk-margin-small-right"
+      className="uk-icon"
     >
       <svg
         dangerouslySetInnerHTML={
           Object {
-            "__html": "<polyline fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" points=\\"4,10 8,15 17,4\\"></polyline>",
+            "__html": "<path fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.06\\" d=\\"M16,16 L4,4\\"></path><path fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.06\\" d=\\"M16,4 L4,16\\"></path>",
           }
         }
         height={20}
@@ -32,6 +29,28 @@ exports[`NotifyMesssage should render correctly 1`] = `
         width={20}
         xmlns="http://www.w3.org/2000/svg"
       />
+    </span>
+  </a>
+  <div
+    onClick={[Function]}
+  >
+    <span>
+      <span
+        className="uk-icon"
+      >
+        <svg
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<polyline fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" points=\\"4,10 8,15 17,4\\"></polyline>",
+            }
+          }
+          height={20}
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </span>
+       
     </span>
     children
   </div>

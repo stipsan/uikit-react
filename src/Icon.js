@@ -1,6 +1,7 @@
 import { Component, PropTypes } from 'react'
 import loader from 'uikit/dist/js/uikit-icons.min.js'
 import cx from 'classnames'
+import Spinner from './Spinner'
 
 let icons
 loader({ icon: { add: (UIkitIcons) => { icons = UIkitIcons } } })
@@ -30,6 +31,10 @@ export default class Icon extends Component {
 
     const { className, ratio, viewBox, icon, ...props } = this.props
     const svg = icons[icon] && icons[icon].replace(/^<svg[^>]*>|<\/svg>$/g, '')
+
+    if (icon === 'spinner') {
+      return <Spinner className={className} />
+    }
 
     return (
       <span className={cx('uk-icon', className)}>
