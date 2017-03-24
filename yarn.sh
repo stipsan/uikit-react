@@ -32,7 +32,6 @@ git config --global push.default simple
 
 git add yarn.lock
 git commit -m "chore: update yarn.lock"
-git push
 PUSH_STATUS=$(git push 2>&1)
 
 if [[ $PUSH_STATUS == "Everything up-to-date" ]]; then
