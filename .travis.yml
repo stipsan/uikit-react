@@ -6,6 +6,6 @@ cache: yarn
 before_script: "node guard.js"
 script: "yarn test -- --coverage && yarn lint"
 after_script: "yarn coveralls"
-after_success: "bash yarn.sh"
+before_install: "bash yarn.sh"
 notifications:
   email: false
