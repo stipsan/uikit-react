@@ -50,7 +50,7 @@
   },
   "homepage": "https://uikit-react.io",
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "3.3.0",
+    "@kadira/react-storybook-addon-info": "3.4.0",
     "@kadira/storybook": "2.35.3",
     "@kadira/storybook-deployer": "1.2.0",
     "autoprefixer": "6.7.7",
