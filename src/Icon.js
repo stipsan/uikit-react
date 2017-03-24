@@ -1,5 +1,6 @@
 import { Component, PropTypes } from 'react'
 import loader from 'uikit/dist/js/uikit-icons.min.js'
+import cx from 'classnames'
 
 let icons
 loader({ icon: { add: (UIkitIcons) => { icons = UIkitIcons } } })
@@ -14,9 +15,11 @@ export default class Icon extends Component {
     ratio: PropTypes.number.isRequired,
     // @TODO custom viewBox validator
     viewBox: PropTypes.string.isRequired,
+    className: PropTypes.string,
   }
 
   static defaultProps = {
+    className: '',
     ratio: 1,
     viewBox: '0 0 20 20',
   }
@@ -26,11 +29,11 @@ export default class Icon extends Component {
     const height = 20
     const width = 20
 
-    const { ratio, viewBox, icon, ...props } = this.props
+    const { className, ratio, viewBox, icon, ...props } = this.props
     const svg = icons[icon] && icons[icon].replace(/^<svg[^>]*>|<\/svg>$/g, '')
 
     return (
-      <span className="uk-icon">
+      <span className={cx('uk-icon', className)}>
         <svg
           {...props}
           // @TODO optimize
