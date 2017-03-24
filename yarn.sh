@@ -21,7 +21,7 @@ git checkout $TRAVIS_PULL_REQUEST_BRANCH
 # See if commit message includes "update"
 git log --name-status HEAD^..HEAD | grep "update" || exit 0
 
-echo "updatinging lockfile"
+echo "updating lockfile"
 yarn
 
 echo "Commit and push yarn.lock"
@@ -32,6 +32,11 @@ git config --global push.default simple
 git add yarn.lock
 git commit -m "chore: update yarn.lock"
 git push
+PUSH_STATUS=$(git push 2>&1)
+
+if [[ $PUSH_STATUS === "Everything up-to-date" ]]; then
+	exit 0
+fi
 
 echo "Pushed commit to trigger rebuild, this build will cancel"
 exit 1
