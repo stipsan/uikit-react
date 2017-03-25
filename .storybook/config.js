@@ -1,3 +1,5 @@
+import 'uikit/src/less/uikit.theme.less'
+
 import infoAddon from '@kadira/react-storybook-addon-info'
 import { configure, setAddon, addDecorator } from '@kadira/storybook'
 
@@ -6,10 +8,6 @@ import './uikit.less'
 import Logo from './Logo'
 
 setAddon(infoAddon)
-
-const iframeWrapperStyle = Object.freeze({
-  height: '80px',
-})
 
 addDecorator((fn, { kind, story }) => <div>
   <nav className="uk-navbar-container uk-navbar">
@@ -29,7 +27,7 @@ addDecorator((fn, { kind, story }) => <div>
       <Logo />
       <div className="uk-navbar-center-right">
         <div>
-          <div className="uk-flex uk-flex-middle" style={iframeWrapperStyle}>
+          <div className="uk-flex uk-flex-middle" style={{ height: '80px' }}>
             <iframe
               frameBorder="0"
               height="20px"
@@ -56,12 +54,6 @@ addDecorator((fn, { kind, story }) => <div>
     </div>
   </nav>
   <div className="uk-margin-top uk-margin-left uk-margin-right uk-margin-bottom">
-    {/* <a
-      href={`javascript:
-      var script = document.createElement('script');
-      script.setAttribute('src', 'https://getuikit.com/migrate.min.js');
-      document.body.appendChild(script);
-    `}>test</a> */}
     {fn()}
   </div>
 </div>)
