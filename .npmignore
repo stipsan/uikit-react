@@ -1,5 +1,6 @@
 .storybook
 .coverage
+.out
 src
 test
 assets.json
