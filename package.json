@@ -50,7 +50,8 @@
     "coverageDirectory": "<rootDir>/.coverage",
     "setupFiles": [
       "<rootDir>/test/setup.js"
-    ]
+    ],
+    "testPathIgnorePatterns": ["/node_modules/", "lib/"]
   },
   "homepage": "https://uikit-react.io",
   "devDependencies": {
