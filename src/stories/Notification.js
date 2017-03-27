@@ -68,7 +68,7 @@ Notification.displayName = 'Notification'
 storiesOf('Notification', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <NotificationsContainer isSticky type="info" />
+      <NotificationsContainer type="info" />
     </div>
   ), { header: false, inline: true, propTables: [Notification] })
   .addWithInfo('Position', '', () => (
