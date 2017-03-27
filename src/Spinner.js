@@ -1,5 +1,6 @@
 import { PropTypes, PureComponent } from 'react'
 import cx from 'classnames'
+import computedStyle from 'computed-style'
 
 class Spinner extends PureComponent {
   static propTypes = {
@@ -21,10 +22,9 @@ class Spinner extends PureComponent {
   }
 
   setMeasurements = () => {
-    const style = window.getComputedStyle(this.circle, null)
     this.setState({
       size: this.container.clientWidth,
-      strokeWidth: parseFloat(style.getPropertyValue('stroke-width')),
+      strokeWidth: parseFloat(computedStyle(this.circle, 'stroke-width')),
     })
   }
 
