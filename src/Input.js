@@ -29,7 +29,7 @@ const Input = ({
   if (icon) {
     return (
       <div className="uk-inline">
-        {icon && <Icon className={cx('uk-form-icon', { 'uk-form-icon-flip': flip })} icon={icon} /> }
+        <Icon className={cx('uk-form-icon', { 'uk-form-icon-flip': flip })} icon={icon} />
         {input}
       </div>
     )

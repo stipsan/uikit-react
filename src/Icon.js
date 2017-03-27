@@ -11,7 +11,7 @@ const iconNames = Object.keys(icons)
 export default class Icon extends Component {
 
   static propTypes = {
-    icon: PropTypes.oneOf(iconNames.concat(['spinner'])).isRequired,
+    icon: PropTypes.oneOf([...iconNames, 'spinner']).isRequired,
     ratio: PropTypes.number.isRequired,
     // @TODO custom viewBox validator
     viewBox: PropTypes.string.isRequired,
@@ -30,11 +30,12 @@ export default class Icon extends Component {
     const width = 20
 
     const { className, ratio, viewBox, icon, ...props } = this.props
-    const svg = icons[icon] && icons[icon].replace(/^<svg[^>]*>|<\/svg>$/g, '')
 
     if (icon === 'spinner') {
       return <Spinner className={className} />
     }
+
+    const svg = icons[icon] && icons[icon].replace(/^<svg[^>]*>|<\/svg>$/g, '')
 
     return (
       <span className={cx('uk-icon', className)}>

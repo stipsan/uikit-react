@@ -54,6 +54,19 @@ export default class NotifyMesssage extends Component {
     if (this.state.isClosed) {
       return false
     }
+
+    const body = icon ? (
+      <div onClick={onClick}>
+        <Icon icon={icon} />
+        &nbsp;
+        {children}
+      </div>
+    ) : (
+      <div onClick={onClick}>
+        {children}
+      </div>
+  )
+
     return (
       <div
         className={className}
@@ -62,11 +75,7 @@ export default class NotifyMesssage extends Component {
         <a className="uk-notification-close uk-close uk-icon" onClick={this.handleClose} >
           <Icon icon="close" />
         </a>
-        <div onClick={onClick}>
-          {icon && <Icon icon={icon} /> }
-          &nbsp;
-          {children}
-        </div>
+        {body}
       </div>
     )
   }
