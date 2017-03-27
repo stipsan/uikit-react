@@ -11,7 +11,7 @@ const iconNames = Object.keys(icons)
 export default class Icon extends Component {
 
   static propTypes = {
-    icon: PropTypes.oneOf(iconNames).isRequired,
+    icon: PropTypes.oneOf(iconNames.concat(['spinner'])).isRequired,
     ratio: PropTypes.number.isRequired,
     // @TODO custom viewBox validator
     viewBox: PropTypes.string.isRequired,
