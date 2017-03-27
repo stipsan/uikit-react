@@ -1,7 +1,7 @@
 import src from './static/logo.svg'
 
 const logoStyle = Object.freeze({
-  height: '50px',
+  height: '64px',
 })
 
 const Logo = () => <a className="uk-navbar-item uk-logo">

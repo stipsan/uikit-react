@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "coveralls": "coveralls < .coverage/lcov.info",
     "prebuild": "rm -rf lib",
-    "build": "babel ./src --out-dir ./lib",
+    "build": "babel ./src --ignore __tests__,stories --out-dir ./lib",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -o .out -s .storybook/static",
