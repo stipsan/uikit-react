@@ -68,7 +68,7 @@ Notification.displayName = 'Notification'
 storiesOf('Notification', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <NotificationsContainer type="info" />
+      <NotificationsContainer isSticky type="info" />
     </div>
   ), { header: false, inline: true, propTables: [Notification] })
   .addWithInfo('Position', '', () => (
@@ -96,6 +96,6 @@ storiesOf('Notification', module)
       <NotificationsContainer icon="warning" position="top-right" timeout={5000} type="danger" onClick={action('handleClick')} />
       <NotificationsContainer position="top-center" type="success" />
       <NotificationsContainer position="top-right" type="warning" />
-      <NotificationsContainer icon="danger" position="top-left" type="danger" />
+      <NotificationsContainer isSticky icon="check" position="top-left" type="success" />
     </div>
   ), { header: false, inline: true, propTables: [Notification] })

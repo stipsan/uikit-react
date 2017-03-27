@@ -1,5 +1,6 @@
 import { Component, PropTypes } from 'react'
 import cx from 'classnames'
+import Icon from '../Icon'
 
 export default class NotifyMesssage extends Component {
   static propTypes = {
@@ -58,9 +59,12 @@ export default class NotifyMesssage extends Component {
         className={className}
         style={{ overflow: 'hidden', transition: 'margin ease-out 300ms', ...styles[this.state.isOpen ? 1 : 0] }}
       >
-        <a className="uk-close" onClick={this.handleClose} />
+        <a className="uk-notification-close uk-close uk-icon" onClick={this.handleClose} >
+          <Icon icon="close" />
+        </a>
         <div onClick={onClick}>
-          {icon && <span><i className={`uk-icon-${icon}`} />&nbsp;</span> }
+          {icon && <Icon icon={icon} /> }
+          &nbsp;
           {children}
         </div>
       </div>

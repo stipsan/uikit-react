@@ -1,5 +1,6 @@
 import cx from 'classnames'
 import { PropTypes } from 'react'
+import Icon from './Icon'
 
 const Input = ({
   blank,
@@ -27,16 +28,13 @@ const Input = ({
   const input = <input {...other} className={className} />
   if (icon) {
     return (
-      <div className={cx('uk-form-icon', { 'uk-form-icon-flip': flip })}>
-        <i
-          className={cx(`uk-icon-${icon}`, {
-            'uk-icon-spin': icon === 'spinner' || icon === 'refresh',
-          })}
-        />
+      <div className="uk-inline">
+        {icon && <Icon className={cx('uk-form-icon', { 'uk-form-icon-flip': flip })} icon={icon} /> }
         {input}
       </div>
     )
   }
+
   return input
 }
 
