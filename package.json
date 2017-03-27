@@ -1,6 +1,6 @@
 {
   "name": "uikit-react",
-  "version": "3.0.0-beta.0",
+  "version": "3.0.0-beta.1",
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
@@ -51,7 +51,10 @@
     "setupFiles": [
       "<rootDir>/test/setup.js"
     ],
-    "testPathIgnorePatterns": ["/node_modules/", "lib/"]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "lib/"
+    ]
   },
   "homepage": "https://uikit-react.io",
   "devDependencies": {
