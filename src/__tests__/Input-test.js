@@ -57,10 +57,6 @@ describe('Input', () => {
     ).toJSON()).toMatchSnapshot()
 
     expect(renderer.create(
-      <Input icon="spinner" />
-    ).toJSON()).toMatchSnapshot()
-
-    expect(renderer.create(
       <Input flip icon="refresh" />
     ).toJSON()).toMatchSnapshot()
   })

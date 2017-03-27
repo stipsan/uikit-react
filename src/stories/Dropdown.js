@@ -1,8 +1,8 @@
 import { storiesOf } from '@kadira/storybook'
 import cx from 'classnames'
 import { PropTypes, Component } from 'react'
+import { Button, Icon } from 'uikit-react'
 import Dropdown from '../Dropdown'
-import Button from '../Button'
 
 // This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
 Dropdown.displayName = 'Dropdown'
@@ -60,12 +60,12 @@ storiesOf('Dropdown', module)
     .addWithInfo('Basic Usage', '', () => (
       <div className="uk-margin-bottom">
         <Dropdown mode="hover">
-          <Button>Hover</Button>
+          <Button>Hover <Icon icon="triangle-down" /></Button>
           <MyDropdown />
         </Dropdown>
         &nbsp;
         <Dropdown mode="click">
-          <Button primary>Click</Button>
+          <Button primary>Click <Icon icon="triangle-down" /></Button>
           <MyDropdown />
         </Dropdown>
       </div>
@@ -74,7 +74,7 @@ storiesOf('Dropdown', module)
   .addWithInfo('Nav in dropdown', '', () => (
     <div className="uk-margin-bottom">
       <Dropdown>
-        <Button>Hover</Button>
+        <Button>Hover <Icon icon="triangle-down" /></Button>
         <div className="uk-dropdown uk-dropdown-bottom-left">
           <Nav />
         </div>
@@ -89,7 +89,7 @@ storiesOf('Dropdown', module)
           <li className="uk-active"><a>Active</a></li>
           <li><a href="">Item</a></li>
           <Dropdown className="" component="li" >
-            <a href="#">Parent</a>
+            <a href="#">Parent <Icon icon="triangle-down" /></a>
             <div className="uk-navbar-dropdown">
               <ul className="uk-nav uk-navbar-dropdown-nav">
                 <li className="uk-active"><a href="#">Active</a></li>
