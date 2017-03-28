@@ -81,6 +81,7 @@ exports[`Input renders correctly 12`] = `
         }
       }
       height={20}
+      icon="calendar"
       viewBox="0 0 20 20"
       width={20}
       xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +107,7 @@ exports[`Input renders correctly 13`] = `
         }
       }
       height={20}
+      icon="calendar"
       viewBox="0 0 20 20"
       width={20}
       xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +133,7 @@ exports[`Input renders correctly 14`] = `
         }
       }
       height={20}
+      icon="refresh"
       viewBox="0 0 20 20"
       width={20}
       xmlns="http://www.w3.org/2000/svg"
