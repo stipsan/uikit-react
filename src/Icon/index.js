@@ -1,11 +1,9 @@
 import { Component, PropTypes } from 'react'
-import loader from 'uikit/dist/js/uikit-icons.min.js'
 import cx from 'classnames'
+
+import icons from './icons'
 import Spinner from './Spinner'
-
-let icons
-loader({ icon: { add: (UIkitIcons) => { icons = UIkitIcons } } })
-
+console.log(icons)
 const iconNames = Object.keys(icons)
 
 export default class Icon extends Component {
@@ -40,12 +38,14 @@ export default class Icon extends Component {
     return (
       <span className={cx('uk-icon', className)}>
         <svg
-          {...props}
-          // @TODO optimize
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: svg }}
+          {...props}
+          // @TODO optimize
+
           height={height * ratio}
           viewBox={viewBox}
+          icon={icon}
           width={width * ratio}
           xmlns="http://www.w3.org/2000/svg"
         />

@@ -1,4 +1,4 @@
-import src from './static/logo.svg'
+const src = require('./static/logo.svg')
 
 const logoStyle = Object.freeze({
   height: '64px',
