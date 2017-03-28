@@ -1,14 +1,13 @@
 import renderer from 'react-test-renderer'
 import Icon from '../index'
+import icons from '../icons'
 
 jest.mock('../Spinner', () => 'Spinner')
 
-it('should render correctly', () => {
-  expect(renderer.create(
-    <Icon icon="check" ratio={2} />
-  ).toJSON()).toMatchSnapshot()
-
-  expect(renderer.create(
-    <Icon icon="spinner" />
-  ).toJSON()).toMatchSnapshot()
+const iconNames = Object.keys(icons)
+iconNames.forEach((iconName) => {
+  test(iconName, () => {
+    const component = renderer.create(<Icon icon={iconName} />)
+    expect(component.toJSON()).toMatchSnapshot()
+  })
 })
