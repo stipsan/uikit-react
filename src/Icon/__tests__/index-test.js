@@ -1,5 +1,5 @@
 import renderer from 'react-test-renderer'
-import Icon from '../Icon'
+import Icon from '../index'
 
 jest.mock('../Spinner', () => 'Spinner')
 
