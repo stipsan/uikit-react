@@ -10,6 +10,8 @@ uikit-react
 [![NPM](https://nodei.co/npm/uikit-react.png?downloadRank=true)](https://www.npmjs.com/package/uikit-react)
 [![NPM](https://nodei.co/npm-dl/uikit-react.png?months=3&height=2)](https://nodei.co/npm/uikit-react/)
 
+# We are [busy upgrading](https://github.com/stipsan/uikit-react/pull/491) to UIkit v3
+
 <img src="https://uikit-react.io/logo.svg" width="256"/>
 
 ## Installation
