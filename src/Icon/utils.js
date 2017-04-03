@@ -9,4 +9,4 @@ export const getDimensionsFromViewBox = (svg) => {
   return { width, height }
 }
 
-export const getInnerSvg = svg => svg.replace(/^<svg[^>]*>|<\/svg>$/g, '')
+export const getInnerSvg = svg => svg.replace(/.*<svg[^>]*>|<\/svg>$/g, '')
