@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { Component, PropTypes, createElement } from 'react'
+import Icon from '../Icon'
 
 export default class Dialog extends Component {
   static defaultProps = {
@@ -48,16 +49,14 @@ export default class Dialog extends Component {
       'uk-modal-dialog-blank': blank,
       'uk-modal-dialog-large': large,
     })
-    const closeClassName = classNames('uk-modal-close uk-close', {
-      'uk-close-alt': lightbox,
-    })
+    const closeClassName = 'uk-modal-close-default uk-close'
 
     return (
       <div className={dialogClassName} onClick={handleOverlayClick}>
-        {close && (<a className={closeClassName} onClick={handleClose} />)}
-        {header && (<div className="uk-modal-header"><h2>{header}</h2></div>)}
-        {caption && (<div className="uk-modal-caption">{caption}</div>)}
-        {children}
+        {close && <Icon className={closeClassName} component="button" icon="close-icon" type="button" onClick={handleClose} />}
+        {header && <div className="uk-modal-header"><h2>{header}</h2></div>}
+        {caption && <div className="uk-modal-caption">{caption}</div>}
+        <div className="uk-modal-body">{children}</div>
         { footer.length > 0 && (
           <div className="uk-modal-footer uk-text-right">
             {footer.map((component, i) => createElement(component, { key: i, handleClose }))}
