@@ -1,5 +1,6 @@
 import { Component, PropTypes } from 'react'
 import cx from 'classnames'
+import Icon from '../Icon'
 
 export default class NotifyMesssage extends Component {
   static propTypes = {
@@ -7,7 +8,7 @@ export default class NotifyMesssage extends Component {
     icon: PropTypes.string,
     isSticky: PropTypes.bool,
     timeout: PropTypes.number,
-    type: PropTypes.oneOf(['info', 'success', 'danger', 'warning', false]),
+    type: PropTypes.oneOf(['info', 'success', 'danger', 'warning', 'primary', false]),
     onClick: PropTypes.func, // eslint-disable-line react/require-default-props
   }
 
@@ -38,11 +39,12 @@ export default class NotifyMesssage extends Component {
 
   render() {
     const { children, type, icon, onClick } = this.props
-    const className = cx('uk-notify-message', {
-      'uk-notify-message-info': type === 'info',
-      'uk-notify-message-success': type === 'success',
-      'uk-notify-message-danger': type === 'danger',
-      'uk-notify-message-warning': type === 'warning',
+    const className = cx('uk-notification-message', {
+      'uk-notification-message-info': type === 'info',
+      'uk-notification-message-success': type === 'success',
+      'uk-notification-message-danger': type === 'danger',
+      'uk-notification-message-warning': type === 'warning',
+      'uk-notification-message-primary': type === 'primary',
     })
     const styles = [
       { marginTop: '-64px' },
@@ -52,16 +54,26 @@ export default class NotifyMesssage extends Component {
     if (this.state.isClosed) {
       return false
     }
+
+    const body = icon ? (
+      <div onClick={onClick}>
+        <Icon icon={icon} />
+        &nbsp;
+        {children}
+      </div>
+    ) : (
+      <div onClick={onClick}>
+        {children}
+      </div>
+  )
+
     return (
       <div
         className={className}
         style={{ overflow: 'hidden', transition: 'margin ease-out 300ms', ...styles[this.state.isOpen ? 1 : 0] }}
       >
-        <a className="uk-close" onClick={this.handleClose} />
-        <div onClick={onClick}>
-          {icon && <span><i className={`uk-icon-${icon}`} />&nbsp;</span> }
-          {children}
-        </div>
+        <Icon className="uk-notification-close uk-close" component="a" icon="close-icon" onClick={this.handleClose} />
+        {body}
       </div>
     )
   }

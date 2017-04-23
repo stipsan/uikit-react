@@ -1,5 +1,4 @@
 import renderer from 'react-test-renderer'
-
 import Button from '../Button'
 
 test('Button renders correctly', () => {
@@ -29,10 +28,6 @@ test('Button renders correctly', () => {
 
   expect(renderer.create(
     <Button link>Submit</Button>
-  ).toJSON()).toMatchSnapshot()
-
-  expect(renderer.create(
-    <Button mini>Submit</Button>
   ).toJSON()).toMatchSnapshot()
 
   expect(renderer.create(

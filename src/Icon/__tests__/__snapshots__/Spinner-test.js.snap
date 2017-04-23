@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<span
+  className="uk-icon uk-spinner"
+>
+  <svg
+    height={32}
+    ratio="1"
+    viewBox="0 0 32 32"
+    width={32}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx={16}
+      cy={16}
+      fill="none"
+      r={15}
+      stroke="#000"
+    />
+  </svg>
+</span>
+`;
