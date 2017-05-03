@@ -1,5 +1,6 @@
 import classNames from 'classnames'
-import { Component, PropTypes, createElement } from 'react'
+import { Component, createElement } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Dialog extends Component {
   static defaultProps = {

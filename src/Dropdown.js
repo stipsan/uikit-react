@@ -1,5 +1,6 @@
 import cx from 'classnames'
-import { Component, PropTypes, createElement } from 'react'
+import { Component, createElement } from 'react'
+import PropTypes from 'prop-types'
 
 const links = {}
 

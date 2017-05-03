@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 
 const Input = ({
   blank,

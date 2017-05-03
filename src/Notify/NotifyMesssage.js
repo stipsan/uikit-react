@@ -1,5 +1,6 @@
-import { Component, PropTypes } from 'react'
+import { Component } from 'react'
 import cx from 'classnames'
+import PropTypes from 'prop-types'
 
 export default class NotifyMesssage extends Component {
   static propTypes = {
