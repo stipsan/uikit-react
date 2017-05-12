@@ -1,4 +1,5 @@
-import { Component, PropTypes } from 'react'
+import { Component } from 'react'
+import PropTypes from 'prop-types'
 import Portal from 'react-portal'
 import cx from 'classnames'
 
@@ -11,10 +12,10 @@ export default class Notification extends Component {
   }
 
   static defaultProps = {
-    type: 'primary',
     className: 'uk-notification',
-    position: 'top-center',
     notifications: [],
+    position: 'top-center',
+    type: 'primary',
   }
 
   state = {

@@ -8,7 +8,8 @@ rules:
     - error
     - never
   react/no-danger: error
-  react/no-comment-textnodes: error
+  react/no-comment-textnodes: off
+  jsx-a11y/img-has-alt: off
   react/no-direct-mutation-state: error
   react/no-string-refs: error
   react/jsx-handler-names: error

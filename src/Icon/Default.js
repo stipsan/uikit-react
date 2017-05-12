@@ -1,4 +1,6 @@
-import { PureComponent, PropTypes } from 'react'
+import { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+
 import cx from 'classnames'
 
 import icons from './icons'
