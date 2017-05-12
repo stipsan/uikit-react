@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.3.2] - 2017-05-13
+### Bugfixes
+* Accidentally published v3 beta on `latest` tag.
+
 ## [2.3.1] - 2017-03-17
 ### Changed
 * Fixed broken logo in readme.
@@ -143,7 +147,8 @@ But instead of a conventional OSS project site we decided to host the React Stor
 
 Proved stable enough for a stable semver major version 💃
 
-[Unreleased]: https://github.com/stipsan/uikit-react/compare/v2.3.1...HEAD
+[Unreleased]: https://github.com/stipsan/uikit-react/compare/v2.3.2...HEAD
+[2.3.2]: https://github.com/stipsan/uikit-react/compare/v2.3.1...v2.3.2
 [2.3.1]: https://github.com/stipsan/uikit-react/compare/v2.3.0...v2.3.1
 [2.3.0]: https://github.com/stipsan/uikit-react/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/stipsan/uikit-react/compare/v2.1.1...v2.2.0
