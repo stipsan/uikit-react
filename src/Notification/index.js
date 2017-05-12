@@ -12,10 +12,10 @@ export default class Notification extends Component {
   }
 
   static defaultProps = {
-    type: 'primary',
     className: 'uk-notification',
-    position: 'top-center',
     notifications: [],
+    position: 'top-center',
+    type: 'primary',
   }
 
   state = {
