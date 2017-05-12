@@ -1,6 +1,8 @@
 import { storiesOf } from '@kadira/storybook'
 import cx from 'classnames'
-import { PropTypes, Component } from 'react'
+import { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import { Button } from 'uikit-react'
 import Dropdown from '../Dropdown'
 

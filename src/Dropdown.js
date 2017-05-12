@@ -1,5 +1,6 @@
 import cx from 'classnames'
-import { Component, PropTypes, cloneElement } from 'react'
+import { Component, cloneElement } from 'react'
+import PropTypes from 'prop-types'
 
 const links = {}
 
