@@ -1,6 +1,7 @@
 import cx from 'classnames'
-import { Component, createElement } from 'react'
+import { Component, cloneElement } from 'react'
 import PropTypes from 'prop-types'
+
 
 const links = {}
 
@@ -34,7 +35,10 @@ const dispatch = (namespace) => {
 
 export default class Dropdown extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.arrayOf(PropTypes.element),
+    ]).isRequired,
     delay: PropTypes.number.isRequired,
     mode: PropTypes.oneOf(['hover', 'click']).isRequired,
     remainTime: PropTypes.number.isRequired,
@@ -48,8 +52,8 @@ export default class Dropdown extends Component {
     remainTime: 800,
     delay: 0,
     component: 'div',
-    className: 'uk-button-dropdown',
     link: '',
+    className: 'uk-inline',
   }
 
   state = {
@@ -120,22 +124,49 @@ export default class Dropdown extends Component {
 
   render() {
     const { handleMouseEnter, handleMouseLeave, handleClick } = this
-    const { mode, children, component } = this.props
+    const { mode, component, children, className } = this.props
     const { isOpen } = this.state
-    const className = cx(this.props.className, {
-      'uk-open': isOpen,
-    })
-    const DropdownProps = {
-      'aria-expanded': isOpen,
-      'aria-haspopup': true,
-      className,
+
+    const eventHandlers = {
       onClick: handleClick,
       onMouseEnter: mode === 'hover' && handleMouseEnter,
       onMouseLeave: mode === 'hover' && handleMouseLeave,
-      children,
     }
+
+    if (typeof children === 'function') {
+      return children({ isOpen, ...eventHandlers })
+    }
+
+    if (!Array.isArray(children) || children.length !== 2) {
+      throw new Error('Children must be passed as array and must have two components.')
+    }
+    const [target, body] = children
+
+    // construct target Element
+    const targetElement = cloneElement(target, {
+      ...target.props,
+      ...eventHandlers,
+      className: cx(target.props.className, {
+        'uk-open': isOpen,
+      }),
+    })
+
+    // construct body Element
+    const bodyElement = cloneElement(body, {
+      ...body.props,
+      ...eventHandlers,
+      className: cx(body.props.className, {
+        'uk-open': isOpen,
+      }),
+    })
+
+    const WrapperComponent = component
+
     return (
-      createElement(component, DropdownProps)
+      <WrapperComponent className={className}>
+        {targetElement}
+        {bodyElement}
+      </WrapperComponent>
     )
   }
 }

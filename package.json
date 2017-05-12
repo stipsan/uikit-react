@@ -1,6 +1,6 @@
 {
   "name": "uikit-react",
-  "version": "2.3.1",
+  "version": "3.0.0-beta.3",
   "description": "UIkit components built with React",
   "main": "./lib",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "coveralls": "coveralls < .coverage/lcov.info",
     "prebuild": "rm -rf lib",
-    "build": "babel ./src --out-dir ./lib",
+    "build": "babel ./src --ignore __tests__,stories --out-dir ./lib",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -o .out -s .storybook/static",
@@ -43,9 +43,17 @@
       "<rootDir>/lib/",
       "<rootDir>/node_modules/"
     ],
+    "collectCoverageFrom": [
+      "**/src/**/*.js",
+      "!**/src/stories/**/*.js"
+    ],
     "coverageDirectory": "<rootDir>/.coverage",
     "setupFiles": [
       "<rootDir>/test/setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "lib/"
     ]
   },
   "homepage": "https://uikit-react.io",
@@ -58,6 +66,7 @@
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-jest": "19.0.0",
+    "babel-plugin-inline-import": "^2.0.4",
     "babel-plugin-react-transform": "2.0.2",
     "babel-plugin-transform-react-constant-elements": "6.23.0",
     "babel-plugin-transform-react-inline-elements": "6.22.0",
@@ -96,13 +105,14 @@
     "semver": "^5.3.0",
     "semver-truncate": "^1.1.2",
     "style-loader": "0.17.0",
-    "uikit": "2.27.2",
+    "uikit": "3.0.0-beta.19",
     "url-loader": "0.5.8"
   },
   "dependencies": {
     "classnames": "2.2.5",
-    "react-input-autosize": "1.1.3",
-    "react-portal": "3.1.0"
+    "computed-style": "^0.3.0",
+    "react-input-autosize": "1.1.0",
+    "react-portal": "^3.0.0"
   },
   "contributors": [
     {

@@ -1,1 +1,7 @@
+.coverage
+.out
+.storybook
+src
 test
+assets.json
+guard.js

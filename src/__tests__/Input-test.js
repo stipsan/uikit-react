@@ -49,19 +49,11 @@ describe('Input', () => {
     ).toJSON()).toMatchSnapshot()
 
     expect(renderer.create(
-      <Input width="mini" />
-    ).toJSON()).toMatchSnapshot()
-
-    expect(renderer.create(
       <Input icon="calendar" />
     ).toJSON()).toMatchSnapshot()
 
     expect(renderer.create(
       <Input flip icon="calendar" />
-    ).toJSON()).toMatchSnapshot()
-
-    expect(renderer.create(
-      <Input icon="spinner" />
     ).toJSON()).toMatchSnapshot()
 
     expect(renderer.create(
