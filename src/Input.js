@@ -1,9 +1,7 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-<<<<<<< HEAD
+
 import Icon from './Icon'
-=======
->>>>>>> 516a48d24c6f5e8b8f539df5ba1594fdc5e643ba
 
 const Input = ({
   blank,
