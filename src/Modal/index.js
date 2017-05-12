@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { Component } from 'react'
-import Portal from 'react-portal'
 import PropTypes from 'prop-types'
+import Portal from 'react-portal'
 
 import Button from '../Button'
 import Dialog from './Dialog'

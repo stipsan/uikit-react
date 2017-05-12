@@ -3,7 +3,6 @@ import { Notification, Button } from 'uikit-react'
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-
 class NotificationsContainer extends PureComponent {
   static propTypes = {
     position: PropTypes.string.isRequired,
