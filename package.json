@@ -82,7 +82,7 @@
     "json-loader": "0.5.4",
     "less": "2.7.2",
     "less-loader": "4.0.3",
-    "mocha": "3.3.0",
+    "mocha": "3.4.0",
     "postcss-loader": "2.0.1",
     "prop-types": "^15.5.8",
     "raw-loader": "^0.5.1",
