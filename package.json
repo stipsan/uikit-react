@@ -67,7 +67,7 @@
     "babel-preset-stage-0": "6.24.1",
     "babel-register": "6.24.1",
     "coveralls": "2.13.1",
-    "css-loader": "0.28.2",
+    "css-loader": "0.28.3",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
