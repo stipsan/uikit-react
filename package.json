@@ -81,7 +81,7 @@
     "jsdom": "11.0.0",
     "json-loader": "0.5.4",
     "less": "2.7.2",
-    "less-loader": "4.0.3",
+    "less-loader": "4.0.4",
     "mocha": "3.3.0",
     "postcss-loader": "2.0.1",
     "prop-types": "^15.5.8",
