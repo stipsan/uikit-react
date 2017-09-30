@@ -26,17 +26,27 @@ export default class NotifyMesssage extends Component {
   }
 
   componentDidMount() {
-    setTimeout(this.openNotification, 100)
+    this.enterTimeout = setTimeout(this.openNotification, 100)
 
     if (this.props.timeout && !this.props.isSticky) {
-      setTimeout(this.handleClose, this.props.timeout)
+      this.leaveTimeout = setTimeout(this.handleClose, this.props.timeout)
+    }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.enterTimeout)
+
+    if (this.leaveTimeout) {
+      clearTimeout(this.leaveTimeout)
     }
   }
 
   openNotification = () => this.setState({ isOpen: true })
 
   handleClose = () => {
-    this.setState({ isOpen: false }, () => setTimeout(() => this.setState({ isClosed: true }), 300))
+    this.setState({ isOpen: false }, () => {
+      this.leaveTimeout = setTimeout(() => this.setState({ isClosed: true }), 300)
+    })
   }
 
   render() {

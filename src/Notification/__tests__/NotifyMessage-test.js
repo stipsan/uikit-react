@@ -11,14 +11,22 @@ describe('NotifyMesssage', () => {
     position: 'top-center',
     onClick: jest.fn(),
   }
-  const component = renderer.create(
-    <NotifyMesssage {...defaultProps} />
-  )
+
   it('should render correctly', () => {
+    const component = renderer.create(
+      <NotifyMesssage {...defaultProps} />
+    )
+    expect(component.toJSON()).toMatchSnapshot()
+
+    // Test unmount
+    component.update(<span />)
     expect(component.toJSON()).toMatchSnapshot()
   })
 
   it('should return if state is closed', () => {
+    const component = renderer.create(
+      <NotifyMesssage {...defaultProps} />
+    )
     const instance = component.getInstance()
     instance.handleClose()
     jest.runAllTimers()
