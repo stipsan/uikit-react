@@ -7,8 +7,6 @@ exports[`changes the class when clicked 1`] = `
   <button
     className="uk-button uk-button-default"
     onClick={[Function]}
-    onMouseEnter={false}
-    onMouseLeave={false}
     type="button"
   >
     Click
@@ -16,8 +14,6 @@ exports[`changes the class when clicked 1`] = `
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
     onClick={[Function]}
-    onMouseEnter={false}
-    onMouseLeave={false}
   >
     Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </div>
@@ -31,8 +27,6 @@ exports[`changes the class when clicked 2`] = `
   <button
     className="uk-button uk-open uk-button-default"
     onClick={[Function]}
-    onMouseEnter={false}
-    onMouseLeave={false}
     type="button"
   >
     Click
@@ -40,8 +34,6 @@ exports[`changes the class when clicked 2`] = `
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
     onClick={[Function]}
-    onMouseEnter={false}
-    onMouseLeave={false}
   >
     Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </div>
@@ -55,8 +47,6 @@ exports[`changes the class when clicked 3`] = `
   <button
     className="uk-button uk-button-default"
     onClick={[Function]}
-    onMouseEnter={false}
-    onMouseLeave={false}
     type="button"
   >
     Click
@@ -64,8 +54,6 @@ exports[`changes the class when clicked 3`] = `
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
     onClick={[Function]}
-    onMouseEnter={false}
-    onMouseLeave={false}
   >
     Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </div>
@@ -78,7 +66,6 @@ exports[`changes the class when hovered 1`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -87,7 +74,6 @@ exports[`changes the class when hovered 1`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -102,7 +88,6 @@ exports[`changes the class when hovered 2`] = `
 >
   <button
     className="uk-button uk-open uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -111,7 +96,6 @@ exports[`changes the class when hovered 2`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -126,7 +110,6 @@ exports[`changes the class when hovered 3`] = `
 >
   <button
     className="uk-button uk-open uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -135,7 +118,6 @@ exports[`changes the class when hovered 3`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -150,7 +132,6 @@ exports[`changes the class when hovered 4`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -159,7 +140,6 @@ exports[`changes the class when hovered 4`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -174,7 +154,6 @@ exports[`changes the class when hovered 5`] = `
 >
   <button
     className="uk-button uk-open uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -183,7 +162,6 @@ exports[`changes the class when hovered 5`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -198,7 +176,6 @@ exports[`changes the class when hovered 6`] = `
 >
   <button
     className="uk-button uk-open uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -207,7 +184,6 @@ exports[`changes the class when hovered 6`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -222,7 +198,6 @@ exports[`closes sibling Dropdown on open 1`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -231,7 +206,6 @@ exports[`closes sibling Dropdown on open 1`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -246,7 +220,6 @@ exports[`closes sibling Dropdown on open 2`] = `
 >
   <button
     className="uk-button uk-open uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -255,7 +228,6 @@ exports[`closes sibling Dropdown on open 2`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -270,7 +242,6 @@ exports[`closes sibling Dropdown on open 3`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -279,7 +250,6 @@ exports[`closes sibling Dropdown on open 3`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -294,7 +264,6 @@ exports[`closes when clicked when in hover mode 1`] = `
 >
   <button
     className="uk-button uk-open uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -303,7 +272,6 @@ exports[`closes when clicked when in hover mode 1`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -318,7 +286,6 @@ exports[`closes when clicked when in hover mode 2`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -327,7 +294,6 @@ exports[`closes when clicked when in hover mode 2`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -342,7 +308,6 @@ exports[`closes when clicked when in hover mode 3`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -351,7 +316,6 @@ exports[`closes when clicked when in hover mode 3`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -362,7 +326,7 @@ exports[`closes when clicked when in hover mode 3`] = `
 
 exports[`it should render correctly when children are passed as function 1`] = `
 <div
-  onClick={[Function]}
+  onClick={undefined}
 >
   <button
     className=""
@@ -388,7 +352,6 @@ exports[`renders correctly 1`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -397,7 +360,6 @@ exports[`renders correctly 1`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -412,7 +374,6 @@ exports[`renders correctly 2`] = `
 >
   <button
     className="uk-button uk-button-link"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -421,7 +382,6 @@ exports[`renders correctly 2`] = `
   </button>
   <div
     className="uk-navbar-dropdown"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -447,7 +407,6 @@ exports[`should be closed 1`] = `
 >
   <button
     className="uk-button uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -456,7 +415,6 @@ exports[`should be closed 1`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -471,7 +429,6 @@ exports[`should be open 1`] = `
 >
   <button
     className="uk-button uk-open uk-button-default"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     type="button"
@@ -480,7 +437,6 @@ exports[`should be open 1`] = `
   </button>
   <div
     className="uk-dropdown uk-dropdown-bottom-left uk-open"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
