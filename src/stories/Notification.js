@@ -1,8 +1,7 @@
 import { storiesOf, action } from '@kadira/storybook'
-import { Notify, Button } from 'uikit-react'
+import { Notification, Button } from 'uikit-react'
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-
 
 class NotificationsContainer extends PureComponent {
   static propTypes = {
@@ -57,7 +56,7 @@ class NotificationsContainer extends PureComponent {
         {this.props.onClick ? '- click' : ''}
         {this.props.timeout ? '- timeout' : ''}
       </Button>
-      <Notify
+      <Notification
         notifications={notifications}
         position={position}
       />
@@ -65,17 +64,39 @@ class NotificationsContainer extends PureComponent {
   }
 }
 
-storiesOf('Notify', module)
+Notification.displayName = 'Notification'
+
+storiesOf('Notification', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
       <NotificationsContainer type="info" />
-      <NotificationsContainer position="bottom-center" type="warning" />
-      <NotificationsContainer position="top-right" type="success" />
-      <NotificationsContainer position="top-left" type="danger" />
-      <NotificationsContainer isSticky position="top-right" type="info" />
-      <NotificationsContainer icon="check" position="bottom-right" type="success" />
+    </div>
+  ), { header: false, inline: true, propTables: [Notification] })
+  .addWithInfo('Position', '', () => (
+    <div className="uk-margin-bottom">
+      <NotificationsContainer position="top-left" type="info" />
+      <NotificationsContainer position="top-center" type="info" />
+      <NotificationsContainer position="top-right" type="info" />
+      <NotificationsContainer position="bottom-left" type="info" />
+      <NotificationsContainer position="bottom-center" type="info" />
+      <NotificationsContainer position="bottom-right" type="info" />
+    </div>
+  ), { header: false, inline: true, propTables: [Notification] })
+  .addWithInfo('Style', '', () => (
+    <div className="uk-margin-bottom">
+      <NotificationsContainer position="bottom-center" type="info" />
+      <NotificationsContainer position="top-left" type="primary" />
+      <NotificationsContainer position="top-center" type="success" />
+      <NotificationsContainer position="top-right" type="warning" />
+      <NotificationsContainer position="bottom-left" type="danger" />
+    </div>
+  ), { header: false, inline: true, propTables: [Notification] })
+  .addWithInfo('Component options', '', () => (
+    <div className="uk-margin-bottom">
       <NotificationsContainer icon="warning" position="bottom-left" timeout={10000} type="warning" />
       <NotificationsContainer icon="warning" position="top-right" timeout={5000} type="danger" onClick={action('handleClick')} />
-
+      <NotificationsContainer position="top-center" type="success" />
+      <NotificationsContainer position="top-right" type="warning" />
+      <NotificationsContainer isSticky icon="check" position="top-left" type="success" />
     </div>
-  ), { header: false, inline: true, propTables: [Notify] })
+  ), { header: false, inline: true, propTables: [Notification] })

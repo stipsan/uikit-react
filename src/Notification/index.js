@@ -5,17 +5,17 @@ import cx from 'classnames'
 
 import NotifyMesssage from './NotifyMesssage'
 
-export default class Notify extends Component {
+export default class Notification extends Component {
   static propTypes = {
     notifications: PropTypes.arrayOf(PropTypes.object).isRequired,
     position: PropTypes.string,
   }
 
   static defaultProps = {
-    type: 'primary',
-    className: 'uk-notify',
-    position: 'top-center',
+    className: 'uk-notification',
     notifications: [],
+    position: 'top-center',
+    type: 'primary',
   }
 
   state = {
@@ -34,13 +34,13 @@ export default class Notify extends Component {
       notifications,
     } = this.props
 
-    const className = cx('uk-notify', {
-      'uk-notify-top-center': position === 'top-center',
-      'uk-notify-top-left': position === 'top-left',
-      'uk-notify-top-right': position === 'top-right',
-      'uk-notify-bottom-center': position === 'bottom-center',
-      'uk-notify-bottom-left': position === 'bottom-left',
-      'uk-notify-bottom-right': position === 'bottom-right',
+    const className = cx('uk-notification', {
+      'uk-notification-top-center': position === 'top-center',
+      'uk-notification-top-left': position === 'top-left',
+      'uk-notification-top-right': position === 'top-right',
+      'uk-notification-bottom-center': position === 'bottom-center',
+      'uk-notification-bottom-left': position === 'bottom-left',
+      'uk-notification-bottom-right': position === 'bottom-right',
     })
     return (
       <Portal

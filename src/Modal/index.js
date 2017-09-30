@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { Component } from 'react'
-import Portal from 'react-portal'
 import PropTypes from 'prop-types'
+import Portal from 'react-portal'
 
 import Button from '../Button'
 import Dialog from './Dialog'
@@ -115,30 +115,34 @@ export default class Modal extends Component {
     let footer = []
     if (type === 'alert') {
       footer = [
-        () =>
+        () => (
           <Button
             primary
             className={this.props.confirmButtonClass}
             onClick={handleConfirm}
           >{confirmLabel}
-          </Button>,
+          </Button>
+        ),
       ]
     }
 
     if (type === 'confirm' || type === 'prompt') {
       footer = [
-        () => <Button className={this.props.cancelButtonClass} onClick={handleCancel}>
-          {cancelLabel}
-        </Button>,
+        () => (
+          <Button className={this.props.cancelButtonClass} onClick={handleCancel}>
+            {cancelLabel}
+          </Button>
+        ),
         () => <span>&nbsp;</span>,
-        () =>
+        () => (
           <Button
             primary
             className={this.props.confirmButtonClass}
             onClick={handleConfirm}
           >
             {confirmLabel}
-          </Button>,
+          </Button>
+        ),
       ]
     }
     const { children, ...dialogProps } = this.props

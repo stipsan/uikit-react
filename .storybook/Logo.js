@@ -1,22 +1,11 @@
-import src from './static/logo.svg'
-
-const linkStyle = Object.freeze({
-  height: '40px',
-  overflow: 'hidden',
-  paddingRight: 0,
-  paddingLeft: 0,
-  marginLeft: '-15px',
-})
+const src = require('./static/logo.svg')
 
 const logoStyle = Object.freeze({
-  height: '70px',
-  marginTop: '-15px',
-  opacity: 0.9,
-  width: '82px',
+  height: '64px',
 })
 
-const Logo = () => <a className="uk-navbar-brand" style={linkStyle}>
-  <img role="presentation" src={src} style={logoStyle} title="UIkit React Logo" />
+const Logo = () => <a className="uk-navbar-item uk-logo">
+  <img alt="UIkit React Logo" src={src} style={logoStyle} />
 </a>
 
 export default Logo
