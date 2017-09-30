@@ -24,7 +24,6 @@
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -o docs -s .storybook/static",
-    "deploy-storybook": "storybook-to-ghpages",
     "changelog:preview": "sr-changelog",
     "changelog:commit": "sr-changelog commit",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
