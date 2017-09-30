@@ -112,22 +112,5 @@
     "computed-style": "^0.3.0",
     "react-input-autosize": "1.1.4",
     "react-portal": "3.1.0"
-  },
-  "contributors": [
-    {
-      "name": "Suresh KUMAR Mukhiya",
-      "email": "itsmeskm99@gmail.com",
-      "url": "https://github.com/sureshHARDIYA"
-    },
-    {
-      "name": "Torkil Johnsen",
-      "email": "torkil@torkiljohnsen.com",
-      "url": "https://github.com/torkiljohnsen"
-    },
-    {
-      "name": "Zach Curtis",
-      "email": "zachariahtimothy@gmail.com",
-      "url": "https://github.com/zachariahtimothy"
-    }
-  ]
+  }
 }
