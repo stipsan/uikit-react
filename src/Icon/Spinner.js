@@ -51,7 +51,6 @@ class Spinner extends PureComponent {
       <span className={cx('uk-icon uk-spinner', className)} ref={this.setContainer}>
         <svg
           height={size}
-          ratio="1"
           viewBox={viewBox}
           width={size}
           xmlns="http://www.w3.org/2000/svg"
