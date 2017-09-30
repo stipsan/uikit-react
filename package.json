@@ -23,8 +23,7 @@
     "build": "babel ./src --ignore __tests__,stories --out-dir ./lib",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001",
-    "build-storybook": "build-storybook -o .out -s .storybook/static",
-    "deploy-storybook": "storybook-to-ghpages",
+    "build-storybook": "build-storybook -o docs -s .storybook/static",
     "changelog:preview": "sr-changelog",
     "changelog:commit": "sr-changelog commit",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -54,7 +53,8 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "lib/"
+      "lib/",
+      "docs/"
     ]
   },
   "devDependencies": {
