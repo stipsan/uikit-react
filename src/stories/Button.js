@@ -7,11 +7,11 @@ Button.displayName = 'Button'
 storiesOf('Button', module)
   .addWithInfo('Basic Usage', '', () => (
     <div className="uk-margin-bottom">
-      <Button onClick={action('onClick Default')}>Default</Button>
+      <Button onClick={action('onClick')}>Default</Button>
       &nbsp;
-      <Button disabled>Default Disabled</Button>
+      <Button disabled>Disabled</Button>
       &nbsp;
-      <Button primary>
+      <Button primary onClick={action('onClick')}>
         <Icon className="uk-margin-small-right" icon="trash" />
         Delete
       </Button>
@@ -20,35 +20,35 @@ storiesOf('Button', module)
 
   .addWithInfo('Style modifiers', '', () => (
     <div className="uk-margin-bottom">
-      <Button onClick={action('onClick Default')}>Default</Button>
+      <Button onClick={action('onClick')}>Default</Button>
       &nbsp;
-      <Button primary onClick={action('onClick Primary')}>Primary</Button>
+      <Button primary onClick={action('onClick')}>Primary</Button>
       &nbsp;
-      <Button secondary onClick={action('onClick Primary')}>Secondary</Button>
+      <Button secondary onClick={action('onClick')}>Secondary</Button>
       &nbsp;
-      <Button danger onClick={action('onClick Danger')}>Danger</Button>
+      <Button danger onClick={action('onClick')}>Danger</Button>
       &nbsp;
-      <Button text onClick={action('onClick Danger')}>Text</Button>
+      <Button text onClick={action('onClick')}>Text</Button>
       &nbsp;
-      <Button link onClick={action('onClick Link')}>Link</Button>
+      <Button link onClick={action('onClick')}>Link</Button>
       &nbsp;
     </div>
   ), { header: false, inline: true, propTables: [Button] })
 
   .addWithInfo('Size modifiers', '', () => (
     <div className="uk-margin-bottom">
-      <Button small onClick={action('onClick Success')}>SMALL BUTTON</Button>
+      <Button small onClick={action('onClick')}>SMALL BUTTON</Button>
       &nbsp;
-      <Button primary small onClick={action('onClick Success')}>SMALL BUTTON</Button>
+      <Button primary small onClick={action('onClick')}>SMALL BUTTON</Button>
       &nbsp;
-      <Button secondary small onClick={action('onClick Success')}>SMALL BUTTON</Button>
+      <Button secondary small onClick={action('onClick')}>SMALL BUTTON</Button>
       &nbsp;
       <br /><br />
-      <Button large onClick={action('onClick Submit')}>LARGE BUTTON</Button>
+      <Button large onClick={action('onClick')}>LARGE BUTTON</Button>
       &nbsp;
-      <Button large primary onClick={action('onClick Submit')}>LARGE BUTTON</Button>
+      <Button large primary onClick={action('onClick')}>LARGE BUTTON</Button>
       &nbsp;
-      <Button large secondary onClick={action('onClick Submit')}>LARGE BUTTON</Button>
+      <Button large secondary onClick={action('onClick')}>LARGE BUTTON</Button>
       &nbsp;
     </div>
   ), { header: false, inline: true, propTables: [Button] })
