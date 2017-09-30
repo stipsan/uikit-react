@@ -29,9 +29,7 @@ jobs:
 
       - run: yarn semantic-release || true
 
-      - run:
-          name: Maybe deploy to uikit-react.io
-          command: |
-            if [[ $CIRCLE_BRANCH == master ]]; then
-              yarn deploy-storybook
-            fi
+      - run: |
+        if [[ $CIRCLE_BRANCH == master ]]; then
+          yarn deploy-storybook
+        fi
