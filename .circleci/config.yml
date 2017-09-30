@@ -20,9 +20,18 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      
+
       - run: yarn lint
 
       - run: yarn test --coverage
 
       - run: yarn coveralls
+
+      - run: yarn semantic-release || true
+
+      - run:
+          name: Maybe deploy to uikit-react.io
+          command: |
+            if [[ $CIRCLE_BRANCH == master ]]; then
+              yarn deploy-storybook
+            fi

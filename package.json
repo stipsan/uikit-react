@@ -25,8 +25,15 @@
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -o .out -s .storybook/static",
     "deploy-storybook": "storybook-to-ghpages",
-    "postpublish": "gh-release && yarn run deploy-storybook",
-    "postversion": "git add package.json && git commit -m \"chore(package): update version\""
+    "changelog:preview": "sr-changelog",
+    "changelog:commit": "sr-changelog commit",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
+    "verifyConditions": "condition-circle",
+    "generateNotes": "semantic-release-tamia/generateNotes",
+    "verifyRelease": "semantic-release-tamia/verifyRelease"
   },
   "jest": {
     "coverageReporters": [
