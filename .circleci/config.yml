@@ -27,9 +27,13 @@ jobs:
 
       - run: yarn coveralls
 
-      - run: yarn semantic-release || true
+      - run:
+          name: Maybe publish on npm
+          command: yarn semantic-release || true
 
-      - run: |
-        if [[ $CIRCLE_BRANCH == master ]]; then
-          yarn deploy-storybook
-        fi
+      - run:
+          name: Maybe deploy to uikit-react.io
+          command: |
+            if [[ $CIRCLE_BRANCH == master ]]; then
+              yarn deploy-storybook
+            fi
