@@ -1,7 +1,17 @@
 {
   "name": "uikit-react",
-  "version": "3.0.0-beta.6",
   "description": "UIkit components built with React",
+  "repository": "https://github.com/stipsan/uikit-react.git",
+  "author": "Stian Didriksen <stipsan@gmail.com> (http://github.com/stipsan)",
+  "license": "MIT",
+  "homepage": "https://uikit-react.io",
+  "keywords": [
+    "react",
+    "react-component",
+    "uikit",
+    "react-uikit",
+    "ecosystem-react"
+  ],
   "main": "./lib",
   "scripts": {
     "test": "jest",
@@ -15,24 +25,15 @@
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook -o .out -s .storybook/static",
     "deploy-storybook": "storybook-to-ghpages",
-    "postpublish": "gh-release && yarn run deploy-storybook",
-    "postversion": "git add package.json && git commit -m \"chore(package): update version\""
+    "changelog:preview": "sr-changelog",
+    "changelog:commit": "sr-changelog commit",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stipsan/uikit-react.git"
-  },
-  "keywords": [
-    "react",
-    "react-component",
-    "uikit",
-    "react-uikit",
-    "ecosystem-react"
-  ],
-  "author": "Stian Didriksen <stipsan@gmail.com> (http://github.com/stipsan)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stipsan/uikit-react/issues"
+  "release": {
+    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
+    "verifyConditions": "condition-circle",
+    "generateNotes": "semantic-release-tamia/generateNotes",
+    "verifyRelease": "semantic-release-tamia/verifyRelease"
   },
   "jest": {
     "coverageReporters": [
@@ -56,7 +57,6 @@
       "lib/"
     ]
   },
-  "homepage": "https://uikit-react.io",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.4.0",
     "@kadira/storybook": "2.35.3",
@@ -101,6 +101,7 @@
     "react-height": "3.0.0",
     "react-motion": "0.5.0",
     "react-test-renderer": "15.5.4",
+    "release-relief": "^1.0.1",
     "semver": "^5.3.0",
     "semver-truncate": "^1.1.2",
     "style-loader": "0.18.0",
@@ -112,22 +113,5 @@
     "computed-style": "^0.3.0",
     "react-input-autosize": "1.1.4",
     "react-portal": "3.1.0"
-  },
-  "contributors": [
-    {
-      "name": "Suresh KUMAR Mukhiya",
-      "email": "itsmeskm99@gmail.com",
-      "url": "https://github.com/sureshHARDIYA"
-    },
-    {
-      "name": "Torkil Johnsen",
-      "email": "torkil@torkiljohnsen.com",
-      "url": "https://github.com/torkiljohnsen"
-    },
-    {
-      "name": "Zach Curtis",
-      "email": "zachariahtimothy@gmail.com",
-      "url": "https://github.com/zachariahtimothy"
-    }
-  ]
+  }
 }

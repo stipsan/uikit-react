@@ -1,16 +1,4 @@
-uikit-react
-===========
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/stipsan/uikit-react.svg)](https://greenkeeper.io/)
-
-[![Build Status](https://travis-ci.org/stipsan/uikit-react.svg?branch=master)](https://travis-ci.org/stipsan/uikit-react)
-[![Coverage Status](https://coveralls.io/repos/github/stipsan/uikit-react/badge.svg)](https://coveralls.io/github/stipsan/uikit-react)
-[![npm package](https://img.shields.io/npm/dm/uikit-react.svg)](https://www.npmjs.com/package/uikit-react)
-
-[![NPM](https://nodei.co/npm/uikit-react.png?downloadRank=true)](https://www.npmjs.com/package/uikit-react)
-[![NPM](https://nodei.co/npm-dl/uikit-react.png?months=3&height=2)](https://nodei.co/npm/uikit-react/)
-
-# We are [busy upgrading](https://github.com/stipsan/uikit-react/pull/491) to UIkit v3
+# uikit-react &middot; [![CircleCI Status](https://img.shields.io/circleci/project/github/stipsan/uikit-react.svg?style=flat-square)](https://circleci.com/gh/stipsan/uikit-react) [![Coverage Status](https://img.shields.io/coveralls/stipsan/uikit-react.svg?style=flat-square)](https://coveralls.io/github/stipsan/uikit-react) [![npm version](https://img.shields.io/npm/v/uikit-react.svg?style=flat-square)](https://www.npmjs.com/package/uikit-react) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 
 <img src="https://uikit-react.io/logo.svg" width="256"/>
 
@@ -26,7 +14,8 @@ uikit-react
 * [Dropdown](http://uikit-react.io/?selectedKind=Dropdown&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Modal](http://uikit-react.io/?selectedKind=Modal&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
 * [Input](http://uikit-react.io/?selectedKind=Input&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0)
-* [Notify](http://uikit-react.io/?selectedKind=Notify&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
+* [Notification](http://uikit-react.io/?selectedKind=Notification&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
+* [Icon](http://uikit-react.io/?selectedKind=Icon&selectedStory=Basic%20Usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
 
 ## Addons
 
