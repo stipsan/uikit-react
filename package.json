@@ -53,7 +53,8 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "lib/"
+      "lib/",
+      "docs/"
     ]
   },
   "devDependencies": {
