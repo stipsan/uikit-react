@@ -1,6 +1,6 @@
 # uikit-react &middot; [![CircleCI Status](https://img.shields.io/circleci/project/github/stipsan/uikit-react.svg?style=flat-square)](https://circleci.com/gh/stipsan/uikit-react) [![Coverage Status](https://img.shields.io/coveralls/stipsan/uikit-react.svg?style=flat-square)](https://coveralls.io/github/stipsan/uikit-react) [![npm version](https://img.shields.io/npm/v/uikit-react.svg?style=flat-square)](https://www.npmjs.com/package/uikit-react) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 
-<img src="https://uikit-react.io/logo.svg" width="256"/>
+<img src="https://uikit-react.io/logo.svg?v2" width="256"/>
 
 ## Installation
 
