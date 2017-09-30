@@ -1,6 +1,17 @@
 {
   "name": "uikit-react",
   "description": "UIkit components built with React",
+  "repository": "https://github.com/stipsan/uikit-react.git",
+  "author": "Stian Didriksen <stipsan@gmail.com> (http://github.com/stipsan)",
+  "license": "MIT",
+  "homepage": "https://uikit-react.io",
+  "keywords": [
+    "react",
+    "react-component",
+    "uikit",
+    "react-uikit",
+    "ecosystem-react"
+  ],
   "main": "./lib",
   "scripts": {
     "test": "jest",
@@ -16,22 +27,6 @@
     "deploy-storybook": "storybook-to-ghpages",
     "postpublish": "gh-release && yarn run deploy-storybook",
     "postversion": "git add package.json && git commit -m \"chore(package): update version\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stipsan/uikit-react.git"
-  },
-  "keywords": [
-    "react",
-    "react-component",
-    "uikit",
-    "react-uikit",
-    "ecosystem-react"
-  ],
-  "author": "Stian Didriksen <stipsan@gmail.com> (http://github.com/stipsan)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stipsan/uikit-react/issues"
   },
   "jest": {
     "coverageReporters": [
@@ -55,7 +50,6 @@
       "lib/"
     ]
   },
-  "homepage": "https://uikit-react.io",
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "3.4.0",
     "@kadira/storybook": "2.35.3",
