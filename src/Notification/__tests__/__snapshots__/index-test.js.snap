@@ -26,10 +26,10 @@ exports[`Notification should render correctly 1`] = `
           dangerouslySetInnerHTML={
             Object {
               "__html": "
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
-            </svg>
-            ",
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
+</svg>
+",
             }
           }
           height={14}
@@ -48,7 +48,7 @@ exports[`Notification should render correctly 1`] = `
           <svg
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<polyline fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" points=\\"4,10 8,15 17,4\\"></polyline>",
+                "__html": " <polyline fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" points=\\"4,10 8,15 17,4\\"></polyline>",
               }
             }
             height={20}

@@ -36,10 +36,10 @@ exports[`Modal renders a Blank Modal 1`] = `
           dangerouslySetInnerHTML={
             Object {
               "__html": "
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
-            </svg>
-            ",
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
+</svg>
+",
             }
           }
           height={14}
@@ -122,10 +122,10 @@ exports[`Modal renders a Caption 1`] = `
           dangerouslySetInnerHTML={
             Object {
               "__html": "
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
-            </svg>
-            ",
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
+</svg>
+",
             }
           }
           height={14}
@@ -187,10 +187,10 @@ exports[`Modal renders a Header and Footer 1`] = `
           dangerouslySetInnerHTML={
             Object {
               "__html": "
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
-            </svg>
-            ",
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
+</svg>
+",
             }
           }
           height={14}
@@ -263,10 +263,10 @@ exports[`Modal renders a Lightbox 1`] = `
           dangerouslySetInnerHTML={
             Object {
               "__html": "
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
-            </svg>
-            ",
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
+</svg>
+",
             }
           }
           height={14}
@@ -349,7 +349,7 @@ exports[`Modal renders an alert modal 1`] = `
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={false}
+    onClick={undefined}
     style={
       Object {
         "display": "block",
@@ -399,7 +399,7 @@ exports[`Modal renders an confirm modal 1`] = `
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={false}
+    onClick={undefined}
     style={
       Object {
         "display": "block",
@@ -459,7 +459,7 @@ exports[`Modal renders an prompt modal 1`] = `
   <div
     aria-hidden={false}
     className="uk-modal"
-    onClick={false}
+    onClick={undefined}
     style={
       Object {
         "display": "block",
@@ -548,10 +548,10 @@ exports[`Modal renders correctly 1`] = `
           dangerouslySetInnerHTML={
             Object {
               "__html": "
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
-                <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
-            </svg>
-            ",
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"1\\" y1=\\"1\\" x2=\\"13\\" y2=\\"13\\"></line>
+    <line fill=\\"none\\" stroke=\\"#000\\" stroke-width=\\"1.1\\" x1=\\"13\\" y1=\\"1\\" x2=\\"1\\" y2=\\"13\\"></line>
+</svg>
+",
             }
           }
           height={14}
