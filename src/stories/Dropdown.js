@@ -1,10 +1,9 @@
-import { storiesOf } from '@kadira/storybook'
+import { storiesOf } from '@storybook/react'
 import cx from 'classnames'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Button } from 'uikit-react'
-import Dropdown from '../Dropdown'
+import { Button, Dropdown } from '..'
 
 // This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
 Dropdown.displayName = 'Dropdown'

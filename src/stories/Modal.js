@@ -1,6 +1,6 @@
-import { storiesOf, action } from '@kadira/storybook'
+import { storiesOf, action } from '@storybook/react'
 import { Component } from 'react'
-import { Button, Modal } from 'uikit-react'
+import { Button, Modal } from '..'
 
 Modal.displayName = 'Modal'
 

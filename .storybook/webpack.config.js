@@ -7,11 +7,6 @@ module.exports = {
       React: 'react',
     }),
   ],
-  resolve: {
-    alias: {
-      'uikit-react': '../src',
-    },
-  },
   module: {
     rules: [
       {

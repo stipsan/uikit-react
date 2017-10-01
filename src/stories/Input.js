@@ -1,5 +1,5 @@
-import { storiesOf } from '@kadira/storybook'
-import { Input } from 'uikit-react'
+import { storiesOf } from '@storybook/react'
+import { Input } from '..'
 
 // This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
 Input.displayName = 'Input'

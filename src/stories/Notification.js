@@ -1,7 +1,7 @@
-import { storiesOf, action } from '@kadira/storybook'
-import { Notification, Button } from 'uikit-react'
+import { storiesOf, action } from '@storybook/react'
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { Notification, Button } from '..'
 
 class NotificationsContainer extends PureComponent {
   static propTypes = {
