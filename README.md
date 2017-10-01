@@ -23,7 +23,7 @@
 
 React UI component built on top of the UIkit CSS.
 This library makes no assumptions on how you provide the CSS; load it in any way you like.
-The minimum required css for components to function can be seen in the [LESS file](.storybook/uikit.less) we use to compile UIkit for our [Storybook](http://uikit-react.io).
+For our [Storybook](https://uikit-react.io) we import the LESS file [from UIkit directly](https://github.com/stipsan/uikit-react/blob/20773ae21d698e87d5419cfc117b4f1bb685f41b/.storybook/config.js#L1).
 
 Check our [Storybook](http://uikit-react.io) to see docs and usage examples for each component in the library.
 

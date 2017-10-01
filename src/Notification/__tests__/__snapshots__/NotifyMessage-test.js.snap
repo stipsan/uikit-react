@@ -56,3 +56,5 @@ exports[`NotifyMesssage should render correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`NotifyMesssage should render correctly 2`] = `<span />`;
