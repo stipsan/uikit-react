@@ -1,6 +1,6 @@
 import 'uikit/src/less/uikit.theme.less'
 
-import infoAddon from '@kadira/react-storybook-addon-info'
+import infoAddon from '@storybook/addon-info'
 import { configure, setAddon, addDecorator } from '@storybook/react'
 
 import Logo from './Logo'

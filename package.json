@@ -99,6 +99,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "computed-style": "^0.3.0"
+    "computed-style": "^0.3.0",
+    "react-portal": "^3.1.0"
   }
 }
