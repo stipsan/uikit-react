@@ -61,14 +61,5 @@ storiesOf('Input', module)
           <Input flip icon="clock" />
         </div>
       </div>
-      <div className="uk-form-row">
-        <div className="uk-margin">
-          <Input icon="twitter" />
-          &nbsp;
-        </div>
-        <div className="uk-margin">
-          <Input flip icon="spinner" />
-        </div>
-      </div>
     </form>
   ), { header: false, inline: true })

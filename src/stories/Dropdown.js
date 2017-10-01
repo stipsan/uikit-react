@@ -89,7 +89,7 @@ storiesOf('Dropdown', module)
         <ul className="uk-navbar-nav">
           <li className="uk-active"><a>Active</a></li>
           <li><a href="">Item</a></li>
-          <Dropdown className="" component="li" >
+          <Dropdown className="" component="li" key="first" link="navbar">
             <a href="#">Parent</a>
             <div className="uk-navbar-dropdown">
               <ul className="uk-nav uk-navbar-dropdown-nav">
@@ -103,7 +103,20 @@ storiesOf('Dropdown', module)
               </ul>
             </div>
           </Dropdown>
-          <li><a href="">Item</a></li>
+          <Dropdown className="" component="li" key="second" link="navbar">
+            <a href="#">Parent</a>
+            <div className="uk-navbar-dropdown">
+              <ul className="uk-nav uk-navbar-dropdown-nav">
+                <li className="uk-active"><a href="#">Active</a></li>
+                <li><a href="#">Item</a></li>
+                <li className="uk-nav-header">Header</li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li className="uk-nav-divider" />
+                <li><a href="#">Item</a></li>
+              </ul>
+            </div>
+          </Dropdown>
         </ul>
       </nav>
     </div>
