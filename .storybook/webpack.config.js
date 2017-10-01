@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const autoprefixer = require('autoprefixer')
 
 module.exports = {
   plugins: [
@@ -9,30 +8,34 @@ module.exports = {
     }),
   ],
   resolve: {
-    root: path.join(__dirname, '..'),
     alias: {
-      'uikit-react': 'src',
+      'uikit-react': '../src',
     },
   },
-  postcss() {
-    return [autoprefixer]
-  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.less/,
-        loader: 'style-loader!css-loader!postcss-loader!less-loader',
+        loaders: ["style-loader", "css-loader", "less-loader"],
       },
-      { test: /\.css$/, loaders: ['style', 'css'] },
-      { test: /\.svg$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
+      {
+        test: /\.css/,
+        loaders: ["style-loader", "css-loader"],
+      },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+        options: { limit: 10000, mimetype: 'application/font-woff' },
+        loader: 'url-loader',
+      },
+      {
+        test: /\.svg$/,
+        options: { limit: 10000, mimetype: 'image/svg+xml' },
+        loader: 'url-loader',
       },
       {
         test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader',
       },
-    ],
+    ]
   },
 }
