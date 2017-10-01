@@ -86,14 +86,11 @@
     "json-loader": "0.5.7",
     "less": "2.7.2",
     "less-loader": "4.0.5",
-    "postcss-loader": "2.0.6",
+    "postcss-loader": "1.3.3",
     "prop-types": "^15.5.10",
     "raw-loader": "^0.5.1",
     "react": "16.0.0",
-    "react-addons-test-utils": "15.6.2",
     "react-dom": "16.0.0",
-    "react-height": "3.0.0",
-    "react-motion": "0.5.1",
     "react-test-renderer": "16.0.0",
     "release-relief": "^1.0.1",
     "style-loader": "0.18.2",
@@ -102,8 +99,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "computed-style": "^0.3.0",
-    "react-input-autosize": "^2.0.1",
-    "react-portal": "^3.1.0"
+    "computed-style": "^0.3.0"
   }
 }
