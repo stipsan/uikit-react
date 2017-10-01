@@ -7,7 +7,7 @@ Input.displayName = 'Input'
 storiesOf('Input', module)
   .addWithInfo('Basic Usage', `
   ---
-  For more advanced use cases please check out [\`redux-form-uikit\`](http://form.uikit-react.io).
+  For more advanced use cases please check out [redux-form-uikit](http://form.uikit-react.io).
   `, () => (
     <form className="uk-margin-bottom uk-form">
       <Input placeholder="Text input" />
