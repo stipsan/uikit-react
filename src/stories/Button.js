@@ -1,5 +1,5 @@
-import { storiesOf, action } from '@kadira/storybook'
-import { Button, Icon } from 'uikit-react'
+import { storiesOf, action } from '@storybook/react'
+import { Button, Icon } from '..'
 
 // This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
 Button.displayName = 'Button'

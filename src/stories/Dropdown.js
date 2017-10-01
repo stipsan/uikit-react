@@ -1,10 +1,9 @@
-import { storiesOf } from '@kadira/storybook'
+import { storiesOf } from '@storybook/react'
 import cx from 'classnames'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Button } from 'uikit-react'
-import Dropdown from '../Dropdown'
+import { Button, Dropdown } from '..'
 
 // This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
 Dropdown.displayName = 'Dropdown'
@@ -90,7 +89,7 @@ storiesOf('Dropdown', module)
         <ul className="uk-navbar-nav">
           <li className="uk-active"><a>Active</a></li>
           <li><a href="">Item</a></li>
-          <Dropdown className="" component="li" >
+          <Dropdown className="" component="li" key="first" link="navbar">
             <a href="#">Parent</a>
             <div className="uk-navbar-dropdown">
               <ul className="uk-nav uk-navbar-dropdown-nav">
@@ -104,7 +103,20 @@ storiesOf('Dropdown', module)
               </ul>
             </div>
           </Dropdown>
-          <li><a href="">Item</a></li>
+          <Dropdown className="" component="li" key="second" link="navbar">
+            <a href="#">Parent</a>
+            <div className="uk-navbar-dropdown">
+              <ul className="uk-nav uk-navbar-dropdown-nav">
+                <li className="uk-active"><a href="#">Active</a></li>
+                <li><a href="#">Item</a></li>
+                <li className="uk-nav-header">Header</li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li className="uk-nav-divider" />
+                <li><a href="#">Item</a></li>
+              </ul>
+            </div>
+          </Dropdown>
         </ul>
       </nav>
     </div>

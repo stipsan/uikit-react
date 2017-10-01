@@ -168,7 +168,7 @@ export default class Modal extends Component {
           aria-hidden={isOpen}
           className={className}
           style={style}
-          onClick={type === 'default' && handleClose}
+          onClick={type === 'default' ? handleClose : undefined}
         >
           <Dialog
             close={type === 'default'}

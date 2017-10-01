@@ -1,5 +1,5 @@
-import { storiesOf } from '@kadira/storybook'
-import { Input } from 'uikit-react'
+import { storiesOf } from '@storybook/react'
+import { Input } from '..'
 
 // This is to work around: https://github.com/kadirahq/react-storybook-addon-info/issues/26#issuecomment-229029177
 Input.displayName = 'Input'
@@ -7,7 +7,7 @@ Input.displayName = 'Input'
 storiesOf('Input', module)
   .addWithInfo('Basic Usage', `
   ---
-  For more advanced use cases please check out [\`redux-form-uikit\`](http://form.uikit-react.io).
+  For more advanced use cases please check out [redux-form-uikit](http://form.uikit-react.io).
   `, () => (
     <form className="uk-margin-bottom uk-form">
       <Input placeholder="Text input" />
@@ -59,15 +59,6 @@ storiesOf('Input', module)
         </div>
         <div className="uk-margin">
           <Input flip icon="clock" />
-        </div>
-      </div>
-      <div className="uk-form-row">
-        <div className="uk-margin">
-          <Input icon="twitter" />
-          &nbsp;
-        </div>
-        <div className="uk-margin">
-          <Input flip icon="spinner" />
         </div>
       </div>
     </form>
