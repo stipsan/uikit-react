@@ -129,7 +129,7 @@ export default class Dropdown extends Component {
     const eventHandlers = {
       onClick: handleClick,
     }
-    if(mode === 'hover') {
+    if (mode === 'hover') {
       eventHandlers.onMouseEnter = handleMouseEnter
       eventHandlers.onMouseLeave = handleMouseLeave
     }
