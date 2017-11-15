@@ -126,11 +126,12 @@ export default class Dropdown extends Component {
     const { mode, component, children, className } = this.props
     const { isOpen } = this.state
 
-    const eventHandlers = mode === 'click' ? {
+    const eventHandlers = {
       onClick: handleClick,
-    } : {
-      onMouseEnter: handleMouseEnter,
-      onMouseLeave: handleMouseLeave,
+    }
+    if(mode === 'hover') {
+      eventHandlers.onMouseEnter = handleMouseEnter
+      eventHandlers.onMouseLeave = handleMouseLeave
     }
 
     if (typeof children === 'function') {
