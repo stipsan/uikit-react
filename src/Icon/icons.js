@@ -15,15 +15,16 @@ import slidenavPrevious from 'uikit/src/images/components/slidenav-previous.svg'
 import slidenavPreviousLarge from 'uikit/src/images/components/slidenav-previous-large.svg'
 import spinner from 'uikit/src/images/components/spinner.svg'
 import totop from 'uikit/src/images/components/totop.svg'
+import objectAssign from 'object-assign'
 
 // base storage for icons
 const icons = {}
 
 // Load core icons
-loader({ icon: { add: (UIkitIcons) => { Object.assign(icons, UIkitIcons) } } })
+loader({ icon: { add: (UIkitIcons) => { objectAssign(icons, UIkitIcons) } } })
 
 // Load component icons
-Object.assign(icons, {
+objectAssign(icons, {
   spinner,
   totop,
   'close-icon': closeIcon,
