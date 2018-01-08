@@ -1,5 +1,3 @@
-global.React = require('react')
-
 // eslint-disable-next-line no-console
 const error = console.error
 // eslint-disable-next-line no-console

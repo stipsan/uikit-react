@@ -1,3 +1,4 @@
+import React from 'react'
 import renderer from 'react-test-renderer'
 import Icon from '../index'
 import icons from '../icons'

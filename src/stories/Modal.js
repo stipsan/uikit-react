@@ -1,5 +1,5 @@
 import { storiesOf, action } from '@storybook/react'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { Button, Modal } from '..'
 
 Modal.displayName = 'Modal'

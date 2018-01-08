@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Portal from 'react-portal'
 
