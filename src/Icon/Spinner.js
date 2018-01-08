@@ -1,5 +1,4 @@
-import React from 'react'
-import { PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import computedStyle from 'computed-style'
