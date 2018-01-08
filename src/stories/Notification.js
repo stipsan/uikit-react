@@ -1,5 +1,5 @@
 import { storiesOf, action } from '@storybook/react'
-import { PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Notification, Button } from '..'
 

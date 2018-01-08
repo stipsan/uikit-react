@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import cx from 'classnames'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Button, Dropdown } from '..'

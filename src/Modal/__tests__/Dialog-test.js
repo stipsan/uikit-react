@@ -1,3 +1,4 @@
+import React from 'react'
 import renderer from 'react-test-renderer'
 import Dialog from '../Dialog'
 
