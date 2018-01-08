@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { Component, createElement } from 'react'
+import React, { Component, createElement } from 'react'
 import PropTypes from 'prop-types'
 
 import Icon from '../Icon'
